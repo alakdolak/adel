@@ -4283,7 +4283,7 @@ select[multiple].input-group-sm > .form-control, select[multiple].input-group-sm
 
 .nav > li > a:focus, .nav > li > a:hover {
     text-decoration: none;
-    background-color: #eee
+    /*background-color: #eee*/
 }
 
 .nav > li.disabled > a {
@@ -4298,7 +4298,7 @@ select[multiple].input-group-sm > .form-control, select[multiple].input-group-sm
 }
 
 .nav .open > a, .nav .open > a:focus, .nav .open > a:hover {
-    background-color: #eee;
+    /*background-color: #eee;*/
     border-color: #337ab7
 }
 

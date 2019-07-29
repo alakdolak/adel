@@ -3791,9 +3791,10 @@ ul.profile-contact-menu {
 	opacity:1;
 	right:200px;
 	z-index:9999;
+	text-align: right;
 }
 .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li.open .left-menu-dropdown.chart-left-menu-std{
-	top:-100px;
+	/*top:-100px;*/
 }
 .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li.open .left-menu-dropdown.form-left-menu-std{
 	top:-100px;
@@ -4166,8 +4167,14 @@ ul.breadcome-menu {
     background-color: #00648e;
     border-color: #00648e;
 }
-.materialdesign .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li a:hover, .materialdesign .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li a:focus, .materialdesign .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li a:active, .materialdesign .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li a:visited{
+.materialdesign .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li a:hover, .materialdesign .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li a:active, .materialdesign .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li a:hover{
 	background: #ebebeb;
+}
+.materialdesign .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li a:focus {
+	background: #009ee0;
+}
+.nav-link > span :focus, .nav-link > i :focus {
+	color: black;
 }
 .materialdesign .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li .left-menu-dropdown{
 	background: #ececec;
