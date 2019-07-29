@@ -17,7 +17,7 @@ app.use(helmet());
 app.use(helmet.frameguard({ action: 'deny' }));
 
 app.use(function(req, res, next) {
-    req.nonce = "2726c7f26c";
+    req.nonce = Common.makeRand(20);
     res.setHeader("Content-Security-Policy",
         "default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'nonce-" + req.nonce + "' https://www.google.com/recaptcha/api.js 'unsafe-eval'; img-src 'self' www.gstatic.com; frame-src www.google.com; object-src 'none'; base-uri 'none';");
     return next();

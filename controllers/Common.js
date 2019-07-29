@@ -3,6 +3,16 @@ const moment = require('jalali-moment');
 const sequelize = new Sequelize('mysql://hemayat_root:QaS5rtWb2X4wAN2Q@localhost:3306/hemayat', { logging: false});
 const bcrypt = require('bcrypt');
 
+exports.makeRand = function(length) {
+    let result           = '';
+    let characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let charactersLength = characters.length;
+    for ( let i = 0; i < length; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+};
+
 exports.vmsNationalCode = function(input) {
 
     if (!/^\d{10}$/.test(input)

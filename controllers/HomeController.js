@@ -198,7 +198,66 @@ exports.readExcel = function (req, res) {
 
 exports.retrievePassPage1 = function(req, res) {
     res.render('retrievePassPage1', {
-        csrfToken: req.csrfToken()
+        csrfToken: req.csrfToken(),
+        my_nonce: req.nonce,
+        err: req.params.err
+    });
+};
+
+exports.forgetStep2 = function(req, res) {
+
+    let userId = req.params.userId;
+
+    sequelize.query("select sendTime from activations a, users u where u.phone_num = a.phone_num and u.id = ?", {
+        type: Sequelize.QueryTypes.SELECT,
+        replacements: [userId]
+    }).then(users => {
+
+        if(users != null && users.length > 0) {
+
+            let activation = users[0];
+            let reminder = parseInt((activation.sendTime - ((new Date).getTime()) + 300000) / 1000);
+
+            res.render('retrievePassPage2', {
+                csrfToken: req.csrfToken(),
+                user_id: userId,
+                reminder: reminder
+            });
+        }
+        else
+            res.redirect("/");
+    });
+};
+
+exports.forget = function(req, res) {
+
+    let nid = req.body.nid;
+
+    sequelize.query("select id, phone_num from users where username = ?", {
+        type: Sequelize.QueryTypes.SELECT,
+        replacements: [nid]
+    }).then(user => {
+
+        if(user != null && user.length > 0) {
+            user = user[0];
+            let out = parseInt(Math.random() * (999999 - 100000) + 100000);
+
+            Activation.destroy({where: {phone_num: user.phone_num}});
+
+            Activation.create({
+                sendTime: (new Date).getTime(),
+                phone_num: user.phone_num,
+                code: out
+            }).then(act => {
+                sendSMS(out, user.phone_num);
+                res.redirect("/forgetStep2/" + user.id);
+            }).catch(x => {
+                res.redirect("/retrievePassPage1/err");
+            });
+        }
+        else {
+            res.redirect("/retrievePassPage1/err");
+        }
     });
 };
 
@@ -306,47 +365,14 @@ exports.requestsPage = function(req, res) {
     res.render('requestsPage');
 };
 
-exports.forget = function(req, res) {
-
-    let nid = req.body.nid;
-
-    sequelize.query("select phone_num from users where username = ?", {
-        type: Sequelize.QueryTypes.SELECT,
-        replacements: [nid]
-    }).then(user => {
-
-        if(user != null && user.length > 0) {
-            user = user[0];
-            let out = parseInt(Math.random() * (999999 - 100000) + 100000);
-
-            Activation.destroy({where: {phone_num: user.phone_num}});
-
-            Activation.create({
-                sendTime: (new Date).getTime(),
-                phone_num: user.phone_num,
-                code: out
-            }).then(act => {
-                sendSMS(out, user.phone_num);
-                res.send(JSON.stringify({'status': 'ok', 'phone_num': user.phone_num}, null, 4));
-            }).catch(x => {
-                res.send(JSON.stringify({'status': 'nok3', 'msg': x}, null, 4));
-            });
-        }
-        else {
-            res.send(JSON.stringify({'status': 'nok'}, null, 4));
-        }
-
-    });
-};
-
 exports.submitForgetCode = function(req, res){
 
     let code = req.body.code;
-    let phone_num = req.body.phone_num;
+    let userId = req.body.userId;
 
-    sequelize.query("select id from activations where code = ? and phone_num = ?", {
+    sequelize.query("select a.id from activations a, users u where code = ? and u.phone_num = a.phone_num and u.id = ?", {
         type: Sequelize.QueryTypes.SELECT,
-        replacements: [code, phone_num]
+        replacements: [code, userId]
     }).then(tmp => {
         if (tmp != null && tmp.length > 0) {
             res.send(JSON.stringify({'status': "ok"}, null, 4));
@@ -718,7 +744,7 @@ exports.changePass = function(req, res) {
 
     let pass = req.body.password;
     let confirm_pass = req.body.confirm_password;
-    let phone_num = req.body.phone_num;
+    let userId = req.body.userId;
     let code = req.body.code;
 
     if(pass !== confirm_pass) {
@@ -731,9 +757,9 @@ exports.changePass = function(req, res) {
         return;
     }
 
-    sequelize.query("select u.id from activations a, users u where u.phone_num = a.phone_num and code = ? and a.phone_num = ?", {
+    sequelize.query("select u.id from activations a, users u where u.phone_num = a.phone_num and code = ? and u.id = ?", {
         type: Sequelize.QueryTypes.SELECT,
-        replacements: [code, phone_num]
+        replacements: [code, userId]
     }).then(act => {
         if (act != null && act.length > 0) {
 

@@ -4,6 +4,7 @@ let c_minutes = -1;
 let c_seconds = -1;
 let timer;
 
+let act_code = -1;
 let reminder;
 let userId = -1;
 
@@ -26,7 +27,85 @@ $(document).ready(function () {
         submitThirdForm();
     });
 
+    $("#submitCodeBtn").on('click', function () {
+        submitCode();
+    });
+
+    $("#changePassBtn").on('click', function () {
+        changePass();
+    });
+
 });
+
+function submitCode() {
+
+    let code = $("#code").val();
+    if(code.length === 0)
+        return;
+
+    $.ajax({
+
+        type: 'post',
+        url: '/submitForgetCode',
+        data: {
+            'code': code,
+            'userId': userId
+        },
+        success: function (res) {
+
+            res = JSON.parse(res);
+
+            if(res.status === "ok") {
+                $("#pass2").addClass('hidden');
+                $("#pass3").removeClass('hidden');
+                act_code = code;
+            }
+            else {
+                $(".warning").addClass('hidden');
+                $("#invalidCode").removeClass('hidden');
+            }
+
+        }
+    });
+
+}
+
+function changePass() {
+
+    let confirm_pass = $("#conf").val();
+    let pass = $("#suPass").val();
+
+    if(pass.length === 0)
+        return;
+
+    $.ajax({
+
+        url: '/changePass',
+        type: 'post',
+        data: {
+            'password': pass,
+            'userId': userId,
+            'confirm_password': confirm_pass,
+            'code': act_code
+        },
+        success: function (res) {
+
+            res = JSON.parse(res);
+
+            if(res.status === "ok") {
+                document.location.href = "/";
+            }
+            else if(res.status === "nok1") {
+                $('.formErr').addClass('hidden');
+                $("#incorrectPass").removeClass('hidden');
+            }
+            else if(res.status === "nok2") {
+                $('.formErr').addClass('hidden');
+                $("#invalidPass").removeClass('hidden');
+            }
+        }
+    });
+}
 
 function submitSecondForm() {
 
@@ -99,7 +178,6 @@ function submitThirdForm() {
         }
     });
 }
-
 
 function startTimer(t) {
 

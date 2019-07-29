@@ -20,11 +20,11 @@ function submitFirstForm() {
 
         captchaResponse = $("#g-recaptcha-response").val();
 
-        // if(captchaResponse === "") {
-        //     $(".formErr").addClass('hidden');
-        //     $("#incorrectCaptcha").removeClass('hidden');
-        //     return;
-        // }
+        if(captchaResponse === "") {
+            $(".formErr").addClass('hidden');
+            $("#incorrectCaptcha").removeClass('hidden');
+            return;
+        }
 
         $("#firstForm").submit();
     }

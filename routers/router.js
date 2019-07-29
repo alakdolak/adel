@@ -203,7 +203,9 @@ router.get('/nopa', function(req, res) {
     });
 });
 
-router.get("/retrievePassPage1", HomeController.retrievePassPage1 );
+router.get("/retrievePassPage1/:err?", HomeController.retrievePassPage1 );
+
+router.get("/forgetStep2/:userId", HomeController.forgetStep2 );
 
 router.post("/forget", function(req, res) {
 

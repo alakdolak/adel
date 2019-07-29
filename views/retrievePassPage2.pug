@@ -1,0 +1,142 @@
+extends structure.pug
+
+block content
+
+    div.mainBgColorOfLogin#pass2(style="background-color: #1f647d; padding: 10px;")
+
+        center
+
+            div.hidden#userId(data-val=user_id)
+            div.hidden#reminder(data-val=reminder)
+
+            div.retrievePassMainBox
+
+                div.stepTitles(style="float:right; font-size: 20px")
+
+                    b(style="float:right") رمز عبور خود را بازیابی کنید
+
+                div.retrievePassBoxes#retrievePassBoxes2ndPage
+
+                    div.rpBoxTitle
+
+                        b(style="float:right") کد ارسال شده برای تلفن همراه خود را ارسال کنید
+
+                    div.retrievePass2ndDiv
+
+                        div.retrievePassInputsLabel#retPassIdcdiv
+                            span(style="display: inline-block; padding-top: 3px; font-size: 15px; float: right") کد تأیید
+
+                            input#code.rpInput.form-control(type='text', placeholder='xxxxxx' name='code')
+
+                        div#resendDiv.hidden
+                            a.doNotGetCode(style="cursor: auto; float:right; padding-top: 3px; cursor: pointer; text-decoration: none; color: #aa0800") هنوز کد را دریافت نکرده اید؟
+                            div(style="display:inline-block; width: 70px; float: left")
+                                a#resendBtn(style="float:left; padding-top: 3px; font-size: 12px; cursor: pointer; text-decoration: none") ارسال مجدد
+
+                                //a(style="float:left; padding-top: 10px; font-size: 12px; cursor: pointer; margin-left: 42px; text-decoration: none") ارسال مجدد تماس صوتی
+
+                        div.verifyCodeDescription(style="padding:15px 0px 0px 45px")
+
+                            p.verifyCodeHelpText.errors
+                                span تا
+                                span &nbsp;
+                                span#reminder_time
+                                span &nbsp;
+                                span کد به شماره همراه شما ارسال خواهد شد.
+
+                            //p.verifyCodeHelpText تماس صوتی تا 1:00 دقیقه دیگر برای شما ارسال می گردد.
+                            //p.verifyCodeHelpText متأسافانه امکان ارسال پیامک و برقراری تماس موجود نمی باشد. کد برای شما ایمیل می گردد.
+
+                            //p.verifyCodeHelpText راه های برقراری ارتباط با شما مسدود می باشد. لطفاً به صفحه ورود بازگشته و چند دقیقه دیگر دوباره تلاش کنید.
+
+                            //    a(style="cursor: pointer; text-decoration: none") تماس با پشتیبانی
+
+                        div.pageNavigation
+
+                            button.rpContinuesBtn#submitCodeBtn(style="float: left")
+                                b(style="float: right; color: #ffffff; font-size: 15px") تأیید
+                                img(src = "/assets/img/arrowup.png", style = "float:left; transform: rotate(-90deg); padding-top: 10px")
+                            div#goToPriviousPage.navigationLinksDivs
+                                a.navigationLinks(href="/retrievePassPage1") بازگشت به صفحه قبل
+                            div#goToFirstPage.navigationLinksDivs
+                                a.navigationLinks(href="/login") بازگشت به صفحه ورود
+
+
+                            #invalidCode.hidden.warning(style="margin: 20px; display: inline-block") عبارت وارد شده نامعتبر است
+
+
+                //div.retPassHelpBox
+                //    div.signInHelpBoxContentDivs
+                //        div.signInHelpBoxTextDivs
+                //            span(style="display:inline-block; float: right") به گوشی خود دسترسی ندارید؟
+                //        button.signInHelpBoxBtn(style="margin-top: 2px")
+                //            b(style="color: #ffffff; font-size: 14px") بازیابی رمز عبور
+                //        div.signInHelpBoxTextDivs
+                //            span(style="display:inline-block; float: right; font-size: 11px") می توانید کد را به ایمیل خود ارسال نمایید.
+                //    div.signInHelpBoxContentDivs
+                //        div.signInHelpBoxTextDivs
+                //            span(style="display:inline-block; float: right") ایمیل شما فعال نشده است.
+                //        button.signInHelpBoxBtn(style="margin-top: 2px")
+                //             b(style="color: #ffffff; font-size: 14px") بازیابی رمز عبور
+                //        div.signInHelpBoxTextDivs
+                //            span(style="display:inline-block; float: right; font-size: 11px") می توانید با ورود سؤال امنیتی رمز عبور خود را تغییر دهید. در صورت فراموشی با پشتیبانی تماس بگیرید.
+                //        div.signInHelpBoxTextDivs
+                //            span.verifyCodeHelpText کلمه امنیتی وارد شده اشتباه است. لطفاً با پشتیبانی تماس گرفته و یا کلمه صحیح را وارد کنید.
+                //            //span.verifyCodeHelpText شما سه بار کلمه امنیتی را اشتباه وارد کرده اید لطفاً با پشتیبانی تماس بگیرید.
+                //        div.signInHelpBoxInput
+                //            input#securityWord.form-control(type='text', placeholder='کلمه امنیتی' name='securityWord', style="width: 140px; float: left")
+
+
+
+    div.mainBgColorOfLogin#pass3.hidden(style="background-color: #1f647d; padding: 10px;")
+
+        center
+            div.retrievePassMainBox
+                div.stepTitles(style="float:right; font-size: 20px")
+                    b(style="float:right") رمز عبور خود را بازیابی کنید
+
+                div.retrievePassBoxes
+
+                    div.rpBoxTitle
+                        b(style="float:right") کلمه عبور جدید خود را وارد کنید
+
+                    div.retrievePass2ndDiv#retrievePass2ndDiv3rdPage
+
+                        div.retrievePassInputsLabel
+                            span(style="display: inline-block; padding-top: 3px; font-size: 15px; float: right") کلمه عبور جدید
+                            input#suPass.rpInput.form-control(type='password', placeholder='کلمه عبور' name='newPass', style="width: 70%")
+
+                        div.retrievePassInputsLabel
+                            span(style="display: inline-block; padding-top: 3px; font-size: 15px; float: right") تکرار کلمه عبور
+                            input#conf.rpInput.form-control(type='password', placeholder='کلمه عبور' name='reNewPass', style="width: 70%")
+
+                        div(style="display:inline-block; width: 450px; padding: 0px 30px;")
+
+                            p#incorrectPass.formErr.hidden.passHelpText.errors(style="margin: 0px 22px") تکرار کلمه عبور مطابقت ندارد
+                            p#invalidPass.formErr.hidden.passHelpText.errors(style="margin: 0px 22px; width: 250px") کلمه عبور شما شرایط کلکه عبور ایمن را ندارد. به نکات زیر توجه کنید.
+
+                        div.retrievePassInputsLabel
+
+                            button.rpContinuesBtn#changePassBtn(style="float: left")
+
+                                b(style="float: right; color: #ffffff; font-size: 15px") تأیید
+
+                                img(src = "/assets/img/arrowup.png", style = "float:left; transform: rotate(-90deg); padding-top: 10px")
+                            div(style="display:inline-block; float: right;  padding: 15px 0; text-align: right")
+                                a(href="/login", style="display:inline-block; font-size: 12px; color: #1f647d") بازگشت به صفحه ورود
+
+                div.rpPassDescriptionDiv(style="display: inline-block; width: 50%")
+
+                    fieldset.rpPassDescription
+
+                        legend(style="width: 100px; margin: 0px 10px; border: none;") توجه کنید
+
+                        div.rpPassDescriptionText
+                            p.rpPassDescText رمز شما باید حداقل 8 کاراکتر را شامل شود
+                        div.rpPassDescriptionText
+                            p.rpPassDescText رمز شما باید حتماً دارای حروف بزرگ و کوچک باشد
+                        div.rpPassDescriptionText
+                            p.rpPassDescText رمز شما حتماً باید دارای عدد باشد
+
+
+    script(src="/assets/js/timer.js")
