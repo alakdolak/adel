@@ -42,28 +42,30 @@ html
                             li.nav-item
                                 a.nav-link.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
                                     i.fa.big-icon.fa-home
-                                    span.mini-dn درخواست های من
+                                    span.mini-dn کاربر
                                     span.indicator-right-menu.mini-dn
                                         i.fa.indicator-mn.fa-angle-left
-                                //.dropdown-menu.left-menu-dropdown.animated.flipInX(role='menu')
-                                    a.dropdown-item(href='dashboard.html') Dashboard v.1
-                                    a.dropdown-item(href='dashboard-2.html') Dashboard v.2
-                                    a.dropdown-item(href='analytics.html') Analytics
-                                    a.dropdown-item(href='widgets.html') Widgets
+                                .dropdown-menu.left-menu-dropdown.animated.flipInX(role='menu')
+                                    a.dropdown-item(href='dashboard.html') گزارش‌گیری
+                                    a.dropdown-item(href='dashboard-2.html') اضافه کردن کاربر جدید
                             li.nav-item
                                 a.nav-link.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
                                     i.fa.big-icon.fa-bar-chart-o
-                                    span.mini-dn ارائه ی گزارش
+                                    span.mini-dn ‌کارگروه‌ها
+                                    span.indicator-right-menu.mini-dn
+                                        i.fa.indicator-mn.fa-angle-left
+                                .dropdown-menu.left-menu-dropdown.chart-left-menu-std.animated.flipInX(role='menu')
+                                    a.dropdown-item(href='bar-charts.html') مشاهده‌ی کارگروه‌ها
+                                    a.dropdown-item(href='line-charts.html') اضافه کردن کارگروه‌ها
+                            li.nav-item
+                                a.nav-link.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+                                    i.fa.big-icon.fa-bar-chart-o
+                                    span.mini-dn بلوک‌ها
                                     span.indicator-right-menu.mini-dn
                                         i.fa.indicator-mn.fa-angle-left
                                 //.dropdown-menu.left-menu-dropdown.chart-left-menu-std.animated.flipInX(role='menu')
-                                    a.dropdown-item(href='bar-charts.html') Bar Charts
-                                    a.dropdown-item(href='line-charts.html') Line Charts
-                                    a.dropdown-item(href='area-charts.html') Area Charts
-                                    a.dropdown-item(href='rounded-chart.html') Rounded Charts
-                                    a.dropdown-item(href='c3.html') C3 Charts
-                                    a.dropdown-item(href='sparkline.html') Sparkline Charts
-                                    a.dropdown-item(href='peity.html') Peity Charts
+                                    a.dropdown-item(href='bar-charts.html') مشاهده کارگروه‌ها
+                                    a.dropdown-item(href='line-charts.html') اضافه کردن کارگروه‌ها
             .content-inner-all
                     .header-top-area
                         .fixed-header-top
@@ -99,7 +101,7 @@ html
                                                         li(style="direction: rtl; float: right")
                                                             a(href='#')
                                                                 span.adminpro-icon.adminpro-settings.author-log-ic(style="margin-left: 10px")
-                                                                | تنظیمات
+                                                                | تنظیمات پروفایل
                                                         li(style="direction: rtl; float: right")
                                                             a(href='/logout2')
                                                                 span.adminpro-icon.adminpro-locked.author-log-ic(style="margin-left: 10px")
@@ -116,10 +118,32 @@ html
                                             ul.mobile-menu-nav
                                                 li
                                                     a(data-toggle='collapse', data-target='#Charts', href='#')
-                                                        | درخواست‌های من
+                                                        | کاربر
+                                                        span.admin-project-icon.adminpro-icon.adminpro-down-arrow
+                                                    ul.collapse.dropdown-header-top
+                                                        li
+                                                            a(href='dashboard.html') گزارش‌گیری
+                                                        li
+                                                            a(href='dashboard-2.html') اضافه کردن کابر جدید
                                                 li
                                                     a(data-toggle='collapse', data-target='#demo', href='#')
-                                                        | ارائه ی گزارش
+                                            | کارگروه‌ها
+                                                        span.admin-project-icon.adminpro-icon.adminpro-down-arrow
+                                                    ul.collapse.dropdown-header-top
+                                                        li
+                                                            a(href='dashboard.html') مشاهده‌ی کارگروه‌ها
+                                                        li
+                                                            a(href='dashboard-2.html') اضافه کردن کارگروه‌ها
+                                                li
+                                                    a(data-toggle='collapse', data-target='#demo', href='#')
+                                                | بلوک‌ها
+                                                        span.admin-project-icon.adminpro-icon.adminpro-down-arrow
+                                                    //ul.collapse.dropdown-header-top
+                                                        li
+                                                            a(href='dashboard.html') Dashboard v.1
+                                                        li
+                                                            a(href='dashboard-2.html') Dashboard v.2
+
                     block content
 
                     script(src='/assets/js/js/vendor/modernizr-2.8.3.min.js')
