@@ -11,6 +11,7 @@ const Sequelize = require('sequelize');
 const Common = require("./controllers/Common");
 
 
+
 const sequelize = new Sequelize('mysql://hemayat_root:QaS5rtWb2X4wAN2Q@localhost:3306/hemayat', { logging: false});
 
 app.use(nocache());
