@@ -1,0 +1,170 @@
+extends structure.pug
+
+block backImg
+
+    div.divTitleOnBlock
+        h3.titleOnBack #{inst.name}
+
+    - var img = inst.pic
+
+    //div(style="background: url('" + img + "'); background-size: cover; right: 0; position: absolute; width: 100%; height: 200px; opacity: 0.9")
+
+    img(src = img, style = "width: 100%; opacity: 0.9")
+
+    style .col-xs-9 p { line-height: 1.6em; font-weight: 400; text-align: justify !important; } .col-xs-9 li { line-height: 1.6em; font-weight: 400; text-align: justify !important; } h3 > img { margin-top: -15px !important; } h2 > img { margin-top: -15px !important; }
+block content
+
+    div.overBackMainDiv
+        div.navBarOnOverBackMainDiv
+            ul
+                img.homeIcon(src="/assets/img/home.png")
+                li.homeBtn خانه /
+                li حمایت ها /
+                li تسهیلات /
+                li #{inst.name}
+
+
+        div.imgOnOverBackMainDiv.col-xs-12
+
+                div.boxOnOverBackMain.col-xs-6
+                    center
+                        b(style= "font-size: 20px; color: white") نکات کلیدی:
+
+                div.boxesDivOnImgOnOverBackMainDiv2
+                    div.boxOnImgOnOverBackMainDiv2
+                        div.yellowDotsBoxOnImgOnOverBackMainDiv2
+                            span.dot
+                        div.textBoxOnImgOnOverBackMainDiv2
+                            p(style="display: inline-block; padding-right: 0") #{inst.mablagh}
+
+                    div.boxOnImgOnOverBackMainDiv2
+                        div.yellowDotsBoxOnImgOnOverBackMainDiv2
+                            span.dot
+                        div.textBoxOnImgOnOverBackMainDiv2
+                            p(style="display: inline-block; padding-right: 0") نرخ بهره #{inst.nerkh}%
+
+                    div.boxOnImgOnOverBackMainDiv2
+                        div.yellowDotsBoxOnImgOnOverBackMainDiv2
+                            span.dot
+                        div.textBoxOnImgOnOverBackMainDiv2
+                            p(style="display: inline-block; padding-right: 0") #{inst.bp}
+
+                    //div(style="clear: both")
+
+                    div.boxOnImgOnOverBackMainDiv2
+                        div.yellowDotsBoxOnImgOnOverBackMainDiv2
+                            span.dot
+                        div.textBoxOnImgOnOverBackMainDiv2
+                            p(style="display: inline-block; padding-right: 0") #{inst.zamine}
+
+                    div.boxOnImgOnOverBackMainDiv2
+                        div.yellowDotsBoxOnImgOnOverBackMainDiv2
+                            span.dot
+                        div.textBoxOnImgOnOverBackMainDiv2
+                            p(style="display: inline-block; padding-right: 0") دوره بازپرداخت #{inst.bazpardakht_total} ماه
+
+                    div.boxOnImgOnOverBackMainDiv2
+                        div.yellowDotsBoxOnImgOnOverBackMainDiv2
+                            span.dot
+                        div.textBoxOnImgOnOverBackMainDiv2
+                            p(style="display: inline-block; padding-right: 0") دوره تنفس #{inst.tanafos} ماه
+
+
+    div.col-xs-12#thirdPageStepsDescription(style="padding-right: 200px; padding-left: 200px")
+
+        div(style="text-align: justify")
+            h2 !{inst.titr_1}
+            p(style="font-size: 18px; font-weight: 400") !{inst.desc_1}
+
+        div.boxInGamParent
+            div.boxInGam
+                p
+                    span زمان پیش بینی شده:
+                    span &nbsp;
+                    span #{inst.duration}روز
+
+                p.warning در صورت تکمیل بودن مدارک
+
+                p
+                    span تعداد مدارک مورد نیاز:
+                    span &nbsp;
+                    span #{inst.tedad_madarek}
+
+                p
+                    span شماره شناسایی: فرآیند #{inst.code}
+
+            - var instId = inst.id
+
+            div.boxInGamBtnDiv(style= "display: inline-block; width: 100%")
+                center
+                    a.btn.btn-danger(href='/preactor/' + instId) شروع درخواست
+
+                    div(style="width: 85%")
+                        img.on#onOff1(src="/assets/img/helpon.png", width="25px", height="25px", style="margin-top: 5px; cursor: pointer; display: inline-block")
+                        h4(style="display:inline-block; margin-right: 10px;") طرح تجاری چیست؟
+                        div.explainText.hidden#explain1
+
+                            p با طرح کسب و کار می توان چشم انداز شرکت را به سرمایه گذاران بالقوه، مشتری ها و کارمندان آینده معرفی کرد؛ علاوه بر این، یک طرح خوب، عملکردهای اجرایی و نحوه ی فعالیت ها در دراز مدت را به نمایش می گذارد. هدف اصلی طرح کسب و کار این است که یک درک کلی از اهداف شرکت و نحوه ی دستیابی به آنها را به خواننده ارائه کند.
+                            h3 بخش های اصلی یک طرح کسب و کار استاندارد
+                            h4 1- خلاصه اجرایی
+                            p ین بخش یک مرور کلی از کسب و کار شما و برنامه های آتی است. این بخش معمولا در ابتدای یک طرح کسب و کار نوشته می شود و معمولا ۱ الی ۲ صفحه است.
+                            h4 2- فرصت
+                            p این بخش به این سؤالات پاسخ می دهد: شما در واقع چه چیزی می فروشید و چگونه یک مشکل (یا نیاز) را برای بازار خود حل می کنید؟ بازار هدف و رقبای شما چه کسانی هستند؟
+                            h4 3- اجرا
+                            p چگونه می خواهید فرصت خود را به دست آورید و آن را به یک کسب و کار تبدیل کنید؟
+                            p  این بخش شامل طرح بازاریابی و فروش شما، عملیات و نحوه سنجش موفقیت شما است.
+                            h4 4-تیم و شرکت
+                            p سرمایه گذاران علاوه بر ایده¬های عالی به دنبال تیم های بزرگ و قدرتمند نیز هستند. از این بخش برای معرفی و توضیح تیم فعلی خود و کسانی که باید استخدام شوند استفاده کنید. اگر تیم شما در حال حاضر کامل است و استخدام های خود را نیز انجام داده اید در این بخش ساختار حقوقی شرکت، آدرس دفتر و داستانی کوتاه از تاریخ شرکت را نیز بیان کنید.
+                            h4 5- طرح مالی
+                            p طرح کسب و کار بدون پیش بینی مالی کامل نیست.
+
+        div#rightDivInstructionStepsDescription
+
+            div.col-xs-12.gam
+                div.col-xs-9(style="text-align: justify")
+                    h2 !{inst.gam_1}
+                    p !{inst.desc_gam_1}
+                    //p(style="border-top: 2px solid white; margin-bottom: 0")
+                    //    span(style="color: #009ee0") اطلاعات مهم
+                    //    span &nbsp;&nbsp;
+                    //    span(style="color: #aa0800; font-size: 1.4em") !
+                    //div.coloredUl(style="border-bottom: 2px solid white; padding: 0; font-size: 1.1em; font-weight: 400")
+                    //    p !{inst.notice}
+
+                div.col-xs-3
+                    img(src="/assets/img/s1.png")
+
+            div.col-xs-12.gam
+                div.col-xs-9
+                    h2 !{inst.gam_2}
+                    p !{inst.desc_gam_2}
+                div.col-xs-3
+                    img(src="/assets/img/s2.png")
+
+                div(style= "width: 100%")
+                    center
+                        div.neededInfoBox.shadow.neededInfoBoxSelected#ceil
+                            h4 اطلاعات مورد نیاز
+                        div.neededInfoBox.shadow.neededInfoBoxUnSelected#compare
+                            h4 مدارک مورد نیاز
+
+                div.col-xs-12.calcDiv.shadow(style="margin-top: 10px")
+                    p !{inst.needed_info}
+                div.col-xs-12.compareDiv.hidden.shadow(style="margin-top: 10px")
+                    p !{inst.needed_certificate}
+
+            div.col-xs-12.gam(style="margin-top: 40px")
+                div.col-xs-9
+                    h2 !{inst.gam_3}
+                    p !{inst.desc_gam_3}
+                div.col-xs-3
+                    img(src="/assets/img/s3.png")
+
+
+            div.col-xs-12.gam(style= "margin-bottom: 20px")
+                div.col-xs-9
+                    h2 !{inst.gam_4}
+                    p !{inst.desc_gam_4}
+                div.col-xs-3
+                    img(src="/assets/img/s4.png")
+

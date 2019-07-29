@@ -1,0 +1,150 @@
+.mainBlockNews {
+    display: inline-block;
+    width: 100%;
+    padding: 20px 20%;
+}
+
+.newsContentsMainDiv{
+    width: 100%;
+    display: inline-block;
+    /*float: right;*/
+}
+
+.newsPageContentDiv{
+    width: 100%;
+    display: inline-block;
+    /*border-bottom: 2px solid #c1c2c4;*/
+}
+
+
+
+.newsMenuBar{
+    width: 25%;
+    display: inline-block;
+    float: left;
+    border-right: 2px solid #c1c2c4;
+}
+
+.newsContentImg ,.newsContentText{
+    display: inline-block;
+}
+
+.newsContentText > b{
+    margin-bottom: 20px;
+}
+
+.newsContentSecondImg {
+    width: 45%;
+    float: right;
+}
+
+.newsContentSecondImg > img {
+    width: 100%;
+}
+
+.news2ndContentText {
+    float: left;
+    width: 50%;
+    max-height: 170px;
+    overflow: hidden;
+}
+
+#newsContentFirstText {
+    max-height: 155px;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+.newsContentText > p {
+    text-align: justify;
+}
+
+#newsContentFirstImg > img{
+    width: 100%;
+}
+
+#newsContentFirstBoxDivider {
+    width: 80%;
+    display: inline-block;
+    float: right;
+    border: 2px solid #c1c2c4;
+}
+
+.newsContent2ndBoxDivider {
+    width: 80%;
+    display: inline-block;
+    float: right;
+    border: 2px solid #c1c2c4;
+}
+
+.newsMoreContent {
+    display: inline-block;
+    width: 15%;
+    float: left;
+    margin-top: 10px;
+}
+
+#newsMoreContentIcon {
+    float: left !important;
+    margin-top: 5px;
+}
+
+#newsContentSecondImg > img{
+    width: 100%;
+}
+#newsContentSecondImg {
+    width: 40%;
+}
+
+.newsContent2ndText {
+    width: 50%;
+}
+
+@media only screen and (max-width: 1290px) {
+    .mainBlockNews {
+        padding: 20px 10%;
+    }
+}
+
+@media only screen and (max-width: 970px) {
+    .mainBlockNews {
+        padding: 20px 20px;
+    }
+    .newsMoreContent > span {
+        font-size: 12px;
+    }
+    .newsContent2ndBoxDivider ,#newsContentFirstBoxDivider{
+        margin-top: 15px;
+    }
+    #newsMoreContentIcon {
+        margin-top: 0;
+    }
+}
+
+@media only screen and (max-width: 860px) {
+    .newsContentText {
+        font-size: 14px !important;
+    }
+}
+
+@media only screen and (max-width: 680px) {
+    .newsContent2ndBoxDivider ,#newsContentFirstBoxDivider{
+        width: 70% !important;
+    }
+    .newsMoreContent {
+        width: 20% !important;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+    .newsContentText {
+        font-size: 10px !important;
+    }
+    .newsMoreContent > span {
+        font-size: 9px;
+    }
+    .newsMoreContent {
+        width: 26% !important;
+    }
+}

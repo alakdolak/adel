@@ -1,0 +1,18 @@
+div.inputLabel
+
+    div(style=" padding: 3px 0px 10px 30px; font-size: 15px; width: 100%;")
+
+        span(style=" padding: 3px 0px 0px 30px; font-size: 15px; width: 100%;") پست الکترونیکی
+
+    div(style=" width: 100%;")
+
+        if (user_form != null)
+            input#ceoEmail.signInInput.form-control(value=user_form.mail, type='email', placeholder='name@domain.x' name='email', style="width: 80%; direction: ltr")
+        else
+            input#ceoEmail.signInInput.form-control(type='email', placeholder='name@domain.x' name='email', style="width: 80%; direction: ltr")
+
+        img.off#onOff4(src = "/assets/img/helpoff.png", style = "float: left; width: 30px")
+        p.explainText#explain4 آدرس پست الکترونیک فعال را وارد نمایید. <br/> در صورت فقدان آدرس پست الکترونیک <a target="_blank" href="https://gmail.com">از اینجا</a> می توانید به صورت رایگان یک آدرس درست کنید.
+
+    div(style=" width: 100%;")
+        p#errors.warning(style="margin: 10px; padding: 10px; line-height: 1.7em")

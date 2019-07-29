@@ -1,0 +1,1830 @@
+@media only screen and (min-width: 680px) {
+    #introductionResponsiveDiv {
+        display: none !important;
+    }
+    .result {
+        border-top: white solid 50px;
+        border-bottom: white solid 50px;
+    }
+}
+
+@media only screen and (max-width: 1530px) {
+    .boxesDivWidthScreen{
+        display: inline-block;
+    }
+    .boxWidthScreen {
+        width: 150px !important;
+        height: 150px !important;
+    }
+    .searchWidthScreen > input {
+        width: 320px !important;
+        height: 40px !important;
+    }
+    .magnifierWidthScreen {
+        width: 25px !important;
+        height: 25px !important;
+    }
+    .portfolio-itemWidthScreen img {
+        width: 75px !important;
+    }
+    .boxWidthScreen h3 {
+        font-size: 18px !important;
+    }
+    .boxesDivWidthScreen > h4 {
+        margin: 0 20px !important;
+    }
+    #instructionNames {
+        max-height: 328px !important;
+    }
+}
+
+@media only screen and (max-width: 1470px) {
+    .newsContainer {
+        padding: 5% !important;
+    }
+}
+
+@media only screen and (max-width: 1340px){
+    .titleOnBack {
+        font-size: 18px !important;
+    }
+    #thirdPageStepsDescription{
+        padding: 0 150px !important;
+    }
+    .news {
+        height: 435px !important;
+    }
+}
+
+@media only screen and (max-width: 1190px) {
+    #requesterTypeResponsiveDiv {
+        display: inline-block !important;
+        width: 100%;
+        background-color: #f1f1f1;
+    }
+    #requesterType {
+        display: none;
+    }
+    #instructionNames {
+        max-height: 70% !important;
+    }
+    .boxesDiv {
+        margin: 10px;
+        display: inline-block;
+    }
+    .introduction{
+         width: 48%;
+    }
+}
+
+@media only screen and (max-width: 1165px){
+    .boxOnOverBackMain{
+        padding-top: 90px !important;
+    }
+    .boxOnOverBackMain > center > b{
+        font-size: 15px !important;
+    }
+}
+
+@media only screen and (max-width: 1111px){
+    .newsContainer {
+        padding: 0 1% !important;
+    }
+}
+
+@media only screen and (max-width: 1100px){
+    .iranLogo{
+        display: none;
+    }
+    #disabilityImgDiv {
+        width: 50% ;
+        padding-top: 20px !important;
+    }
+    .boxOnImgOnOverBackMainDivEmployee {
+        width: 70% !important;
+    }
+    .firstPageProfileBtnMenu {
+        width: 161px !important;
+        left: 0 !important;
+    }
+}
+
+@media only screen and (max-width: 1105px){
+    .boxOnOverBackMain{
+        margin-right: 1% !important;
+    }
+    #thirdPageStepsDescription{
+        padding: 0 100px !important;
+    }
+    .boxesDivOnImgOnOverBackMainDiv2 {
+        width: 84% !important;
+    }
+}
+
+@media only screen and (max-width: 1024px){
+    .boxOnImgOnOverBackMainDivIntegration > img {
+        width: 45px !important;
+    }
+    .boxOnImgOnOverBackMainDivIntegration > p {
+        font-size: 12px !important;
+    }
+}
+@media only screen and (max-width: 992px) {
+    .removeDiv {
+        display: none !important;
+    }
+    #calcBoxInputFormResponsive {
+        display: inherit !important;
+    }
+    #calcBoxInputFormForWidthScreens {
+        display: none;
+    }
+    .divTitleOnBlock {
+        padding: 5% 3% !important;
+    }
+    .titleOnBack {
+        font-size: 15px !important;
+    }
+    #thirdPageStepsDescription{
+        padding: 0 50px !important;
+    }
+    #requesterTypeResponsiveDiv{
+        display: inline-block !important;
+        width: 100%;
+        background-color: #f1f1f1;
+    }
+    #requesterType{
+        display:  none;
+    }
+    .newsContentDivResponsive {
+        display: none !important;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .newsContainer {
+        padding: 0 10% !important;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    #rightDivInstructionStepsDescription{
+    width: 100% !important;
+    }
+    .boxInGamParent{
+        width: 100% !important;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    #instructionNames {
+        max-height: 60% !important;
+    }
+    .navBarOnOverBackMainDiv > ul {
+        margin-right: 0 !important;
+    }
+
+}
+
+@media only screen and (max-width: 840px) {
+    .boxOnImgOnOverBackMainDivNopa {
+        width: 50% !important;
+    }
+}
+
+@media only screen and (max-width: 790px){
+    .titleOnBack {
+        font-size: 12px !important;
+    }
+    .gam h2 {
+        font-size: 22px !important;
+    }
+
+}
+
+@media only screen and (max-width: 730px){
+    .boxOnImgOnOverBackMainDiv {
+        width: 90% !important;
+    }
+    .boxesDivOnImgOnOverBackMainDivNopa {
+        padding-top: 45px !important;
+    }
+    .boxesDivOnImgOnOverBackMainDivIntegration {
+        padding-top: 30px !important;
+    }
+    .navBarOnOverBackMainDiv > ul {
+        font-size: 12px !important;
+    }
+    #followUpText b {
+        font-size: 17px !important;
+    }
+    .textBoxOnImgOnOverBackMainDiv2 > p {
+        font-size: 14px !important;
+    }
+    .boxesDivOnImgOnOverBackMainDivResponsive {
+        padding: 30px 20px 0 0 !important;
+    }
+}
+
+@media only screen and (max-width: 680px){
+    #navbarResponsiveBtn {
+        display: inline-block !important;
+        width: 32%;
+    }
+    .nav_bar_header {
+        display: none !important;
+    }
+    #mainLogo {
+        padding-right: 10px !important;
+    }
+    #dateAndDisabilityImgDiv{
+        width: 100% !important;
+    }
+    #disabilityImgDiv {
+        width: 100% !important;
+        background-color: #ffc000;
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+    }
+    #date {
+        float: right !important;
+        font-size: 12px;
+    }
+    .introduction > h4 {
+        font-size: 10px;
+        margin: 5px 0;
+    }
+    #instructionNames {
+        font-size: 10px !important;
+    }
+    .calcBoxMainPage {
+        display: none !important;
+    }
+    .newsContentDiv {
+        width: auto !important;
+        float: inherit !important;
+    }
+    .newsContainer, .newsDiv{
+        float: inherit !important;
+    }
+    .newsContainer {
+        overflow-x: scroll;
+    }
+    #requesterTypeResponsiveDiv {
+        padding: 0;
+    }
+    .search > input {
+        margin-right: 0 !important;
+        width: 340px !important;
+    }
+    .logo{
+        width: 160px !important;
+    }
+    .disabilityImg{
+        width: 15px !important;
+    }
+    .box{
+        width: 155px !important;
+        height: 155px !important;
+    }
+    .box h3 {
+        font-size: 20px !important;
+    }
+    .portfolio-item img {
+        width: 70px !important;
+    }
+    .navBarOnOverBackMainDiv > ul {
+        font-size: 10px !important;
+    }
+    .menuBox {
+        margin: 20px;
+    }
+    #widthScreenNav {
+        display: none !important;
+    }
+    #introductionDiv {
+        display: none !important;
+    }
+
+    .boxOnImgOnOverBackMainDiv2 {
+        width: 50% !important;
+        height: 45px !important;
+    }
+
+    #thirdPageStepsDescription {
+        padding: 10px !important;
+    }
+    #thirdPageStepsDescription > h2 {
+        font-size: 25px !important;
+    }
+    .firstPageProfileBtnMenu {
+        width: 160px !important;
+        display: inline-block;
+        margin-right: -175px;
+        left: inherit !important;
+        top: 58px !important;
+    }
+    .news {
+        height: auto !important;
+    }
+}
+
+@media only screen and (max-width: 610px) {
+    .boxesDivOnImgOnOverBackMainDiv2 {
+        padding-top: 45px !important;
+    }
+    .textBoxOnImgOnOverBackMainDiv2 > p {
+        font-size: 10px !important;
+    }
+}
+
+@media only screen and (max-width: 585px) {
+    .boxOnOverBackMain {
+        width: 20% !important;
+    }
+    .boxesDivOnImgOnOverBackMainDiv2 {
+        width: 79% !important;
+    }
+    .boxOnOverBackMain > center > b {
+        font-size: 13px !important;
+    }
+    .boxOnOverBackMain {
+         padding: 90px 0 !important;
+    }
+    .yellowDotsBoxOnImgOnOverBackMainDiv2 > span {
+        margin-top: 7px !important;
+        height: 8px !important;
+        width: 8px !important;
+    }
+}
+
+@media only screen and (max-width: 580px){
+
+    .boxOnImgOnOverBackMainDiv {
+        width: 100% !important;
+    }
+    .boxOnImgOnOverBackMainDiv > p > span, .boxOnImgOnOverBackMainDiv > p > select {
+        font-size: 12px;
+    }
+    .boxOnImgOnOverBackMainDiv > p > select {
+        width: 60% !important;
+    }
+    .calcBox2ndPage {
+        width: 280px !important;
+    }
+    .calcBoxUnSelected:before, .calcBoxSelected:before {
+        right: 120px !important;
+    }
+    .navBarOnOverBackMainDiv > ul {
+        margin-right: -5% !important;
+    }
+    .navBarOnOverBackMainDiv {
+        height: 40px !important;
+    }
+}
+@media only screen and (max-width: 500px) {
+    #instructionNames {
+        max-height: 50% !important;
+    }
+    .navBarOnOverBackMainDiv > ul > img{
+        width: 15px !important;
+    }
+    .navBarOnOverBackMainDiv > ul {
+        font-size: 7px !important;
+    }
+    .titleOnBack {
+        font-size: 10px !important;
+    }
+    .neededInfoBox {
+        width: 90% !important;
+    }
+    .gam img {
+        width: 60px !important;
+    }
+    .followUpDivs {
+        padding: 0 !important;
+    }
+    #followUpBtn Button {
+         width: auto !important;
+        float: left !important;
+    }
+    #followUpInput input {
+        width: 120px;
+    }
+}
+
+@media only screen and (max-width: 330px) {
+    .search > input {
+        width: 300px !important;
+    }
+    .box{
+        width: 133px !important;
+        height: 133px !important;
+    }
+    .box h3 {
+        font-size: 15px !important;
+    }
+    .boxOnImgOnOverBackMainDiv > p {
+        font-size: 12px !important;
+    }
+    .boxOnImgOnOverBackMainDiv > img {
+        width: 45px !important;
+    }
+    .navBarOnOverBackMainDiv > ul {
+        margin-right: -12% !important;
+    }
+}
+
+#blindnessText > p {
+    font-size: 14px;
+}
+
+#blindnessText > h4 {
+    font-size: 15px;
+    color: #0a6aa1;
+}
+
+.specialBox {
+    height: 100%;
+    width: 170px;
+    background-color: rgb(255, 197, 9);
+    position: relative;
+    margin-right: 2px;
+}
+
+.specialBox > center {
+    margin-top: 20px;
+    margin-right: 40px;
+}
+
+.specialBoxSelected {
+    background-color: rgb(201, 75, 0) !important;
+}
+
+.specialBoxSelected:before {
+    border-right: 50px solid rgb(201, 75, 0) !important;
+    z-index: 2;
+}
+
+.specialBox:before {
+    content: "";
+    position: absolute;
+    right: 170px;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    z-index: 2;
+    border-right: 50px solid rgb(255, 197, 9);
+    border-top: 50px solid transparent !important;
+    border-bottom: 50px solid transparent !important;
+}
+
+/*.specialBoxConcaveSelected:after {*/
+/*content: "";*/
+/*position: absolute;*/
+/*right: 0;*/
+/*bottom: 0;*/
+/*width: 0;*/
+/*height: 0;*/
+/*border-right: 50px solid rgb(201, 75, 0) !important;*/
+/*border-top: 50px solid transparent;*/
+/*border-bottom: 50px solid transparent;*/
+/*}*/
+
+.specialBoxConcave:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-right: 50px solid white;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+}
+
+
+.followUp {
+    background-color: #f1f1f1;
+    border-top: 20px solid white;
+}
+
+.followUpDivs{
+    float: right;
+    margin: 10px 0;
+}
+
+#followUpText b {
+    display: inline-block;
+    float: left;
+    padding-top: 10px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+#followUpInput input {
+    display: inline-block;
+    height: 50px;
+}
+
+#followUpBtn button {
+    background-color: #ffc000;
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+    height: 50px;
+    width: 120px;
+}
+
+#followUpBottomText b {
+    font-size: 15px;
+}
+
+.introduction {
+    float: right;
+}
+.requesterType {}
+
+#introductionResponsiveDiv {
+    width: 100%;
+    border-right: 10px solid #ffc000 !important;
+    border-left: 10px solid #ffc000 !important;
+}
+#scrollNamesResponsiveOne > button {
+    position: absolute;
+    top: 10px;
+    left: 6%;
+    right: auto;
+    width: 30px;
+    height: 32px;
+    border: none;
+}
+
+#introductionResponsiveDiv > div {
+    width: 100% !important;
+}
+
+#scrollNamesResponsiveOne {
+    width: 100%;
+    background: #1f647d;
+    height: 50px;
+}
+
+.row {
+    margin: 0;
+}
+
+.shahid {
+    font-size: 0.8em;
+    float: right;
+    min-width: 80px;
+}
+
+.checkBoxForShahid {
+    background: url('/assets/img/checkboxful.png');
+}
+
+.shahidFilter {
+    cursor: pointer;
+    float: right;
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+.emptyCheckBoxForShahid {
+    background: url('/assets/img/checkboxempty.png');
+}
+
+.on, .off {
+    cursor: pointer;
+}
+
+.btn-primary {
+    /*background-color: #ffc000;*/
+    /*border-color: #009ee0;*/
+    width: 80%;
+}
+
+.nav_bar_header {
+    background-color: #f1f1f1;
+    height: 45px;
+    border-radius: 10px 10px 0 0;
+    margin-top: 8px;
+}
+
+.nav_bar_header > button {
+    margin-top: 3px;
+    float: left;
+    width: 150px;
+    border-radius: 10px;
+    margin-left: -10px;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+#navbarResponsiveBtn {
+    display: none;
+    float: left;
+    width: 50%;
+    padding: 0 !important;
+    position: absolute;
+    left: 0;
+}
+
+#navbarBtnResponsive {
+    float: left;
+    margin-bottom: 0;
+    border-radius: 0 4px 4px 0;
+    padding-left: 20px ;
+    background-color: #009ee0;
+    margin-top: 15px !important;
+}
+
+#navbarResponsiveBtnContainer {
+    float: left;
+    padding: 0 !important;
+}
+
+#navbarResponsiveBtnContainerDiv {
+    /*float: left;*/
+    width: 100%;
+    /*padding-left: 15px;*/
+}
+
+.container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.navbar-fluid{
+    padding: 0 !important;
+    position: absolute;
+    z-index: 1;
+    /*display: inline-block;*/
+    left: 0;
+    width: 140%
+}
+
+.navbar-fluid > ul {
+    padding: 0 5px !important;
+    background-color: #009ee0;
+    margin-top: 0 !important;
+    border-radius: 0 5px 5px 0;
+    position: relative;
+    z-index: 1;
+    /*left: 0;*/
+}
+
+.menuButtonsResponsive {
+    margin-top: 10px !important;
+    float: inherit !important;
+    font-weight: 500;
+    color: white !important;
+    border-bottom: 1px solid;
+    padding-bottom: 10px;
+}
+
+.menuBox {
+    margin-top: 20px;
+}
+
+.navbar-nav {
+    margin: 7.5px 0;
+}
+
+.icon-bar {
+    background-color: white;
+    height: 4px !important;
+    width: 30px !important;
+}
+
+.disabilityImg {
+    float: left;
+    margin-left: 3px;
+    width: 25px;
+    cursor: pointer;
+}
+
+.shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#firstPageProfileBtn {
+    background: #ffc000 ;
+    padding: 5px 6px !important;
+    height: 36px;
+    width: 150px;
+  }
+
+#firstPageProfileBtnText {
+    display: inline-block;
+    float: right;
+    width: 50%;
+    margin-top: 3px;
+    text-align: right;
+}
+
+#firstPageProfileBtnText > b{
+    color: white;
+    font-size: 14px;
+}
+
+#firstPageProfileBtnImg{
+    display: inline-block;
+    float: left;
+    width: 50%;
+}
+
+#firstPageProfileBtnImg > img{
+    float: left;
+    width: 25px !important;
+    margin: 0 !important;
+}
+
+.firstPageProfileBtnMenu {
+    background: #ffc000;
+    position: absolute;
+    border-radius: 10px;
+    left: -18px;
+    top: 50px;
+    z-index: 1;
+    width: 195px;
+}
+
+.firstPageProfileBtnMenuText {
+    width: 100%;
+    text-align: right;
+    padding: 5px 8px;
+}
+
+.firstPageProfileBtnMenuText > a {
+    color: white;
+    text-decoration: none;
+}
+
+.firstPageProfileBtnMenu > hr {
+    margin: 0 10px !important;
+}
+
+.menu_buttons {
+    margin-top: 10px;
+    float: right;
+    font-weight: 500;
+    color: #989595;
+}
+
+.menu_buttons > span {
+    padding: 8px 15px 8px 8px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.menu_buttons > span:hover {
+    border-bottom: 5px solid #009ee0;
+    color: #009ee0;
+}
+
+.iranLogo {
+    width: 86px;
+    margin-top: 12px;
+}
+
+.logo {
+    float: right;
+    width: 65px;
+    margin: 10px;
+}
+
+.logo_name {
+    font-size: 0.9em;
+    float: right;
+    display: inline-block;
+    color: #1f647d;
+    font-weight: bold;
+    margin-top: 18px;
+}
+
+.back {
+    /*margin-left: 65px;*/
+}
+
+.introduction {
+    text-align: center;
+    color: white;
+    border-right: 5px solid #ffc000;
+    border-left: 0.1em solid #ffc000;
+    padding: 0;
+}
+
+.introduction div {
+    background-color: #1f647d;
+    padding: 10px;
+    width: 90%;
+    font-size: 15px;
+}
+
+.introduction a {
+    color: white;
+    text-align: right;
+    border-bottom: 0.1em solid #ffc000;
+    padding-bottom: 6px;
+    padding-top: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+}
+
+.introduction a:hover {
+    color: #ffc000;
+    text-decoration: none;
+}
+
+.boxesDiv {
+    margin: 10px;
+    display: inline-block;
+}
+
+.boxesDiv > h4 {
+    /*padding: 7px;*/
+    color: white;
+    font-weight: bold;
+}
+
+.box {
+    background-color: white;
+    cursor: pointer;
+    width: 200px;
+    height: 200px;
+    float: right;
+    border-radius: 7px;
+    margin-right: 12px;
+    margin-top: 12px;
+}
+
+.search {
+    position: relative;
+    /*width: 420px;*/
+    display: inline-block;
+}
+
+.search > input {
+    margin-right: 8px;
+    margin-top: 15px;
+    width: 415px ;
+    height: 57px;
+    border-radius: 7px;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.magnifier {
+    background: url("../img/magnifier.png");
+    height: 34px;
+    width: 34px;
+    display: inline-block;
+    background-size: cover;
+    top: 25px;
+    position: absolute;
+    left: 20px;
+    cursor: pointer;
+}
+
+.box img {
+    margin-top: 10px;
+}
+.box h3 {
+    color: #aa0800;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.box h4 {
+    color: #aa0800;
+}
+
+.textBox {
+    color: #aa0800;
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.textBox h2 {
+    margin: 0;
+    padding-top: 40px;
+}
+
+.textBox p {
+    margin-top: 0;
+    font-size: 0.9em;
+}
+
+.result {
+    background-color: #009ee0;
+    padding: 0;
+}
+
+.result .col-xs-12 {
+    padding: 0;
+}
+
+.result .col-xs-10 {
+    padding-right: 50px !important;
+}
+
+.result .col-xs-3 {
+    padding: 0;
+}
+
+.result > .paddingDiv {
+    padding-top: 50px;
+}
+
+.resultNo {
+    background-color: white;
+    padding: 10px;
+    margin: 10px 0 10px 10px;
+    font-size: 16px;
+    color: #989595;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.resultNo:hover {
+    background-color: #ffc000;
+    color: white;
+}
+
+.result .col-xs-2 {
+    padding: 0;
+}
+
+.result h4 {
+    color: white;
+    font-weight: 300;
+}
+
+.explainText {
+    font-weight: bold;
+    color: #1d7eaa;
+    text-align: justify;
+    font-size: 0.8em;
+    margin-top: 5px;
+}
+
+.tableHeader {
+    margin-right: 1%;
+    width: 100%;
+}
+
+.tableHeader > thead > tr {
+    width: 100%;
+}
+.fixed_header{
+    /*width: @table_width;*/
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.tableBody {
+    overflow-x: auto;
+}
+
+.result .tableHeader td {
+    /*width: 105px;*/
+    /*display: inline-block;*/
+    padding: 5px;
+}
+
+.result td, .result th {
+    min-width: 80px;
+    width: 115px;
+    /*display: inline-block;*/
+    font-size: 0.8em;
+    font-weight: 600;
+    /*max-width: 110px;*/
+}
+
+.result .redBtn {
+    font-size: 0.9em;
+}
+
+.redBtn {
+    background-color: #aa0800;
+    color: white;
+}
+
+.coloredRow {
+    background-color: #f1f1f1;
+    color: #989595;
+}
+
+.coloredRow td {
+    padding: 10px;
+}
+
+#myTableParent > table tbody > tr{
+    border-bottom: 2px solid white;
+    border-right: 10px solid #1f647d;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+}
+
+.newsDiv {
+    background-color: #f1f1f1;
+    padding-bottom: 50px;
+}
+
+.newsContentDiv {
+    margin: 20px 0;
+    display: inline-block;
+}
+
+.news {
+    background-color: white;
+    /*margin-top: 20px;*/
+    /*height: 370px;*/
+    /*overflow: hidden;*/
+    text-align: justify;
+    border-radius: 8px;
+    height: 400px;
+}
+
+.news > div {
+    /*max-height: 160px;*/
+    /*overflow: hidden;*/
+    padding: 10px;
+}
+
+.news > img {
+    padding: 0;
+    width: 100%;
+}
+
+.news > h5 {
+    padding: 10px;
+    margin-bottom: 0 !important;
+}
+
+.news  p {
+   font-size: 14px;
+}
+
+.readMore {
+    background: url("../img/newsmore.png");
+    float: right;
+    display: block;
+    width: 17px;
+    height: 17px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.overBackMainDiv {
+    /*margin-top: 200px;*/
+    z-index: 2;
+    width: 100%;
+}
+
+.navBarOnOverBackMainDiv {
+    background-color: #00648e;
+    height: 50px;
+    padding: 10px 0 10px;
+    display: inline-block;
+    width: 100%;
+}
+
+.navBarOnOverBackMainDiv > ul {
+    margin-right: 2%;
+    /*padding: 20px 0 20px 20px;*/
+}
+
+.homeIcon {
+    float: right;
+    width: 25px;
+    margin-top: -5px;
+}
+
+.navBarOnOverBackMainDiv li {
+    color: white;
+    list-style-type: none;
+    float: right;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.imgOnOverBackMainDiv > div > p {
+    color: white;
+    /*position: absolute;*/
+    top: 52px;
+    right: 235px;
+    font-size: 16px;
+    font-weight: 700;
+    display: inline-block;
+    width: 100%;
+}
+
+.boxOnImgOnOverBackMainDiv {
+    float: right;
+    cursor: pointer;
+    width: 50%;
+}
+
+.boxOnImgOnOverBackMainDiv2 {
+    float: right;
+    width: 33%;
+    cursor: pointer;
+    height: 60px;
+}
+
+.boxOnImgOnOverBackMainDiv > img {
+    width: 50px;
+    float: right;
+}
+
+.boxOnImgOnOverBackMainDiv:hover {
+    background-color: #ffc000;
+    color: #aa0800;
+    border-radius: 40px;
+    padding: 0.1em;
+}
+
+.boxOnImgOnOverBackMainDivIntegration {
+    width: 33%;
+}
+
+#scrollNames {
+    cursor: pointer;
+    position: relative;
+}
+
+#scrollNames button {
+    position: absolute;
+    top: 7px;
+    left: 44%;
+    right: auto;
+    width: 30px;
+    height: 15px;
+    border: none;
+    background-size: contain;
+}
+
+#scrollNames:hover {
+    opacity: 0.5;
+}
+
+.boxesDivOnImgOnOverBackMainDiv {
+    display: inline-block;
+    /*height: 70%;*/
+    padding: 70px 20px 0 0;
+    width: 70%;
+    /*margin-right: 36%;*/
+    /*margin-top: 50px;*/
+    /*position: absolute;*/
+}
+
+.boxesDivOnImgOnOverBackMainDiv2 {
+    /*height: 100px;*/
+    width: 70%;
+    /*margin-right: 32%;*/
+    /*margin-top: 30px;*/
+    /*position: absolute;*/
+    display: inline-block;
+    height: 100%;
+    padding: 45px 20px 0 0;
+}
+
+.textBoxOnImgOnOverBackMainDiv2 {
+    display: inline-block;
+    width: 80%;
+    float: right;
+}
+
+.yellowDotsBoxOnImgOnOverBackMainDiv2 {
+    display: inline-block;
+    width: 8%;
+    float: right;
+}
+
+.yellowDotsBoxOnImgOnOverBackMainDiv2 > span {
+    margin-top: 10px;
+}
+
+.boxOnImgOnOverBackMainDiv > p {
+    margin: 15px;
+    padding-right: 40px;
+    color: #aa0800;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.boxOnImgOnOverBackMainDiv2 > div > p {
+    margin: 7px;
+    padding-right: 40px;
+    color: #aa0800;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.boxOnImgOnOverBackMainDivEmployee > p {
+    padding: 0 !important;
+}
+
+.imgOnOverBackMainDiv {
+    background: url('/assets/img/backMain.jpg') repeat no-repeat;
+    height: 200px;
+    background-size: contain;
+}
+
+.boxOnOverBackMain{
+    height: 100%;
+    width:15%;
+    display: inline-block;
+    float: right;
+    margin-right: 10%;
+    background: url('/assets/img/backTitle.jpg') repeat;
+    padding-top: 85px;
+}
+
+.chooseCalc {
+    background-color: #f1f1f1;
+}
+.chooseCalc {
+    padding: 0;
+}
+
+.calcBox {
+    background-color: white;
+    width: 430px;
+    height: 100px;
+    padding: 30px;
+    display: inline-block;
+    margin: 20px;
+    color: #989595;
+    position: relative;
+    cursor: pointer;
+}
+
+.calcBox h3 {
+    margin-top: 6px;
+}
+
+.calcBoxSelected {
+    border-bottom: 8px solid #009ee0;
+}
+
+#calcBoxInputFormResponsive {
+    display: none;
+}
+
+.titleBoxSelected {
+    border-bottom: 8px solid #009ee0;
+}
+
+.titleBoxSelected:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    top: 100px;
+    right: 47%;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #009ee0;
+}
+
+.calcBoxSelected:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    top: 100px;
+    right: 190px;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #009ee0;
+}
+
+.calcBoxUnSelected:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    top: 80px;
+    right: 190px;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid #009ee0;
+}
+
+.compareDiv {
+    background-color: white;
+    padding: 20px;
+}
+
+.compareDiv > .col-xs-5 {
+    background-color: #1f647d;
+}
+
+.introHeader {
+    color: white;
+    border-bottom: 1px solid white;
+    padding: 30px 30px 0 0;
+}
+
+.introHeader h4 {
+    font-weight: 300;
+}
+
+.calcTable tr {
+    border-bottom: 2px solid #989595;
+}
+
+.calcTable td:first-child {
+    background-color: #1f647d;
+}
+
+.calcTable {
+    color: #989595;
+    /*max-width: 100%;*/
+    overflow-x: auto;
+    display: block;
+}
+
+.divTitleOnBlock {
+    display: inline-block;
+    width: 60%;
+    position: absolute;
+    z-index: 2;
+    padding: 6% 4%;
+}
+
+.titleOnBack {
+    color: white;
+    margin: 0 !important;
+    font-size: 20px;
+}
+
+.calcTable td {
+    padding: 8px;
+}
+
+.calcTable td:first-child {
+    width: 40%;
+    color: white;
+    font-size: 20px;
+}
+
+.calcDiv {
+    background-color: white;
+    padding: 20px;
+}
+
+.calcDiv  h3 {
+    color: #989595;
+}
+
+.hidden {
+    display: none;
+}
+
+.effect:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 30px;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid white;
+}
+
+.noUi-target,.noUi-target * {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -ms-touch-action: none;
+    touch-action: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.noUi-target {
+    position: relative;
+    direction: ltr;
+}
+
+.noUi-base {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    /* Fix 401 */
+}
+
+.noUi-origin {
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.noUi-handle {
+    position: relative;
+    z-index: 1;
+}
+
+.noUi-stacking .noUi-handle {
+    /* This class is applied to the lower origin when
+       its values is > 50%. */
+    z-index: 10;
+}
+
+.noUi-state-tap .noUi-origin {
+    -webkit-transition: left 0.3s,top .3s;
+    transition: left 0.3s,top .3s;
+}
+
+.noUi-state-drag * {
+    cursor: inherit !important;
+}
+
+/* Painting and performance;
+ * Browsers can paint handles in their own layer.
+ */
+.noUi-base,.noUi-handle {
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+
+/* Slider size and handle placement;
+ */
+.noUi-horizontal {
+    height: 4px;
+}
+
+.noUi-horizontal .noUi-handle {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    left: -7px;
+    top: -7px;
+    background-color: #345DBB;
+}
+
+/* Styling;
+ */
+.noUi-background {
+    background: #D6D7D9;
+}
+
+.noUi-connect {
+    background: #345DBB;
+    -webkit-transition: background 450ms;
+    transition: background 450ms;
+}
+
+.noUi-origin {
+    border-radius: 2px;
+}
+
+.noUi-target {
+    border-radius: 2px;
+}
+
+.noUi-target.noUi-connect {
+}
+
+/* Handles and cursors;
+ */
+.noUi-draggable {
+    cursor: w-resize;
+}
+
+.noUi-vertical .noUi-draggable {
+    cursor: n-resize;
+}
+
+.noUi-handle {
+    cursor: default;
+    -webkit-box-sizing: content-box !important;
+    -moz-box-sizing: content-box !important;
+    box-sizing: content-box !important;
+}
+
+.noUi-handle:active {
+    border: 8px solid #345DBB;
+    border: 8px solid rgba(53,93,187,0.38);
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    left: -14px;
+    top: -14px;
+}
+
+/* Disabled state;
+ */
+[disabled].noUi-connect,[disabled] .noUi-connect {
+    background: #B8B8B8;
+}
+
+[disabled].noUi-origin,[disabled] .noUi-handle {
+    cursor: not-allowed;
+}
+
+.effect p {
+    margin: 0;
+}
+
+.selectedKindPersonal {
+    background-color: #1f647d;
+    color: white;
+}
+
+.unSelectedKindPersonal {
+    background-color: #f1f1f1;
+    color: black;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    background-color: #ffc000;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.blueDot {
+    height: 12px;
+    width: 12px;
+    background-color: #009ee0;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.gam:nth-child(odd) {
+    background-color: #f1f1f1;
+}
+
+.gam img {
+    float: right;
+    width: 80px;
+    margin-top: 15px;
+}
+
+.gam p {
+    font-size: 16px;
+    font-weight: 500;
+    text-align: justify;
+}
+
+.boxInGam {
+    background-color: white;
+    border: 1px solid #989595;
+    border-radius: 10px;
+    padding: 7px;
+    margin: 8px;
+    /*width: 350px;*/
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+
+}
+
+.boxInGamParent {
+    float: left;
+    width: 30%;
+}
+
+.boxInGamParent a {
+    /*width: 350px;*/
+    margin: 8px;
+    background-color: #aa0800;
+    border-radius: 25px;
+}
+
+.boxInGamBtnDiv > center > a {
+    white-space: normal !important;
+}
+
+.warning {
+    color: #aa0800;
+    font-size: 0.9em;
+    border-radius: 10px;
+}
+
+#rightDivInstructionStepsDescription {
+    float: right;
+    width: 60%;
+}
+
+.neededInfoBox {
+    background-color: white;
+    width: 40%;
+    height: 100px;
+    padding: 20px;
+    display: inline-block;
+    margin: 20px;
+    color: #989595;;
+    position: relative;
+    cursor: pointer;
+}
+
+.neededInfoBoxSelected {
+    border-bottom: 8px solid #009ee0;
+}
+
+.neededInfoBoxSelected:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    top: 100px;
+    right: 43%;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #009ee0;
+}
+
+.neededInfoBoxUnSelected:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    top: 80px;
+    right: 43%;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid #009ee0;
+}
+
+.coloredUl {
+    list-style: none;
+}
+
+.coloredUl li::before {
+    content: "•";
+    color: #009ee0;
+    display: inline-block;
+    width: 0.5em;
+    font-size: 1.7em;
+    margin-top: -30px;
+}
+
+.popup {
+    position: fixed;
+    top: 100px;
+    width: 50%;
+    left: 25%;
+    right: 25%;
+    border-radius: 8px;
+    border: 5px solid #ffc000;
+    background-color: #f1f1f1;
+    z-index: 34;
+}
+
+.dark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(133,133,133,0.61);
+    width: 100%;
+    height: 700vh;
+    z-index: 33;
+}
+
+.popup .innerDiv {
+    border-radius: 3px;
+    border: 5px solid #009ee0;
+    min-height: 70vh;
+    max-height: 80vh;
+    overflow: auto;
+}
+
+.popup .closePopUp {
+    position: absolute;
+    background: url("/assets/img/popup_close.png");
+    width: 35px;
+    height: 35px;
+    left: 10px;
+    top: 0;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.popup .innerInner {
+    position: relative;
+    width: 94%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.popup .header {
+    border-radius: 4px;
+    background-color: #1f647d;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    margin-top: 10px;
+    width: 100%;
+    padding: 7px;
+}
+
+.popup .body {
+    padding: 7px;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 18px;
+    text-align: justify;
+}
+
+.popup .img {
+    width: 50%;
+}
+
+#facilityDescriptionText {
+
+    text-align: justify
+}
+
+footer {
+    background-color: #009ee0; /* For browsers that do not support gradients */
+    background-image: linear-gradient(to right, #009ee0 , #1f647d); /* Standard syntax (must be last) */
+    width: 100%;
+    color: white;
+    display: inline-block;
+    float: right;
+}
+
+footer h3 {
+    border-bottom: 2px solid white;
+    padding-bottom: 10px;
+}
+
+footer a {
+    font-size: 14px;
+    font-weight: 400;
+    border-bottom: 1px solid white;
+    padding-bottom: 4px;
+    margin-top: 20px;
+    cursor: pointer;
+    color: white !important;
+    text-decoration: none;
+    display: block;
+
+}
+
+
+footer p {
+    font-size: 14px;
+    font-weight: 400;
+    border-bottom: 1px solid white;
+    padding-bottom: 4px;
+    margin-top: 20px;
+    cursor: pointer;
+    color: white !important;
+    text-decoration: none;
+    display: block;
+    text-align: justify;
+}
+
+footer p:last-child {
+    border-bottom: none !important;
+}
+
+footer a:last-child {
+    border-bottom: none !important;
+}
+
+footer a:hover {
+    text-decoration: none;
+}
+
+.footerLogoDiv > p {
+    border: none;
+    line-height: 30px;
+}

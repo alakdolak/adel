@@ -1,0 +1,36 @@
+
+div.inputLabel
+
+    div(style=" padding: 3px 0px 10px 30px; font-size: 15px; width: 100%;")
+
+        span(style=" padding: 3px 0px 0px 30px; font-size: 15px; width: 100%;") تاریخ تولد
+
+    div(style=" width: 100%;")
+
+
+    div(style=" width: 100%;")
+
+        select#ceoBirthdayDay.signInInput.form-control(type='text', placeholder='عدد' name='birthday_day', style="width:20% !important; display: inline-block; margin: 0 0 0 5%")
+            option(value = -1) روز
+            - for (let i = 1; i < 32; i++) {
+                if (user_form != null && i == user_form.birthday_day)
+                    option(selected, value=i) !{i}
+                else
+                    option(value=i) !{i}
+            - }
+        select#ceoBirthdayMonth.signInInput.form-control(type='text', placeholder='عدد' name='birthday_month', style="width:20% !important; display: inline-block; margin: 0 5%")
+            option(value = -1) ماه
+            - for (let i = 1; i < 13; i++) {
+                if (user_form != null && parseInt(i) == user_form.birthday_month)
+                    option(selected, value=i) !{i}
+                else
+                    option(value=i) !{i}
+            - }
+        select#ceoBirthdayYear.signInInput.form-control(type='text', placeholder='عدد' name='birthday_year', style="width:20% !important; display: inline-block; margin: 0 5% 0 0")
+            option(value = -1) سال
+            - for (var i = 1398; i > 1299; i--) {
+                if (user_form != null && parseInt(i) == user_form.birthday_year)
+                    option(selected, value=i) !{i}
+                else
+                    option(value=i) !{i}
+            - }

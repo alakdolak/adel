@@ -1,0 +1,718 @@
+.responseBox{
+    float: right;
+    border: none;
+    background-color: white;
+    background-image: none;
+    display: inline-block;
+}
+
+#signUpBtnSignIn{
+    float: left;
+}
+
+@media only screen and (max-width: 480px){
+    .pageNavigation > button {
+        float: inherit !important;
+    }
+    .navigationLinksDivs {
+        float: inherit !important;
+        width: 50% !important;
+        text-align: inherit !important;
+        padding: 10px 0 !important;
+    }
+    .navigationLinks {
+        float: inherit !important;
+    }
+}
+
+@media only screen and (max-width: 1370px) {
+    .retrievePass2ndDiv {
+        padding: 0 15% !important;
+    }
+    .retPassHelpBox, .rpPassDescriptionDiv{
+        width: 80% !important;
+    }
+    #1stRetPassHelpBox > div > div {
+        width: 56% !important;
+    }
+}
+
+@media only screen and (max-width: 930px) {
+    #retPassIdc > span {
+        padding: 5px 0 !important;
+        width: 100% !important;
+        text-align: right !important;
+    }
+    .rpInput{
+        float: right !important;
+        width: 100% !important;
+        margin: 0 !important;
+    }
+    .retrievePassBoxes {
+        width: 100% !important;
+        margin: 20px 0 !important;
+    }
+    .retrievePass2ndDiv {
+        padding: 0 !important;
+    }
+    .retPassHelpBox, .rpPassDescriptionDiv, #resendDiv{
+        width: 100% !important;
+    }
+    .suFooter > button {
+        width: 100px !important;
+    }
+    .suFooter > a {
+        font-size: 10px !important;
+    }
+    #resendDiv > a , #resendDiv > div > a {
+        font-size: 10px !important;
+    }
+}
+
+/*@media only screen and (max-width: 800px) {*/
+    /*.retrievePassBoxes {*/
+        /*width: 100% !important;*/
+        /*margin: 20px 0 !important;*/
+    /*}*/
+    /*.retrievePass2ndDiv {*/
+        /*padding: 0 !important;*/
+    /*}*/
+    /*.retPassHelpBox{*/
+        /*width: 100% !important;*/
+    /*}*/
+/*}*/
+
+@media only screen and (max-width: 670px) {
+    .retrievePassMainBox {
+        padding: 30px 4% !important;
+        font-size: 12px !important;
+    }
+}
+
+@media only screen and (max-width: 1370px) {
+    .signInHelpBoxTextDivs, .signInHelpBoxTextDivs {
+        width: 70% !important;
+    }
+}
+
+@media only screen and (max-width: 1180px){
+    #signInMainBox , .retrievePassMainBox{
+        width: 90% !important;
+    }
+}
+
+@media only screen and (max-width: 790px){
+    #signInHelpBox{
+        width: 95% !important;
+    }
+}
+
+@media only screen and (max-width: 890px){
+    #loginForm{
+        padding: 0 14% !important;
+    }
+    .signUpBoxes {
+        width: 80% !important;
+        float: inherit !important;
+        margin: 0 !important;
+    }
+    .signUpInstructionsDiv {
+        width: 90% !important;
+    }
+    .signUpInput, .signUpInputLabelTitles, .passDescription{
+        width: 100% !important;
+    }
+
+}
+
+@media only screen and (max-width: 510px){
+    #loginForm{
+        padding: 0 5% !important;
+    }
+    .divSignInInput > span{
+        font-size: 14px !Important;
+    }
+    .mainBgColorOfLogin{
+        padding: 10px 0 !important;
+    }
+    #ictLogInBtn{
+        float: inherit !important;
+    }
+    #ictLogIn > span {
+        float: right !important;
+        margin-bottom: 10px;
+    }
+    #ictLogIn {
+        display: inline-block !important;
+        padding-bottom: 10px !important;
+    }
+    .signInHelpBoxBtn {
+        width: 30% !important;
+        height: fit-content !important;
+    }
+    #signInHelpBox{
+        padding: 10px 0 !important;
+    }
+    .signUpContents {
+        padding: 5% 0 !important;
+    }
+    .instructionContentTitle {
+        font-size: 15px !important;
+    }
+}
+
+@media only screen and (max-width: 1055px){
+    #signInMainBox{
+        padding: 0 !important;
+        border-radius: 8px 8px 0 0;
+    }
+    #signInBox{
+        margin: 0 !important;
+        border-radius: 8px 8px 0 0 !important;
+    }
+}
+
+@media only screen and (max-width: 1545px){
+    #signUptextSignIn{
+        width: 100%;
+    }
+
+    #signUptextSignIn > span{
+        margin: 20px 0;
+        float: none !important;
+    }
+    #signUpBtnSignIn{
+        float: none !important;
+    }
+
+}
+
+@media only screen and (max-width: 600px){
+    .responseBox {
+        display: none;
+    }
+    .signUpInstructionsDiv{
+        margin: 20px 0px !important;
+    }
+    #verifyCode{
+        padding: 15px 0px !important;
+    }
+    .doNotGetCode {
+        font-size: 10px !important;
+    }
+    #continueStages{
+        width: 100px !important;
+    }
+}
+
+.signUpContents {
+    padding: 5%;
+}
+
+.signUpBoxes {
+    width: 40%;
+}
+
+.stepTitles{
+    float:right;
+    font-size: 20px;
+    width: 100%;
+}
+
+.doNotGetCode{
+    font-size: 12px
+}
+
+.signUpBoxes {
+    float: right;
+    background-image: linear-gradient(to bottom, #ffffff, #ececec);
+    /*width: 550px;*/
+    /*height: 400px;*/
+    padding: 20px 15px;
+    display: inline-block;
+    margin: 20px 0 0 20px;
+    position: relative;
+    border-radius: 5px;
+    border: solid 2px #c2c1c1;
+}
+
+.signUp {
+    background-image: linear-gradient(to bottom, #ffffff, #ececec);
+    width: 550px;
+    height: 400px;
+    padding: 20px 15px;
+    display: inline-block;
+    margin: 20px;
+    position: relative;
+    border-radius: 5px;
+    border: solid 2px #c2c1c1;
+}
+
+
+.inputLabel {
+    color: black;
+    padding: 10px 20px;
+    display: inline-block;
+    float: right;
+    width: 100%;
+}
+
+.signUpInputLabel {
+    padding: 10px 10px !important;
+}
+
+.signUpInputLabelTitles {
+    display: inline-block;
+    width: 80%;
+    float: right;
+}
+
+.signUpInput {
+    width: 80%;
+    float: right;
+}
+
+#suEmail{
+    /*width: 320px;*/
+    /*float: left;*/
+}
+
+#acceptance {
+    display: inline-block;
+    float: right;
+    width: 100%;
+    padding: 15px 10px;
+}
+
+#accCheck {
+    float: right;
+}
+
+#accText{
+    float: right;
+    text-align: justify;
+    width: 90%;
+    padding-right: 10px;
+    font-size: 13px;
+}
+
+.verifyCodeDescription{
+    padding: 10px 20px;
+    display: inline-block;
+    width: 100%;
+    float: right;
+}
+
+.verifyCodeHelpText{
+    font-size: 12px;
+    color: #aa0800;
+    text-align: justify;
+    float: right;
+}
+
+.suFooter {
+    width: 100%;
+    display: inline-block;
+    margin: 10px 0;
+}
+
+.passDescTextDiv {
+    display: inline-block;
+    width: 100%;
+}
+
+.passDescText {
+    font-size: 12px;
+    /*float: right;*/
+    margin-bottom: 0;
+    padding: 5px;
+}
+
+.passHelpText {
+    font-size: 12px;
+    color: #aa0800;
+    text-align: justify;
+    float: right;
+    margin-bottom: 0;
+    margin-top: 5px;
+}
+
+#signInMainBox{
+    display: inline-block;
+    background-color: #ffffff;
+    width: 80%;
+    /*margin: 35px;*/
+    padding: 20px 70px;
+}
+
+#signInBox{
+    background-image: linear-gradient(to bottom, #ffffff, #ececec);
+    /*height: 70%;*/
+    margin:5px;
+    border-radius:8px;
+}
+
+#logInTitle{
+    background-color: #009ee0;
+    /*height: 10%;*/
+    width: 100%;
+    border-radius: 8px 8px 0px 0px;
+    float: right;
+}
+
+.divSignInInput {
+    display: inline-block;
+    padding: 10px 0;
+    margin-top: 10px;
+    width: 100%;
+
+}
+
+/*#signInIdCode{*/
+    /*display: inline-block;*/
+    /*padding: 10px;*/
+    /*margin-top: 10px;*/
+/*}*/
+
+/*#signInPass {*/
+    /*padding: 10px*/
+/*}*/
+
+.signInInput{
+    /*width:320px !important;*/
+    display: inline-block !important;
+}
+
+#siBtnForgetPass{
+    width: 100%;
+    display: inline-block;
+    margin-top: 30px;
+    /*padding-top: 10px;*/
+}
+
+#signInBtn {
+    float: left;
+    background-color: #ffc000;
+    width: 150px;
+    height: 30px;
+    border-radius: 3px;
+    border: none;
+    display: inline-block;
+}
+
+#ictLogIn{
+    display: block;
+    border: solid 1px;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 30px;
+    padding: 10px 0px 20px 10px;
+}
+
+#ictLogInBtn{
+    float: left;
+    background-color: #1f647d;
+    width: 80px;
+    height: 25px;
+    border-radius: 4px;
+    border: none;
+    display: block;
+    color: #ffffff;
+    margin-top: 8px;
+}
+
+#signUpLinkSignIn {
+    display: inline-block;
+    margin: 20px 0;
+    height: auto;
+    width: 100%;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+#signUpLinkSignInTitle{
+    background-color: #ffc000;
+    /*height: 10%;*/
+    width: 100%;
+    border-radius: 8px 8px 0px 0px;
+    display: inline-block;
+}
+
+#suBtnSi {
+    /*float: left;*/
+    background-color: #1f647d;
+    width: 140px;
+    height: 30px;
+    border-radius: 4px;
+    border: none;
+    display: inline-block;
+    color: #ffffff;
+    /*margin-top: 10px;*/
+}
+
+#signInHelpBox {
+    border: 1px solid #afafaf;
+    width: 80%;
+    display: inline-block;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 15px 0;
+}
+
+.signInHelpBoxBtn {
+    float: left;
+    background-color: #404040;
+    width: 140px;
+    height: 30px;
+    border-radius: 4px;
+    border: none;
+    display: inline-block;
+    color: #ffffff;
+}
+
+.signInHelpBoxDivs{
+    height: 50px;
+    padding: 10px;
+}
+
+#retrievePassByMailBtn{
+    margin-top: 10px;
+}
+
+.retrievePassMainBox {
+    display: inline-block;
+    background-color: #ffffff;
+    /*height: 100%;*/
+    width: 80%;
+    /*margin: 35px;*/
+    padding: 30px 70px;
+}
+
+.retrievePassBoxes {
+    background-image: linear-gradient(to bottom, #ffffff, #ececec);
+    width: 80%;
+    /*height: 50%;*/
+    padding: 20px 15px;
+    display: inline-block;
+    margin: 20px;
+    position: relative;
+    border-radius: 5px;
+    border: solid 2px #c2c1c1;
+}
+
+.rpBoxTitle{
+    display: inline-block;
+    float: right;
+    width: 100%;
+}
+
+.retrievePass2ndDiv{
+    padding: 60px 25% 35px 25%;
+}
+
+.retrievePassInputsLabel {
+    color: black;
+    padding: 10px 0;
+    display: inline-block;
+    /*float: right;*/
+    width: 100%;
+}
+
+#retPassIdc {
+    margin-top: 20px;
+}
+
+.rpInput{
+    width: 80%;
+    height: 30px;
+    float: left;
+    /*margin: 0px 17px 0px 0px;*/
+    display: inline-block;
+}
+
+.rpInputBirth {
+    width: 60px;
+    height: 30px;
+    /*float: right;*/
+    margin: 0px 15px;
+    display: inline-block;
+}
+
+.rpContinuesBtn {
+    float: left;
+    background-color: #ffc000;
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    display: inline-block;
+    margin: 14px 0;
+}
+
+.retPassHelpBox {
+    border: 1px solid #afafaf;
+    width: 70%;
+    display: inline-block;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 15px;
+}
+
+#retrievePassSupport{
+    margin-bottom: 0;
+}
+
+.rpPassDescription {
+    padding:10px;
+    border: solid 3px black;
+    border-radius: 10px;
+    display: inline-block;
+    /*width: 100%;*/
+    float: right;
+    margin: 10px;
+    /*height: 170px;*/
+    font-size: 15px;
+}
+
+.rpPassDescText {
+    float: right;
+}
+
+.continueStages {
+    float: left;
+    background-color: #ffc000;
+    width: 150px;
+    height: 30px;
+    border-radius: 3px;
+    border: none;
+    display: inline-block;
+}
+
+.textIns {
+    float: right;
+    display: inline-block;
+    padding-top: 25px;
+}
+
+#verifyCode {
+    color: black;
+    padding: 15px 80px 15px 20px;
+    display: inline-block;
+    width: 100%;
+}
+
+#vcDescription{
+    padding: 15px 80px 15px 80px;
+}
+
+.vcHelpText{
+    font-size: 12px;
+    color: #aa0800;
+    text-align: justify;
+    float: right;
+}
+
+.passDescription {
+    padding:10px;
+    border: solid 3px black;
+    border-radius: 10px;
+    display: inline-block;
+    /*width: 300px;*/
+    float: right;
+    margin: 10px;
+}
+
+.signUpInstructionsDiv{
+    background-color: white;
+    width: 50%;
+    /*height: 400px;*/
+    padding: 0px;
+    display: inline-block;
+    margin: 20px;
+    color: #989595;
+    position: relative;
+}
+
+.instructionContent {
+    color: #009ee0;
+}
+
+.instructionContentTitle {
+    display: inline-block;
+    width: 100%;
+    float: right;
+}
+
+.passHelpText {
+    font-size: 9px;
+    color: #aa0800;
+    text-align: justify;
+    float: right;
+    margin-bottom: 0;
+}
+
+.signInHelpBoxContentDivs {
+    display: inline-block;
+    float: right;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.signInHelpBoxTextDivs {
+    display: inline-block;
+    width: 70%;
+    float: right;
+}
+
+.signInHelpBoxTextDivs > span, .signInHelpBoxTextDivs > b {
+    text-align: right;
+    padding-bottom: 5px;
+}
+
+#resendDiv{
+    display: inline-block;
+    width: 80%;
+    padding: 10px 0;
+    float: right;
+}
+
+.pageNavigation{
+    display: inline-block;
+    width: 100%;
+}
+
+.navigationLinksDivs{
+    display: inline-block;
+    width: 40%;
+    float: right;
+    text-align: right;
+}
+
+.navigationLinks {
+    float:right;
+    padding-top: 10px;
+    font-size: 11px;
+    cursor: pointer;
+    /*margin-left: 42px;*/
+    text-decoration: none;
+}
+
+#retrievePass2ndDiv3rdPage {
+
+}
+
+.rpPassDescriptionText{
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+}
+
+.explainText {
+    font-weight: bold;
+    color: #1d7eaa;
+    text-align: justify;
+    font-size: 0.8em;
+    margin-top: 5px;
+    width: 100%;
+    display: inline-block;
+}

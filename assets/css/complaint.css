@@ -1,0 +1,42 @@
+.mainBlockComplaint {
+    display: inline-block;
+    width: 100%;
+    padding: 30px 5%;
+}
+
+.complaintMainTitle {
+    color: #013567;
+}
+
+.complaintMainTitle {
+    font-weight: 800;
+}
+#complaintMainContentTitleDiv{
+    color: #00508f;
+}
+
+.complaintContent {
+    display: inline-block;
+    width: 100%;
+    border: 2px solid #c1c2c4;
+    padding: 10px;
+}
+
+#complaintMainContentDiv {
+    line-height: 30px;
+}
+
+#complaintMainContent4thLineDiv {
+    width: 100%;
+}
+.complaint-table {
+    max-width: 100%;
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 30px;
+}
+
+.complaint-table td {
+    padding: 10px;
+}

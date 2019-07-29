@@ -1,0 +1,82 @@
+extends structure.pug
+
+block backImg
+
+    div.divTitleOnBlock
+        h3.titleOnBack
+
+    //div(style="background: url('/assets/img/cover.jpg'); background-size: cover; right: 0; position: absolute; width: 100%; height: 200px; opacity: 0.9")
+
+    img(src = "/assets/img/cover.jpg", style = "width: 100%; opacity: 0.9")
+
+block content
+
+    div.navBarOnOverBackMainDiv
+        ul
+            img.homeIcon(src="/assets/img/home.png")
+            li.homeBtn خانه /
+            li حمایت ها /
+            li خبرها
+
+    div.mainBlockNews
+
+        div.newsContentsMainDiv
+            div#newsContentFirstDiv.newsPageContentDiv
+                div#newsContentFirstImg.newsContentImg
+                    img(src="/assets/img/n1.png")
+                div#newsContentFirstText.newsContentText
+                    div(style="margin-bottom: 10px")
+                        b نمایشگاه الکامپ انعکاسی از وضعیت فناوری اطلاعات در کشور است
+                    p به گزارش روابط عمومی و امور بین‌الملل سازمان فناوری اطلاعات ایران : صبح  امروز نشست خبری بیست و پنجمین نمایشگاه الکامپ با حضور امیر ناظمی معاون وزیر و رییس سازمان فناوری اطلاعات ایران و اثنی عشری رییس سازمان نظام صنفی رایانه‌ای و جمعی از اصحاب رسانه در سالن کنفرانس سازمان فناوری برگزار شد .
+                    p معاون وزیر ارتباطات در این نشت گفت : سالن دولت الکترونیک با متراژ  دو هزار و 500 مترمربع و متشکل از 40 دستگاه دولتی در قالب 22 غرفه برگزار خواهد شد و در این سالن سازمان‌ها و ارگان‌های دولتی به معرفی خدمات خود خواهد پرداخت .
+            hr#newsContentFirstBoxDivider
+            div.newsMoreContent
+                span بیشتر بخوانید
+                a.readMore#newsMoreContentIcon(target= "_blank" href= "https://ito.gov.ir/web/guest/news/-/view/%D9%86%D9%85%D8%A7%DB%8C%D8%B4%DA%AF%D8%A7%D9%87-%D8%A7%D9%84%DA%A9%D8%A7%D9%85%D9%BE-%D8%A7%D9%86%D8%B9%DA%A9%D8%A7%D8%B3%DB%8C-%D8%A7%D8%B2-%D9%88%D8%B6%D8%B9%DB%8C%D8%AA-%D9%81%D9%86%D8%A7%D9%88%D8%B1%DB%8C-%D8%A7%D8%B7%D9%84%D8%A7%D8%B9%D8%A7%D8%AA-%D8%AF%D8%B1-%DA%A9%D8%B4%D9%88%D8%B1-%D8%A7%D8%B3%D8%AA-/2330")
+            div.newsContent2ndDiv.newsPageContentDiv
+                div.newsContentSecondImg.newsContentImg
+                    img(src="/assets/img/N2.jpg")
+                div.newsContentSecondText.newsContentText.news2ndContentText
+                    div(style="margin-bottom: 10px")
+                        b استفاده و کاربرد هوش مصنوعی در دنیای امروز ضروری است
+                    p رئیس سازمان فناوری اطلاعات در رویداد کارآفرینانه ی "ویتا" تصریح کرد: با تشریح سطح تجارت الکترونیک میان کشورهای مختلف، لازم است هر چه سریعتر وارد تکنولوژی هایی مانند هوش مصنوعی شویم تا این امکان برای جامعه فراهم شود و میزان بیشتری از افراد به دانش و داشته ها دسترسی بهتری داشته باشند.
+
+            hr.newsContent2ndBoxDivider
+            div.newsMoreContent
+                span بیشتر بخوانید
+                a.readMore#newsMoreContentIcon(target= "_blank" href= "https://ito.gov.ir/web/guest/news/-/view/%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87-%D9%88-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%AF-%D9%87%D9%88%D8%B4-%D9%85%D8%B5%D9%86%D9%88%D8%B9%DB%8C-%D8%AF%D8%B1-%D8%AF%D9%86%DB%8C%D8%A7%DB%8C-%D8%A7%D9%85%D8%B1%D9%88%D8%B2-%D8%B6%D8%B1%D9%88%D8%B1%DB%8C-%D8%A7%D8%B3%D8%AA-/2335")
+            div.newsContent2ndDiv.newsPageContentDiv
+                div.newsContentSecondImg.newsContentImg
+                    img(src="/assets/img/N3.jpg")
+                div.newsContentSecondText.newsContentText.news2ndContentText
+                    div(style="margin-bottom: 10px")
+                        b سامانه مجوزدهی کشور رونمایی شد
+                    p به گزارش روابط عمومی و امور بین الملل سازمان فناوری اطلاعات ایران، امیر ناظمی، معاون وزیر ارتباطات خبر از رونمایی سامانه دریافت مجوز کشور داد. او همچنین اعلام کرد در حال حاضر زیرساخت‌های کشور برای ارائه مجوز از طریق سامانه خاص به آدرس اینترنتی http://G4B.ir فراهم شده است. وی خاطرنشان کرد: از امروز هیچ دستگاه دولتی بهانه‌ای برای شفافیت در مجوزدهی نخواهند داشت.
+            hr.newsContent2ndBoxDivider
+            div.newsMoreContent
+                span بیشتر بخوانید
+                a.readMore#newsMoreContentIcon(target= "_blank" href= "https://ito.gov.ir/web/guest/news/-/view/%D8%B3%D8%A7%D9%85%D8%A7%D9%86%D9%87-%D9%85%D8%AC%D9%88%D8%B2%D8%AF%D9%87%DB%8C-%DA%A9%D8%B4%D9%88%D8%B1-%D8%B1%D9%88%D9%86%D9%85%D8%A7%DB%8C%DB%8C-%D8%B4%D8%AF%C2%A0/2325")
+            div.newsContent2ndDiv.newsPageContentDiv
+                div.newsContentSecondImg.newsContentImg
+                    img(src="/assets/img/N4.jpg")
+                div.newsContentSecondText.newsContentText.news2ndContentText
+                    div(style="margin-bottom: 10px")
+                        b نشست تخصصی نقش فین تک ها در رونق تولید برگزار شد
+                    p به گزارش روابط عمومی و امور بین الملل فناوری اطلاعات ایران ، به نقل از مرکز پژوهش های مجلس شورای اسلامی، دفتر مطالعات انرژی، صنعت و معدن این مرکز، طی یک نشست تخصصی که امروز- چهارشنبه- با حضور مدیران و پژوهشگران مرکز پژوهش‌های مجلس، صاحب نظران، پژوهشگران نهادهای دولتی و خصوصی و مراکز پژوهشی کشور برگزار شد به بررسی نقش فین‌تک‌ها در رونق تولید پرداخت.
+            hr.newsContent2ndBoxDivider
+            div.newsMoreContent
+                span بیشتر بخوانید
+                a.readMore#newsMoreContentIcon(target= "_blank" href= "https://ito.gov.ir/web/guest/news/-/view/%D9%86%D8%B4%D8%B3%D8%AA-%D8%AA%D8%AE%D8%B5%D8%B5%DB%8C-%D9%86%D9%82%D8%B4-%D9%81%DB%8C%D9%86-%D8%AA%DA%A9-%D9%87%D8%A7-%D8%AF%D8%B1-%D8%B1%D9%88%D9%86%D9%82-%D8%AA%D9%88%D9%84%DB%8C%D8%AF-%D8%A8%D8%B1%DA%AF%D8%B2%D8%A7%D8%B1-%D8%B4%D8%AF/2324")
+
+        //div.newsMenuBar
+            ul دسته بندی
+                li اخبار
+                li مقالات
+                li آموزش
+                li خدمات
+                li چند رسانه ای
+            ul آرشیو
+                li خرداد 98
+                li تیر 98
+                li مرداد 98
+

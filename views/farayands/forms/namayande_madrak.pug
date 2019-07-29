@@ -1,0 +1,55 @@
+- let instId = inst.id
+
+script(src="/assets/js/madarek.js")
+include madrakPopUp
+
+div.hidden#nextURL(data-val='/postcondition/' + instId)
+
+div.col-lg-8.col-md-12(id="form", style="float: right; display: inline-block; margin-bottom: 30px; padding: 0")
+
+    div.inputLabel
+
+        div(style=" padding: 3px 0px 10px 30px; font-size: 15px; width: 100%;")
+            span(style=" padding: 3px 0px 0px 30px; font-size: 15px; width: 100%;") تصویر کارت ملی
+
+        div(style=" width: 100%;")
+
+            div
+                input.signInInput.form-control(type='file', name='namayande_nid', data-label='تصویر کارت ملی', style="width:80%;float:right; display: inline-block")
+
+                - if(user_form != null) {
+                    - for (let i = 0; i < user_form.length; i++) {
+                        // span #{user_form[i].key_}
+                        - if(user_form[i].key_ == 'namayande_nid')
+                            span #{user_form[i].val_}
+                    - }
+                - }
+
+            img.off#onOff1( src = "/assets/img/helpoff.png", style = "float: left; width: 30px")
+            p.explainText#explain1(style="width: 80%; text-align: justify; color: #1d7eaa; float: right; font-size: 11px; padding-top: 5px") تصویر مدرک مورد نظر را، واضح و خوانا با حجم زیر 2M، الصاق نمایید.
+
+
+    div.inputLabel
+
+        div(style=" padding: 3px 0px 10px 30px; font-size: 15px; width: 100%;")
+            span(style=" padding: 3px 0px 0px 30px; font-size: 15px; width: 100%;") نامه معرفی رسمی نماینده
+
+        div(style=" width: 100%;")
+
+            div
+                input.signInInput.form-control(type='file', data-label='نامه معرفی رسمی نماینده', name='introducer_namayande', style="width:80%;float:right; display: inline-block")
+
+                - if(user_form != null) {
+                    - for (let i = 0; i < user_form.length; i++) {
+                        // span #{user_form[i].key_}
+                        - if(user_form[i].key_ == 'introducer_namayande')
+                            span #{user_form[i].val_}
+                    - }
+                - }
+
+            img.off#onOff2( src = "/assets/img/helpoff.png", style = "float: left; width: 30px")
+            p.explainText#explain2(style="width: 80%; text-align: justify; color: #1d7eaa; float: right; font-size: 11px; padding-top: 5px") تصویر مدرک مورد نظر را، واضح و خوانا با حجم زیر 2M، الصاق نمایید.
+
+
+include elements/submitBtn
+

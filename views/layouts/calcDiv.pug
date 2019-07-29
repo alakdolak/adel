@@ -1,0 +1,131 @@
+div.col-xs-12.calcDiv.hidden
+
+        div.col-md-1
+        div.col-md-4#calcBoxInputFormResponsive(style="padding: 0")
+            div.row
+                div.col-xs-12
+                    div.col-xs-3(style="padding: 0; margin-top: 30px")
+                        img.on#onOff5(src="/assets/img/helpon.png", style="width: 25px; margin-right: 10px; cursor: pointer")
+                    div.col-xs-8(style="padding: 0")
+                        p(style="color: #989595") فروش خالص
+                        p.hidden#explain5(style="color: #aa0800; font-size: 0.8em; text-align: justify") ردیف 1 اظهارنامه مالیاتی
+                        input#pure(onkeypress="return isNumber(event)", onkeyup="calcAmount()", type="text", style="width: 100%; float: right", placeholder="0")
+                        span(style="float: right; color: #989595; margin-right: -30px") ریال
+                    div.col-xs-1
+
+                div.col-xs-12(style="margin-top: 10px")
+
+                    div.col-xs-3(style="padding: 0; margin-top: 30px")
+                        img.on#onOff4(src="/assets/img/helpon.png", style="width: 25px; margin-right: 10px; cursor: pointer")
+                    div.col-xs-8(style="padding: 0")
+                        p(style="color: #989595") درآمد ناخالص پیمانکاری و ارائه خدمات
+                        p.hidden#explain4(style="color: #aa0800; font-size: 0.8em; text-align: justify") ردیف 4 اظهارنامه مالیاتی
+                        input#unpure(onkeypress="return isNumber(event)", onkeyup="calcAmount()", type="text", style="width: 100%; float: right", placeholder="0")
+                        span(style="float: right; color: #989595; margin-right: -30px") ریال
+                    div.col-xs-1
+
+                div.col-xs-12(style="margin-top: 10px")
+
+                    div.col-xs-3(style="padding: 0; margin-top: 30px")
+                        img.on#onOff3(src="/assets/img/helpon.png", style="width: 25px; margin-right: 10px; cursor: pointer")
+                    div.col-xs-8(style="padding: 0")
+                        p(style="color: #989595") حقوق، دستمزد و مزایا
+                        p.hidden#explain3(style="color: #aa0800; font-size: 0.8em; text-align: justify") مجموع رديف ۸ از جدول۱۲ و رديف۲ ازجدول ۱۹ اظهارنامه مالیاتی
+                        input#wage(onkeypress="return isNumber(event)", onkeyup="calcAmount()", type="text", style="width: 100%; float: right", placeholder="0")
+                        span(style="float: right; color: #989595; margin-right: -30px") ریال
+                    div.col-xs-1
+
+                div.col-xs-12(style="margin-top: 10px")
+
+                    div.col-xs-3(style="padding: 0; margin-top: 30px")
+                        img.on#onOff2(src="/assets/img/helpon.png", style="width: 25px; margin-right: 10px; cursor: pointer")
+                    div.col-xs-8(style="padding: 0")
+                        p(style="color: #989595")  سایر درآمدهای عملیاتی + سایر هزینه های عملیاتی
+                        p.hidden#explain2(style="color: #aa0800; font-size: 0.8em; text-align: justify") مجموع ردیف های ۱۸ و ۱۹ اظهارنامه مالیاتی
+                        input#operator(onkeypress="return isNumber(event)", onkeyup="calcAmount()", type="text", style="width: 100%; float: right", placeholder="0")
+                        span(style="float: right; color: #989595; margin-right: -30px") ریال
+                    div.col-xs-1
+
+                div.col-xs-12(style="margin-top: 10px")
+
+                    div.col-xs-3(style="padding: 0; margin-top: 30px")
+                        img.on#onOff1(src="/assets/img/helpon.png", style="width: 25px; margin-right: 10px; cursor: pointer")
+                    div.col-xs-8(style="padding: 0")
+                        p(style="color: #989595") سایر درآمدها و هزینه های غیر عملیاتی
+                        p.hidden#explain1(style="color: #aa0800; font-size: 0.8em; text-align: justify") ردیف 32 اظهارنامه مالیاتی
+                        input#other(onkeypress="return isNumber(event)", onkeyup="calcAmount()", type="text", style="width: 100%; float: right", placeholder="0")
+                        span(style="float: right; color: #989595; margin-right: -30px") ریال
+                    div.col-xs-1
+
+        div.col-md-3.shadow(style="padding: 0")
+            h3(style="color: #989595; padding: 10px") سقف تسهیلات شما
+
+            div.effect(style="background-color: #f1f1f1; height: 160px")
+                div(style="padding: 10px; margin-right: 30px; margin-top: 70px; width: 150px; display: inline-block")
+                    h4#resultCalc 0 ریال
+                //button.btn(style="margin-right: 30px; background-color: #aa0800; color: white; margin-top: 70px; padding: 10px; width: 150px") شروع کنید
+
+        div.col-md-4#calcBoxInputFormForWidthScreens(style="padding: 0")
+            div.row
+                div.col-xs-12
+                    div.col-xs-3(style="padding: 0; margin-top: 30px")
+                        img.on#onOff5(src="/assets/img/helpon.png", style="width: 25px; margin-right: 10px; cursor: pointer")
+                    div.col-xs-8(style="padding: 0")
+                        p(style="color: #989595") فروش خالص
+                        p.hidden#explain5(style="color: #aa0800; font-size: 0.8em; text-align: justify") ردیف 1 اظهارنامه مالیاتی
+                        input#pure(onkeypress="return isNumber(event)", onkeyup="calcAmount()", type="text", style="width: 100%; float: right", placeholder="0")
+                        span(style="float: right; color: #989595; margin-right: -30px") ریال
+                    div.col-xs-1
+
+                div.col-xs-12(style="margin-top: 10px")
+
+                    div.col-xs-3(style="padding: 0; margin-top: 30px")
+                        img.on#onOff4(src="/assets/img/helpon.png", style="width: 25px; margin-right: 10px; cursor: pointer")
+                    div.col-xs-8(style="padding: 0")
+                        p(style="color: #989595") درآمد ناخالص پیمانکاری و ارائه خدمات
+                        p.hidden#explain4(style="color: #aa0800; font-size: 0.8em; text-align: justify") ردیف 4 اظهارنامه مالیاتی
+                        input#unpure(onkeypress="return isNumber(event)", onkeyup="calcAmount()", type="text", style="width: 100%; float: right", placeholder="0")
+                        span(style="float: right; color: #989595; margin-right: -30px") ریال
+                    div.col-xs-1
+
+                div.col-xs-12(style="margin-top: 10px")
+
+                    div.col-xs-3(style="padding: 0; margin-top: 30px")
+                        img.on#onOff3(src="/assets/img/helpon.png", style="width: 25px; margin-right: 10px; cursor: pointer")
+                    div.col-xs-8(style="padding: 0")
+                        p(style="color: #989595") حقوق، دستمزد و مزایا
+                        p.hidden#explain3(style="color: #aa0800; font-size: 0.8em; text-align: justify") مجموع رديف ۸ از جدول۱۲ و رديف۲ ازجدول ۱۹ اظهارنامه مالیاتی
+                        input#wage(onkeypress="return isNumber(event)", onkeyup="calcAmount()", type="text", style="width: 100%; float: right", placeholder="0")
+                        span(style="float: right; color: #989595; margin-right: -30px") ریال
+                    div.col-xs-1
+
+                div.col-xs-12(style="margin-top: 10px")
+
+                    div.col-xs-3(style="padding: 0; margin-top: 30px")
+                        img.on#onOff2(src="/assets/img/helpon.png", style="width: 25px; margin-right: 10px; cursor: pointer")
+                    div.col-xs-8(style="padding: 0")
+                        p(style="color: #989595")  سایر درآمدهای عملیاتی + سایر هزینه های عملیاتی
+                        p.hidden#explain2(style="color: #aa0800; font-size: 0.8em; text-align: justify") مجموع ردیف های ۱۸ و ۱۹ اظهارنامه مالیاتی
+                        input#operator(onkeypress="return isNumber(event)", onkeyup="calcAmount()", type="text", style="width: 100%; float: right", placeholder="0")
+                        span(style="float: right; color: #989595; margin-right: -30px") ریال
+                    div.col-xs-1
+
+                div.col-xs-12(style="margin-top: 10px")
+
+                    div.col-xs-3(style="padding: 0; margin-top: 30px")
+                        img.on#onOff1(src="/assets/img/helpon.png", style="width: 25px; margin-right: 10px; cursor: pointer")
+                    div.col-xs-8(style="padding: 0")
+                        p(style="color: #989595") سایر درآمدها و هزینه های غیر عملیاتی
+                        p.hidden#explain1(style="color: #aa0800; font-size: 0.8em; text-align: justify") ردیف 32 اظهارنامه مالیاتی
+                        input#other(onkeypress="return isNumber(event)", onkeyup="calcAmount()", type="text", style="width: 100%; float: right", placeholder="0")
+                        span(style="float: right; color: #989595; margin-right: -30px") ریال
+                    div.col-xs-1
+
+        div.col-md-3(style="padding: 0")
+            center
+                h3 محاسبه سقف تسهیلات
+                h4(style="text-align: justify; line-height: 1.3")
+                    span(style="color: #aa0800;") توجه:
+                    span &nbsp;
+                    span(style="color: #989595;")  مربوط به اظهارنامه های حداکثر 2 سال گذشته و بعد از آن اعداد ردیف های مشخص شده در فرم زیر را از جدول شماره 12 اظهارنامه مالیاتی با واحد میلیون ریال وارد کنید.
+        div.col-md-1

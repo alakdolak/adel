@@ -1,0 +1,11 @@
+div.inputLabel
+
+    div(style=" padding: 3px 0px 10px 30px; font-size: 15px; width: 100%;")
+
+        span(style=" padding: 3px 0px 0px 30px; font-size: 15px; width: 100%;") نام پدر
+
+    div(style=" width: 100%;")
+        if(user_form != null)
+            input#ceoFatherName.signInInput.form-control(value=user_form.father_name, type='text', name='father_name', style="width:80%; display: inline-block")
+        else
+            input#ceoFatherName.signInInput.form-control(type='text', name='father_name', style="width:80%; display: inline-block")

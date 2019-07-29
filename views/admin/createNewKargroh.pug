@@ -1,0 +1,94 @@
+extend ../ProfilesStructure.pug
+
+block content
+
+    .user-prfile-activity-area.mg-b-40.mg-t-30
+        .container-fluid
+            .row
+
+                center
+                    label(for="name") نام کارگروه
+                    input(id="name", value=kargroh, type="text", style="margin-right: 5px")
+
+                .col-lg-12
+                    .col-lg-2
+
+                    .col-lg-8(style= "margin-top: 20px")
+                        .row
+                            .col-lg-12
+                                .sparkline10-list.shadow-reset
+                                    .sparkline10-hd
+                                        .main-sparkline10-hd
+                                            h1 لیست کل اعضا
+                                            .sparkline10-outline-icon
+                                                span.sparkline10-collapse-link
+                                                    i.fa.fa-chevron-up
+                                        .sparkline10-graph
+                                            .input-knob-dial-wrap
+                                                .row
+                                                    .col-lg-6
+                                                        button.btn.btn-primary#addToLoggerBtn(style="min-width: 210px; margin: 5px;") افزودن به اعضای مشاهده کننده
+                                                        button.btn.btn-default#addToVerifierBtn(style="min-width: 210px; margin: 5px;") افزودن به اعضای بررسی کننده
+                                                    .col-lg-6
+                                                        .chosen-select-single
+                                                            select.chosen-select#usersList(multiple='0', tabindex='-1')
+                                                                - for (let i = 0; i < users.length; i++) {
+                                                                    option(id="options_" + users[i].id, value=users[i].id) #{users[i].first_name + " " + users[i].last_name}
+                                                                - }
+
+                    .col-lg-2
+
+
+                .col-lg-12(style="margin-top: 30px")
+
+                    .col-lg-2
+
+                    .col-lg-4
+                        .row(style= "margin-bottom: 30px")
+                            .col-lg-12
+                                .sparkline10-list.shadow-reset
+                                    .sparkline10-hd
+                                        .main-sparkline10-hd
+                                            h1 اعضای مشاهده کننده
+                                            .sparkline10-outline-icon
+                                                span.sparkline10-collapse-link
+                                                    i.fa.fa-chevron-up
+                                        .sparkline10-graph
+                                            .input-knob-dial-wrap
+                                                .row
+                                                    .col-lg-12
+                                                        .chosen-select-single#loggerDiv
+                                                            - for(let i = 0; i < members.length; i++) {
+                                                                - if(members[i].logger)
+                                                                    p(id="members_" + members[i].id)
+                                                                        span #{members[i].username}
+                                                                        span.btn.btn-danger.deleteBtn(data-val=members[i].id, style="margin-right: 5px") حذف
+                                                            - }
+
+                    .col-lg-4
+                        .row(style= "margin-bottom: 30px")
+                            .col-lg-12
+                                .sparkline10-list.shadow-reset
+                                    .sparkline10-hd
+                                        .main-sparkline10-hd
+                                            h1 اعضای بررسی کننده
+                                            .sparkline10-outline-icon
+                                                span.sparkline10-collapse-link
+                                                    i.fa.fa-chevron-up
+                                        .sparkline10-graph
+                                            .input-knob-dial-wrap
+                                                .row
+                                                    .col-lg-12
+                                                        .chosen-select-single#verifierDiv
+                                                            - for(let i = 0; i < members.length; i++) {
+                                                                - if(!members[i].logger)
+                                                                    p(id="members_" + members[i].id)
+                                                                        span #{members[i].username}
+                                                                        span.btn.btn-danger.deleteBtn(data-val=members[i].id, style="margin-right: 5px") حذف
+
+                                                            - }
+
+
+                    .col-lg-2
+
+    script(src="/assets/js/kargroh.js")

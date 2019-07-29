@@ -1,0 +1,14 @@
+
+style .explainText { clear: both; }
+- final = false;
+
+div.hidden#specialCities(data-val=specialCities)
+div.hidden#final(data-val="false")
+
+div.hidden#mode(data-val=(step == 0 ? "1" : "0"))
+script(src="/assets/js/pre.js")
+
+- let instIdTmp = inst.id
+input(type="hidden", name="instId", value=instIdTmp)
+
+include dynamicForm

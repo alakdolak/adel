@@ -1,0 +1,468 @@
+<html><head>
+ 
+<!-- HTTP 1.1 -->
+<meta http-equiv="Cache-Control" content="no-store">
+<!-- HTTP 1.0 -->
+<meta http-equiv="Pragma" content="no-cache">
+<!-- Prevents caching at the Proxy Server -->
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+<script type="text/javascript" src="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/engine.js"></script>
+<script type="text/javascript" src="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/util.js"></script>
+<script type="text/javascript" src="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/AnnouncementManager.txt"></script>
+<script type="text/javascript" src="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/announcements.js"></script>
+<script type="text/javascript" src="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/PrivateMessageManager.txt"></script>
+<script type="text/javascript" src="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/privatemessages.js"></script>
+
+
+<script src="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/prototype.js" type="text/javascript"></script>
+<script src="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/effects.js" type="text/javascript"></script>
+
+<script type="text/javascript" src="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/JSCookMenu.js"></script>
+<script type="text/javascript" src="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/effect.js"></script>
+<script type="text/javascript" src="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/theme.js"></script>
+<script type="text/javascript" src="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/ui.js"></script>
+<script type="text/javascript" src="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/menu.js"></script>
+
+<link type="text/css" rel="Stylesheet" href="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/theme.css">
+<link type="text/css" rel="Stylesheet" href="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/tabs.css">
+
+
+
+
+<title>پرتال سازمانی </title>
+
+<style type="text/css">
+body {
+	font-family:tahoma;
+	font-size:12px;
+	scrollbar: none;
+}
+img {border: 0px;}
+.userPictureBox_div {
+	background-image:url(/portal/images/ui/topframe/rtl/userpic_box_02.jpg);
+	background-repeat:no-repeat;
+	width:65px;
+	height:70px;
+	z-index:2;
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+.userPicture_div {
+	position:absolute;
+	left:14px;
+	top:11px;
+	width:40px;
+	height:40px;
+}
+.userPicture_div img {
+	border:1px #4c5ec6 solid;
+}
+.userInfoBox_div {
+	background-image:url(/portal/images/ui/topframe/rtl/userInfo_box_02.jpg);
+	background-repeat:no-repeat;
+	width:168px;
+	height:48px;
+	z-index:2;
+	position:absolute;
+	top:0px;
+	left:65px;
+	padding-top:8px;
+	padding-right:20px;
+	text-align:right;
+	font-family:tahoma;
+	font-size:11px;
+	font-weight:500;
+	color:#000000;
+	line-height:16px;
+	text-align: justify;
+}
+.menuCircle_div {
+	width:46px;
+	height:54px;
+	z-index:2;
+	position:absolute;
+	top:46px;
+	left:65px;
+}
+.menuButton_div {
+	width:46px;
+	height:54px;
+	z-index:2;
+	position:absolute;
+	top:46px;
+	left:111px;
+	font-size:11px;
+
+	margin-right:95px;
+
+}
+.menuButton_div table td {
+	font-size:11px;
+	background-color:#243768;
+}
+.bodyIframe_div {
+	width:100%;
+	height:100%;
+}
+#popupMenu_div {
+	position:absolute;
+	left:64px;
+	top:68px;
+	width:259px;
+	height:300px;
+	z-index:3;
+	background-image: url(/portal/images/ui/topframe/rtl/popup_menu_bg.gif);
+	background-repeat:no-repeat;
+	display:block;
+	visibility: visible;
+}
+
+.popupMenu_ul li{
+	direction:rtl;
+	width:100%;
+	list-style:none;
+	vertical-align:baseline;
+	font-size:11px;	
+	
+}
+.popupMenu_ul li a:link , .popupMenu_ul li a:visited {
+	font-size:11px;
+	text-decoration:none;
+	color:#333333;
+	padding-top:3px;
+	display:block;
+	background-image:url(/portal/images/ui/topframe/rtl/popup_menu/li_bg.jpg);
+	background-position:right;
+	background-repeat:no-repeat;
+	height:22px;
+
+}
+.popupMenu_ul li a:hover, .popupMenu_ul li a:active {
+	font-size:11px;
+	text-decoration:none;
+	color:#333333;
+	padding-top:3px;
+	display:block;
+	background-image:url(/portal/images/ui/topframe/rtl/popup_menu/li_bg.hover.jpg);
+	background-position:right;
+	background-repeat:no-repeat;
+	height:22px;
+}
+
+.popupMenu_ul li img{
+	vertical-align:bottom;
+	border:none;
+}
+
+#messageBar_div {
+	top:0px;
+	left:20%;
+	width:60%;
+	z-index:1000;
+	position:absolute;
+}
+#messageBarIcon_div {
+	top:1px;
+	left:10px;
+	z-index:1000;
+	position:absolute;
+}
+#messageBarClose_div {
+	top:2px;
+	right:7px;
+	z-index:1000;
+	position:absolute;
+}
+.messagesText {
+	width:3000px;
+	font-family:tahoma;
+	font-size:11px;
+	color:#000;
+	padding-right:15px;
+	padding-left:20px;
+	direction: rtl;
+	text-align:right;
+}
+
+
+
+
+</style>
+
+
+</head>
+
+
+<body onresize="adjustWindow();" onclick="togglePopupIfNecessary()" style="overflow: hidden;" topmargin="0" marginwidth="0" marginheight="0" leftmargin="0" bgcolor="#FFFFFF">
+
+<div id="headerContentDiv">
+
+<div id="messageBar_div" style="z-index: 10000; display: none;">
+	<div id="messageBarIcon_div"><img src="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/info.gif"></div>
+	<div id="messageBarClose_div"><img src="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/closeMessageBar.gif" onclick="new Effect.SlideUp('messageBar_div');"></div>
+<table dir="rtl" width="100%" cellspacing="0" cellpadding="0" border="0">
+	<tbody><tr>
+		<td style="background-position: right; background-image: url(/portal/images/ui/topframe/rtl/messageBar/messageBar_04.gif); background-repeat: no-repeat" width="16" height="21">&nbsp;</td>
+		<td style="text-align:center; direction: rtl; background-image: url(/portal/images/ui/topframe/rtl/messageBar/messageBar_02.gif); background-repeat: repeat">
+			<span style="width:80%;text-align:center">
+				<marquee direction="right" behavior="scroll" scrollamount="3"><span id="theMessage" class="messagesText"> SOME TEXT </span></marquee>
+			</span>
+		</td>
+		<td style="background-position: left; background-image: url(/portal/images/ui/topframe/rtl/messageBar/messageBar_01.gif); background-repeat: no-repeat" width="16" height="21">&nbsp;</td>
+	</tr>
+	<tr>
+		<td style="background-color:transparent; background-image: url(/portal/images/ui/topframe/rtl/messageBar/messageBar_05.gif); background-repeat: no-repeat" width="16" height="16">&nbsp;</td>
+		<td style="background-image: url(/portal/images/ui/topframe/rtl/messageBar/messageBar_06.gif); background-repeat: repeat-x">&nbsp;</td>
+		<td style="background-color:transparent; background-image: url(/portal/images/ui/topframe/rtl/messageBar/messageBar_08.gif); background-repeat: no-repeat" width="16" height="16">&nbsp;</td>
+	</tr>
+</tbody></table>
+
+</div>
+
+<div id="popupMenu_div" style="display: none">
+
+<table dir="rtl" width="256" cellspacing="0" cellpadding="0" border="0">
+	<tbody><tr>
+		<td style="background-repeat: repeat-x" width="16" background="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/popup_menu_bg_03.gif">&nbsp;</td>
+		<td style="background-repeat: repeat-x" background="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/popup_menu_bg_02.gif">&nbsp;</td>
+		<td colspan="2" style="background-repeat: repeat-x; width: 51px;" height="35"><img src="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/popup_menu_bg_01.gif" width="51" height="35"></td>
+	</tr>
+	<tr>
+		<td background="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/popup_menu_bg_06.gif">&nbsp;</td>
+		<td colspan="2" background="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/popup_menu_bg_05.gif">
+		<ul class="popupMenu_ul">
+			<li>
+				<a href="https://samt.tamin.ir/portal/gwt/entrypoint/index.jsp?defaultform=user/user.profile.xml" target="mainFrame" title="تنظيمات صفحه شخصي">
+				<img src="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/gtk-open.gif" alt="تنظيمات صفحه شخصي" title="تنظيمات صفحه شخصي">
+				&nbsp;&nbsp;تنظيمات صفحه شخصي
+				</a>
+			</li>
+			<li>
+				<a href="https://samt.tamin.ir/portal/gwt/entrypoint/index.jsp?defaultform=user/user.changecurrentuserpassword.xml" target="mainFrame" title="تغيير رمز عبور">
+				<img src="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/lock.gif" alt="تغيير رمز عبور" title="تغيير رمز عبور">
+				&nbsp;&nbsp;تغيير رمز عبور
+				</a>
+			</li>
+			<li>
+				<a href="https://samt.tamin.ir/portal">
+				<img src="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/redhat-home.gif">
+				&nbsp;&nbsp;صفحه اصلي سيستم جامع
+				</a>
+			</li>
+		</ul>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+
+		</td>
+		<td width="12" background="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/popup_menu_bg_04.gif">&nbsp;</td>
+	</tr>
+	<tr>
+		<td style="background-repeat: repeat-x" background="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/popup_menu_bg_12.gif">&nbsp;</td>
+		<td colspan="2" style="background-repeat: repeat-x; padding: 3px" valign="top" background="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/popup_menu_bg_11.gif">
+		<a href="javascript:logout('%D8%A2%D9%8A%D8%A7 %D9%85%D8%A7%D9%8A%D9%84 %D8%A8%D9%87 %D8%AE%D8%B1%D9%88%D8%AC %D8%A7%D8%B2 %D8%B3%D9%8A%D8%B3%D8%AA%D9%85 %D9%85%D9%8A %D8%A8%D8%A7%D8%B4%D9%8A%D8%AF%D8%9F')">
+		<img src="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/exit.gif">
+		</a>
+		</td>
+		<td style="background-repeat: repeat-x" height="40" background="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/popup_menu_bg_10.gif">&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td width="39">&nbsp;</td>
+		<td>&nbsp;</td>
+	</tr>
+</tbody></table>
+</div>
+
+<div style="width: 100%;">
+<table dir="rtl" width="100%" cellspacing="0" cellpadding="0" border="0">
+	<tbody><tr>
+		<td width="194" height="70" align="left"><img src="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/top_header_03.jpg" alt=""></td>
+		<td style="background-image: url(/portal/images/ui/topframe/rtl/top_header_02.jpg); background-repeat: repeat-x" height="70">&nbsp;</td>
+		<td width="23" height="70"><img src="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/top_header_01.jpg" alt=""></td>
+	</tr>
+</tbody></table>
+
+<table dir="rtl" width="100%" cellspacing="0" cellpadding="0" border="0">
+	<tbody><tr>
+		<td style="background-image: url(/portal/images/ui/topframe/rtl/top_header_04.jpg)" width="23" height="30">&nbsp;</td>
+		<td style="background-image: url(/portal/images/ui/topframe/rtl/top_header_04.jpg); background-repeat: repeat-x" valign="bottom">
+		
+		
+		<div style="text-align:right; direction: rtl">
+          <div id="mainNav"><table summary="main menu" class="ThemeOffice2003Menu" cellspacing="0"><tbody><tr><td class="ThemeOffice2003MainItem" onmouseover="cmItemMouseOver(this,1,'cmSubMenuID1',0,0,false)" onmousedown="cmItemMouseDownOpenSub (this,1,'cmSubMenuID1',0,0)" onmouseout="cmItemMouseOut (this,1,'cmSubMenuID1',0,0)" onmouseup="cmItemMouseUp (this,1,'cmSubMenuID1',0,0, event)"><span class="ThemeOffice2003MainFolderLeft">&nbsp;</span><span class="ThemeOffice2003MainFolderText"><span>مدیریت پورتال</span></span><span class="ThemeOffice2003MainFolderRight">&nbsp;</span></td><td class="ThemeOffice2003MainItem" onmouseover="cmItemMouseOver(this,1,'cmSubMenuID3',0,3,false)" onmousedown="cmItemMouseDownOpenSub (this,1,'cmSubMenuID3',0,3)" onmouseout="cmItemMouseOut (this,1,'cmSubMenuID3',0,3)" onmouseup="cmItemMouseUp (this,1,'cmSubMenuID3',0,3, event)"><span class="ThemeOffice2003MainFolderLeft">&nbsp;</span><span class="ThemeOffice2003MainFolderText"><span>عملیات لیست بیمه</span></span><span class="ThemeOffice2003MainFolderRight">&nbsp;</span></td><td class="ThemeOffice2003MainItem" onmouseover="cmItemMouseOver(this,1,'cmSubMenuID4',0,7,false)" onmousedown="cmItemMouseDownOpenSub (this,1,'cmSubMenuID4',0,7)" onmouseout="cmItemMouseOut (this,1,'cmSubMenuID4',0,7)" onmouseup="cmItemMouseUp (this,1,'cmSubMenuID4',0,7, event)"><span class="ThemeOffice2003MainFolderLeft">&nbsp;</span><span class="ThemeOffice2003MainFolderText"><span>عملیات پرداخت</span></span><span class="ThemeOffice2003MainFolderRight">&nbsp;</span></td></tr></tbody></table><div class="ThemeOffice2003SubMenu" id="cmSubMenuID1" style="z-index: 1000;position: absolute; top: 0px; left: 0px;"><table summary="sub menu" id="cmSubMenuID1Table" class="ThemeOffice2003SubMenuTable" cellspacing="0"><tbody><tr class="ThemeOffice2003MenuItem" onmouseover="cmItemMouseOver(this,0,'cmSubMenuID2',0,1,false)" onmousedown="cmItemMouseDownOpenSub (this,0,'cmSubMenuID2',0,1)" onmouseout="cmItemMouseOut (this,0,'cmSubMenuID2',0,1)" onmouseup="cmItemMouseUp (this,0,'cmSubMenuID2',0,1, event)"><td class="ThemeOffice2003MenuFolderLeft"><img alt="" src="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/spacer.gif"></td><td class="ThemeOffice2003MenuFolderText">اطلاعات پیکربندی</td><td class="ThemeOffice2003MenuFolderRight"><img alt="" src="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/arrow.gif"></td></tr></tbody></table></div><div class="ThemeOffice2003SubMenu" id="cmSubMenuID2" style="z-index: 1005;position: absolute; top: 0px; left: 0px;"><table summary="sub menu" id="cmSubMenuID2Table" class="ThemeOffice2003SubMenuTable" cellspacing="0"><tbody><tr class="ThemeOffice2003MenuItem" onmouseover="cmItemMouseOver(this,0,null,0,2,false)" onmousedown="cmItemMouseDownOpenSub (this,0,null,0,2)" onmouseout="cmItemMouseOut (this,0,null,0,2)" onmouseup="cmItemMouseUp (this,0,null,0,2, event)"><td class="ThemeOffice2003MenuItemLeft"><img alt="" src="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/spacer.gif"></td><td class="ThemeOffice2003MenuItemText">مشخصات سیستم</td><td class="ThemeOffice2003MenuItemRight"><img alt="" src="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/blank.gif"></td></tr></tbody></table></div><div class="ThemeOffice2003SubMenu" id="cmSubMenuID3" style="z-index: 1000; position: absolute; top: 0px; left: 0px; visibility: hidden;"><table summary="sub menu" id="cmSubMenuID3Table" class="ThemeOffice2003SubMenuTable" cellspacing="0"><tbody><tr class="ThemeOffice2003MenuItem" onmouseover="cmItemMouseOver(this,0,null,0,4,false)" onmousedown="cmItemMouseDownOpenSub (this,0,null,0,4)" onmouseout="cmItemMouseOut (this,0,null,0,4)" onmouseup="cmItemMouseUp (this,0,null,0,4, event)"><td class="ThemeOffice2003MenuItemLeft"><img alt="" src="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/spacer.gif"></td><td class="ThemeOffice2003MenuItemText">بارگذاری لیست بیمه</td><td class="ThemeOffice2003MenuItemRight"><img alt="" src="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/blank.gif"></td></tr><tr class="ThemeOffice2003MenuItem" onmouseover="cmItemMouseOver(this,0,null,0,5,false)" onmousedown="cmItemMouseDownOpenSub (this,0,null,0,5)" onmouseout="cmItemMouseOut (this,0,null,0,5)" onmouseup="cmItemMouseUp (this,0,null,0,5, event)"><td class="ThemeOffice2003MenuItemLeft"><img alt="" src="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/spacer.gif"></td><td class="ThemeOffice2003MenuItemText">مشاهده فهرست لیست ها</td><td class="ThemeOffice2003MenuItemRight"><img alt="" src="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/blank.gif"></td></tr><tr class="ThemeOffice2003MenuItem" onmouseover="cmItemMouseOver(this,0,null,0,6,false)" onmousedown="cmItemMouseDownOpenSub (this,0,null,0,6)" onmouseout="cmItemMouseOut (this,0,null,0,6)" onmouseup="cmItemMouseUp (this,0,null,0,6, event)"><td class="ThemeOffice2003MenuItemLeft"><img alt="" src="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/spacer.gif"></td><td class="ThemeOffice2003MenuItemText">گزارش آماری وضعیت لیست ها</td><td class="ThemeOffice2003MenuItemRight"><img alt="" src="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/blank.gif"></td></tr></tbody></table></div><div class="ThemeOffice2003SubMenu" id="cmSubMenuID4" style="z-index: 1000;position: absolute; top: 0px; left: 0px;"><table summary="sub menu" id="cmSubMenuID4Table" class="ThemeOffice2003SubMenuTable" cellspacing="0"><tbody><tr class="ThemeOffice2003MenuItem" onmouseover="cmItemMouseOver(this,0,null,0,8,false)" onmousedown="cmItemMouseDownOpenSub (this,0,null,0,8)" onmouseout="cmItemMouseOut (this,0,null,0,8)" onmouseup="cmItemMouseUp (this,0,null,0,8, event)"><td class="ThemeOffice2003MenuItemLeft"><img alt="" src="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/spacer.gif"></td><td class="ThemeOffice2003MenuItemText">پرداخت برگ پرداخت</td><td class="ThemeOffice2003MenuItemRight"><img alt="" src="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/blank.gif"></td></tr></tbody></table></div></div>
+		</div>
+		
+		</td>
+	</tr>
+</tbody></table>
+
+</div>
+
+
+<div class="userPictureBox_div">
+<div class="userPicture_div"><img src="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/userpic.png" alt="يوسف  مقدمي" width="40" height="47"> 
+</div>
+</div>
+
+<div class="userInfoBox_div">يوسف  مقدمي<br>
+<b></b>
+</div>
+
+<div class="menuCircle_div" onclick="Effect.toggle('popupMenu_div','appear'); return false;" style="z-index: 1000; cursor: pointer; display: block">
+<table dir="rtl" width="46" height="54">
+	<tbody><tr><td>&nbsp;</td></tr>
+</tbody></table>
+</div>
+
+<div class="menuCircle_div"><img src="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/top_header_nav.jpg"></div>
+<div class="menuButton_div">
+<table dir="rtl" width="100%" cellspacing="0" cellpadding="0" border="0">
+	<tbody><tr>
+		<td><img src="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/top_header_button_03.jpg"></td>
+		<td style="background-image: url(/portal/images/ui/topframe/rtl/top_header_button_02.jpg); background-repeat: repeat-x" nowrap="nowrap">
+			<span dir="ltr">1398/04/22</span>
+		</td>
+		<td><img id="top_header_button_01.jpg" src="%D9%BE%D8%B1%D8%AA%D8%A7%D9%84%20%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%DB%8C_files/top_header_button_01.gif" usemap="#Map" border="0"></td>
+	</tr>
+</tbody></table>
+</div>
+
+
+</div>
+
+<div id="contentDiv" class="bodyIframe_div" dir="rtl" style="height: 532px;">
+<table dir="rtl" width="100%" height="100%" cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td>
+
+
+<iframe name="mainFrame" scrolling="auto" marginwidth="0" marginheight="0" id="mainFrame" title="" src="/portal/template/fa/main_page_fa.jsp" onclick="togglePopupIfNecessary()" width="100%" height="100%" frameborder="0"></iframe>
+</td>
+</tr>
+</tbody></table>
+</div>
+
+
+<map name="Map">
+	<area shape="rect" coords="5,4,21,21" href="javascript:history.back(-1)">
+	<area shape="rect" coords="25,4,44,21" href="javascript:document.getElementById('mainFrame').contentWindow.location.reload();">
+	<area shape="rect" id="inboxarea" coords="48,4,71,21" href="https://samt.tamin.ir/portal/privatemessage/privateMessage.list.jsf" title="صندوق پستي (1)" target="mainFrame">
+	
+</map>
+
+
+
+<script type="text/javascript">
+var portalMenu = [
+
+[null, '<span>مدیریت پورتال</span>', null, 'mainFrame', 'مدیریت پورتال', 
+
+
+
+,
+
+
+
+,
+
+
+
+,
+
+
+
+,
+
+
+
+,
+
+[null, 'اطلاعات پیکربندی', null, 'mainFrame', 'اطلاعات پیکربندی'
+,
+	
+[null, 'مشخصات سیستم', '/user-account/gwt/entrypoint/index.jsp?defaultform=systemInfo/systemInfo.view.xml', 'mainFrame', 'مشخصات سیستم']   ,
+	
+,
+	
+
+]
+
+]
+ 
+,
+
+[null, '<span>عملیات لیست بیمه</span>', null, 'mainFrame', 'عملیات لیست بیمه', 
+
+
+[null, 'بارگذاری لیست بیمه', '/list/gwt/entrypoint/index.jsp?defaultform=uploadlistrequestform', 'mainFrame', 'بارگذاری لیست بیمه'
+
+]
+
+
+,
+
+
+[null, 'مشاهده فهرست لیست ها', '/list/gwt/entrypoint/index.jsp?defaultform=requestlistform', 'mainFrame', 'مشاهده فهرست لیست ها'
+
+]
+
+
+,
+
+
+[null, 'گزارش آماری وضعیت لیست ها', '/list/gwt/entrypoint/index.jsp?defaultform=statisticstatusreportform', 'mainFrame', 'گزارش آماری وضعیت لیست ها'
+
+]
+
+
+,
+
+
+
+]
+
+ 
+,
+
+[null, '<span>عملیات پرداخت</span>', null, 'mainFrame', 'عملیات پرداخت', 
+
+
+[null, 'پرداخت برگ پرداخت', '/list/gwt/entrypoint/index.jsp?defaultform=paypaymentsheetform', 'mainFrame', 'پرداخت برگ پرداخت'
+
+]
+
+
+]
+
+ 
+,
+
+ 
+,
+
+ 
+]; 
+</script>
+
+<script type="text/javascript">
+	/*
+	setNewNotificationsMessage('شما پيغام جديد داريد: ');
+	*/
+	initWindowOnLoads();
+	adjustWindow();
+	initPortalMenu("rtl");
+</script>
+			
+
+
+
+</body></html>

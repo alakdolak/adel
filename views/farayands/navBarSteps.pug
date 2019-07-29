@@ -1,0 +1,308 @@
+
+div.hidden#stepNo(data-val=step)
+
+div.navBarFirstStepImgState
+
+    - if (!hasPreActor && !hasPreCondition)
+
+        a.specialBox.stepText.step1Text(href=redirects[0])
+            center
+                b(style= "width: 100%; display:inline-block") گام اول
+                p(style= "width: 100%; display:inline-block") اطلاعات هویتی
+
+                div
+                    img(src = "/assets/img/edit.png", alt= "steps" style =  "width: 10%")
+                    b(style ="font-size:10px; width: 10%; padding: 0 5px") تکمیل اطلاعات توسط کاربر
+
+        a.specialBox.specialBoxConcave.stepText.step2Text(href=redirects[1])
+            center
+                b(style= "width: 100%; display:inline-block") گام دوم
+                p(style= "width: 100%; display:inline-block") تکمیل مدارک
+                div
+                    img(src = "/assets/img/edit.png", alt= "steps" style =  "width: 10%")
+                    b(style ="font-size:10px; width: 10%;  padding: 0 5px") تکمیل اطلاعات توسط کاربر
+
+        - if(hasPostCondition)
+            a.specialBox.specialBoxConcave.stepText.step3Text(href=redirects[2])
+                center
+                    b(style= "width: 100%; display:inline-block") گام سوم
+                    p(style= "width: 100%; display:inline-block") اطلاعات طرح
+                    div
+                        img(src = "/assets/img/edit.png", alt= "steps" style =  "width: 10%")
+                        b(style ="font-size:10px; width: 10%; padding: 0 5px") تکمیل اطلاعات توسط کاربر
+
+    - if (hasPreActor && !hasPreCondition)
+
+        a.specialBox.stepText.step-1Text(href=redirects[0])
+            center
+                b(style= "width: 100%; display:inline-block") گام اول
+                p(style= "width: 100%; display:inline-block") شرایط ویژه
+
+                div
+                    img(src = "/assets/img/edit.png", alt= "steps" style =  "width: 10%")
+                    b(style ="font-size:10px; width: 10%; padding: 0 5px") تکمیل اطلاعات توسط کاربر
+
+        a.specialBox.specialBoxConcave.stepText.step1Text(href=redirects[1])
+            center
+                b(style= "width: 100%; display:inline-block") گام دوم
+                p(style= "width: 100%; display:inline-block") اطلاعات هویتی
+
+                div
+                    img(src = "/assets/img/edit.png", alt= "steps" style =  "width: 10%")
+                    b(style ="font-size:10px; width: 10%; padding: 0 5px") تکمیل اطلاعات توسط کاربر
+
+        a.specialBox.specialBoxConcave.stepText.step2Text(href=redirects[2])
+            center
+                b(style= "width: 100%; display:inline-block") گام سوم
+                p(style= "width: 100%; display:inline-block") تکمیل مدارک
+                div
+                    img(src = "/assets/img/edit.png", alt= "steps" style =  "width: 10%")
+                    b(style ="font-size:10px; width: 10%;  padding: 0 5px") تکمیل اطلاعات توسط کاربر
+
+
+        - if(hasPostCondition)
+            a.specialBox.specialBoxConcave.stepText.step3Text(href=redirects[3])
+                center
+                    b(style= "width: 100%; display:inline-block") گام چهارم
+                    p(style= "width: 100%; display:inline-block") اطلاعات طرح
+                    div
+                        img(src = "/assets/img/edit.png", alt= "steps" style =  "width: 10%")
+                        b(style ="font-size:10px; width: 10%; padding: 0 5px") تکمیل اطلاعات توسط کاربر
+
+    - if (!hasPreActor && hasPreCondition)
+
+        - if(redirects.length > 1) {
+
+            a.specialBox.stepText.step0Text(href=redirects[0])
+                center
+                    b(style= "width: 100%; display:inline-block") گام اول
+                    p(style= "width: 100%; display:inline-block") پیش شرط‌های وام
+
+                    div
+                        img(src = "/assets/img/edit.png", alt= "steps" style =  "width: 10%")
+                        b(style ="font-size:10px; width: 10%; padding: 0 5px") تکمیل اطلاعات توسط کاربر
+
+            a.specialBox.stepText.specialBoxConcave.step1Text(href=redirects[1])
+                center
+                    b(style= "width: 100%; display:inline-block") گام دوم
+                    p(style= "width: 100%; display:inline-block") اطلاعات هویتی
+
+                    div
+                        img(src = "/assets/img/edit.png", alt= "steps" style =  "width: 10%")
+                        b(style ="font-size:10px; width: 10%; padding: 0 5px") تکمیل اطلاعات توسط کاربر
+
+        a.specialBox.specialBoxConcave.stepText.step2Text(href=redirects[2])
+            center
+                b(style= "width: 100%; display:inline-block") گام سوم
+                p(style= "width: 100%; display:inline-block") تکمیل مدارک
+                div
+                    img(src = "/assets/img/edit.png", alt= "steps" style =  "width: 10%")
+                    b(style ="font-size:10px; width: 10%;  padding: 0 5px") تکمیل اطلاعات توسط کاربر
+        - }
+        - else {
+            a.specialBox.stepText.step0Text(href=redirects[0])
+                center
+                    b(style= "width: 100%; display:inline-block") گام اول
+                    p(style= "width: 100%; display:inline-block") پیش شرط‌های وام
+
+                    div
+                        img(src = "/assets/img/edit.png", alt= "steps" style =  "width: 10%")
+                        b(style ="font-size:10px; width: 10%; padding: 0 5px") تکمیل اطلاعات توسط کاربر
+        - }
+
+        - if(hasPostCondition)
+            a.specialBox.specialBoxConcave.stepText.step3Text(href=redirects[3])
+                center
+                    b(style= "width: 100%; display:inline-block") گام چهارم
+                    p(style= "width: 100%; display:inline-block") اطلاعات طرح
+                    div
+
+    - if (hasPreActor && hasPreCondition)
+
+        a.specialBox.stepText.step-1Text(href=redirects[0])
+            center
+                b(style= "width: 100%; display:inline-block") گام اول
+                p(style= "width: 100%; display:inline-block") شرایط ویژه
+
+                div
+                    img(src = "/assets/img/edit.png", alt= "steps" style =  "width: 10%")
+                    b(style ="font-size:10px; width: 10%; padding: 0 5px") تکمیل اطلاعات توسط کاربر
+
+        a.specialBox.stepText.specialBoxConcave.step0Text(href=redirects[1])
+            center
+                b(style= "width: 100%; display:inline-block") گام دوم
+                p(style= "width: 100%; display:inline-block") پیش شرط‌های وام
+
+                div
+                    img(src = "/assets/img/edit.png", alt= "steps" style =  "width: 10%")
+                    b(style ="font-size:10px; width: 10%; padding: 0 5px") تکمیل اطلاعات توسط کاربر
+
+        a.specialBox.specialBoxConcave.stepText.step1Text(href=redirects[2])
+            center
+                b(style= "width: 100%; display:inline-block") گام سوم
+                p(style= "width: 100%; display:inline-block") اطلاعات هویتی
+
+                div
+                    img(src = "/assets/img/edit.png", alt= "steps" style =  "width: 10%")
+                    b(style ="font-size:10px; width: 10%; padding: 0 5px") تکمیل اطلاعات توسط کاربر
+
+        a.specialBox.specialBoxConcave.stepText.step2Text(href=redirects[3])
+            center
+                b(style= "width: 100%; display:inline-block") گام چهارم
+                p(style= "width: 100%; display:inline-block") تکمیل مدارک
+                div
+                    img(src = "/assets/img/edit.png", alt= "steps" style =  "width: 10%")
+                    b(style ="font-size:10px; width: 10%;  padding: 0 5px") تکمیل اطلاعات توسط کاربر
+
+        - if(hasPostCondition)
+            a.specialBox.specialBoxConcave.stepText.step3Text(href=redirects[4])
+                center
+                    b(style= "width: 100%; display:inline-block") گام پنجم
+                    p(style= "width: 100%; display:inline-block") اطلاعات طرح
+                    div
+                        img(src = "/assets/img/edit.png", alt= "steps" style =  "width: 10%")
+                        b(style ="font-size:10px; width: 10%; padding: 0 5px") تکمیل اطلاعات توسط کاربر
+
+div.navBarStepStateResponsiveBox
+
+    - if (!hasPreActor && !hasPreCondition)
+
+        a.stepState.stepText.step1Text(href=redirects[0])
+            p(style= "width: 100%; display:inline-block") اطلاعات هویتی
+
+        div.stepHelp
+            b تکمیل اطلاعات توسط کاربر
+            img(src = "/assets/img/edit.png", alt= "steps")
+
+        a.stepState.stepText.step2Text(href=redirects[1])
+            p(style= "width: 100%; display:inline-block") تکمیل مدارک
+
+        div.stepHelp
+            b تکمیل اطلاعات توسط کاربر
+            img(src = "/assets/img/edit.png", alt= "steps")
+
+        - if(hasPostCondition)
+            a.stepState.stepText.step3Text(href=redirects[2])
+                p(style= "width: 100%; display:inline-block") اطلاعات طرح
+
+            div.stepHelp
+                b تکمیل اطلاعات توسط کاربر
+                img(src = "/assets/img/edit.png", alt= "steps")
+
+    - if (hasPreActor && !hasPreCondition)
+
+        a.stepState.stepText.step-1Text(href=redirects[0])
+            p(style= "width: 100%; display:inline-block") شرایط ویژه
+
+        div.stepHelp
+            b تکمیل اطلاعات توسط کاربر
+            img(src = "/assets/img/edit.png", alt= "steps")
+
+        a.stepState.stepText.step1Text(href=redirects[1])
+            p(style= "width: 100%; display:inline-block") اطلاعات هویتی
+
+        div.stepHelp
+            b تکمیل اطلاعات توسط کاربر
+            img(src = "/assets/img/edit.png", alt= "steps")
+
+        a.stepState.stepText.step2Text(href=redirects[2])
+            p(style= "width: 100%; display:inline-block") تکمیل مدارک
+
+        div.stepHelp
+            b تکمیل اطلاعات توسط کاربر
+            img(src = "/assets/img/edit.png", alt= "steps")
+
+
+        - if(hasPostCondition)
+            a.stepState.stepText.step3Text(href=redirects[3])
+                p(style= "width: 100%; display:inline-block") اطلاعات طرح
+
+            div.stepHelp
+                b تکمیل اطلاعات توسط کاربر
+                img(src = "/assets/img/edit.png", alt= "steps")
+
+    - if (!hasPreActor && hasPreCondition)
+
+        - if(redirects.length > 1) {
+
+            a.stepState.stepText.step0Text(href=redirects[0])
+                p(style= "width: 100%; display:inline-block") پیش شرط‌های وام
+
+            div.stepHelp
+                b تکمیل اطلاعات توسط کاربر
+                img(src = "/assets/img/edit.png", alt= "steps")
+
+            a.stepState.stepText.step1Text(href=redirects[1])
+                p(style= "width: 100%; display:inline-block") اطلاعات هویتی
+
+            div.stepHelp
+                b تکمیل اطلاعات توسط کاربر
+                img(src = "/assets/img/edit.png", alt= "steps")
+
+        a.stepState.stepText.step2Text(href=redirects[2])
+            p(style= "width: 100%; display:inline-block") تکمیل مدارک
+
+        div.stepHelp
+            b تکمیل اطلاعات توسط کاربر
+            img(src = "/assets/img/edit.png", alt= "steps")
+        - }
+        - else {
+            a.stepState.step0Text(href=redirects[0])
+                p(style= "width: 100%; display:inline-block") پیش شرط‌های وام
+
+            div.stepHelp
+                b تکمیل اطلاعات توسط کاربر
+                img(src = "/assets/img/edit.png", alt= "steps")
+        - }
+
+        - if(hasPostCondition)
+            a.stepState.stepText.step3Text(href=redirects[3])
+                p(style= "width: 100%; display:inline-block") اطلاعات طرح
+
+            div.stepHelp
+
+    - if (hasPreActor && hasPreCondition)
+
+        a.stepState.step-1Text(href=redirects[0])
+            p(style= "width: 100%; display:inline-block") شرایط ویژه
+
+        div.stepHelp
+            b تکمیل اطلاعات توسط کاربر
+            img(src = "/assets/img/edit.png", alt= "steps")
+
+        a.stepState.specialBoxConcave.step0Text(href=redirects[1])
+            p(style= "width: 100%; display:inline-block") پیش شرط‌های وام
+
+        div.stepHelp
+            b تکمیل اطلاعات توسط کاربر
+            img(src = "/assets/img/edit.png", alt= "steps")
+
+
+        a.stepState.stepText.step1Text(href=redirects[2])
+            p(style= "width: 100%; display:inline-block") اطلاعات هویتی
+
+        div.stepHelp
+            b تکمیل اطلاعات توسط کاربر
+            img(src = "/assets/img/edit.png", alt= "steps")
+
+
+        a.stepState.stepText.step2Text(href=redirects[3])
+            p(style= "width: 100%; display:inline-block") تکمیل مدارک
+
+        div.stepHelp
+            b تکمیل اطلاعات توسط کاربر
+            img(src = "/assets/img/edit.png", alt= "steps")
+
+
+        - if(hasPostCondition)
+            a.stepState.stepText.step3Text(href=redirects[4])
+                p(style= "width: 100%; display:inline-block") اطلاعات طرح
+
+            div.stepHelp
+                b تکمیل اطلاعات توسط کاربر
+                img(src = "/assets/img/edit.png", alt= "steps")
+
+
+
+
+script(src="/assets/js/navBarSteps.js")

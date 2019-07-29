@@ -1,0 +1,12 @@
+style .explainText { clear: both; }
+- final = true;
+
+div.hidden#specialCities(data-val=specialCities)
+div.hidden#final(data-val="true")
+
+script(src="/assets/js/pre.js")
+
+- let instIdTmp = inst.id
+input(type="hidden", name="instId", value=instIdTmp)
+
+include dynamicForm

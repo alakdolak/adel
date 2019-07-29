@@ -1,0 +1,367 @@
+extends structure.pug
+
+block backImg
+        div.col-xs-12(style= "padding: 0")
+            img(src="/assets/img/mainPage.jpg", style=" right: 0; width: 100%; opacity: 0.9")
+
+            div.col-xs-3.introduction#introductionDiv(style= "position: absolute; right:0; top: 0; padding: 0; height: 100%")
+                center(style= "margin-left: 33px;")
+                    h4 معرفی طرح‌ها
+                div#scrollNames.scrollUpSmooth(style="width:90%; background: #ffc000; height: 20px")
+                    button(style="background: url('/assets/img/up-arrow_2.png') no-repeat;")
+                div#instructionNames(style="max-height: 440px; overflow: hidden")
+                div#scrollNames.scrollDownSmooth(style="width:90%; background: #ffc000; height: 20px")
+                    button(style="background: url('/assets/img/down-arrow_2.png') no-repeat;")
+
+            div.col-xs-9#requesterType(style= "position: absolute; float: right; left: 1; top: 0; height: 100%;")
+
+                div.boxesDiv.boxesDivWidthScreen
+
+                    center
+                        h4(style="margin: 0 50px; font-weight: bold; color: white") شما چه کسی هستید؟
+
+                    div.box.boxWidthScreen.portfolio-itemWidthScreen.portfolio-item.portfolio-effect__item.portfolio-item--eff1.nopa
+                        center#imgBox1
+                            img(src = "/assets/img/mortarboard.png")
+                            h3(style="margin-left: 5px; margin-right: 5px;") کسب‌و‌کار‌ نوپا
+
+                        div.portfolio-item__info
+                            h3.portfolio-item__header کسب‌و‌کار‌ نوپا
+                            div.portfolio-item__links
+                                center.textBox#textBox1
+                                   p(style="font-size: 12px") صاحبان کسب و کار نوپا که به دنبال گسترش کسب و کار خود هستند
+
+
+                    div.box.boxWidthScreen.portfolio-item.portfolio-itemWidthScreen.portfolio-effect__item.portfolio-item--eff1.box.antiNopa
+                        center#imgBox3
+                            img(src = "/assets/img/loan.png")
+                            h3 کسب‌و‌کار‌ غیرنوپا
+
+                        div.portfolio-item__info
+                            h3.portfolio-item__header کسب‌و‌کار‌ غیرنوپا
+                            h3.portfolio-item__header کسب‌و‌کار‌ غیرنوپا
+                            div.portfolio-item__links
+                                center.textBox#textBox3
+                                    p(style="font-size: 12px") صاحبان کسب و کارغیرنوپا که به دنبال تاسیس شتاب‌دهنده، سرمایه‌گذاری جسورانه و یا استخدام افراد هستند
+
+
+                    div(style="clear:both")
+
+                    div.box.boxWidthScreen.portfolio-item.portfolio-itemWidthScreen.portfolio-effect__item.portfolio-item--eff1.investment
+                        center#imgBox2
+                            img(src = "/assets/img/avatar.png")
+                            h3 کسب‌و‌کار‌ پلتفرمی
+
+                        div.portfolio-item__info
+                            h3.portfolio-item__header کسب‌و‌کار‌ پلتفرمی
+
+                            div.portfolio-item__links
+                                center.textBox#textBox2
+                                    p(style="font-size: 12px") صاحبان  پلتفرم‌های مبتنی بر فناوری اطلاعات که به دنبال توسعه کسب و کار خود هستند
+
+
+                    div.box.boxWidthScreen.portfolio-item.portfolio-itemWidthScreen.portfolio-effect__item.portfolio-item--eff1.employee
+                        center#imgBox4
+                            img(src = "/assets/img/tax.png")
+                            h3 متقاضی شغل
+
+                        div.portfolio-item__info
+                            h3.portfolio-item__header متقاضی شغل
+
+                            div.portfolio-item__links
+                                center.textBox#textBox4
+                                    p(style="font-size: 12px")  افراد حرفه‌ای دارای مهارت که می‌خواهند محصول یا خدمت خود را به دست مشتری برسانند
+
+
+                    div(style="clear:both")
+
+                    div.search.searchWidthScreen
+                        input(type="text", placeholder="جستجو کنید")
+                        span.magnifier.magnifierWidthScreen
+
+
+        - if(login)
+
+            div.col-xs-12.followUp
+
+                div.followUpDivs#followUpText.col-xs-4
+                    b  پیگیری درخواست
+                div.followUpDivs#followUpInput.col-xs-4
+                    center
+                        input#followUpCode.form-control.justNumber(placeholder="شماره درخواست")
+                div.followUpDivs#followUpBtn.col-xs-4
+                    button.btn#followUpBtn پیگیری
+                div.followUpDivs#followUpBottomText.col-xs-12
+                    center
+                        b اگر در حال حاضر درخواستی در داخل سامانه دارید با وارد کردن کد در خواست میتوانید مستقیماْ روند درخواست خود را کنترل نمایید.
+block content
+
+    div#requesterTypeResponsiveDiv(style= "display:none")
+        center
+            div.boxesDiv
+
+                h4(style="margin-right: 20px; font-weight: bold; font-size: 21px; color: #aa0800") شما چه کسی هستید؟
+
+                center
+
+                    div.box.portfolio-item.portfolio-effect__item.portfolio-item--eff1.nopa
+                        center#imgBox1
+                            img(src = "/assets/img/mortarboard.png")
+                            h3(style="margin-left: 5px; margin-right: 5px;") کسب‌و‌کار‌ نوپا
+
+                        div.portfolio-item__info
+                            h3.portfolio-item__header کسب‌و‌کار‌ نوپا
+                            div.portfolio-item__links
+                                center.textBox#textBox1
+                                    p(style="font-size: 12px") صاحبان کسب و کار نوپا که به دنبال گسترش کسب و کار خود هستند
+
+
+                    div.portfolio-item.portfolio-effect__item.portfolio-item--eff1.box.antiNopa
+                        center#imgBox3
+                            img(src = "/assets/img/loan.png")
+                            h3 کسب‌و‌کار‌ غیرنوپا
+
+                        div.portfolio-item__info
+                            h3.portfolio-item__header کسب‌و‌کار‌ غیرنوپا
+                            div.portfolio-item__links
+                                center.textBox#textBox3
+                                    p(style="font-size: 12px") صاحبان کسب و کارغیرنوپا که به دنبال تاسیس شتاب‌دهنده، سرمایه‌گذاری جسورانه و یا استخدام افراد هستند
+
+
+                    div(style="clear:both")
+
+                    div.box.portfolio-item.portfolio-effect__item.portfolio-item--eff1.investment
+                        center#imgBox2
+                            img(src = "/assets/img/avatar.png")
+                            h3 کسب‌و‌کار‌ پلتفرمی
+
+                        div.portfolio-item__info
+                            h3.portfolio-item__header کسب‌و‌کار‌ پلتفرمی
+
+                            div.portfolio-item__links
+                                center.textBox#textBox2
+                                    p(style="font-size: 12px") صاحبان  پلتفرم‌های مبتنی بر فناوری اطلاعات که به دنبال توسعه کسب و کار خود هستند
+
+
+                    div.box.portfolio-item.portfolio-effect__item.portfolio-item--eff1.employee
+                        center#imgBox4
+                            img(src = "/assets/img/tax.png")
+                            h3 متقاضی شغل
+
+                        div.portfolio-item__info
+                            h3.portfolio-item__header متقاضی شغل
+
+                            div.portfolio-item__links
+                                center.textBox#textBox4
+                                    p(style="font-size: 12px") افراد حرفه‌ای دارای مهارت که می‌خواهند محصول یا خدمت خود را به دست مشتری برسانند
+
+
+                    div(style="clear:both")
+
+                    div.search
+                        input(type="text", placeholder="جستجو کنید")
+                        span.magnifier
+
+    div.col-xs-3.introduction#introductionResponsiveDiv(style= "padding: 0;")
+        //h4 معرفی طرح ها
+        //div#scrollNames(onmouseenter="scrollUpName()", style="width:90%; background: #ffc000; height: 20px")
+            //button(style="background: url('/assets/img/up-arrow_2.png') no-repeat;")
+        //div#instructionNames(style="max-height: 425px; overflow: hidden")
+        div#scrollNamesResponsiveOne
+            b(style ="display: inline-block; float: right; font-size: 17px") معرفی طرح‌ها
+            button(style="background: url('/assets/img/arrowDown.png') no-repeat 0px; color: #ffc000")
+        div#instructionNamesResponsiveDiv.hidden(style=" overflow: hidden")
+
+
+    div.col-xs-12.result
+
+        div.col-xs-12.col-md-3.paddingDiv(style= "float: right")
+
+            div.col-xs-2
+                img.on#onOff1(src="/assets/img/helpon.png", width="25px", height="25px", style="margin-top: 5px; cursor: pointer")
+
+            div.col-xs-10(style="border-bottom:1px solid white")
+                h4 چه حمایتی مناسب شماست
+                p.explainText.hidden#explain1 بر اساس نیاز، فعالیت و نوع شخصیت حمایت مورد نظر خود را انتخاب کنید.
+
+            div.col-xs-2
+                img.on#onOff2(src="/assets/img/helpon.png", width="25px", height="25px", style="margin-top: 5px; cursor: pointer")
+
+            div.col-xs-10(style="border-bottom:1px solid white; color: white; padding: 10px 20px 10px 0")
+                p نوع شخصیت
+                p.explainText.hidden#explain2 فرد به معنای شخصیت حقیقی و شرکت یا سازمان به معنای شخصیت حقوقی
+                select#kindPersonality(style="color: #989595; width: 100%")
+                    option(value=-1) انتخاب کنید
+                    option(value=0) حقیقی
+                    option(value=1) حقوقی
+            div.col-xs-2
+                img.on#onOff3(src="/assets/img/helpon.png", width="25px", height="25px", style="margin-top: 5px; cursor: pointer")
+
+            div.col-xs-10(style="border-bottom:1px solid white; color: white; padding: 10px 20px 10px 0")
+                p زمینه فعالیت
+                p.explainText.hidden#explain3  در صورت نبودن فعالیت شما در لیست نزدیک ترین گزینه را انتخاب کنید.
+                select#activityBranch(style="color: #989595; width: 100%")
+                    option(value=-1) انتخاب کنید
+                    option.hagh_hogh_1(value=1) شرکت نوپا
+                    //option.hagh_hogh_1(value=2) شرکت فناور فاوا
+                    //option.hagh_hogh_1(value=3) خریدار محصول
+                    //option.hagh_hogh_1(value=4) استارتاپ
+                    option.hagh_hogh_1(value=5) شرکت
+
+            div.col-xs-2
+                img.on#onOff4(src="/assets/img/helpon.png", width="25px", height="25px", style="margin-top: 5px; cursor: pointer")
+
+            div.col-xs-10(style="border-bottom:1px solid white; color: white; padding: 10px 20px 10px 0")
+                p محل فعالیت
+                p.explainText.hidden#explain4 برای اشخاص حقیقی، آدرس منزل و برای اشخاص حقوقی آدرس ثبتی
+
+                select#stateSelect(style="color: #989595; width: 40%")
+                    option(value=-1) استان
+                    - for (var i = 0; i < states.length; i++) {
+                        option(value=states[i].id) #{states[i].name}
+                    - }
+
+                select#citySelect(style="color: #989595; width: 40%;  margin-right: 20%")
+                    option(value=-1) شهر
+
+            div.col-xs-12(style="font-size: 0.9em; color: white; margin-top: 5px; padding-right: 50px !important")
+                p در صورت شامل شدن موارد مناسب را انتخاب کنید
+                div.col-xs-12
+                    div.col-xs-6
+                        p.shahid توان یاب
+                        div#tavanFilter.emptyCheckBoxForShahid.shahidFilter
+                        div(style="clear:both")
+                        p.shahid مددجو
+                        div#madadFilter.emptyCheckBoxForShahid.shahidFilter
+                    div.col-xs-6
+                        p.shahid خانواده شهید
+                        div#shahidFilter.emptyCheckBoxForShahid.shahidFilter
+                        div(style="clear:both")
+                        p.shahid جانباز
+                        div#janbazFilter.emptyCheckBoxForShahid.shahidFilter
+                        div(style="clear:both")
+                        p.shahid ایثارگر
+                        div#esarFilter.emptyCheckBoxForShahid.shahidFilter
+
+        div.col-xs-12.col-md-7(style="padding: 0; float: right")
+            div.shadow(style="background-color: white; margin-top: 10px; margin-bottom: 10px")
+                div#tableContainer(style="padding: 10px 0 10px 10px")
+                    h3(style="color: #009ee0; font-weight: 300; padding-right: 10px") نتایج شما
+
+                    div(style="position: relative; float: left; width: 60px; margin-top: -60px")
+                        button.btn.upBtn(style="position: absolute; background-color: #1f647d; padding: 5px")
+                            span(style="width: 16px; height: 16px; background: url('/assets/img/arrowup.png'); display: inline-block; background-size: contain; background-repeat: no-repeat;")
+
+                        button.btn.rightBtn(style="position: absolute; top: 15px; left: 62px; background-color: #1f647d; padding: 5px")
+                            span(style="width: 16px; height: 16px; background: url('/assets/img/arrowup.png'); display: inline-block; background-size: contain; background-repeat: no-repeat; transform: rotate(90deg)")
+
+                        button.btn.downBtn(style="position: absolute; top: 30px; background-color: #1f647d; padding: 5px")
+                            span(style="width: 16px; height: 16px; background: url('/assets/img/arrowup.png'); display: inline-block; background-size: contain; background-repeat: no-repeat; transform: rotate(180deg)")
+
+                        button.btn.leftBtn(style="position: absolute; top: 15px ;left: 3px; background-color: #1f647d; padding: 5px")
+                            span(style="width: 16px; height: 16px; background: url('/assets/img/arrowup.png'); display: inline-block; background-size: contain; background-repeat: no-repeat; transform: rotate(270deg)")
+
+
+
+                    div#myTableParent(style="max-height: 300px; overflow: auto")
+
+                        table(style= "width: 100%")
+                            thead#tableHeader(style="width: 95%")
+                            tbody#table(style="width: 100%")
+
+        div.col-xs-12.col-md-2.removeDiv(style="padding: 0; float: right")
+            div(style="float: right; margin-top: 20px")
+
+                div.resultNo(style="margin-bottom: 20px")
+                    span کل طرح‌ها:
+                    span &nbsp;
+                    span#total_result_no(data-filled=false)
+
+                div.resultNo
+                    span نتایج شما:
+                    span &nbsp;
+                    span#result1_no
+
+
+    div.col-xs-12.newsDiv
+
+        center
+
+            div.col-xs-12.chooseCalc
+                center
+                    div.calcBox.calcBoxMainPage.shadow.titleBoxSelected(style="width:600px !important")
+                        h3 انواع خدمات حمایت و اشتغال
+            div.col-xs-12.newsContainer(style= "padding: 0 10%; align-content: center")
+
+                div.col-xs-6.col-md-4.newsContentDiv
+                    div.news
+                        img#imgNews1(src="/assets/img/news4.jpg")
+                        h5#headerNews1 اصناف حوزه فاوا
+                        div#news1
+                            p هدف از طرح حمایت از ادغام و اکتساب شرکت های فعال در حوزه های خدمت اقدام به ارائه تسهیلات ارزان‌قیمت جهت ایجاد اشتغال به ازای هر نفر شاغل جدید در اصناف حوزه فاوا (که از این ‌پس در این دستورالعمل کسب‌وکار فاوا نامیده می‌شود) بر اساس طرح توسعه کسب‌وکار می‌نماید. در این طرح به‌ غیر از صاحبان کسب‌وکار تعدادی نیروی انسانی جدید نیز مطابق ضوابط مشغول به‌کار شوند.
+
+                        //div(style="padding: 10px")
+                        //    span(style="font-size: 11px; display: block; float: right") بیشتر بخوانید
+                        //    div.readMore(onclick="showNews(1)")
+
+                div.col-xs-6.col-md-4.newsContentDiv
+                    div.news
+                        img#imgNews2(src="/assets/img/news3.jpg")
+                        h5#headerNews2 پلتفرم‌های کسب و کار فاوا
+                        div#news2
+                            p این خدمت اقدام به ارائه تسهیلات ارزان‌قیمت به‌منظور توسعه پلتفرم‌های کسب‌وکار مبتنی بر فناوری اطلاعات و در جهت ارتقاء فرصت‌های شغلی در پلتفرم می‌نماید. پلتفرم هر رسانه‌ای است که طرفین عرضه و تقاضای یک محصول یا خدمت را به هم معرفی می‌نماید و منجر به ایجاد درآمد برای عرضه‌کننده می‌شود.
+
+                        //div(style="padding: 10px")
+                        //    span(style="font-size: 11px; display: block; float: right") بیشتر بخوانید
+                        //    div.readMore(onclick="showNews(2)")
+
+                div.col-xs-6.col-md-4.newsContentDiv
+                    div.news
+                        img#imgNews3(src="/assets/img/news2.jpg")
+                        h5#headerNews3 عرضه کنندگان محصول و یا خدمت بر روی پلتفرم
+                        div#news3
+                            p این خدمت اقدام به ارائه تسهیلات قرض‌الحسنه جهت اشتغال‌زایی عرضه‌کنندگان تخصصی و حرفه‌ای فعال به منظور عرضه محصولات و خدمات در پلتفرم‌های کسب‌وکار مبتنی بر فناوری اطلاعات می‌نماید. در این طرح، تسهیلات با نظارت پلتفرم به عرضه‌کنندگان محصول (کالا/خدمت) ارائه می‌شود.
+
+                        //div(style="padding: 10px")
+                        //    span(style="font-size: 11px; display: block; float: right") بیشتر بخوانید
+                        //    div.readMore(onclick="showNews(3)")
+
+                div.col-xs-6.col-md-4.newsContentDiv
+                    div.news
+                        img#imgNews4(src="/assets/img/news1.jpg")
+                        h5#headerNews4 شتاب‌دهنده سازمانی
+                        div#news4
+                            p این خدمت اقدام به ارائه تسهیلات ارزان‌قیمت جهت ایجاد و توسعه شتاب‌دهنده‌های سازمانی در حوزه فاوا در شرکت‌های بزرگ یا دارنده پروانه از وزارت ارتباطات و فناوری اطلاعات (همچون اپراتورهای تلفن همراه و شرکت‌های دارای پروانه ارتباطات ثابت) بر اساس یک طرح راه‌اندازی و توسعه شتاب‌دهنده می‌نماید. در این طرح بایستی تعداد مشخصی کسب‌وکار نوپا در سال شتاب‌دهی شوند.
+
+                        //div(style="padding: 10px")
+                        //    span(style="font-size: 11px; display: block; float: right") بیشتر بخوانید
+                        //    div.readMore(onclick="showNews(4)")
+
+                //div.col-xs-6.col-md-4.newsContentDiv.newsContentDivResponsive
+
+                div.col-xs-6.col-md-4.newsContentDiv
+                    div.news
+                        img#imgNews4(src="/assets/img/news5.jpg")
+                        h5#headerNews4 صندوق سرمایه‌گذاری جسورانه
+                        div#news4
+                            p این خدمت اقدام به ارائه تسهیلات ارزان ‌قیمت جهت حمایت از صندوق‌های سرمایه‌گذاری جسورانه فاوا در شرکت‌های بزرگ یا دارنده پروانه از وزارت ارتباطات و فناوری اطلاعات (همچون اپراتورهای تلفن همراه و شرکت‌های دارای پروانه ارتباطات ثابت) می‌نماید. در این طرح بایستی میزان مشخصی از سرمایه‌گذاری جسورانه در حوزه فاوا با رویکرد توسعه کسب‌وکارهای جدید و اشتغال‌زا انجام شود.
+
+                        //div(style="padding: 10px")
+                        //    span(style="font-size: 11px; display: block; float: right") بیشتر بخوانید
+                        //    div.readMore(onclick="showNews(4)")
+
+                div.col-xs-6.col-md-4.newsContentDiv
+                    div.news
+                        img#imgNews4(src="/assets/img/news6.jpg")
+                        h5#headerNews4 شرکت‌های نوپای حوزه‌ی فاوا
+                        div#news4
+                            p این خدمت اقدام به ارائه تسهیلات قرض‌الحسنه جهت توسعه فعالیت‌ها و اشتغال‌زایی شرکت‌های نوپا در حوزه فاوا بر اساس یک طرح توسعه کسب‌وکار می‌نماید. در این طرح به ‌غیر از اعضای مؤسس بایستی تعدادی نیروی انسانی جدید نیز مطابق ضوابط مشغول به‌کار شوند.
+
+                        //div(style="padding: 10px")
+                        //    span(style="font-size: 11px; display: block; float: right") بیشتر بخوانید
+                        //    div.readMore(onclick="showNews(4)")
+
+                //div.col-xs-6.col-md-4.newsContentDiv.newsContentDivResponsive
+
+    script(src="/assets/js/getCities.js")
+    script(src="/assets/js/firstPage.js")

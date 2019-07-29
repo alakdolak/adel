@@ -1,0 +1,20 @@
+
+div.inputLabel
+
+    div(style=" padding: 3px 0px 10px 30px; font-size: 15px; width: 100%;")
+
+        span(style=" padding: 3px 0px 0px 30px; font-size: 15px; width: 100%;") کد ملی
+
+    div(style=" width: 100%;")
+
+        if (user_form != null)
+            input#ceoIdCode.signInInput.form-control.justNumber(value=user_form.nid, type='text', placeholder='کد ملی ده رقمی' name='nid', style="width: 80%; display: inline-block; direction: ltr")
+        else
+            input#ceoIdCode.signInInput.form-control.justNumber(type='text', placeholder='کد ملی ده رقمی' name='nid', style="width: 80%; display: inline-block; direction: ltr")
+
+        //div.identifyButton(style= "float: left")
+            //button.rpContinuesBtn#confirms1m1(style="float: left; margin: 0; width: 100%; height: auto")
+                //b(style="float: right; color: #ffffff; font-size: 10px") سنجش اصالت
+
+        img.off#onOff2(src = "/assets/img/helpoff.png", style = "float: left; width: 30px")
+        p.explainText#explain2 لطفاً پس از وارد کردن نام و نام خانوادگی به همراه کد ملی دکمه سنجش اصالت را فشار دهید. سایر اطلاعات هویتی توسط سامانه شاهکار پر خواهد گردید.

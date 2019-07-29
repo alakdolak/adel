@@ -1,0 +1,463 @@
+extend ProfilesStructure.pug
+
+block side-bar-menu
+
+    script let items = JSON.parse(!{items});
+
+    .left-sidebar-pro
+                nav#sidebar
+                    .sidebar-header
+                        a(href='#')
+                            img(src='/assets/img/img/message/1.png', alt='', style="width: 80px; height: 80px;")
+                        h3 #{nid}
+                    .left-custom-menu-adp-wrap
+                        ul.nav.navbar-nav.left-sidebar-menu-pro
+                            li.nav-item
+                                a.nav-link.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+                                    i.fa.big-icon.fa-home
+                                    span.mini-dn درخواست های من
+                                    span.indicator-right-menu.mini-dn
+                                        i.fa.indicator-mn.fa-angle-left
+                                //.dropdown-menu.left-menu-dropdown.animated.flipInX(role='menu')
+                                    a.dropdown-item(href='dashboard.html') Dashboard v.1
+                                    a.dropdown-item(href='dashboard-2.html') Dashboard v.2
+                                    a.dropdown-item(href='analytics.html') Analytics
+                                    a.dropdown-item(href='widgets.html') Widgets
+                            li.nav-item
+                                a.nav-link.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+                                    i.fa.big-icon.fa-bar-chart-o
+                                    span.mini-dn ارائه ی گزارش
+                                    span.indicator-right-menu.mini-dn
+                                        i.fa.indicator-mn.fa-angle-left
+                                //.dropdown-menu.left-menu-dropdown.chart-left-menu-std.animated.flipInX(role='menu')
+                                    a.dropdown-item(href='bar-charts.html') Bar Charts
+                                    a.dropdown-item(href='line-charts.html') Line Charts
+                                    a.dropdown-item(href='area-charts.html') Area Charts
+                                    a.dropdown-item(href='rounded-chart.html') Rounded Charts
+                                    a.dropdown-item(href='c3.html') C3 Charts
+                                    a.dropdown-item(href='sparkline.html') Sparkline Charts
+                                    a.dropdown-item(href='peity.html') Peity Charts
+
+block content
+
+        .mobile-menu-area
+            .container
+                .row
+                    .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                        .mobile-menu
+                            nav#dropdown
+                                ul.mobile-menu-nav
+                                    li
+                                        a(data-toggle='collapse', data-target='#Charts', href='#')
+                                            | درخواست‌های من
+                                    li
+                                        a(data-toggle='collapse', data-target='#demo', href='#')
+                                            | ارائه ی گزارش
+
+        // Mobile Menu end
+        .user-profile-area
+            .container-fluid
+                .row
+                    .col-lg-12.col-md-12.col-sm-12.col-xs-12(style= "margin-top: 20px;")
+                        .user-profile-wrap.shadow-reset
+                            .row
+                                .col-lg-4.col-sm-6.col-xs-12(style= "float: right")
+                                    .row
+                                        .col-lg-2.col-xs-2(style= "float: right")
+                                            .user-profile-img
+                                                img(src='assets/img/img/notification/5.jpg', alt='')
+                                        .col-lg-10.col-xs-10(style= "float: right")
+                                            .user-profile-content
+                                                h2 نام شخص حقیقی یا حقوقی
+                                                p.profile-founder
+                                                    strong نام طرح
+                                                p.profile-des توضیحات طرح: فیلد ورودی توسط کاربر
+                                .col-lg-4.col-sm-6.col-xs-12(style= "float: right")
+                                    .user-profile-social-list
+                                        table.table.small.m-b-xs
+                                            tbody
+                                                tr
+                                                    td
+                                                        | شهر یا استان طرح
+                                                        strong 542
+                                                    td
+                                                        | مبلغ درخواستی
+                                                        strong 222
+                                                tr
+                                                    td
+                                                        | درخواست پیشین
+                                                        strong دارد/ندارد
+                                                    td
+                                                        | شرایط ویژه
+                                                        strong دارد/ندارد
+                                                tr
+                                                    td
+                                                        | درخواست پیشین سایر اعضا
+                                                        strong دارد/ندارد
+                                                    td
+
+                                .col-lg-4.col-xs-12(style= "float: right")
+                                    .analytics-sparkle-line.user-profile-sparkline
+                                        .analytics-content
+                                            h5(style= "width: 100%;") Visits in last 24h
+                                            h2.counter 498009
+                                            #sparkline22
+        .user-prfile-activity-area.mg-b-40.mg-t-30
+            .container-fluid
+                .row
+                    .col-lg-3
+                        .user-profile-about.shadow-reset
+                            h2 عنوان طرح
+                            p توضیحات طرح
+                        .user-profile-mutual-friends.shadow-reset.mg-t-30
+                            h2 بازیگر ویژه
+                            p نمایش فیلدهای اطلاعات
+                            .mutual-friend-list
+                                a(href='#')
+                                    img(src='assets/img/img/notification/1.jpg', alt='')
+                                a(href='#')
+                                    img(src='assets/img/img/notification/2.jpg', alt='')
+                                a(href='#')
+                                    img(src='assets/img/img/notification/3.jpg', alt='')
+                                a(href='#')
+                                    img(src='assets/img/img/notification/4.jpg', alt='')
+                                a(href='#')
+                                    img(src='assets/img/img/notification/5.jpg', alt='')
+                                a(href='#')
+                                    img(src='assets/img/img/notification/6.jpg', alt='')
+                                a(href='#')
+                                    img(src='assets/img/img/notification/1.jpg', alt='')
+                                a(href='#')
+                                    img(src='assets/img/img/notification/2.jpg', alt='')
+                        .widget-flot-bg.shadow-reset.mg-t-30
+                            p سایر اعضا:
+                        .widget-flot-bg.shadow-reset(style= "margin-top: 10px")
+                                div.col-sm-6.col-xs-12(style= "float: right")
+                                    p نام
+                                div.col-sm-6.col-xs-12(style= "float: right")
+                                    p کد ملی
+                                div.col-xs-12(style= "float: inherit")
+                                    p سابقه پیشین در سیستم: دارد/ندارد
+                        .widget-flot-bg.shadow-reset.mg-t-30
+                            .admin-widget-flot-ch
+                                h1 خلاصه اطلاعات دسته پیش‌شرط
+                            .flot-chart
+                                .flot-chart-content#flot-chart89
+                        .single-skill.shadow-reset.mg-t-30
+                            .row
+                                .col-lg-12
+                                    .progress-circular1
+                                        h2(style= "text-align: justify; line-height: 30px;")  مبلغ وام، درصد اختصاص یافته نسبت به سقف تسهیلات
+                                .col-lg-6
+                                    .progress-circular
+                                        input.knob(type='text', value='0', data-rel='85', data-linecap='round', data-width='90', data-bgcolor='#999', data-fgcolor='#7266ba', data-thickness='.10', data-readonly='true', disabled='')
+                                .col-lg-6
+                                    .progress-circular
+                                        h2(style= "margin-top: 25px")
+                                            span $
+                                            span.counter 5862
+
+                        .analytics-adminpro-wrap.shadow-reset.mg-t-30
+                            .skill-content-3.analytics-adminpro.analytics-adminpro3
+                                .skill
+                                    .progress.progress-bt
+                                        .lead-content
+                                            h3
+                                                span.counter 80
+                                                | %
+                                            p Admin Template
+                                        .progress-bar.wow.fadeInLeft(data-progress='80%', style='width: 80%; float: right', data-wow-duration='1.5s', data-wow-delay='1.2s')
+                                            span 80%
+                        .analytics-adminpro-wrap.shadow-reset.mg-t-30
+                            .skill-content-3.analytics-adminpro
+                                .skill
+                                    .progress
+                                        .lead-content
+                                            h3
+                                                span.counter 95
+                                                | %
+                                            p Wordpress
+                                        .progress-bar.wow.fadeInLeft(data-progress='95%', style='width: 95%; float: right', data-wow-duration='1.5s', data-wow-delay='1.2s')
+                                            span 95%
+                        .analytics-adminpro-wrap.shadow-reset.mg-t-30
+                            .skill-content-3.analytics-adminpro.analytics-adminpro4
+                                .skill
+                                    .progress
+                                        .lead-content
+                                            h3
+                                                span.counter 85
+                                                | %
+                                            p Joomla
+                                        .progress-bar.wow.fadeInLeft(data-progress='85%', style='width: 85%; float: right', data-wow-duration='1.5s', data-wow-delay='1.2s')
+                                            span 85%
+                        .analytics-adminpro-wrap.profile-res-mg-b-30.shadow-reset.mg-t-30
+                            .skill-content-3.analytics-adminpro.analytics-adminpro2
+                                .skill
+                                    .progress.progress-bt
+                                        .lead-content
+                                            h3
+                                                span.counter 93
+                                                | %
+                                            p Ecommerce
+                                        .progress-bar.wow.fadeInLeft(data-progress='93%', style='width: 93%; float: right', data-wow-duration='1.5s', data-wow-delay='1.2s')
+                                            span 93%
+                    .col-lg-6
+                        .post-user-profile-awrap.shadow-reset
+                            .user-profile-post
+                                .row
+                                    .col-lg-6.col-md-6.col-sm-6.col-xs-6(style= "float: right")
+                                        .user-profile-post-name
+                                            h2
+                                                a(href='#') اطلاعات حقوقی
+                                            p
+                                                span Today 4:21 pm - 12.06.2014
+                                    .col-lg-3.col-md-3.col-sm-3.col-xs-6
+                                            button.btn.btn-success(data-toggle='collapse', data-target='#adminpro-demo2', style= "float: left") تأیید همه
+                                .row
+                                    .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                        .profile-user-post-content
+                                            p نام حقوقی
+
+                                            .user-post-reply
+                                                input.form-control#searchPlanInput.col-sm-6.col-xs-12(type= "text", placeholder= "نام", name= "")
+                                                .btn-group.col-sm-8.col-xs-12(style= "float: left; padding: 0")
+                                                    button.btn.btn-warning سابقه
+                                                    button.btn.btn-basic ارجاع
+                                                    button.btn.btn-danger اعلان نقص
+                                                    button.btn.btn-success تأیید
+                            .user-profile-comment-list
+                                .row
+                                    .col-lg-2.col-md-2.col-sm-2.col-xs-12
+                                        .user-profile-comment-img
+                                            a(href='#')
+                                                img(src='assets/img/img/notification/2.jpg', alt='')
+                                    .col-lg-10.col-md-10.col-sm-10.col-xs-12
+                                        .user-profile-comment-content
+                                            p
+                                                strong Andrew Williams
+                                                | Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words.
+                                            .row
+                                                .col-lg-7
+                                                    .comment-date-profile
+                                                        span.profile-time-ds-none 12.06.2014
+                                .row.profile-comment-mg
+                                    .col-lg-2.col-md-2.col-sm-2.col-xs-12
+                                        .user-profile-comment-img
+                                            a(href='#')
+                                                img(src='assets/img/img/notification/6.jpg', alt='')
+                                    .col-lg-10.col-md-10.col-sm-10.col-xs-12
+                                        .user-profile-comment-content
+                                            p
+                                                strong Andrew Williams
+                                                | Andrew Williams Making this the first true generator on the Internet. It uses a dictionary.
+                                            .row
+                                                .col-lg-7
+                                                    .comment-date-profile
+                                                        span.profile-time-ds-none 10.05.2018
+                                        .row.replay-user-comment-pro
+                                            .col-lg-2.col-md-2.col-sm-2.col-xs-12
+                                                .user-profile-comment-img
+                                                    a(href='#')
+                                                        img(src='assets/img/img/notification/5.jpg', alt='')
+                                            .col-lg-10.col-md-10.col-sm-10.col-xs-12
+                                                .user-profile-comment-input
+                                                    textarea(name='text', cols='30', rows='10', placeholder='Write Comment..')
+                                .row.profile-comment-mg
+                                    .col-lg-2.col-md-2.col-sm-2.col-xs-12
+                                        .user-profile-comment-img
+                                            a(href='#')
+                                                img(src='assets/img/img/notification/3.jpg', alt='')
+                                    .col-lg-10.col-md-10.col-sm-10.col-xs-12
+                                        .user-profile-comment-content
+                                            p
+                                                strong Andrew Williams
+                                                | Web sites still in their infancy. Various versions have evolved over the years, sometimes by accident.
+                                            .row
+                                                .col-lg-7
+                                                    .comment-date-profile
+                                                        span.profile-time-ds-none 10.05.2018
+                                .row.profile-comment-mg
+                                    .col-lg-2.col-md-2.col-sm-2.col-xs-12
+                                        .user-profile-comment-img
+                                            a(href='#')
+                                                img(src='assets/img/img/notification/4.jpg', alt='')
+                                    .col-lg-10.col-md-10.col-sm-10.col-xs-12
+                                        .user-profile-comment-input
+                                            textarea(name='text', cols='30', rows='10', placeholder='Write Comment..')
+                        .post-user-profile-awrap.post-user-profile-second.shadow-reset
+                            .user-profile-post
+                                .row
+                                    .col-lg-3.col-md-3.col-sm-3.col-xs-12(style= "float: right")
+                                        .user-profile-img-post
+                                            a(href='#')
+                                                img(src='assets/img/img/notification/5.jpg', alt='')
+                                    .col-lg-6.col-md-6.col-sm-6.col-xs-12(style= "float: right")
+                                        .user-profile-post-name
+                                            h2
+                                                a(href='#') نمایش مدارک
+                                            p
+                                                span Today 4:21 pm - 12.06.2014
+                                    //.col-lg-3.col-md-3.col-sm-3.col-xs-12
+
+                                            button.btn-success(data-toggle='collapse', data-target='#adminpro-demo2')
+                                .row
+                                    .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                        .profile-user-post-content
+                                            p توضیحات مدرک نمایش داده شده
+                                            img.profile-user-post-img(src='/assets/img/img/profile/1.jpg', alt='')
+                                            .user-post-reply
+                                                .user-post-reply
+                                                    //input.form-control#searchPlanInput(type= "text", placeholder= "نام", name= "")
+                                                    .btn-group(style= "float: left;")
+                                                        button.btn.btn-success تأیید
+                                                        button.btn.btn-danger اعلان نقص
+                                                        button.btn.btn-basic ارجاع
+                                                        button.btn.btn-warning سابقه
+                            .user-profile-comment-list
+                                .row
+                                    .col-lg-2.col-md-2.col-sm-2.col-xs-12
+                                        .user-profile-comment-img
+                                            a(href='#')
+                                                img(src='assets/img/img/notification/2.jpg', alt='')
+                                    .col-lg-10.col-md-10.col-sm-10.col-xs-12
+                                        .user-profile-comment-content
+                                            p
+                                                strong Andrew Williams
+                                                | Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words.
+                                            .row
+                                                .col-lg-5
+                                                    .comment-replay-profile
+                                                        .btn-group
+                                                            button.btn.btn-white.btn-xs
+                                                                i.fa.fa-thumbs-up
+                                                                | 99 Like
+                                                            button.btn.btn-white.btn-xs
+                                                                i.fa.fa-comments
+                                                                | Reply
+                                                .col-lg-7
+                                                    .comment-date-profile
+                                                        span.profile-time-ds-none 12.06.2018
+                                .row.profile-comment-mg
+                                    .col-lg-2.col-md-2.col-sm-2.col-xs-12
+                                        .user-profile-comment-img
+                                            a(href='#')
+                                                img(src='assets/img/img/notification/6.jpg', alt='')
+                                    .col-lg-10.col-md-10.col-sm-10.col-xs-12
+                                        .user-profile-comment-content
+                                            p
+                                                strong Andrew Williams
+                                                | Andrew Williams Making this the first true generator on the Internet. It uses a dictionary.
+                                            .row
+                                                .col-lg-5.col-md-5.col-sm-5.col-xs-12
+                                                    .comment-replay-profile
+                                                        .btn-group
+                                                            button.btn.btn-white.btn-xs
+                                                                i.fa.fa-thumbs-up
+                                                                | 299 Like
+                                                            button.btn.btn-white.btn-xs
+                                                                i.fa.fa-comments
+                                                                | Reply
+                                                .col-lg-7.col-md-7.col-sm-7.col-xs-12
+                                                    .comment-date-profile
+                                                        span.profile-time-ds-none 10.05.2018
+                                        .row.replay-user-comment-pro
+                                            .col-lg-2.col-md-2.col-sm-2.col-xs-12
+                                                .user-profile-comment-img
+                                                    a(href='#')
+                                                        img(src='assets/img/img/notification/5.jpg', alt='')
+                                            .col-lg-10.col-md-10.col-sm-10.col-xs-12
+                                                .user-profile-comment-input
+                                                    textarea(name='text', cols='30', rows='10', placeholder='Write Comment..')
+                                .row.profile-comment-mg
+                                    .col-lg-2.col-md-2.col-sm-2.col-xs-12
+                                        .user-profile-comment-img
+                                            a(href='#')
+                                                img(src='assets/img/img/notification/3.jpg', alt='')
+                                    .col-lg-10.col-md-10.col-sm-10.col-xs-12
+                                        .user-profile-comment-content
+                                            p
+                                                strong Andrew Williams
+                                                | Web sites still in their infancy. Various versions have evolved over the years, sometimes by accident.
+                                            .row
+                                                .col-lg-5
+                                                    .comment-replay-profile
+                                                        .btn-group
+                                                            button.btn.btn-white.btn-xs
+                                                                i.fa.fa-thumbs-up
+                                                                | 299 Like
+                                                            button.btn.btn-white.btn-xs
+                                                                i.fa.fa-comments
+                                                                | Reply
+                                                .col-lg-7
+                                                    .comment-date-profile
+                                                        span.profile-time-ds-none 10.05.2018
+                                .row.profile-comment-mg
+                                    .col-lg-2.col-md-2.col-sm-2.col-xs-12
+                                        .user-profile-comment-img
+                                            a(href='#')
+                                                img(src='assets/img/img/notification/4.jpg', alt='')
+                                    .col-lg-10.col-md-10.col-sm-10.col-xs-12
+                                        .user-profile-comment-input
+                                            textarea(name='text', cols='30', rows='10', placeholder='Write Comment..')
+                    .col-lg-3
+                        .sparkline7-list.profile-online-mg-t-30.shadow-reset
+                            .sparkline7-hd
+                                .main-spark7-hd
+                                    h1 Contact List
+                                    .sparkline7-outline-icon
+                                        span.sparkline7-collapse-link
+                                            i.fa.fa-chevron-up
+                                        span
+                                            i.fa.fa-wrench
+                                        span.sparkline7-collapse-close
+                                            i.fa.fa-times
+                            .sparkline7-hd
+                                div.farayandStepsDetailsDiv
+                                    div.farayandStepsDetailsDivs
+                                        div(style="float: left; width: 2%; background-color: green; height: 100%; display: inline-block")
+                                        b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") اطلاعات حقوقی
+                                        br
+                                        span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") اطلاعات ثبتی شرکت
+
+                                    div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
+                                        div(style="float: left; width: 2%; background-color: red; height: 100%; display: inline-block")
+                                        b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") اطلاعات مدیرعامل
+                                        br
+                                        span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") اطلاعات حقیقی مدیرعامل
+                                    div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
+                                        div(style="float: left; width: 2%; background-color: #606060; height: 100%; display: inline-block")
+                                        b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") اطلاعات هیئت مدیره
+                                        br
+                                        span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") اطلاعات حقیقی هیئت مدیره
+                            .sparkline7-graph
+                                //make the height auto by removing user-profile-scrollbar class
+                                .user-profile-contact.user-profile-scrollbar
+                                    ul.profile-contact-menu
+                                        li
+                                            a(href='#')
+                                                img(src='/assets/img/img/notification/5.jpg', alt='')
+                                                span Sakila Joy
+                                                //span.contact-profile-online-f
+                                                    i.fa.fa-circle.contact-profile-online
+                                        li
+                                            a(href='#')
+                                                img(src='/assets/img/img/notification/1.jpg', alt='')
+                                                span Fire Foxy
+                                                //span.contact-profile-online-f 31m
+                                        li
+                                            a(href='#')
+                                                img(src='/assets/img/img/notification/2.jpg', alt='')
+                                                span Jhon Royita
+                                                //span.contact-profile-online-f
+                                                    i.fa.fa-circle.contact-profile-online
+                                        li
+                                            a(href='#')
+                                                img(src='/assets/img/img/notification/3.jpg', alt='')
+                                                span Selim Reza
+                                                //span.contact-profile-online-f
+                                                    i.fa.fa-circle.contact-profile-online
+                                        li
+                                            a(href='#')
+                                                img(src='/assets/img/img/notification/4.jpg', alt='')
+                                                span Navil khan
+                                                //span.contact-profile-online-f 4h

@@ -1,0 +1,25 @@
+extend ../ProfilesStructure.pug
+
+block content
+
+    .contact-clients-area.mg-b-40
+        .container-fluid
+            .row
+                - for(let i = 0; i < kargrohs.length; i++) {
+                    .col-lg-4.col-md-4.col-sm-6.col-xs-12(style= "margin-top: 15px")
+                        .contact-client-single.shadow-reset.ct-client-b-mg-30.ct-client-b-mg-30-n.contact-client-v2
+                            .row
+                                .col-lg-12(style= "margin-top: 15px")
+                                    .contact-client-img.contact-img-v2
+                                        h2
+                                            a.contact-client-name(href='/kargroh/' + kargrohs[i].name) #{kargrohs[i].name}
+
+                                .contact-client-footer
+                                    .btn-group
+                                        a.btn.btn-xs.btn-white(href='/deleteKargroh/' + kargrohs[i].name)
+                                            i.fa.fa-close
+                                            | حذف
+                - }
+
+                center.col-xs-12(style="margin-top: 10px")
+                    a.btn.btn-success(href="/createNewKargroh") افزودن کار گروه جدید

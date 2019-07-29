@@ -1,0 +1,810 @@
+extend ProfilesStructure.pug
+
+block side-bar-menu
+
+    .left-sidebar-pro
+                nav#sidebar
+                    .sidebar-header
+                        a(href='#')
+                            img(src='/assets/img/img/message/1.jpg', alt='')
+                        h3 Andrar Son
+                        p Developer
+                        strong AP+
+                    .left-custom-menu-adp-wrap
+                        ul.nav.navbar-nav.left-sidebar-menu-pro
+                            li.nav-item
+                                a.nav-link.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+                                    i.fa.big-icon.fa-home
+                                    span.mini-dn درخواست ها
+                                    span.indicator-right-menu.mini-dn
+                                        i.fa.indicator-mn.fa-angle-left
+                                .dropdown-menu.left-menu-dropdown.animated.flipInX(role='menu')
+                                    a.dropdown-item(href='dashboard.html') Dashboard v.1
+                                    a.dropdown-item(href='dashboard-2.html') Dashboard v.2
+                                    a.dropdown-item(href='analytics.html') Analytics
+                                    a.dropdown-item(href='widgets.html') Widgets
+
+block content
+
+        // Header top area end
+        // Mobile Menu start
+        .mobile-menu-area
+            .container
+                .row
+                    .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                        .mobile-menu
+                            nav#dropdown
+                                ul.mobile-menu-nav
+                                    li
+                                        a(data-toggle='collapse', data-target='#Charts', href='#')
+                                            | Home
+                                            span.admin-project-icon.adminpro-icon.adminpro-down-arrow
+                                        ul.collapse.dropdown-header-top
+                                            li
+                                                a(href='dashboard.html') Dashboard v.1
+                                            li
+                                                a(href='dashboard-2.html') Dashboard v.2
+                                            li
+                                                a(href='analytics.html') Analytics
+                                            li
+                                                a(href='widgets.html') Widgets
+                                    li
+                                        a(data-toggle='collapse', data-target='#demo', href='#')
+                                            | Mailbox
+                                            span.admin-project-icon.adminpro-icon.adminpro-down-arrow
+                                        ul#demo.collapse.dropdown-header-top
+                                            li
+                                                a(href='inbox.html') Inbox
+                                            li
+                                                a(href='view-mail.html') View Mail
+                                            li
+                                                a(href='compose-mail.html') Compose Mail
+                                    li
+                                        a(data-toggle='collapse', data-target='#others', href='#')
+                                            | Miscellaneous
+                                            span.admin-project-icon.adminpro-icon.adminpro-down-arrow
+                                        ul#others.collapse.dropdown-header-top
+                                            li
+                                                a(href='profile.html') Profile
+                                            li
+                                                a(href='contact-client.html') Contact Client
+                                            li
+                                                a(href='contact-client-v.1.html') Contact Client v.1
+                                            li
+                                                a(href='project-list.html') Project List
+                                            li
+                                                a(href='project-details.html') Project Details
+                                    li
+                                        a(data-toggle='collapse', data-target='#Miscellaneousmob', href='#')
+                                            | Interface
+                                            span.admin-project-icon.adminpro-icon.adminpro-down-arrow
+                                        ul#Miscellaneousmob.collapse.dropdown-header-top
+                                            li
+                                                a(href='google-map.html') Google Map
+                                            li
+                                                a(href='data-maps.html') Data Maps
+                                            li
+                                                a(href='pdf-viewer.html') Pdf Viewer
+                                            li
+                                                a(href='x-editable.html') X-Editable
+                                            li
+                                                a(href='code-editor.html') Code Editor
+                                            li
+                                                a(href='tree-view.html') Tree View
+                                            li
+                                                a(href='preloader.html') Preloader
+                                            li
+                                                a(href='images-cropper.html') Images Cropper
+                                    li
+                                        a(data-toggle='collapse', data-target='#Chartsmob', href='#')
+                                            | Charts
+                                            span.admin-project-icon.adminpro-icon.adminpro-down-arrow
+                                        ul#Chartsmob.collapse.dropdown-header-top
+                                            li
+                                                a(href='bar-charts.html') Bar Charts
+                                            li
+                                                a(href='line-charts.html') Line Charts
+                                            li
+                                                a(href='area-charts.html') Area Charts
+                                            li
+                                                a(href='rounded-chart.html') Rounded Charts
+                                            li
+                                                a(href='c3.html') C3 Charts
+                                            li
+                                                a(href='sparkline.html') Sparkline Charts
+                                            li
+                                                a(href='peity.html') Peity Charts
+                                    li
+                                        a(data-toggle='collapse', data-target='#Tablesmob', href='#')
+                                            | Tables
+                                            span.admin-project-icon.adminpro-icon.adminpro-down-arrow
+                                        ul#Tablesmob.collapse.dropdown-header-top
+                                            li
+                                                a(href='static-table.html') Static Table
+                                            li
+                                                a(href='data-table.html') Data Table
+                                    li
+                                        a(data-toggle='collapse', data-target='#formsmob', href='#')
+                                            | Forms
+                                            span.admin-project-icon.adminpro-icon.adminpro-down-arrow
+                                        ul#formsmob.collapse.dropdown-header-top
+                                            li
+                                                a(href='basic-form-element.html') Basic Form Elements
+                                            li
+                                                a(href='advance-form-element.html') Advanced Form Elements
+                                            li
+                                                a(href='password-meter.html') Password Meter
+                                            li
+                                                a(href='multi-upload.html') Multi Upload
+                                            li
+                                                a(href='tinymc.html') Text Editor
+                                            li
+                                                a(href='dual-list-box.html') Dual List Box
+                                    li
+                                        a(data-toggle='collapse', data-target='#Appviewsmob', href='#')
+                                            | App views
+                                            span.admin-project-icon.adminpro-icon.adminpro-down-arrow
+                                        ul#Appviewsmob.collapse.dropdown-header-top
+                                            li
+                                                a(href='basic-form-element.html') Basic Form Elements
+                                            li
+                                                a(href='advance-form-element.html') Advanced Form Elements
+                                            li
+                                                a(href='password-meter.html') Password Meter
+                                            li
+                                                a(href='multi-upload.html') Multi Upload
+                                            li
+                                                a(href='tinymc.html') Text Editor
+                                            li
+                                                a(href='dual-list-box.html') Dual List Box
+                                    li
+                                        a(data-toggle='collapse', data-target='#Pagemob', href='#')
+                                            | Pages
+                                            span.admin-project-icon.adminpro-icon.adminpro-down-arrow
+                                        ul#Pagemob.collapse.dropdown-header-top
+                                            li
+                                                a(href='login.html') Login
+                                            li
+                                                a(href='register.html') Register
+                                            li
+                                                a(href='captcha.html') Captcha
+                                            li
+                                                a(href='checkout.html') Checkout
+                                            li
+                                                a(href='contact.html') Contacts
+                                            li
+                                                a(href='review.html') Review
+                                            li
+                                                a(href='order.html') Order
+                                            li
+                                                a(href='comment.html') Comment
+        // Mobile Menu end
+        // stockprice, feed area end
+        .admin-dashone-data-table-area.mg-b-15
+            .container-fluid
+                .row
+                    .col-lg-12(style= "margin-top: 15px")
+                        .sparkline8-list.shadow-reset
+                            .sparkline8-hd
+                                .main-sparkline8-hd
+                                    h1 درخواست ها
+                                    //.sparkline8-outline-icon
+                                        span.sparkline8-collapse-link
+                                            i.fa.fa-chevron-up
+                                        span
+                                            i.fa.fa-wrench
+                                        span.sparkline8-collapse-close
+                                            i.fa.fa-times
+                            .sparkline8-graph
+                                .datatable-dashv1-list.custom-datatable-overright
+                                    #toolbar
+                                        select.form-control
+                                            option(value='') Export Basic
+                                            option(value='all') Export All
+                                            option(value='selected') Export Selected
+                                    table#table(data-toggle='table', data-pagination='true', data-search='true', data-show-columns='true', data-show-pagination-switch='true', data-show-refresh='true', data-key-events='true', data-show-toggle='true', data-resizable='true', data-cookie='true', data-cookie-id-table='saveId', data-show-export='true', data-click-to-select='true', data-toolbar='#toolbar')
+                                        thead
+                                            tr
+                                                th(data-field='state', data-checkbox='true')
+                                                th(data-field='id') ID
+                                                th(data-field='status') مرحله
+                                                th(data-field='name', data-editable='true') نام درخواست گننده
+                                                th(data-field='company', data-editable='true') نوع درخواست
+                                                th(data-field='complete') وضعیت
+                                                th(data-field='task', data-editable='true') تاریخ شروع
+                                                th(data-field='date', data-editable='true') مانده
+                                                th(data-field='support') تاریخ تکمیل
+                                                th(data-field='action') ارجاعات موجود
+                                        tbody
+                                            tr
+                                                td
+                                                td 1
+                                                td
+                                                    .btn-group.project-list-ad
+                                                        button.btn.btn-white.btn-xs Active
+                                                td Web Development
+                                                td Aber Ltd.
+                                                td.datatable-ct
+                                                    span.pie 1/6
+                                                td 10%
+                                                td Jul 14, 2018
+                                                td
+                                                    .support-list-img
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/1.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/2.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/3.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/4.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/5.jpg', alt='')
+                                                td
+                                                    .btn-group.project-list-action
+                                                        button.btn.btn-white.btn-action.btn-xs
+                                                            i.fa.fa-folder
+                                                            | View
+                                                        button.btn.btn-white.btn-xs
+                                                            i.fa.fa-pencil
+                                                            | Edit
+                                            tr
+                                                td
+                                                td 2
+                                                td
+                                                    .btn-group.project-list-ad
+                                                        button.btn.btn-white.btn-xs Active
+                                                td Graphic Design
+                                                td Abitibi Inc.
+                                                td.datatable-ct
+                                                    span.pie 230/360
+                                                td 70%
+                                                td fab 2, 2018
+                                                td
+                                                    .support-list-img
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/1.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/2.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/3.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/4.jpg', alt='')
+                                                td
+                                                    .btn-group.project-list-action
+                                                        button.btn.btn-white.btn-action.btn-xs
+                                                            i.fa.fa-folder
+                                                            | View
+                                                        button.btn.btn-white.btn-xs
+                                                            i.fa.fa-pencil
+                                                            | Edit
+                                            tr
+                                                td
+                                                td 3
+                                                td
+                                                    .btn-group.project-list-ad-bl
+                                                        button.btn.btn-white.btn-xs Pending
+                                                td Software Development
+                                                td Acambis plc
+                                                td.datatable-ct
+                                                    span.pie 0.42/1.461
+                                                td 0%
+                                                td Seb 5, 2018
+                                                td
+                                                    .support-list-img
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/6.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/5.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/3.jpg', alt='')
+                                                td
+                                                    .btn-group.project-list-action
+                                                        button.btn.btn-white.btn-action.btn-xs
+                                                            i.fa.fa-folder
+                                                            | View
+                                                        button.btn.btn-white.btn-xs
+                                                            i.fa.fa-pencil
+                                                            | Edit
+                                            tr
+                                                td
+                                                td 4
+                                                td
+                                                    .btn-group.project-list-ad
+                                                        button.btn.btn-white.btn-xs Active
+                                                td Woocommerce
+                                                td ACLN Ltd.
+                                                td.datatable-ct
+                                                    span.pie 2,7
+                                                td 15%
+                                                td Oct 10, 2018
+                                                td
+                                                    .support-list-img
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/1.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/2.jpg', alt='')
+                                                td
+                                                    .btn-group.project-list-action
+                                                        button.btn.btn-white.btn-action.btn-xs
+                                                            i.fa.fa-folder
+                                                            | View
+                                                        button.btn.btn-white.btn-xs
+                                                            i.fa.fa-pencil
+                                                            | Edit
+                                            tr
+                                                td
+                                                td 5
+                                                td
+                                                    .btn-group.project-list-ad
+                                                        button.btn.btn-white.btn-xs Active
+                                                td Joomla
+                                                td ACS-Tech Ltd.
+                                                td.datatable-ct
+                                                    span.pie 200,133
+                                                td 80%
+                                                td Nov 20, 2018
+                                                td
+                                                    .support-list-img
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/5.jpg', alt='')
+                                                td
+                                                    .btn-group.project-list-action
+                                                        button.btn.btn-white.btn-action.btn-xs
+                                                            i.fa.fa-folder
+                                                            | View
+                                                        button.btn.btn-white.btn-xs
+                                                            i.fa.fa-pencil
+                                                            | Edit
+                                            tr
+                                                td
+                                                td 6
+                                                td
+                                                    .btn-group.project-list-ad-rd
+                                                        button.btn.btn-white.btn-xs Unactive
+                                                td Wordpress
+                                                td ActFits.com Inc.
+                                                td.datatable-ct
+                                                    span.pie 0.42,1.051
+                                                td 0%
+                                                td Aug 25, 2018
+                                                td
+                                                    .support-list-img
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/4.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/5.jpg', alt='')
+                                                td
+                                                    .btn-group.project-list-action
+                                                        button.btn.btn-white.btn-action.btn-xs
+                                                            i.fa.fa-folder
+                                                            | View
+                                                        button.btn.btn-white.btn-xs
+                                                            i.fa.fa-pencil
+                                                            | Edit
+                                            tr
+                                                td
+                                                td 7
+                                                td
+                                                    .btn-group.project-list-ad
+                                                        button.btn.btn-white.btn-xs Active
+                                                td Ecommerce
+                                                td ActivCard S.A.
+                                                td.datatable-ct
+                                                    span.pie 2,7
+                                                td 15%
+                                                td July 17, 2018
+                                                td
+                                                    .support-list-img
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/1.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/2.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/3.jpg', alt='')
+                                                td
+                                                    .btn-group.project-list-action
+                                                        button.btn.btn-white.btn-action.btn-xs
+                                                            i.fa.fa-folder
+                                                            | View
+                                                        button.btn.btn-white.btn-xs
+                                                            i.fa.fa-pencil
+                                                            | Edit
+                                            tr
+                                                td
+                                                td 8
+                                                td
+                                                    .btn-group.project-list-ad
+                                                        button.btn.btn-white.btn-xs Active
+                                                td Android Apps
+                                                td Adecco S.A.
+                                                td.datatable-ct
+                                                    span.pie 2,7
+                                                td 15%
+                                                td June 11, 2018
+                                                td
+                                                    .support-list-img
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/6.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/2.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/3.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/4.jpg', alt='')
+                                                td
+                                                    .btn-group.project-list-action
+                                                        button.btn.btn-white.btn-action.btn-xs
+                                                            i.fa.fa-folder
+                                                            | View
+                                                        button.btn.btn-white.btn-xs
+                                                            i.fa.fa-pencil
+                                                            | Edit
+                                            tr
+                                                td
+                                                td 9
+                                                td
+                                                    .btn-group.project-list-ad
+                                                        button.btn.btn-white.btn-xs Active
+                                                td Prestashop
+                                                td AEGON N.V.
+                                                td.datatable-ct
+                                                    span.pie 2,7
+                                                td 15%
+                                                td May 9, 2018
+                                                td
+                                                    .support-list-img
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/6.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/2.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/3.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/4.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/5.jpg', alt='')
+                                                td
+                                                    .btn-group.project-list-action
+                                                        button.btn.btn-white.btn-action.btn-xs
+                                                            i.fa.fa-folder
+                                                            | View
+                                                        button.btn.btn-white.btn-xs
+                                                            i.fa.fa-pencil
+                                                            | Edit
+                                            tr
+                                                td
+                                                td 10
+                                                td
+                                                    .btn-group.project-list-ad-bl
+                                                        button.btn.btn-white.btn-xs Pending
+                                                td Game Development
+                                                td Aerco Ltd.
+                                                td.datatable-ct
+                                                    span.pie 2,7
+                                                td 0%
+                                                td April 5, 2018
+                                                td
+                                                    .support-list-img
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/4.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/5.jpg', alt='')
+                                                td
+                                                    .btn-group.project-list-action
+                                                        button.btn.btn-white.btn-action.btn-xs
+                                                            i.fa.fa-folder
+                                                            | View
+                                                        button.btn.btn-white.btn-xs
+                                                            i.fa.fa-pencil
+                                                            | Edit
+                                            tr
+                                                td
+                                                td 11
+                                                td
+                                                    .btn-group.project-list-ad
+                                                        button.btn.btn-white.btn-xs Active
+                                                td Angular Js
+                                                td Agrium Inc.
+                                                td.datatable-ct
+                                                    span.pie 2,7
+                                                td 15%
+                                                td Dec 1, 2018
+                                                td
+                                                    .support-list-img
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/6.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/5.jpg', alt='')
+                                                td
+                                                    .btn-group.project-list-action
+                                                        button.btn.btn-white.btn-action.btn-xs
+                                                            i.fa.fa-folder
+                                                            | View
+                                                        button.btn.btn-white.btn-xs
+                                                            i.fa.fa-pencil
+                                                            | Edit
+                                            tr
+                                                td
+                                                td 12
+                                                td
+                                                    .btn-group.project-list-ad
+                                                        button.btn.btn-white.btn-xs Active
+                                                td Opencart
+                                                td Air Canada
+                                                td.datatable-ct
+                                                    span.pie 2,7
+                                                td 15%
+                                                td Jan 6, 2018
+                                                td
+                                                    .support-list-img
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/3.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/4.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/5.jpg', alt='')
+                                                td
+                                                    .btn-group.project-list-action
+                                                        button.btn.btn-white.btn-action.btn-xs
+                                                            i.fa.fa-folder
+                                                            | View
+                                                        button.btn.btn-white.btn-xs
+                                                            i.fa.fa-pencil
+                                                            | Edit
+                                            tr
+                                                td
+                                                td 13
+                                                td
+                                                    .btn-group.project-list-ad-rd
+                                                        button.btn.btn-white.btn-xs Unactive
+                                                td Education
+                                                td Alcan Inc.
+                                                td.datatable-ct
+                                                    span.pie 2,7
+                                                td 0%
+                                                td Feb 6, 2016
+                                                td
+                                                    .support-list-img
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/6.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/2.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/3.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/4.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/5.jpg', alt='')
+                                                td
+                                                    .btn-group.project-list-action
+                                                        button.btn.btn-white.btn-action.btn-xs
+                                                            i.fa.fa-folder
+                                                            | View
+                                                        button.btn.btn-white.btn-xs
+                                                            i.fa.fa-pencil
+                                                            | Edit
+                                            tr
+                                                td
+                                                td 14
+                                                td
+                                                    .btn-group.project-list-ad
+                                                        button.btn.btn-white.btn-xs Active
+                                                td Construction
+                                                td Alcatel
+                                                td.datatable-ct
+                                                    span.pie 2,7
+                                                td 15%
+                                                td Jan 6, 2016
+                                                td
+                                                    .support-list-img
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/6.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/4.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/5.jpg', alt='')
+                                                td
+                                                    .btn-group.project-list-action
+                                                        button.btn.btn-white.btn-action.btn-xs
+                                                            i.fa.fa-folder
+                                                            | View
+                                                        button.btn.btn-white.btn-xs
+                                                            i.fa.fa-pencil
+                                                            | Edit
+                                            tr
+                                                td
+                                                td 15
+                                                td
+                                                    .btn-group.project-list-ad
+                                                        button.btn.btn-white.btn-xs Active
+                                                td Real Estate
+                                                td Alstom
+                                                td.datatable-ct
+                                                    span.pie 2,7
+                                                td 15%
+                                                td Dec 1, 2016
+                                                td
+                                                    .support-list-img
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/5.jpg', alt='')
+                                                td
+                                                    .btn-group.project-list-action
+                                                        button.btn.btn-white.btn-action.btn-xs
+                                                            i.fa.fa-folder
+                                                            | View
+                                                        button.btn.btn-white.btn-xs
+                                                            i.fa.fa-pencil
+                                                            | Edit
+                                            tr
+                                                td
+                                                td 16
+                                                td
+                                                    .btn-group.project-list-ad
+                                                        button.btn.btn-white.btn-xs Active
+                                                td Personal Regume
+                                                td Altarex Corp.
+                                                td.datatable-ct
+                                                    span.pie 2,7
+                                                td 15%
+                                                td May 9, 2016
+                                                td
+                                                    .support-list-img
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/4.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/5.jpg', alt='')
+                                                td
+                                                    .btn-group.project-list-action
+                                                        button.btn.btn-white.btn-action.btn-xs
+                                                            i.fa.fa-folder
+                                                            | View
+                                                        button.btn.btn-white.btn-xs
+                                                            i.fa.fa-pencil
+                                                            | Edit
+                                            tr
+                                                td
+                                                td 17
+                                                td
+                                                    .btn-group.project-list-ad
+                                                        button.btn.btn-white.btn-xs Active
+                                                td Admin Template
+                                                td Alvarion Ltd.
+                                                td.datatable-ct
+                                                    span.pie 2,7
+                                                td 15%
+                                                td June 11, 2016
+                                                td
+                                                    .support-list-img
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/6.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/2.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/5.jpg', alt='')
+                                                td
+                                                    .btn-group.project-list-action
+                                                        button.btn.btn-white.btn-action.btn-xs
+                                                            i.fa.fa-folder
+                                                            | View
+                                                        button.btn.btn-white.btn-xs
+                                                            i.fa.fa-pencil
+                                                            | Edit
+                                            tr
+                                                td
+                                                td 18
+                                                td
+                                                    .btn-group.project-list-ad
+                                                        button.btn.btn-white.btn-xs Active
+                                                td FrontEnd
+                                                td Amcor Ltd.
+                                                td.datatable-ct
+                                                    span.pie 2,7
+                                                td 15%
+                                                td May 9, 2015
+                                                td
+                                                    .support-list-img
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/3.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/4.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/5.jpg', alt='')
+                                                td
+                                                    .btn-group.project-list-action
+                                                        button.btn.btn-white.btn-action.btn-xs
+                                                            i.fa.fa-folder
+                                                            | View
+                                                        button.btn.btn-white.btn-xs
+                                                            i.fa.fa-pencil
+                                                            | Edit
+                                            tr
+                                                td
+                                                td 19
+                                                td
+                                                    .btn-group.project-list-ad
+                                                        button.btn.btn-white.btn-xs Active
+                                                td Backend
+                                                td Amdocs Ltd.
+                                                td.datatable-ct
+                                                    span.pie 2,7
+                                                td 15%
+                                                td Feb 9, 2014
+                                                td
+                                                    .support-list-img
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/6.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/2.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/3.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/4.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/5.jpg', alt='')
+                                                td
+                                                    .btn-group.project-list-action
+                                                        button.btn.btn-white.btn-action.btn-xs
+                                                            i.fa.fa-folder
+                                                            | View
+                                                        button.btn.btn-white.btn-xs
+                                                            i.fa.fa-pencil
+                                                            | Edit
+                                            tr
+                                                td
+                                                td 20
+                                                td
+                                                    .btn-group.project-list-ad
+                                                        button.btn.btn-white.btn-xs Active
+                                                td Java Advance
+                                                td Amersham plc
+                                                td.datatable-ct
+                                                    span.pie 2,7
+                                                td 15%
+                                                td July 6, 2014
+                                                td
+                                                    .support-list-img
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/6.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/2.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/3.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/5.jpg', alt='')
+                                                td
+                                                    .btn-group.project-list-action
+                                                        button.btn.btn-white.btn-action.btn-xs
+                                                            i.fa.fa-folder
+                                                            | View
+                                                        button.btn.btn-white.btn-xs
+                                                            i.fa.fa-pencil
+                                                            | Edit
+                                            tr
+                                                td
+                                                td 21
+                                                td
+                                                    .btn-group.project-list-ad
+                                                        button.btn.btn-white.btn-xs Active
+                                                td Jquery Advance
+                                                td Amvescap plc
+                                                td.datatable-ct
+                                                    span.pie 2,7
+                                                td 15%
+                                                td Jun 6, 2013
+                                                td
+                                                    .support-list-img
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/3.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/4.jpg', alt='')
+                                                        a(href='#')
+                                                            img(src='../assets/img/img/notification/5.jpg', alt='')
+                                                td
+                                                    .btn-group.project-list-action
+                                                        button.btn.btn-white.btn-action.btn-xs
+                                                            i.fa.fa-folder
+                                                            | View
+                                                        button.btn.btn-white.btn-xs
+                                                            i.fa.fa-pencil
+                                                            | Edit

@@ -1,0 +1,57 @@
+extends structure.pug
+
+block backImg
+
+    div.divTitleOnBlock
+        h3.titleOnBack
+
+    //div(style="background: url('/assets/img/cover.jpg'); background-size: cover; right: 0; position: absolute; width: 100%; height: 200px; opacity: 0.9")
+
+    img(src = "/assets/img/banner4.jpg", style = "width: 100%; opacity: 0.9")
+
+block content
+
+    div.navBarOnOverBackMainDiv
+        ul
+            img.homeIcon(src="/assets/img/home.png")
+            li.homeBtn خانه /
+            li شکایات و پیشنهادات
+
+    div.mainBlockComplaint
+        div.complaintContent
+            div.complaintMainTitle
+                p شکایات
+            div#complaintMainContentDiv
+                div#complaintMainContentTitleDiv
+                    p ضمن تشکر از مراجعه شما به سامانه ثبت و پیگیری شکایات و گزارشات، خواهشمند است جهت ثبت یا پیگیری شکایات خود به شرح ذیل اقدام فرمایید:
+                div#complaintMainContent1stLineDiv.complaintMainContentTextLinesDiv
+                    span 1- اگر شکایات شما در خصوص کارکنان یا واحدهای زیرمجموعه سازمان فناوری اطلاعات ایران بوده و یا مربوط به یکی از خدمات ارائه شده توسط سازمان فناوری اطلاعات ایران است
+                    span &nbsp;
+                        a(href= "https://ito.gov.ir/e-services" target= "_blank") (میز خدمت)
+                    span ، از طریق این قسمت نسبت به ثبت یا پیگیری شکایات و گزارشات اقدام فرمایید.
+                div#complaintMainContent2ndLineDiv.complaintMainContentTextLinesDiv
+                    p 2- با عنایت به بند اول برنامه پنجم دستورالعمل 9گانه صیانت از حقوق شهروندی مبنی بر رسیدگی به شکایات و اختصاص دو ساعت در هفته برای ملاقات‌های عمومی ، به آگاهی می‌رساند در خصوص تحقق موضوع فوق، دفتر مدیریت عملکرد سازمان فناوری اطلاعات ایران، آمادگی خود را در روزهای دوشنبه هر هفته از ساعت 10 الی 12 (به استثنای تعطیلات رسمی) در ساختمان‌های مرکزی اعلام می‌دارد.
+                div#complaintMainContent1stLineDiv.complaintMainContentTextLinesDiv
+                    span 3- اگر شکایات یا پیگیری شما مربوط به سایر موارد مرتبط با فعالیت‌های وزارت ارتباطات و فناوری اطلاعات است (از جمله: سرعت اینترنت، شرکت‌های ارائه دهنده خدمات اینترنتی، مخابرات شهرستان‌ها و ...) ، از طریق این قسمت و ورود به
+                    span &nbsp;
+                        a(href= "https://195.cra.ir/") سامانه پاسخگویی وزارت ارتباطات و فناوری اطلاعات
+                    span &nbsp;
+                    span نسبت به ثبت یا پیگیری شکایات و گزارشات اقدام فرمایید.
+                div#complaintMainContent3rdLineDiv.complaintMainContentTextLinesDiv
+                    p 4- در راستای اجرای تبصره 8 دستورالعمل اجرایی مواد 91 و 92 قانون مدیریت خدمات کشوری (مبارزه با رشوه و ارتشاء) در صورت مشاهده تخلفات احتمالی مرتبط با این سازمان به بازرسان ویژه به شرح ذیل اطلاع دهید:
+
+                div#complaintMainContent4thLineDiv.complaintMainContentTextLinesDiv
+                    table.complaint-table
+                        tbody
+                            tr
+                                td بهروز عباس زاده
+                                td abbaszade@ito.goc.ir
+                            tr
+                                td علی شکوهی بیدهندی
+                                td shokouhi@ito.goc.ir
+                            tr
+                                td محمد عباس لاهرودی
+                                td abbasilahrodi@ito.goc.ir
+
+                div#complaintMainContent5thLineDiv.complaintMainContentTextLinesDiv
+                    p شماره تماس کارشناس رسیدگی به شکایات : 88115763-021

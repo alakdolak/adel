@@ -1,0 +1,65 @@
+extend ../ProfilesStructure.pug
+
+block content
+
+    .income-order-visit-user-area
+        .container-fluid
+            .row(style= "margin-top: 15px; height: 170px")
+                .col-lg-3.col-md-3.col-sm-6.col-xs-12
+                    .income-dashone-total.shadow-reset.nt-mg-b-30
+                        .income-title
+                            .main-income-head
+                                h2 تعداد کل درخواست‌های تکمیل شده
+                                .main-income-phara
+                                    p Monthly
+                        .income-dashone-pro
+                            .income-rate-total
+                                .price-adminpro-rate
+                                    h3
+                                        span.counter#totalDoneRequest
+                            .clear
+                .col-lg-3.col-md-3.col-sm-6.col-xs-12
+                    .income-dashone-total.shadow-reset.nt-mg-b-30
+                        .income-title
+                            .main-income-head
+                                h2 تعداد کل درخواست‌های در حال تکمیل
+                                .main-income-phara.order-cl
+                                    p Annual
+                        .income-dashone-pro
+                            .income-rate-total
+                                .price-adminpro-rate
+                                    h3
+                                        span.counter#totalRequests
+                            .clear
+                .col-lg-3.col-md-3.col-sm-6.col-xs-12
+                    .income-dashone-total.shadow-reset.nt-mg-b-30
+                        .income-title
+                            .main-income-head
+                                h2 تعداد ثبت نامی ها
+                                .main-income-phara.visitor-cl
+                                    p Today
+                        .income-dashone-pro
+                            .income-rate-total
+                                .price-adminpro-rate
+                                    h3
+                                        span.counter #{totalUsers}
+                            .clear
+                .col-lg-3.col-md-3.col-sm-6.col-xs-12
+                    .income-dashone-total.shadow-reset.nt-mg-b-30
+
+                        .income-dashone-pro(style= "height: auto")
+                            .analytics-content
+                                h5 بازدید ها(از هفته گذشته تا امروز)
+                                h2.counter#totalVisits
+                                #sparkline26
+
+    .analytics-sparkle-area.mg-tb-30
+        .container-fluid
+            .row#perURLDiv
+
+    .analysis-rounded-area
+        .container-fluid
+            .row#perInstructionsDiv(style= "margin-bottom: 30px")
+
+
+    script(src="/assets/js/analytics.js")

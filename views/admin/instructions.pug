@@ -1,0 +1,16 @@
+extend ../ProfilesStructure.pug
+
+block content
+    .contact-clients-area.mg-b-40
+        .container-fluid
+            .row
+                - for(let i = 0; i < instructions.length; i++) {
+                    .col-lg-4.col-md-4.col-sm-6.col-xs-12(style= "margin-top: 15px; min-height: 150px;")
+                        .contact-client-single.shadow-reset.ct-client-b-mg-30.ct-client-b-mg-30-n.contact-client-v2
+                            .row
+                                .col-lg-12(style= "margin-top: 15px")
+                                    .contact-client-img.contact-img-v2
+                                        h3
+                                            a.contact-client-name(href='/blockCreator/' + instructions[i].id) #{instructions[i].name}
+                                        h5 #{instructions[i].title}
+                - }

@@ -1,0 +1,22 @@
+
+div.inputLabel
+
+    div(style=" padding: 3px 0px 10px 30px; font-size: 15px; width: 100%;")
+
+        span(style=" padding: 3px 0px 0px 30px; font-size: 15px; width: 100%;") نام و نام خانوادگی
+
+    div(style=" width: 100%;")
+
+        - if(user_form != null) {
+            input#repName.signInInput.form-control(value=user_form.first_name, type='text', placeholder='نام' name='first_name', style="width:25%; display: inline-block; margin: 0 0 0 2%")
+            input#repFamilyName.signInInput.form-control(value=user_form.last_name, type='text', placeholder='نام خانوادگی' name='last_name', style="width:50%; display: inline-block; margin: 0 3% 0 0")
+        - }
+        - else {
+            input#repName.signInInput.form-control(type='text', placeholder='نام' name='first_name', style="width:25%; display: inline-block; margin: 0 0 0 2%")
+            input#repFamilyName.signInInput.form-control(type='text', placeholder='نام خانوادگی' name='last_name', style="width:50%; display: inline-block; margin: 0 3% 0 0")
+        - }
+        img.off#onOff1(src = "/assets/img/helpoff.png", style = "float: left; width: 30px")
+        p.explainText#explain1 نام و نام خانوادگی خود را بر اساس کارت ملی و یا شناسنامه درج نمایید
+
+
+script(src='/assets/js/filter/nameJustFarsi.js')

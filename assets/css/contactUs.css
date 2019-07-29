@@ -1,0 +1,81 @@
+.mainBlockContactUs {
+    display: inline-block;
+    width: 100%;
+    padding: 30px 10% 175px 10%;
+}
+
+.contactUsContent {
+    display: inline-block;
+    width: 100%;
+    border: 2px solid #c1c2c4;
+    padding: 10px;
+}
+
+.contactUsContentTexts {
+    display: inline-block;
+    float: right;
+}
+
+.goldenOne {
+    color: #ffc000;
+}
+
+.contactUsContents {
+    display: inline-block;
+    width: 100%;
+}
+
+.contactUsTitle {
+    display: inline-block;
+    width: 100%;
+}
+
+.contactUsTitleImg{
+    display: inline-block;
+    width: 5%;
+}
+
+.contactUsTitleImg >img {
+    width: 20px;
+}
+
+.contactUsTitleText{
+    display: inline-block;
+    width: 60%;
+    color: #00acee;
+}
+
+.contactUsContents > p {
+    margin-right: 5%;
+}
+
+.contactUsContentMap {
+    display: inline-block;
+    float: left;
+}
+
+.contactUsContentMap > img {
+    width: 100%;
+    border: 2px solid #009ee0;
+}
+
+.contactUsTitleDiv > p, .contactUsTitle > p, .contactUsContents > p {
+    font-weight: 700;
+}
+@media only screen and (max-width: 680px) {
+    .contactUsTitleDiv > p, .contactUsTitle > p, .contactUsContents > p {
+        font-size: 12px;
+    }
+    .contactUsTitleImg {
+        width: 8%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .contactUsTitleImg {
+        width: 13%;
+    }
+    .contactUsTitleImg >img {
+        width: 17px;
+    }
+}

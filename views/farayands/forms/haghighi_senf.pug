@@ -1,0 +1,59 @@
+script(src="/assets/js/getCities.js")
+script(src="/assets/js/senfForm.js")
+
+div.col-lg-8.col-md-12(style="float: right; display: inline-block; margin-bottom: 30px; padding: 0")
+
+    div.inputLabel
+
+        div(style=" padding: 3px 0px 10px 30px; font-size: 15px; width: 100%;")
+            span(style=" padding: 3px 0px 0px 30px; font-size: 15px; width: 100%;") نام کامل واحد صنفی
+
+        div(style=" width: 100%;")
+
+            if (user_form != null)
+                input#juridicalName.signInInput.form-control(value=user_form.name type='text', placeholder='نام' name='name', style="width:80%; display: inline-block")
+            else
+                input#juridicalName.signInInput.form-control(type='text', placeholder='نام' name='name', style="width:80%; display: inline-block")
+
+            - let instIdTmp = inst.id
+            input(type="hidden", name="instId", value=instIdTmp)
+            img.off#onOff10(src="/assets/img/helpoff.png", style = "float: left; width: 30px")
+            p.explainText#explain10 نام کامل واحد صنفی را درج نمایید.
+
+    div.inputLabel
+
+        div(style=" padding: 3px 0px 10px 30px; font-size: 15px; width: 100%;")
+
+            span(style=" padding: 3px 0px 0px 30px; font-size: 15px; width: 100%;") کد اقتصادی
+
+        div(style=" width: 100%;")
+
+            if (user_form != null)
+                input#economicCode.justNumber.signInInput.form-control(value=user_form.economy_code, type='text', placeholder='عدد' name='economy_code', style="width:80%; display: inline-block")
+            else
+                input#economicCode.signInInput.form-control.justNumber(type='text', placeholder='عدد' name='economy_code', style="width:80%; display: inline-block")
+            img.off#onOff15(src="/assets/img/helpoff.png", style = "float: left; width: 30px")
+            p.explainText#explain15 کد اقتصادی واحد صنفی خود را بر اساس اسناد ثبتی درج نمایید.
+
+    include elements/contact
+    include elements/phone
+
+    div.inputLabel
+
+        div(style=" padding: 3px 0px 10px 30px; font-size: 15px; width: 100%;")
+            span(style=" padding: 3px 0px 0px 30px; font-size: 15px; width: 100%;") وب سایت
+
+        div(style=" width: 100%;")
+            if(user_form != null)
+                input#companyWebsite.signInInput.form-control.justEnglish(value=user_form.site, type='text', placeholder='www.domain.x' name='site', style="width: 80%; direction: ltr")
+            else
+                input#companyWebsite.signInInput.form-control.justEnglish(type='text', placeholder='www.domain.x' name='site', style="width: 80%; direction: ltr")
+
+            img.off#onOff16( src="/assets/img/helpoff.png", style = "float: left; width: 30px")
+            p.explainText#explain16 آدرس وب سایت شرکت را با حروف لاتین درج نمایید.
+
+    div(style=" width: 100%;")
+        p#errors.warning(style="margin: 10px; padding: 10px; line-height: 1.7em")
+
+include elements/submitBtn
+

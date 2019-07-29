@@ -1,0 +1,103 @@
+extend ProfilesStructure.pug
+
+block content
+    .user-prfile-activity-area.mg-b-40.mg-t-30
+            .container-fluid
+                .row
+                    .col-md-4.col-xs-12(style= "float: right")
+                        .row(style= "margin-bottom: 30px")
+                            .col-lg-12
+                                .sparkline10-list.shadow-reset
+                                    .sparkline10-hd
+                                        .main-sparkline10-hd
+                                            h1#profileSettingH1 تغییر رمز عبور
+
+                                        .sparkline10-graph
+                                            .form-group-inner
+                                                .row
+                                                    .col-xs-12.profileSettingInputsHeadDiv(style= "float: right")
+                                                        .login-input-head(style= "padding-left: 0")
+                                                            p کلمه‌ی عبور قبلی
+                                                    .col-xs-12.profileSettingInputsDivs(style= "float: right")
+                                                        .login-input-area(style= "margin-left: 0")
+                                                            input(type='password', name='password', style= "text-align: left")
+                                                            i.fa.fa-lock.login-user
+                                                .row
+                                                    .col-xs-12.profileSettingInputsHeadDiv(style= "float: right")
+                                                        .login-input-head(style= "padding-left: 0")
+                                                            p کلمه‌ی عبور جدید
+                                                    .col-xs-12.profileSettingInputsDivs(style= "float: right")
+                                                        .login-input-area(style= "margin-left: 0")
+                                                            input(type='password', name='password', style= "text-align: left")
+                                                            i.fa.fa-lock.login-user
+                                                .row
+                                                    .col-xs-12.profileSettingInputsHeadDiv(style= "float: right")
+                                                        .login-input-head(style= "padding-left: 0")
+                                                            p تکرار کلمه‌ی عبور
+                                                    .col-xs-12.profileSettingInputsDivs(style= "float: right")
+                                                        .login-input-area(style= "margin-left: 0")
+                                                            input(type='password', name='confarm_password', style= "text-align: left")
+                                                            i.fa.fa-lock.login-user
+                                                .row
+
+                                                    .col-lg-8(style= "float: left")
+                                                        .login-button-pro
+                                                            button.login-button.login-button-rg(type='submit', style= "float: left") ثبت
+                    .col-md-4.col-xs-12(style= "float: right")
+                        .row(style= "margin-bottom: 30px")
+                            .col-lg-12
+                                .sparkline10-list.shadow-reset
+                                    .sparkline10-hd
+                                        .main-sparkline10-hd
+                                            h1#profileSettingH1 تغییر شماره‌ی تلفن همراه
+
+                                        .sparkline10-graph
+                                            .form-group-inner
+                                                .row
+                                                    .col-xs-12.profileSettingInputsHeadDiv(style= "float: right")
+                                                        .login-input-head(style= "padding-left: 0")
+                                                            p شماره‌ی همراه
+                                                    .col-xs-12.profileSettingInputsDivs(style= "float: right")
+                                                        .login-input-area(style= "margin-left: 0")
+                                                            input(type='text', name='confarm_password', style= "text-align: left")
+                                                            i.fa.fa-phone.login-user
+                                                .row
+                                                    .col-xs-12.profileSettingInputsHeadDiv(style= "float: right")
+                                                        .login-input-head(style= "padding-left: 0")
+                                                            p کد تأیید
+                                                    .col-xs-12.profileSettingInputsDivs(style= "float: right")
+                                                        .login-input-area(style= "margin-left: 0")
+                                                            input(type='text', name='confarm_password', style= "text-align: left")
+                                                            i.fa.fa-phone.login-user
+                                                .row
+
+                                                    .col-lg-8(style= "float: left")
+                                                        .login-button-pro
+                                                            button.login-button.login-button-rg(type='submit', style= "float: left") ثبت
+
+
+
+                    .col-md-4.col-xs-12(style= "float: right")
+                        .row(style= "margin-bottom: 30px")
+                            .col-lg-12
+                                .sparkline10-list.shadow-reset
+                                    .sparkline10-hd
+                                        .main-sparkline10-hd
+                                            h1#profileSettingH1 تغییر پست الکترونیکی
+
+                                        .sparkline10-graph
+                                            .form-group-inner
+                                                .row
+                                                    .col-xs-12.profileSettingInputsHeadDiv(style= "float: right")
+                                                        .login-input-head(style= "padding-left: 0")
+                                                            p آدرس ایمیل جدید
+                                                    .col-xs-12.profileSettingInputsDivs(style= "float: right")
+                                                        .login-input-area(style= "margin-left: 0")
+                                                            input(type='email', name='email', style= "text-align: left")
+                                                            i.fa.fa-envelope.login-user(aria-hidden='true')
+                                                .row
+
+                                                    .col-lg-8(style= "float: left")
+                                                        .login-button-pro
+                                                            button.login-button.login-button-rg(type='submit', style= "float: left") ثبت
+

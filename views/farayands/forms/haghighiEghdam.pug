@@ -1,0 +1,17 @@
+script(src="/assets/js/getCities.js")
+script(src="/assets/js/haghighiForm.js")
+
+div.col-lg-8.col-md-12(style="float: right; display: inline-block; margin-bottom: 30px; padding: 0")
+
+    - let instIdTmp = inst.id
+    input(type="hidden", name="instId", value=instIdTmp)
+
+    include elements/name
+    include elements/shahkar_melli
+    include elements/contact_haghighi
+
+    div(style=" width: 100%;")
+        p#errors.warning(style="margin: 10px; padding: 10px; line-height: 1.7em")
+
+include elements/submitBtn
+

@@ -1,0 +1,23 @@
+div.col-lg-8.col-md-12(style="float: right; display: inline-block; margin-bottom: 30px; padding: 0")
+
+    div.inputLabel
+
+        div(style=" padding: 3px 0px 10px 30px; font-size: 15px; width: 100%;")
+
+            span(style=" padding: 3px 0px 0px 30px; font-size: 15px; width: 100%;") تعداد
+
+        div(style=" width: 100%;")
+
+            select#numOfMembers.signInInput.form-control(type='text', placeholder='انتخاب کنید' name='numOfMembers', style="width: 80%; display: inline-block")
+                - for (let i = 1; i < 11; i++) {
+                    option(value=!{i}) !{i}
+                - }
+
+            img.off#onOff11(src = "/assets/img/helpoff.png", style = "float: left; width: 30px")
+            p.explainText#explain11 تعداد صاحبان جواز را بر اساس اسناد ثبتی درج نمایید.
+
+    div#usersDiv
+
+include elements/submitBtn
+script(src="/assets/js/javaz.js")
+

@@ -1,0 +1,16 @@
+div.inputLabel
+    div(style="padding: 3px 0px 10px 30px; font-size: 15px; width: 100%;")
+
+        span(style=" padding: 3px 0px 0px 30px; font-size: 15px; width: 100%;") شماره همراه
+
+    div(style="width: 100%;")
+
+        - if(user_form != null) {
+            input.form-control.justNumber(value=user_form.phone, type='text', placeholder='09xxxxxxxxx' name='phone', style="width: 80%; direction: ltr; display: inline-block")
+        - }
+        - else {
+            input.form-control.justNumber(type='text', placeholder='09xxxxxxxxx' name='phone', style="width: 80%; direction: ltr; display: inline-block")
+        - }
+
+        img.off#onOff19(src = "/assets/img/helpoff.png", style = "float: left; width: 30px")
+        p.explainText#explain19 شماره تلفن همراه خود را وارد نمایید.

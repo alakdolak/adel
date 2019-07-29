@@ -1,0 +1,508 @@
+@media only screen and (max-width: 992px) and (min-width: 740px) {
+    .farayandStepsDetailsDivs > b {
+        font-size: 10px !important;
+    }
+    .farayandStepsDetailsDivs > span {
+        font-size: 10px !important;
+    }
+}
+
+@media only screen and (max-width: 740px) and (min-width: 520px) {
+    .farayandStepsDetailsDivs > b {
+        padding-top: 3% !important;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .responsiveVersion {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 741px) {
+    .navBarStepStateResponsiveBox {
+        display: none !important;
+    }
+    .farayandStepsDetailsResponsiveDiv {
+        display: none !important;
+    }
+}
+
+
+@media only screen and (max-width: 500px){
+    #farayandWholeInfosResponsive {
+        width: 70% !important;
+    }
+    #navBarStepImageResponsiveDiv {
+        width: 100% !important;
+    }
+}
+
+@media only screen and (max-width: 580px) {
+    .specialBox > center > p {
+        font-size: 10px;
+        padding-top: 5px;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .responseBox {
+        display: none;
+    }
+    .instructions{
+        margin: 20px 0 !important;
+    }
+    .signUpInput{
+        width: 260px !important;
+    }
+    #verifyCode{
+        padding: 15px 0 !important;
+    }
+    .doNotGetCode {
+        font-size: 10px !important;
+    }
+    #continueStages{
+        width: 100px !important;
+    }
+    #farayandHeader {
+        padding: 20px 0 !important;
+    }
+}
+
+@media only screen and (max-width: 740px) {
+    .specialBox > center > p , .specialBox > center > div > b {
+        display: none !important;
+    }
+    .specialBox {
+        width: 19% !important;
+        margin: 0 1px !important;
+        height: auto !important;
+        padding-bottom: 5px;
+    }
+    #navBarStepsState {
+        height: auto !important;
+    }
+    .navBarFirstStepImgState {
+        height: auto !important;
+    }
+    .specialBox > center > div {
+        margin-top: 10px;
+    }
+    .specialBox > center > b {
+        margin-bottom: 10px;
+    }
+    .farayandStepsDetails {
+        width: 100% !important;
+    }
+    .farayandStepsDetailsDiv > a {
+        display: none !important;
+    }
+    #farayandInputGetter {
+        width: 100% !important;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    #farayandHeaderTitleReqCode {
+        width: 40%;
+    }
+    #farayandHeaderTitleReqCode > b {
+        font-size: 12px;
+    }
+    #farayandHeader {
+        padding-bottom: 20px !important;
+    }
+    .farayandInputsGetter {
+        display: none;
+    }
+    .specialBox:before, .specialBoxConcave:after {
+        display: none !important;
+    }
+    .specialBox > center {
+        margin-right: 0;
+        margin-top: 15px;
+    }
+    .specialBox {
+        width: 15%;
+        margin: 0 15px;
+    }
+    .navBarFirstStepImgState {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    #farayandHeaderTitleReqCode {
+        float: right !important;
+
+    }
+    #farayandWholeInfos > b{
+        font-size: 80% !important;
+    }
+}
+
+@media only screen and (max-width: 1170px){
+    #navBarStepImageDiv {
+        display: none !important;
+    }
+}
+
+
+@media only screen and (max-width: 1300px) {
+    #FarayandMainBody {
+        padding-left: 10% !important;
+        padding-right: 10% !important;
+    }
+    .navBarFirstStepImgState{
+        margin-right: 0 !important;
+    }
+}
+
+.inputLabel {
+    color: black;
+    padding: 10px 20px;
+    display: inline-block;
+    float: right;
+    width: 100%;
+}
+
+.signInInput{
+    /*width:320px !important;*/
+    display: inline-block !important;
+}
+
+#farayandHeader {
+    padding: 20px 10% 0 10%;
+    display: inline-block;
+}
+
+#backToHomeFrayand {
+    float: left;
+    padding-bottom: 20px;
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+
+#farayandHeader2ndLine {
+    display: inline-block;
+}
+
+#farayandHeaderTitleContents {
+    float: right;
+    display: inline-block;
+}
+
+#titleHeaderFarayand {
+    font-size: 30px;
+}
+
+#attHeaderFarayand{
+    color: #aa0800;
+    font-size: 18px;
+}
+
+#farayandHeaderTitleContents{
+    padding:0;
+}
+
+#farayandHeaderTitleReqCode {
+    float: left;
+    background-color: #ffc000;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 20px 0;
+    height: 30px;
+    padding: 5px;
+}
+
+#farayandHeaderTitleReqCodeContent {
+    color: white;
+    font-size: 15px;
+}
+
+#farayandHeaderReqCodediv {
+    padding: 0;
+}
+
+#farayandHeaderReqCodeBtn {
+    display: inline-block;
+    float: left;
+    margin: 20px 0;
+    color: white;
+    font-weight: 700;
+    width: 150px;
+}
+
+#farayandWholeInfosResponsive {
+    margin: 20px 0;
+    width: 50%;
+}
+
+.farayandStepsDetailsResponsiveDivs {
+    margin: 0 5px 10px;
+    padding: 0;
+    float: none;
+    display: inline-block;
+    border-top: 10px solid white;
+    background-color: #00acee;
+    width: 24%;
+    height: 60px;
+    color: white;
+}
+
+.farayandStepsDetailsResponsiveDivs > b {
+    display: inline-block;
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+#navBarStepsState{
+    background-image: linear-gradient(to left, #009ee0, #1f647d);
+    height: 100px;
+    padding: 0;
+    margin: 0;
+}
+
+#navBarStepImageDiv {
+    display: inline-block;
+    height: 100%;
+    width: 20%;
+}
+
+#navBarStepImgState{
+    display: inline-block;
+    float: right;
+    padding: 0 10%;
+}
+
+#navBarStepImage1stLineText , #navBarStepImage1stLineTextResponsive{
+    font-size: 15px;
+    display: inline-block;
+    color: #ffc000;
+    /*padding-bottom: 5px;*/
+}
+
+#navBarStepImage1stLineTextResponsive {
+    width: 100%;
+}
+
+#navBarStepImage {
+    padding: 5px 0;
+    display: inline-block;
+    width: 75%;
+}
+
+#navBarStepImageResponsive {
+    padding: 5px 0;
+    display: inline-block;
+    width: 65%;
+}
+
+#navBarStepImageResponsiveDiv {
+    padding: 5px 0;
+    display: inline-block;
+    float: inherit;
+    width: 65%;
+    background-color: beige;
+}
+
+#navBarStepImage2ndLineText {
+    display: inline-block;
+    font-size: 12px;
+    width: 100%;
+    color: white;
+}
+
+#navBarStepImage2ndLineTextResponsive {
+    display: inline-block;
+    font-size: 12px;
+    width: 100%;
+    color: black;
+}
+
+#FarayandMainBody {
+    background-color: #ececec;
+    display: inline-block;
+    /*height: 100%;*/
+    padding: 30px 15%;
+}
+
+.GetSpecification {
+    display: inline-block;
+}
+
+.farayandStepsDetails {
+    float: right;
+    width: 25%;
+}
+
+.farayandStepsDetailsDiv {
+    display: inline-block;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.farayandStepsDetailsDivs {
+    background-color: #1f647d;
+    /*padding: 10px;*/
+    cursor: pointer;
+    color: white;
+    display: inline-block;
+    width: 100%;
+    height: 70px;
+    margin: 2px;
+}
+
+.farayandInfosDiv{
+    display: inline-block;
+    border: solid 2px #009ee0;
+    border-radius: 5px;
+    width: 80%;
+    Padding: 10px;
+    /*margin: 10px;*/
+}
+
+#farayandWholeInfos{
+    font-size: 80%;
+}
+
+#farayandInputGetter{
+    display: inline-block;
+    width: 70%;
+    margin: 2px 5px;
+    background-color: white;
+    padding: 3% 5%;
+}
+
+.navBarFirstStepImgState{
+    height: 100%;
+    position: relative;
+    text-align: center;
+    float: right;
+    /*margin: 0 6% 0 0;*/
+    color: white;
+}
+
+.navBarStepStateResponsiveBox {
+    height: 50px;
+    width: 100%;
+    color: white;
+    display: inline-block;
+    background-color: rgb(201, 75, 0) ;
+}
+
+.stepState {
+    width: 50%;
+    float: right;
+    height: 100%;
+    padding: 14px;
+    color: white;
+}
+
+.stepState > p {
+    width: 100%;
+    display:inline-block
+}
+
+.stepHelp {
+    width: 50%;
+    float: left;
+    height: 100%;
+    padding: 18px;
+}
+
+.stepHelp > b{
+    font-size:10px;
+    padding: 0 5px;
+    float: left;
+}
+
+.stepHelp > img {
+    float: left;
+    width: 15px;
+}
+
+.stepText{
+    color: white;
+}
+
+.stepText:link {
+    color: white;
+    text-decoration: none;
+}
+
+.stepText:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.stepText:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.step0Text{
+    cursor: pointer;
+    /*position: absolute;*/
+    /*bottom: 20px;*/
+    /*right: 15%;*/
+    display: inline-block;
+}
+.step1Text{
+    cursor: pointer;
+    /*position: absolute;*/
+    /*bottom: 20px;*/
+    /*right: 15%;*/
+    display: inline-block;
+}
+.step2Text{
+    cursor: pointer;
+    /*position: absolute;*/
+    /*bottom: 20px;*/
+    /*right: 43%;*/
+    display: inline-block;
+}
+
+.step3Text{
+    cursor: pointer;
+    /*position: absolute;*/
+    /*bottom: 20px;*/
+    /*right: 67%;*/
+    display: inline-block;
+}
+
+.step-1Text{
+    cursor: pointer;
+    /*position: absolute;*/
+    /*bottom: 20px;*/
+    /*right: 67%;*/
+    display: inline-block;
+}
+
+#repIdCode{
+    position: relative;
+    /*text-align: center;*/
+    float: right;
+    /*margin: 0 6% 0 0;*/
+    color: white;
+}
+
+.identifyButton{
+    position: absolute;
+    bottom: 83.5%;
+    left: 24%;
+    display: inline-block;
+}
+
+.rpContinuesBtn {
+    float: left;
+    background-color: #ffc000;
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    display: inline-block;
+    margin: 0px 45px;
+}

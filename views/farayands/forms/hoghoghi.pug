@@ -1,0 +1,171 @@
+
+script(src="/assets/js/hoghoghiForm.js")
+
+div.col-lg-8.col-md-12(style="float: right; display: inline-block; margin-bottom: 30px; padding: 0")
+
+    div.inputLabel
+
+        div(style=" padding: 3px 0px 10px 30px; font-size: 15px; width: 100%;")
+
+            span(style=" padding: 3px 0px 0px 30px; font-size: 15px; width: 100%;") نام کامل حقوقی
+
+        div(style=" width: 100%;")
+
+            if (user_form != null)
+                input#juridicalName.signInInput.form-control(value=user_form.name type='text', placeholder='نام' name='name', style="width:80%; display: inline-block")
+            else
+                input#juridicalName.signInInput.form-control(type='text', placeholder='نام' name='name', style="width:80%; display: inline-block")
+
+            - let instIdTmp = inst.id
+            input(type="hidden", name="instId", value=instIdTmp)
+            img.off#onOff10(src = "/assets/img/helpoff.png", style = "float: left; width: 30px")
+            p.explainText#explain10 نام حقوقی شرکت خود را بر اساس اساسنامه و یا اسناد ثبتی شرکت درج نمایید.
+
+    div.inputLabel
+
+        div(style=" padding: 3px 0px 10px 30px; font-size: 15px; width: 100%;")
+
+            span(style=" padding: 3px 0px 0px 30px; font-size: 15px; width: 100%;") نوع شرکت
+
+        div(style=" width: 100%;")
+
+            select#companyType.signInInput.form-control(type='text', placeholder='انتخاب کنید' name='company_kind', style="width: 80%; display: inline-block")
+                option(selected, value="-1") انتخاب کنید
+
+                if(user_form != null && parseInt(user_form.company_kind) === 1)
+                    option(selected, value="1") مسئولیت محدود
+                else
+                    option(value="1") مسئولیت محدود
+
+                if(user_form != null && parseInt(user_form.company_kind) === 2)
+                    option(selected, value="2") سهامی خاص
+                else
+                    option(value="2") سهامی خاص
+
+                if(user_form != null && parseInt(user_form.company_kind) === 3)
+                    option(selected, value="3") سهامی عام
+                else
+                    option(value="3") سهامی عام
+
+                if(user_form != null && parseInt(user_form.company_kind) === 4)
+                    option(selected, value="4") موسسه
+                else
+                    option(value="4") موسسه
+
+                if(user_form != null && parseInt(user_form.company_kind) === 5)
+                    option(selected, value="5") تعاونی
+                else
+                    option(value="5") تعاونی
+
+                if(user_form != null && parseInt(user_form.company_kind) === 6)
+                    option(selected, value="6") سایر
+                else
+                    option(value="6") سایر
+
+            img#onOff11(src = "/assets/img/helpoff.png", style = "float: left; width: 30px")
+            p.explainText#explain11 نوع شرکت خود را بر اساس اساسنامه و یا اسناد ثبتی از میان گزینه های موجود انتخاب نمایید.
+
+    div.inputLabel
+
+        div(style=" padding: 3px 0px 10px 30px; font-size: 15px; width: 100%;")
+
+            span(style=" padding: 3px 0px 0px 30px; font-size: 15px; width: 100%;") شماره ثبت شرکت
+
+        div(style=" width: 100%;")
+
+            if(user_form != null)
+                input#recNum.signInInput.form-control.justNumber(value=user_form.company_no, type='text', placeholder='عدد' name='company_no', style="width:80%; display: inline-block")
+            else
+                input#recNum.signInInput.form-control.justNumber(type='text', placeholder='عدد' name='company_no', style="width:80%; display: inline-block")
+
+            img.off#onOff12(src="/assets/img/helpoff.png", style = "float: left; width: 30px")
+            p.explainText#explain12 شماره شرکت خود را بر اساس اسناد ثبتی درج نمایید.
+
+    div.inputLabel
+
+        div(style=" padding: 3px 0px 10px 30px; font-size: 15px; width: 100%;")
+
+            span(style=" padding: 3px 0px 0px 30px; font-size: 15px; width: 100%;") تاریخ ثبت شرکت
+
+        div(style=" width: 100%;")
+            select#recDateDay.signInInput.form-control(type='text', placeholder='عدد' name='submit_date_day', style="width:20% !important; display: inline-block; margin: 0 0 0 5%")
+                option(value = -1) روز
+                - for (let i = 1; i < 32; i++) {
+                    if (user_form != null && i == user_form.submit_date_day)
+                        option(selected, value=i) !{i}
+                    else
+                        option(value=i) !{i}
+                - }
+            select#recDateMonth.signInInput.form-control(type='text', placeholder='عدد' name='submit_date_month', style="width:20% !important; display: inline-block; margin: 0 5%")
+                option(value = -1) ماه
+                - for (let i = 1; i < 13; i++) {
+                    if (user_form != null && parseInt(i) == user_form.submit_date_month)
+                        option(selected, value=i) !{i}
+                    else
+                        option(value=i) !{i}
+                - }
+            select#recDateYear.signInInput.form-control(type='text', placeholder='عدد' name='submit_date_year', style="width:20% !important; display: inline-block; margin: 0 5% 0 0")
+                option(value = -1) سال
+                - for (var i = 1398; i > 1299; i--) {
+                    if (user_form != null && parseInt(i) == user_form.submit_date_year)
+                        option(selected, value=i) !{i}
+                    else
+                        option(value=i) !{i}
+                - }
+            img.off#onOff13(src="/assets/img/helpoff.png", style = "float: left; width: 30px")
+            p.explainText#explain13 تاریخ ثبت شرکت خود را بر اساس اسناد ثبتی درج نمایید.
+
+    div.inputLabel
+
+        div(style=" padding: 3px 0px 10px 30px; font-size: 15px; width: 100%;")
+
+            span(style=" padding: 3px 0px 0px 30px; font-size: 15px; width: 100%;") شناسه ملی شرکت
+
+        div(style=" width: 100%;")
+
+            if (user_form != null)
+                input#nationalIdCode.justNumber.signInInput.form-control(value=user_form.nid, type='text', placeholder='عدد' name='nid', style="width:80%; display: inline-block")
+            else
+                input#nationalIdCode.signInInput.form-control.justNumber(type='text', placeholder='عدد' name='nid', style="width:80%; display: inline-block")
+
+            img.off#onOff14(src="/assets/img/helpoff.png", style = "float: left; width: 30px")
+            p.explainText#explain14 شناسه ملی شرکت خود را بر اساس اسناد ثبتی درج نمایید.
+
+    div.inputLabel
+
+        div(style=" padding: 3px 0px 10px 30px; font-size: 15px; width: 100%;")
+
+            span(style=" padding: 3px 0px 0px 30px; font-size: 15px; width: 100%;") کد اقتصادی
+
+        div(style=" width: 100%;")
+
+            if (user_form != null)
+                input#economicCode.signInInput.form-control.justNumber(value=user_form.economy_code, type='text', placeholder='عدد' name='economy_code', style="width:80%; display: inline-block")
+            else
+                input#economicCode.signInInput.form-control.justNumber(type='text', placeholder='عدد' name='economy_code', style="width:80%; display: inline-block")
+            img.off#onOff15(src="/assets/img/helpoff.png", style = "float: left; width: 30px")
+            p.explainText#explain15 کد اقتصادی شرکت خود را بر اساس اسناد ثبتی درج نمایید.
+
+    include elements/contact
+
+    div.inputLabel
+
+        div(style=" padding: 3px 0px 10px 30px; font-size: 15px; width: 100%;")
+
+            span(style=" padding: 3px 0px 0px 30px; font-size: 15px; width: 100%;") وب سایت
+
+        div(style=" width: 100%;")
+
+            if(user_form != null)
+                input#companyWebsite.signInInput.form-control.justEnglish(value=user_form.site, type='text', placeholder='www.domain.x' name='site', style="width: 80%; direction: ltr")
+            else
+                input#companyWebsite.signInInput.form-control.justEnglish(type='text', placeholder='www.domain.x' name='site', style="width: 80%; direction: ltr")
+
+            img.off#onOff16( src="/assets/img/helpoff.png", style = "float: left; width: 30px")
+            p.explainText#explain16 آدرس وب سایت شرکت را با حروف لاتین درج نمایید.
+
+        div(style=" width: 100%;")
+            p#errors.warning(style="margin: 10px; padding: 10px; line-height: 1.7em")
+
+include elements/submitBtn
+

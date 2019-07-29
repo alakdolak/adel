@@ -1,0 +1,119 @@
+extend ProfilesStructure.pug
+
+block content
+    .user-profile-area
+        .container-fluid
+            .row
+                .col-lg-12.col-md-12.col-sm-12.col-xs-12(style= "margin-top: 20px;")
+                    .user-profile-wrap.shadow-reset
+                        .row
+                            .col-lg-4.col-sm-6.col-xs-12(style= "float: right")
+                                .row
+                                    .col-lg-2.col-xs-2(style= "float: right")
+                                        .user-profile-img
+                                            img(src='assets/img/img/notification/5.jpg', alt='')
+                                    .col-lg-10.col-xs-10(style= "float: right")
+                                        .user-profile-content
+                                            h2 نام شخص حقیقی یا حقوقی
+                                            p.profile-founder
+                                                strong نام طرح
+                                            p.profile-des توضیحات طرح: فیلد ورودی توسط کاربر
+                            .col-lg-4.col-sm-6.col-xs-12(style= "float: right")
+                                .user-profile-social-list
+                                    table.table.small.m-b-xs
+                                        tbody
+                                            tr
+                                                td
+                                                    | شهر یا استان طرح
+                                                    strong 542
+                                                td
+                                                    | مبلغ درخواستی
+                                                    strong 222
+                                            tr
+                                                td
+                                                    | درخواست پیشین
+                                                    strong دارد/ندارد
+                                                td
+                                                    | شرایط ویژه
+                                                    strong دارد/ندارد
+                                            tr
+                                                td
+                                                    | درخواست پیشین سایر اعضا
+                                                    strong دارد/ندارد
+                                                td
+
+                            .col-lg-4.col-xs-12(style= "float: right")
+                                .analytics-sparkle-line.user-profile-sparkline
+                                    .analytics-content
+                                        h5(style= "width: 100%;") Visits in last 24h
+                                        h2.counter 498009
+                                        #sparkline22
+    .user-prfile-activity-area.mg-b-40.mg-t-30
+        .container-fluid
+            .row
+                .col-lg-3
+                    .sparkline7-list.profile-online-mg-t-30.shadow-reset.mg-b-30
+                        .sparkline7-hd
+                            .main-spark7-hd
+                                h1 آپلود لیست بیمه
+                                .sparkline7-outline-icon
+                                    span.sparkline7-collapse-link
+                                        i.fa.fa-chevron-up
+                        .sparkline7-hd
+                            .form-group-inner
+                                .row
+                                    .col-lg-12
+                                        .file-upload-inner.ts-forms
+                                            .input.prepend-big-btn
+                                                //label.icon-right(for='prepend-big-btn')
+                                                    i.fa.fa-download
+                                                .file-button
+                                                    | آپلود لیست
+                                                    input#prepend-big-btn(type='file')
+                                                input#prepend-big-btn(type='text', placeholder='فایل آپلود نشده است')
+                .col-lg-6
+                    .row(style= "margin-bottom: 30px")
+                        .col-lg-12
+                            .sparkline10-list.shadow-reset
+                                .sparkline10-hd
+                                    .main-sparkline10-hd
+                                        h1 نفرات بیمه شده
+                                        .sparkline10-outline-icon
+                                            span.sparkline10-collapse-link
+                                                i.fa.fa-chevron-up
+                                            span.sparkline10-collapse-close
+                                                i.fa.fa-times(style= "transform: rotate(45deg)")
+                                    .sparkline10-graph
+                                        .form-group-inner
+                                            .row
+                                                .col-lg-12
+                                                    .row
+                                                        .col-lg-3.col-sm-6(style= "float: right")
+                                                            .form-select-list
+                                                                input.form-control.basic-ele-mg-b-10(type='text', placeholder='نام بیمه شونده')
+                                                        .col-lg-3.col-sm-6(style= "float: right")
+                                                            .form-select-list
+                                                                input.form-control.basic-ele-mg-b-10(type='text', placeholder='نام خانوادگی بیمه شونده')
+                                                        .col-lg-3.col-sm-6(style= "float: right")
+                                                            .form-select-list
+                                                                input.form-control.basic-ele-mg-b-10(type='text', placeholder='کد ملی بیمه شونده')
+                                                        .col-lg-3.col-sm-6(style= "float: right")
+                                                            .form-select-list
+                                                                input.form-control(type='text', placeholder='شماره بیمه')
+
+
+
+                .col-lg-3
+                    .sparkline7-list.profile-online-mg-t-30.shadow-reset
+                        .sparkline7-hd
+                            .main-spark7-hd
+                                h1 اعضای کارگروه
+                                .sparkline7-outline-icon
+                                    span.sparkline7-collapse-link
+                                        i.fa.fa-chevron-up
+                                    span
+                                        i.fa.fa-wrench
+                                    span.sparkline7-collapse-close
+                                        i.fa.fa-times
+                        .sparkline7-hd
+                            div.assessorMembersGroup

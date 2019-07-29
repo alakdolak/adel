@@ -1,0 +1,55 @@
+@media only screen and (max-width: 680px) {
+    #termsAndConditionsMenuBar, #termsAndConditionsContentsDiv  {
+        float: inherit !important;
+        width: 80% !important;
+        margin: 20px 0 !important;
+    }
+}
+#mainBlockTermsAndConditions {
+    display: inline-block;
+    width: 100%;
+    padding: 20px 40px;
+}
+
+#termsAndConditionsMenuBar{
+    width: 25%;
+    display: inline-block;
+    border: 2px solid #c1c2c4;
+    margin: 0 10px;
+    float: right;
+    border-bottom: inherit;
+}
+
+.termsAndConditionsMenuBarTitles{
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    border-bottom: 2px solid #c1c2c4;
+    background-color: #f2f3f5;
+}
+
+.termsAndConditionsMenuBarTitles > h4{
+    float: right;
+    padding: 0 10px;
+}
+
+.arrowUpIcon {
+    position: absolute;
+    left: 10px;
+    color: goldenrod;
+    background-color: #f2f3f5;
+    top: 10px;
+}
+
+#termsAndConditionsContentsDiv {
+    width: 65%;
+    display: inline-block;
+    border: 2px solid #989595;
+    padding: 0 10px;
+    margin: 0 10px;
+    float: left;
+}
+
+#termsAndConditionsContentsDiv > p {
+    float: right;
+}

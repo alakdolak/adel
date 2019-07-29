@@ -1,0 +1,179 @@
+- let instId = inst.id
+
+script(src="/assets/js/madarek.js")
+include madrakPopUp
+
+div.hidden#nextURL(data-val='/farayand/2/2/' + instId)
+
+div.col-lg-8.col-md-12(style="float: right; display: inline-block; margin-bottom: 30px; padding: 0")
+
+    div.inputLabel
+
+        div(style=" padding: 3px 0px 10px 30px; font-size: 15px; width: 100%;")
+            span(style=" padding: 3px 0px 0px 30px; font-size: 15px; width: 100%;") پیوست آگهی تاسیس روزنامه رسمی شرکت
+
+        div(style=" width: 100%;")
+
+            - if(user_form != null) {
+                - for (let i = 0; i < user_form.length; i++) {
+                    // span #{user_form[i].key_}
+                    - if(user_form[i].key_ == 'companyBirthAnnouncement')
+                        span #{user_form[i].val_}
+                - }
+            - }
+
+            input.signInInput.form-control(type='file', data-label='پیوست آگهی تاسیس روزنامه رسمی شرکت', name='companyBirthAnnouncement', style="width:80%;float:right; display: inline-block")
+            img.off#onOff1( src = "/assets/img/helpoff.png", style = "float: left; width: 30px")
+            p.explainText#explain1(style="width: 80%; text-align: justify; color: #1d7eaa; float: right; font-size: 11px; padding-top: 5px") تصویر مدرک مورد نظر را، واضح و خوانا با حجم زیر 2M، الصاق نمایید.
+
+    div.inputLabel
+
+        div(style=" padding: 3px 0px 10px 30px; font-size: 15px; width: 100%;")
+            span(style=" padding: 3px 0px 0px 30px; font-size: 15px; width: 100%;") پیوست اساسنامه شرکت
+
+        div(style=" width: 100%;")
+
+            - if(user_form != null) {
+                - for (let i = 0; i < user_form.length; i++) {
+                    // span #{user_form[i].key_}
+                    - if(user_form[i].key_ == 'companyAsasname')
+                        span #{user_form[i].val_}
+                - }
+            - }
+
+            input.signInInput.form-control(type='file', data-label='پیوست اساسنامه شرکت', name='companyAsasname', style="width:80%;float:right; display: inline-block")
+            img.off#onOff2( src = "/assets/img/helpoff.png", style = "float: left; width: 30px")
+            p.explainText#explain2(style="width: 80%; text-align: justify; color: #1d7eaa; float: right; font-size: 11px; padding-top: 5px") تصویر مدرک مورد نظر را، واضح و خوانا با حجم زیر 2M، الصاق نمایید.
+
+        div(style="display: inline-block; font-size: 15px; width: 100%;")
+
+            //button(style= "background: inherit; border: none;")
+            //    img(src = "/assets/img/adddoc.png", style = "right: left; width: 20px")
+
+            //span(style=" padding: 3px 0px 0px 30px; font-size: 10px; width: 100%;") اگر بیش از یک فایل می باشد
+
+    div.inputLabel
+
+        div(style=" padding: 3px 0px 10px 30px; font-size: 15px; width: 100%;")
+            span(style=" padding: 3px 0px 0px 30px; font-size: 15px; width: 100%;") پیوست آخرین تغییرات روزنامه رسمی شرکت (در صورت وجود)
+        div(style=" width: 100%;")
+
+            - if(user_form != null) {
+                - for (let i = 0; i < user_form.length; i++) {
+                    // span #{user_form[i].key_}
+                    - if(user_form[i].key_ == 'companyLastChanges')
+                        span #{user_form[i].val_}
+                - }
+            - }
+
+            input.signInInput.form-control(type='file', data-label='پیوست آخرین تغییرات روزنامه رسمی شرکت', name='companyLastChanges', style="width:80%;float:right; display: inline-block")
+            img.off#onOff3( src = "/assets/img/helpoff.png", style = "float: left; width: 30px")
+            p.explainText#explain3(style="width: 80%; text-align: justify; color: #1d7eaa; float: right; font-size: 11px; padding-top: 5px") تصویر مدرک مورد نظر را، واضح و خوانا با حجم زیر 2M، الصاق نمایید.
+
+    div.inputLabel
+
+        div(style=" padding: 3px 0px 10px 30px; font-size: 15px; width: 100%;")
+            span(style=" padding: 3px 0px 0px 30px; font-size: 15px; width: 100%;") پیوست آخرین تغییرات هیئت مدیره و مدیر عامل(درصورت وجود)
+
+        div(style=" width: 100%;")
+
+            - if(user_form != null) {
+                - for (let i = 0; i < user_form.length; i++) {
+                    // span #{user_form[i].key_}
+                    - if(user_form[i].key_ == 'lastChangeOfBoardMembers')
+                        span #{user_form[i].val_}
+                - }
+            - }
+
+            input#lastChangeOfBoardMembers.signInInput.form-control(type='file', data-label='پیوست آخرین تغییرات هیئت مدیره و مدیر عامل', name='lastChangeOfBoardMembers', style="width:80%;float:right; display: inline-block")
+            img.off#onOff4( src = "/assets/img/helpoff.png", style = "float: left; width: 30px")
+            p.explainText#explain4(style="width: 80%; text-align: justify; color: #1d7eaa; float: right; font-size: 11px; padding-top: 5px") تصویر مدرک مورد نظر را، واضح و خوانا با حجم زیر 2M، الصاق نمایید.
+
+    div.inputLabel
+
+        div(style=" padding: 3px 0px 10px 30px; font-size: 15px; width: 100%;")
+            span(style=" padding: 3px 0px 0px 30px; font-size: 15px; width: 100%;") پیوست آخرین تغییرات آدرس (درصورت وجود)
+
+        div(style=" width: 100%;")
+
+            - if(user_form != null) {
+                - for (let i = 0; i < user_form.length; i++) {
+                    // span #{user_form[i].key_}
+                    - if(user_form[i].key_ == 'lastAddress')
+                        span #{user_form[i].val_}
+                - }
+            - }
+
+            input.signInInput.form-control(type='file', name='lastAddress', data-label='پیوست آخرین تغییرات آدرس', style="width:80%;float:right; display: inline-block")
+            img.off#onOff5( src = "/assets/img/helpoff.png", style = "float: left; width: 30px")
+            p.explainText#explain5(style="width: 80%; text-align: justify; color: #1d7eaa; float: right; font-size: 11px; padding-top: 5px") تصویر مدرک مورد نظر را، واضح و خوانا با حجم زیر 2M، الصاق نمایید.
+
+    div.inputLabel
+        div(style=" padding: 3px 0px 10px 30px; font-size: 15px; width: 100%;")
+            span(style=" padding: 3px 0px 0px 30px; font-size: 15px; width: 100%;") کد کارگاه مرتبط
+
+        div(style=" width: 100%;")
+
+            - if(user_form != null) {
+                - let allow = true
+                - for (let i = 0; i < user_form.length; i++) {
+                    // span #{user_form[i].key_}
+                    - if(user_form[i].key_ == 'workHouseCode')
+                        input.signInInput.form-control.justNumber(type='text', data-label='کد کارگاه مرتبط', value=user_form[i].val_, placeholder='عدد' name='workHouseCode', style="width: 80%; display: inline-block")
+                        - allow = false
+                - }
+                - if(allow)
+                    input.signInInput.form-control.justNumber(type='text', data-label='کد کارگاه مرتبط', placeholder='عدد' name='workHouseCode', style="width: 80%; display: inline-block")
+            - }
+            - else
+                input.signInInput.form-control.justNumber(type='text', data-label='کد کارگاه مرتبط', placeholder='عدد' name='workHouseCode', style="width: 80%; display: inline-block")
+
+            img.off#onOff6( src = "/assets/img/helpoff.png", style = "float: left; width: 30px")
+            p.explainText#explain6(style="width: 80%; text-align: justify; color: #1d7eaa; float: right; font-size: 11px; padding-top: 5px") کد کارگاه سازمان تامین اجتماعی را وارد نمایید.
+
+    div.inputLabel
+
+        div(style=" padding: 3px 0px 10px 30px; font-size: 15px; width: 100%;")
+            span(style=" padding: 3px 0px 0px 30px; font-size: 15px; width: 100%;") پیوست لیست بیمه شرکت در 6 ماه گذشته (نام و نام خانوادگی بیمه شدگان به همراه کد بیمه و کد ملی)
+
+        div(style=" width: 100%;")
+
+            - if(user_form != null) {
+                - for (let i = 0; i < user_form.length; i++) {
+                    // span #{user_form[i].key_}
+                    - if(user_form[i].key_ == 'lastInsuranceList')
+                        span #{user_form[i].val_}
+                - }
+            - }
+
+            input.signInInput.form-control(type='file', name='lastInsuranceList', data-label='پیوست لیست بیمه شرکت در 6 ماه گذشته', style="width:80%;float:right; display: inline-block")
+            img.off#onOff7( src = "/assets/img/helpoff.png", style = "float: left; width: 30px")
+            p.explainText#explain7(style="width: 80%; text-align: justify; color: #1d7eaa; float: right; font-size: 11px; padding-top: 5px") تصویر مدرک مورد نظر را، واضح و خوانا با حجم زیر 2M، الصاق نمایید.
+
+    div.inputLabel
+
+        div(style=" padding: 3px 0px 10px 30px; font-size: 15px; width: 100%;")
+            span(style=" padding: 3px 0px 0px 30px; font-size: 15px; width: 100%;") پیوست رزومه شرکت
+
+        div(style=" width: 100%;")
+
+            - if(user_form != null) {
+                - for (let i = 0; i < user_form.length; i++) {
+                    // span #{user_form[i].key_}
+                    - if(user_form[i].key_ == 'companyProposal')
+                        span #{user_form[i].val_}
+                - }
+            - }
+
+            input.signInInput.form-control(type='file', name='companyProposal', data-label='پیوست رزومه شرکت', style="width:80%;float:right; display: inline-block")
+            img.off#onOff8( src = "/assets/img/helpoff.png", style = "float: left; width: 30px")
+            p.explainText#explain8(style="width: 80%; text-align: justify; color: #1d7eaa; float: right; font-size: 11px; padding-top: 5px") تصویر مدرک مورد نظر را، واضح و خوانا با حجم زیر 2M، الصاق نمایید.
+
+        div(style="display: inline-block; font-size: 15px; width: 100%;")
+
+            //button(style= "background: inherit; border: none;")
+            //    img(src = "/assets/img/adddoc.png", style = "right: left; width: 20px")
+
+            //span(style=" padding: 3px 0px 0px 30px; font-size: 10px; width: 100%;") اگر بیش از یک فایل می باشد
+
+include elements/submitBtn

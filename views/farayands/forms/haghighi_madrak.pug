@@ -1,0 +1,29 @@
+- let instId = inst.id
+script(src="/assets/js/madarek.js")
+include madrakPopUp
+
+div.hidden#nextURL(data-val='/postcondition/' + instId)
+
+div.col-lg-8.col-md-12(style="float: right; display: inline-block; margin-bottom: 30px; padding: 0")
+
+    div.inputLabel
+
+        div(style=" padding: 3px 0px 10px 30px; font-size: 15px; width: 100%;")
+            span(style=" padding: 3px 0px 0px 30px; font-size: 15px; width: 100%;") کپی کارت ملی اقدام کننده
+
+        div(style=" width: 100%;")
+
+            - if(user_form != null) {
+                - for (let i = 0; i < user_form.length; i++) {
+                    // span #{user_form[i].key_}
+                    - if(user_form[i].key_ == 'nid_haghighi')
+                        span #{user_form[i].val_}
+                - }
+            - }
+
+            input.signInInput.form-control(type='file', data-label='کپی کارت ملی اقدام کننده', name='nid_haghighi', style="width:80%;float:right; display: inline-block")
+            img.off#onOff1(src="/assets/img/helpoff.png", style = "float: left; width: 30px")
+            p.explainText#explain1(style="width: 80%; text-align: justify; color: #1d7eaa; float: right; font-size: 11px; padding-top: 5px") تصویر مدرک مورد نظر را، واضح و خوانا با حجم زیر 2M، الصاق نمایید.
+
+
+include elements/submitBtn

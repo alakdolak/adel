@@ -1,0 +1,47 @@
+extend ProfilesStructure.pug
+
+block content
+
+    .data-table-area.mg-b-15
+        .container-fluid
+            .row
+                .col-lg-12(style= "margin-top: 15px")
+                    .sparkline13-list.shadow-reset
+                        .sparkline13-hd
+                            .main-sparkline13-hd
+                                h1
+                                    span#name
+
+                                    span شماره پیگیری درخواست:
+                                    span &nbsp;&nbsp;&nbsp;
+                                    span#code
+                                //.sparkline13-outline-icon
+                                    span.sparkline13-collapse-link
+                                        i.fa.fa-chevron-up
+                                    span
+                                        i.fa.fa-wrench
+                                    span.sparkline13-collapse-close
+                                        i.fa.fa-times
+                        .sparkline13-graph
+                            select#inst(style="margin: 10px")
+                                - for(let ii = 0; ii < items.length; ii++) {
+                                    option(value=items[ii].id) #{items[ii].name}
+                                - }
+                            .datatable-dashv1-list.custom-datatable-overright
+                                table#table(data-toggle='table', data-resizable='true')
+                                    thead
+                                        tr
+                                            //th(data-field='state', data-checkbox='true')
+                                            th(data-field='state')
+                                            th(data-field='id') ID
+                                            th(data-field='name', data-editable='false') مرحله
+                                            th(data-field='email', data-editable='false') نام کار گروه
+                                            th(data-field='phone', data-editable='false') تاریخ شروع + کد درخواست
+                                            th(data-field='company', data-editable='false') تاریخ پیش بینی تکمیل + روز باقی مانده
+                                            th(data-field='task', data-editable='false') درصد تکمیل
+                                            th(data-field='date', data-editable='false') وضعیت ارجاع
+                                            th(data-field='price', data-editable='false') گزارش ارجاع
+                                            th(data-field='action') تاریخ ارجاع
+                                    tbody#tbody
+
+    script(src="/assets/js/profile.js")

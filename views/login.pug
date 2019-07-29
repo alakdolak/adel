@@ -1,0 +1,125 @@
+extends structure.pug
+
+block content
+
+    div.mainBgColorOfLogin(style="background-color: #1f647d; padding: 10px;")
+
+        center
+
+            div#signInMainBox
+
+                div#signInBox
+
+                    div#logInTitle
+
+                        b(style="float: right; color: #ffffff; padding: 10px 30px;") ورود
+
+                        img.on#onOff1(src="/assets/img/helpon.png", style = "float: left; width: 45px; padding: 10px 0px 5px 20px")
+
+                    form#loginForm(method='POST', action='/login' , style= "padding: 0 25%")
+
+                        input(type="hidden", name="_csrf", value=csrfToken)
+
+                        div#signInIdCode.divSignInInput
+
+                            span(style=" width: 15%; font-size: 15px; float: right") کد ملی
+
+                            input.signInInput.form-control(type='text', autocomplete='username', placeholder='کد ملی ده رقمی', name='username', style="float: left; width:80%; display: inline-block")
+
+                        div#signInPass.divSignInInput
+
+                            span(style=" WIDTH:15%; font-size: 15px; float: right") رمز عبور
+                            input.signInInput.form-control(type='password', autocomplete='current-password', placeholder='رمز عبور', name='password', style="float: left; width:80%; display: inline-block")
+
+                        div.divSignInInput
+                            div.g-recaptcha(data-sitekey="6LewsasUAAAAAPalqBV7qJioRJa5qXnz4nCHH686")
+
+                        script(src='https://www.google.com/recaptcha/api.js')
+
+
+                        div#siBtnForgetPass.divSignInInput
+
+                            a(href="/retrievePassPage1", style="float: right; cursor: pointer; text-decoration: none; padding-top: 5px; font-size: 10px") رمز عبور خود را فراموش کرده اید؟
+                            button#signInBtn(type="submit")
+                                b(style="float: right; color: #ffffff; font-size: 15px") ورود
+                                img(src = "/assets/img/arrowup.png", style = "float:left; transform: rotate(-90deg); padding-top: 10px")
+
+                        div(style="margin-top: 10px; color: #aa0800")
+                            - if(err)
+                                p#warning نام کاربری یا رمزعبور اشتباه است
+                            p.explainText#explain1.hidden با ورود کد ملی و رمزعبور خود، وارد سایت شوید.<br/>کد ملی را به صورت پشت سر هم بدون فاصله و علامت - وارد کنید.
+                        div#ictLogIn
+
+                            span اگر عضو سایت
+                                a(target="_blank" href='http://irannoafarin.ir/')  irannoafarin
+                                span  هستید با پروفایل خود وارد شوید
+
+                            button#ictLogInBtn ورود
+
+                        div#signUpLinkSignIn
+
+                            div#signUpLinkSignInTitle
+
+                                b(style="float: right; color: #ffffff; padding: 10px 30px;") عضویت
+
+                                img.on#onOff2(src="/assets/img/helpon.png", style = "float: left; width: 45px; padding: 10px 0px 5px 20px")
+
+                            div#signUpLinkSignInContent(style="display: inline-block; width: 100%; padding: 10px")
+
+                                div#signUptextSignIn
+
+                                    span(style="float: right; display: inline-block; margin-top:5px") اگر عضو سایت نیستید همین حالا ثبت نام کنید
+
+                                div#signUpBtnSignIn
+
+                                    button#suBtnSi(type="button")
+                                        b(style="float: right; color: #ffffff; font-size: 14px") ثبت نام
+                                        img(src = "/assets/img/arrowup.png", style = "float:left; transform: rotate(-90deg); padding-top: 10px")
+
+                                p.explainText#explain2.hidden در صورتی که تاکنون در سایت ثبت نام نکرده اید از این قسمت وارد فرآیند ثبت نام شوید.
+
+                div#signInHelpBox
+
+                    div#retrievePassByPhone.signInHelpBoxDivs
+
+                        div.signInHelpBoxContentDivs
+
+                            div.signInHelpBoxTextDivs
+
+                                span(style="display:inline-block; float: right") رمز عبور خود را فراموش کرده اید؟
+
+                            button#retrievePassByPhoneBtn.signInHelpBoxBtn(onclick="document.location.href = '/retrievePassPage1'")
+
+                                 b(style="color: #ffffff; font-size: 14px") بازیابی رمز عبور
+
+                            div.signInHelpBoxTextDivs
+
+                                span(style="display:inline-block; float: right; font-size: 10px") با استفاده از تلفن همراه خود و بخشی از اطلاعات هویتی می توانید رمز عبور را بازیابی کنید
+
+                    //div#retrievePassByMail.signInHelpBoxDivs(style="height: 55px; margin-bottom: 10px")
+                    //    div.signInHelpBoxContentDivs
+                    //        div.signInHelpBoxTextDivs
+                    //            span(style="display:inline-block; float: right") به گوشی خود دسترسی ندارید؟
+                    //        button#retrievePassBymailBtn.signInHelpBoxBtn
+                    //             b(style="color: #ffffff; font-size: 14px") بازیابی رمز عبور
+                    //        div.signInHelpBoxTextDivs
+                    //            span(style="display:inline-block; float: right; font-size: 11px") با استفاده از پست الکترونیکی خود می توانید رمز عبور خود را بازیابی کنید.
+                    //        div.signInHelpBoxTextDivs
+                    //            span(style="display:inline-block; float: right; font-size: 10px; color: #aa0800") توجه کنید این گزینه تنها در صورت فعال سازی پست الکترونیکی فعال خواهد بود.
+
+                    div#signInSupport.signInHelpBoxDivs
+
+                        div.signInHelpBoxContentDivs
+
+                            div.signInHelpBoxTextDivs
+
+                                span(style="display:inline-block; float: right") باز هم مشکل دارید؟
+
+                            button#retrievePassByPhoneBtn.signInHelpBoxBtn(onclick="document.location.href = '/contactUs'")
+                                b(style="color: #ffffff; font-size: 14px") تماس با پشتیبانی
+
+                            div.signInHelpBoxTextDivs
+
+                                span(style="display:inline-block; float: right; font-size: 10px") با پشتیبانی تماس بگیرید تا شما را راهنمایی کنند.
+
+    script(src="/assets/js/login.js")

@@ -1,0 +1,19 @@
+
+div.hidden#requestURL(data-val='/submitNamayandeForm')
+script(src="/assets/js/modiramelForm.js")
+
+div.col-lg-8.col-md-12(style="float: right; display: inline-block; margin-bottom: 30px; padding: 0")
+
+    - let instIdTmp = inst.id
+    input(type="hidden", name="instId", value=instIdTmp)
+    include elements/name
+    include elements/shahkar_melli
+    include elements/phone
+    include elements/email
+
+    div(style=" width: 100%;")
+        p#errors.warning(style="margin: 10px; padding: 10px; line-height: 1.7em")
+
+include elements/submitBtn
+
+

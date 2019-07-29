@@ -1,0 +1,219 @@
+html
+   head
+        title ایران کارفا
+        meta(charset = "utf-8")
+        meta(name = "viewport", content = "width=device-width, initial-scale=1")
+        link(rel = "stylesheet", href = "/assets/css/bootstrap.min.css")
+        link(rel = "stylesheet", href = "/assets/css/fontiran.css")
+        link(rel = "stylesheet", href = "/assets/css/font.css")
+        link(rel = "stylesheet", href = "/assets/css/style.css")
+        link(rel = "stylesheet", href = "/assets/css/farayand.css")
+        script(src="/assets/js/jquery.min.js")
+        script(src="/assets/js/bootstrap.min.js")
+        script(src="/assets/js/common.js")
+        meta(name="csrf-token" content=csrfToken)
+        script(src="/assets/js/jquery.farsiInput.js")
+        link(rel = "icon", href="/assets/img/fav.png", type="image/png" sizes="16x16")
+        meta(name="description", content="یکی از مهم‌ترین تسهیل‌گری‌های برای نوآوری در نظر گرفتن اندکی روامداری قانونی و مقدماتی است. کسب‌و‌کارهای نوپا و شرکت‌ها براساس مدل کسب‌وکارنو شکل می‌گیرند پس باید به آنها فرصت داد تا ایده خود را برای مدت محدودی و در سقف محدود به آزمون بگذارند")
+
+   body
+
+        div.hidden#instId(data-val=inst.id)
+
+        script(src="/assets/js/getSelectedCities.js")
+
+        div#farayandHeader.col-xs-12
+
+            div.titleHeaderHomeLink.col-xs-12
+
+                a.blueLinks#backToHomeFrayand(href="/") بازگشت به سامانه
+
+            div#farayandHeader2ndLine.col-xs-12
+
+                div.col-lg-6.col-xs-12#farayandHeaderTitleContents
+
+                    b#titleHeaderFarayand #{inst.name}
+
+                div.col-lg-2.col-xs-6#farayandHeaderReqCodediv
+
+                    button#farayandHeaderReqCodeBtn.rpContinuesBtn(style="background-color: #7bc4dc") ارسال برای بررسی نهایی
+
+                div.col-lg-3.col-xs-4#farayandHeaderTitleReqCode
+
+                    b#farayandHeaderTitleReqCodeContent کد درخواست : #{code}
+
+            div.responsiveVersion
+
+                div.col-xs-12#farayandStepsDetailsResponsiveDiv
+                    b(style ="display: inline-block; float: right; font-size: 17px; width: 80%") اطلاعات طرح‌
+                    img(src="/assets/img/arrowDown.png" style= "float: left; width: 20px;")
+                    //button(style="background: url('/assets/img/arrowDown.png') no-repeat 0px; color: #ffc000")
+
+                    center
+                        div#farayandWholeInfosResponsive.farayandInfosDiv
+
+                            div(style=" float: right; width: 100%; display: inline-block")
+
+                                b(style="float: right; padding: 0 0 10px 0; display: inline-block; color: #009ee0") نام طرح :
+
+                                b(style="float: right; padding: 0 0 10px 0; display: inline-block") #{inst.name}
+
+                            div(style=" float: right; width: 100%; display: inline-block")
+
+                                b(style="float: right; padding: 0 0 10px 0; display: inline-block; color: #009ee0") مدت زمان کل فرآیند :
+
+                                b(style="float: right; padding: 0 0 10px 0; display: inline-block") #{inst.duration} روز
+
+                            div(style=" float: right; width: 100%; display: inline-block")
+
+                                b(style="float: right; padding: 0 0 10px 0; display: inline-block; color: #009ee0") نرخ بهره :
+                                b(style="float: right; padding: 0 0 10px 0; display: inline-block") %#{inst.nerkh}
+
+                            div(style=" float: right; width: 100%; display: inline-block")
+
+                                b(style="float: right; padding: 0 0 10px 0; display: inline-block; color: #009ee0") دوره تنفس :
+                                b(style="float: right; padding: 0 0 10px 0; display: inline-block") #{inst.tanafos} ماه
+
+                            div(style=" float: right; width: 100%; display: inline-block")
+
+                                b(style="float: right; padding: 0 0 10px 0; display: inline-block; color: #009ee0") پرداخت مرحله ای :
+                                b(style="float: right; padding: 0 0 10px 0; display: inline-block") #{inst.payment_kind} مرحله
+                            div(style=" float: right; width: 100%; display: inline-block")
+
+                                b(style="float: right; padding: 0 0 10px 0; display: inline-block; color: #009ee0") دوره باز پرداخت :
+                                b(style="float: right; padding: 0 0 10px 0; display: inline-block") #{inst.bazpardakht} ماه
+
+                center(style="display: inline-block; width: 100%")
+                    div#navBarStepImageResponsiveDiv.col-xs-8
+
+                        center
+
+                            div#navBarStepImage1stLineTextResponsive
+
+                                span مراحل این فرآیند
+
+                            img#navBarStepImageResponsive(src="/assets/img/prog.png")
+
+                            div#navBarStepImage2ndLineTextResponsive
+
+                                div(style="float: right; display: inline-block; width:33%")
+
+                                    span(style="float: left") ثبت نام در سامانه
+
+                                div(style="display: inline-block; width:33%")
+
+                                    span بانک عامل
+
+                                div(style="float: left; display: inline-block; width:33%")
+
+                                    span(style="float: right") پرداخت و کزارش دهی
+
+        div#navBarStepsState.col-xs-12
+
+            div#navBarStepImageDiv.col-xs-4
+
+                center
+
+                    div#navBarStepImage1stLineText
+
+                        span مراحل این فرآیند
+
+                    img#navBarStepImage(src="/assets/img/prog.png")
+
+                    div#navBarStepImage2ndLineText
+
+                        div(style="float: right; display: inline-block; width:33%")
+
+                            span(style="margin: 0 10%") ثبت نام در سامانه
+
+                        div(style="display: inline-block; width:33%")
+
+                            span بانک عامل
+
+                        div(style="float: left; display: inline-block; width:33%")
+
+                            span پرداخت و کزارش دهی
+
+            block navBarSteps
+
+
+
+
+        div#FarayandMainBody.col-md-12
+
+            div.GetSpecification.col-xs-12
+
+                div.farayandStepsDetails
+
+                    div.farayandStepsDetailsDiv
+
+                        block farayandStepsDetailsDivs
+
+                    div.farayandInputsGetter
+
+                        center
+
+                            //div#farayandTimeDiv.farayandInfosDiv
+                            //    b(style=" width: 100%; padding: 0 0 10px 0; display: inline-block") مدت زمان این مرحله فرآیند
+                            //    b(style=" width: 100%; padding: 0 0 10px 0; display: inline-block; color: #aa0800") تقریباً سه ماه
+                            //    span(style=" width: 100%; display: inline-block; color: #aa0800") در صورت تکمیل مدارک
+
+                            div#farayandWholeInfos.farayandInfosDiv
+
+                                div(style=" float: right; width: 100%; display: inline-block")
+
+                                    b(style="float: right; padding: 0 0 10px 0; display: inline-block; color: #009ee0") نام طرح :
+
+                                    b(style="float: right; padding: 0 0 10px 0; display: inline-block") #{inst.name}
+
+                                div(style=" float: right; width: 100%; display: inline-block")
+
+                                    b(style="float: right; padding: 0 0 10px 0; display: inline-block; color: #009ee0") مدت زمان کل فرآیند :
+
+                                    b(style="float: right; padding: 0 0 10px 0; display: inline-block") #{inst.duration} روز
+
+                                div(style=" float: right; width: 100%; display: inline-block")
+
+                                    b(style="float: right; padding: 0 0 10px 0; display: inline-block; color: #009ee0") نرخ بهره :
+                                    b(style="float: right; padding: 0 0 10px 0; display: inline-block") %#{inst.nerkh}
+
+                                div(style=" float: right; width: 100%; display: inline-block")
+
+                                    b(style="float: right; padding: 0 0 10px 0; display: inline-block; color: #009ee0") دوره تنفس :
+                                    b(style="float: right; padding: 0 0 10px 0; display: inline-block") #{inst.tanafos} ماه
+
+                                div(style=" float: right; width: 100%; display: inline-block")
+
+                                    b(style="float: right; padding: 0 0 10px 0; display: inline-block; color: #009ee0") پرداخت مرحله ای :
+                                    b(style="float: right; padding: 0 0 10px 0; display: inline-block") #{inst.payment_kind} مرحله
+                                div(style=" float: right; width: 100%; display: inline-block")
+
+                                    b(style="float: right; padding: 0 0 10px 0; display: inline-block; color: #009ee0") دوره باز پرداخت :
+                                    b(style="float: right; padding: 0 0 10px 0; display: inline-block") #{inst.bazpardakht} ماه
+
+
+                div#farayandInputGetter
+
+                    block inputs
+
+
+        div.hidden.popup#finalizePopUp
+            div.innerDiv
+                div.innerInner
+                    div.closePopUp#finalizeClosePopUpBtn
+                    div.header#headerInPopUp
+                        h3 برای ارسال درخواست لطفا اطلاعات زیر را تکمیل کنید
+                    div.body#bodyInPopUp
+                        center
+                            div#finalizeErrors
+
+        script(src="/assets/js/finalize.js")
+
+
+
+
+
+
+
+
+

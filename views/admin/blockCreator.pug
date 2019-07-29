@@ -1,0 +1,196 @@
+extend ../ProfilesStructure.pug
+
+block content
+
+    .user-prfile-activity-area.mg-b-40.mg-t-30
+        div.hidden#blockId(data-val=blockId)
+        div.hidden#instId(data-val=instId)
+        .container-fluid
+            .row
+                .col-lg-3
+                    .sparkline7-list.profile-online-mg-t-30.shadow-reset.mg-b-30
+                        .sparkline7-hd
+                            .main-spark7-hd
+                                h1 فیلدهای مرتبط
+                                .sparkline7-outline-icon
+                                    span.sparkline7-collapse-link
+                                        i.fa.fa-chevron-up
+                        .sparkline7-hd
+                            div.farayandStepsDetailsDiv
+
+                                div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
+                                    b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") شرایط ویژه
+                                    br
+                                    span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") بازیگران ویژه
+                                    input(type="checkbox", value="-1", name="fields[]", style="margin-right: -10px")
+
+                                div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
+                                    b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") پیش شرط های وام
+                                    br
+                                    span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") پیش شرط های وام
+                                    input(type="checkbox", value="0", name="fields[]", style="margin-right: -10px")
+
+                                div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
+                                    b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") اطلاعات طرح
+                                    br
+                                    span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") اطلاعات طرح
+                                    input(type="checkbox", value="-2", name="fields[]", style="margin-right: -10px")
+
+                                - if(hoghoghi)
+                                    div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
+                                        b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") اطلاعات حقوقی
+                                        br
+                                        span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") اطلاعات ثبتی شرکت
+                                        input(type="checkbox", value="1", name="fields[]", style="margin-right: -10px")
+                                    div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
+                                        b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") اطلاعات مدیرعامل
+                                        br
+                                        span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") اطلاعات حقیقی مدیرعامل
+                                        input(type="checkbox", value="2", name="fields[]", style="margin-right: -10px")
+                                    div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
+                                        b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") اطلاعات هیئت مدیره
+                                        br
+                                        span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") اطلاعات حقیقی مدیرعامل
+                                        input(type="checkbox", value="3", name="fields[]", style="margin-right: -10px")
+                                    div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
+                                        b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") اطلاعات نماینده
+                                        br
+                                        span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") اطلاعات حقیقی مدیرعامل
+                                        input(type="checkbox", value="4", name="fields[]", style="margin-right: -10px")
+                                    div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
+                                        b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") مدارک شرکت
+                                        br
+                                        span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") مدارک ثبتی شرکت
+                                        input(type="checkbox", value="5", name="fields[]", style="margin-right: -10px")
+                                    div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
+                                        b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") مدارک مدیرعامل
+                                        br
+                                        span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") مدارک حقوقی مرتبط با مدیرعامل
+                                        input(type="checkbox", value="6", name="fields[]", style="margin-right: -10px")
+                                    div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
+                                        b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") مدارک نماینده
+                                        br
+                                        span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") مدارک حقوقی مرتبط با نماینده
+                                        input(type="checkbox", value="7", name="fields[]", style="margin-right: -10px")
+                                -else
+                                    div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
+                                         b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") اطلاعات حقیقی صاحبان جواز
+                                         br
+                                         span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") اطلاعات حقیقی صاحبان جواز
+                                         input(type="checkbox", value="8", name="fields[]", style="margin-right: -10px")
+                                    div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
+                                         b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") اطلاعات حقیقی اقدام کننده
+                                         br
+                                         span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") اطلاعات حقیقی اقدام کننده
+                                         input(type="checkbox", value="9", name="fields[]", style="margin-right: -10px")
+                                    div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
+                                         b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") اطلاعات حقیقی واحد صنف
+                                         br
+                                         span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") اطلاعات حقیقی واحد صنف
+                                         input(type="checkbox", value="10", name="fields[]", style="margin-right: -10px")
+                                    div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
+                                         b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") مدارک صاحبان
+                                         br
+                                         span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") مدارک حقوقی مرتبط با اقدام کننده
+                                         input(type="checkbox", value="11", name="fields[]", style="margin-right: -10px")
+
+                                button.btn.btn-success#manageAccessBtn(style="float: left") تایید
+
+
+                .col-lg-5
+                    .row(style= "margin-bottom: 30px")
+                        .col-lg-12
+                            .sparkline10-list.shadow-reset
+                                .sparkline10-hd
+                                    .main-sparkline10-hd
+                                        h1 کارگروه استان
+                                        .sparkline10-outline-icon
+                                            span.sparkline10-collapse-link
+                                                i.fa.fa-chevron-up
+                                            span.sparkline10-collapse-close
+                                                i.fa.fa-times(style= "transform: rotate(45deg)")
+                                    .sparkline10-graph
+                                        .input-knob-dial-wrap
+                                            .row
+                                                .col-lg-12
+                                                    .chosen-select-single.mg-b-20
+                                                        label کارگروه
+                                                        select.chosen-select#selectedKargroh(tabindex='-1')
+                                                            - for(let i = 0; i < kargrohs.length; i++) {
+                                                                option(value=kargrohs[i].name) #{kargrohs[i].name}
+                                                            - }
+                                                    .chosen-select-single
+                                                        select.chosen-select#selectedStates(multiple='', tabindex='-1', data-placeholder="استان مورد نظر خود را انتخاب نمایید")
+                                                            - for(let i = 0; i < states.length; i++) {
+                                                                option(value=states[i].id) #{states[i].name}
+                                                            - }
+
+                                                    button.btn.btn-success#addStateKargroh(style="margin: 10px; float: left") افزودن کارگروه استانی
+
+                                            .row(style= "margin-top: 30px")
+                                                .col-lg-12
+                                                    .main-sparkline10-hd
+                                                        h1 کارگروه های انتخاب شده
+                                                    .sparkline10-graph
+                                                        .input-knob-dial-wrap
+                                                            .row
+                                                                .col-lg-12
+                                                                    .chosen-select-single#loggerDiv
+                                                                    - for(let i = 0; i < stateKargrohs.length; i++) {
+                                                                        p(id="kargroh_" + stateKargrohs[i].id)
+                                                                            span #{stateKargrohs[i].kargroh + " - " + stateKargrohs[i].name}
+                                                                            span.btn.btn-danger.deleteBtn(data-val=stateKargrohs[i].id, style="margin-right: 5px") حذف
+                                                                    - }
+
+
+
+                .col-lg-4
+                    .timeAlerts.shadow-reset.user-profile-about.mg-b-30
+                        div
+                            p نام
+                            - if(block != null)
+                                input.form-control(type="text", id="name", value=block.name)
+                            - else
+                                input.form-control(type="text", id="name")
+                        div
+                            p بلاک قبلی
+                            select.form-control(id="prev")
+                                option(value=-1) این بلاک آغازین است
+                                - for (let i = 0; i < blocks.length; i++) {
+                                    option(value=blocks[i].id) #{blocks[i].name}
+                                - }
+                        div
+                            p زمان بررسی
+                            - if(block != null)
+                                input.form-control.justNumber(type="text", id="duration", value=block.duration)
+                            - else
+                                input.form-control.justNumber(type="text", id="duration")
+                        div
+                            p زمان اخطار اولیه
+                            - if(block != null)
+                                input.form-control.justNumber(type="text", id="initNotice", value=block.init_notice)
+                            - else
+                                input.form-control.justNumber(type="text", id="initNotice")
+                        div
+                            p زمان اخطار نهایی
+                            - if(block != null)
+                                input.form-control.justNumber(type="text", id="finalNotice", value=block.final_notice)
+                            - else
+                                input.form-control.justNumber(type="text", id="finalNotice")
+                        div
+                            p کارگروه پیش فرض
+                            div(style="width: 50%; display: inline-block; float: left")
+                                select.chosen-select#defaultKargroh
+                                    - for(let i = 0; i < kargrohs.length; i++) {
+                                        - if (block != null && block.default_kargroh == kargrohs[i].name)
+                                            option(value=kargrohs[i].name, selected="true") #{kargrohs[i].name}
+                                        - else
+                                            option(value=kargrohs[i].name) #{kargrohs[i].name}
+                                    - }
+
+                        div#errs(style="color: #aa0800")
+
+                        div
+                            button.btn.btn-success#confirmBtn(style="margin: 10px; float: left") تایید
+
+        script(src="/assets/js/blockCreator.js")

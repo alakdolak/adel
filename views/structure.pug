@@ -1,0 +1,218 @@
+html
+   head
+        title ایران کارفا
+        meta(charset = "utf-8")
+        meta(name = "viewport", content = "width=device-width, initial-scale=1")
+        //link(rel = "stylesheet", href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css")
+        link(rel = "stylesheet", href = "/assets/css/bootstrap.min.css")
+        link(rel = "stylesheet", href = "/assets/css/fontiran.css")
+        link(rel = "stylesheet", href = "/assets/css/font.css")
+        link(rel = "stylesheet", href = "/assets/css/style.css")
+        link(rel = "stylesheet", href = "/assets/css/hover.css")
+        link(rel = "stylesheet", href = "/assets/css/news.css")
+        link(rel = "stylesheet", href = "/assets/css/signingIn&Up.css")
+        link(rel = "stylesheet", href = "/assets/css/termAndConditions.css")
+        link(rel = "stylesheet", href = "/assets/css/contactUs.css")
+        link(rel = "stylesheet", href = "/assets/css/complaint.css")
+        link(rel = "icon", href="/assets/img/fav.png", type="image/png" sizes="16x16")
+        meta(name="description", content="یکی از مهم‌ترین تسهیل‌گری‌های برای نوآوری در نظر گرفتن اندکی روامداری قانونی و مقدماتی است. کسب‌و‌کارهای نوپا و شرکت‌ها براساس مدل کسب‌وکارنو شکل می‌گیرند پس باید به آنها فرصت داد تا ایده خود را برای مدت محدودی و در سقف محدود به آزمون بگذارند")
+
+        meta(name="csrf-token" content=csrfToken)
+
+        script(src="/assets/js/jquery.min.js")
+        script(src="/assets/js/bootstrap.min.js")
+   body
+        div.dark.hidden
+        div.row
+
+            div.col-xs-12(style = "padding: 0")
+                div.col-md-1(style = " padding: 0; width: auto !important")
+                    img.iranLogo(src= "/assets/img/iran.png")
+
+
+                div.col-md-3.col-xs-12#mainLogo(style= "float: right; width:243px")
+                    img.logo.homeBtn(src="/assets/img/mainLogo.png" , style= "float: right; width:243px; cursor: pointer")
+
+                div.col-xs-12#navbarResponsiveBtn.navbar
+                    div.container-fluid#navbarResponsiveBtnContainer
+                        div.navbar-header#navbarResponsiveBtnContainerDiv
+                            button.navbar-toggle#navbarBtnResponsive(type= "button", data-toggle= "collapse", data-target= ".navbar-collapse")
+                                span.sr-only
+                                span.icon-bar
+                                span.icon-bar
+                                span.icon-bar
+
+                        div.navbar-fluid.navbar-collapse
+                            ul.nav.navbar-nav#widthScreenNav
+                                li.active.menu_buttons.menuButtonsResponsive(style= "margin-top: 10px !important")
+                                    span.homeBtn خانه
+                                li.active.menu_buttons.menuButtonsResponsive
+                                    span.newsBtn اخبار
+                                li.active.menu_buttons.menuButtonsResponsive
+                                    span.complaintBtn شکایات و پیشنهادات
+                                li.active.menu_buttons.menuButtonsResponsive
+                                    span.contactUsBtn تماس با ما
+
+                                - if(!login)
+                                    button.btn.btn-primary.shadow.menuBox.loginBtn ورود به سامانه
+
+                                - if (login) {
+                                    button.btn.shadow#firstPageProfileBtn.menuBox.toggleProfile
+                                        div#firstPageProfileBtnText
+                                            b سلام!
+                                        div#firstPageProfileBtnImg
+                                            img.logo(src = "/assets/img/profile.png")
+                                        div.hidden.firstPageProfileBtnMenu
+                                            div.firstPageProfileBtnMenuText.firstPageProfileBtnMenuProfileLink
+                                                a(href='/profile') پروفایل کاربری
+                                            //hr
+                                            //div.firstPageProfileBtnMenuText.firstPageProfileBtnMenuFollowReq
+                                            //    a پیگیری درخواست
+                                            hr
+                                            div.firstPageProfileBtnMenuText.firstPageProfileBtnMenuProfileLogOut
+                                                a(href="/logout") خروج
+                                - }
+
+                        div.navbar-fluid.navbar-collapse(style= "width: 140%; position: absolute; z-index: 3")
+                            ul.nav.navbar-nav.hidden#hamberMenu
+                                center(style= "border-bottom: 2px solid white")
+                                    - if(!login)
+                                        button.btn.btn-primary.menuBox.loginBtn ورود به سامانه
+
+                                    - if (login) {
+                                        button.btn.shadow#firstPageProfileBtn.menuBox.toggleProfile
+                                            div#firstPageProfileBtnText
+                                                b سلام!
+                                            div#firstPageProfileBtnImg
+                                                img.logo(src = "/assets/img/profile.png")
+                                        div.hidden.firstPageProfileBtnMenu
+                                            div.firstPageProfileBtnMenuText.firstPageProfileBtnMenuProfileLink
+                                                a(href='/profile') پروفایل کاربری
+                                            //hr
+                                            //div.firstPageProfileBtnMenuText.firstPageProfileBtnMenuFollowReq
+                                            //    a پیگیری درخواست
+                                            hr
+                                            div.firstPageProfileBtnMenuText.firstPageProfileBtnMenuProfileLogOut
+                                                a(href="/logout") خروج
+                                    - }
+                                li.active.menu_buttons.menuButtonsResponsive
+                                    span.homeBtn خانه
+                                li.active.menu_buttons.menuButtonsResponsive
+                                    span.newsBtn اخبار
+                                li.active.menu_buttons.menuButtonsResponsive
+                                    span.complaintBtn شکایات و پیشنهادات
+                                li.active.menu_buttons.menuButtonsResponsive
+                                    span.contactUsBtn تماس با ما
+
+                div.col-md-8#dateAndDisabilityImgDiv(style = "padding: 0")
+
+                    div.col-xs-12#disabilityImgDiv(style = "margin-top: 5px")
+                        img.disabilityImg(src="/assets/img/blindness.png")
+                        //img.disabilityImg(src="/assets/img/lowsight.png")
+                        img.disabilityImg(src="/assets/img/hearingdis.png")
+                        img.disabilityImg(src="/assets/img/low-education.png")
+                        img.disabilityImg(src="/assets/img/disability.png")
+                        div#date(style="float: left; margin-left: 10px")
+
+                    div.col-xs-6.col-md-3.newsContentDiv.hidden
+                        div.news
+                            h5#headerBlindness معلولان با آسیب بینایی، می‌توانند با مطالعه این فایل راهنما، با سهولت بیشتری از امکانات این سامانه استفاده کنند
+                            div#blindnessText
+                                p(style= "font-size: 14px") تمامی جوانب دسترس‌پذیری برای استفاده‌ی نابینایان رعایت شده و این قشر می‌توانند به وسیله‌ی صفحه‌خوان‌ها نرم‌افزارهای تیدیل متن به گفتار فارسی خود، از خدمات ارائه شده‌ی دستگاه‌های مختلف استفاده کند.
+                                p(style= "font-size: 14px") توجه داشته باشید که جوانب دسترس‌پذیری، صرفاً مربوط به مطالب، صفحات و لینک‌هایی می‌شود که در خود پرتال طرح ملی اشتغال سازمان فناوری اطلاعات ایران باز می‌شود و وبسایت‌های سایر دستگاه‌های خدمت‌رسان که از طریق این پایگاه به ارائه‌ی خدمت می‌پردازند را شامل نمی‌شود.
+                                h4(style= "color: #0a6aa1; font-weight: 700; font-size: 14px") دسترسی از طریق فهرست محتوای اصلی
+                                p(style= "font-size: 14px") در این بخش نیز با زدن رفتن به محتوای اصلی، بر روی چهار بخش حمایت اصلی قرار میگیرید و با اینتر بر روی هر کدام از آن‌ها خدمات مرتبط با آن نمایش داده می‌شود.
+                                h4(style= "color: #0a6aa1; font-weight: 700; font-size: 14px") دسترسی از طریق جست‌وجو
+                                p(style= "font-size: 14px") با جست‌وجوی موضوع یا عنوان از طریق جویش‌گر، دسترسی به خدمت هم از طریق خود درگاه ملی و همچنین از طریق شبکه ملی اطلاعات حاصل می‌شود.
+                                h4(style= "color: #0a6aa1; font-weight: 700; font-size: 14px") دسترسی به تمامی خدمات در منوی کناری
+                                p(style= "font-size: 14px") خدمات حمایتی و شغلی سامانه‌ی حاضر در منوی کناری در دسترس عموم قرار می‌گیرد.
+                                h4(style= "color: #0a6aa1; font-weight: 700; font-size: 14px") دسترسی از طریق خدمات عمومی
+                                p(style= "font-size: 14px") این بخش شامل چهار بخش اصلی است. با کلیک کردن برروی هر یک از آن‌ها حمایت مربوط به آن به صورت جداگانه لیست شده و قابل پیمایش است.
+                                h4(style= "color: #0a6aa1; font-weight: 700; font-size: 14px") دسترسی به کارشناسان و ارسال پیام برای آن‌ها
+                                p(style= "font-size: 14px") در پایین سایت بخشی تحت عنوان پشتیبانی آفلاین قرار دارد. شما می‌توانید وارد فرم ارسال پیام شده و پیغام خود را برای کارشناسان این پایگاه ارسال کنید.
+                                p(style= "font-size: 14px") لازم به ذکر است، ارسال پیام از طریق این بخش، دارای کدهای امنیتی تصویری نبوده و به راحتی می‌توانید پیام خود را ارسال کنید.
+
+                    div.col-xs-12.nav_bar_header.shadow
+                        div.menu_buttons
+                            span.homeBtn خانه
+                            span.newsBtn اخبار
+                            span.complaintBtn شکایات و پیشنهادات
+                            span.contactUsBtn تماس با ما
+
+
+                        - if(!login)
+                            button.btn.btn-primary.shadow.loginBtn ورود به سامانه
+
+                        - if (login) {
+                            button.btn.shadow#firstPageProfileBtn.toggleProfile
+                                div#firstPageProfileBtnText
+                                    b سلام!
+                                div#firstPageProfileBtnImg
+                                    img.logo(src = "/assets/img/profile.png")
+                            div.hidden.firstPageProfileBtnMenu
+                                div.firstPageProfileBtnMenuText.firstPageProfileBtnMenuProfileLink
+                                    a(href='/profile') پروفایل کاربری
+                                //hr
+                                //div.firstPageProfileBtnMenuText.firstPageProfileBtnMenuFollowReq
+                                //    a پیگیری درخواست
+                                hr
+                                div.firstPageProfileBtnMenuText.firstPageProfileBtnMenuProfileLogOut
+                                    a(href="/logout") خروج
+                        - }
+
+
+            div.col-xs-12.back(style="width: 100%; padding: 0")
+
+                block backImg
+                block content
+
+        div.popup#newsPopUp.hidden
+            div.innerDiv
+                div.innerInner
+                    div.closePopUp#closeNewsPopUp
+                    div.header#headerInPopUp
+                    div.body#bodyInPopUp
+                    center
+                        img.img#picInPopUp
+
+
+        script(src="/assets/js/main.js")
+        script(src="/assets/js/common.js")
+
+        footer(style="margin-top: 50px")
+            div.col-xs-12
+                div.col-sm-3.col-xs-12.footerLogoDiv(style= "float: right")
+                    img(width="80%", style="width: 200px;margin-top: 40px;" src="/assets/img/footerLogo.png")
+                    p یکی از مهم‌ترین تسهیل‌گری‌های برای نوآوری در نظر گرفتن اندکی روامداری قانونی و مقدماتی است. کسب‌و‌کارهای نوپا و شرکت‌ها براساس مدل کسب‌وکارنو شکل می‌گیرند پس باید به آنها فرصت داد تا ایده خود را برای مدت محدودی و در سقف محدود به آزمون بگذارند
+
+                div.col-sm-3.col-xs-12(style= "float: right")
+                    h3 لینک های مرتبط
+                    a(href="http://leader.ir", target="_blank") پایگاه اطلاع رسانی دفتر مقام معظم رهبری
+                    a(href="http://president.ir", target="_blank") پایگاه اطلاع رسانی ریاست جمهوری
+                    a(href="http://www.dolat.ir", target="_blank") پایگاه اطلاع رسانی دولت
+                    a(href="https://www.ict.gov.ir", target="_blank") وزارت ارتباطات و فناوری اطلاعات
+                    a(href="http://www.iran.gov.ir", target="_blank") درگاه ملی خدمات دولت هوشمند
+                    a(href="http://dpapp.ir/apps/ito-1.0.1.apk", target="_blank") دانلود اپلیکیشن سازمان فناوری اطلاعات
+
+
+                div.col-sm-3.col-xs-12(style= "float: right")
+                    h3 خدمات دولت الکترونیک
+
+                    a(href="https://iran.gov.ir/organ/show/id/53/serviceid/38", target="_blank") ایجاد صندوق پست الکترونیک
+                    a(href="https://account.tamin.ir/auth/view/login/source/login.jsp", target="_blank") سوابق تأمین اجتماعی
+                    a(href="https://gavahi.post.ir/#banner", target="_blank") دریافت کد پستی
+                    a(href="https://idehhub.com/fa", target="_blank") خرید سهام کسب و کارهای نوپا
+                    a(href="http://irannoafarin.ir", target="_blank") دریافت شناسه ملی استارتاپی
+
+                div.col-sm-3.col-xs-12(style= "float: right")
+                    h3 تماس با ما
+                    p تهران - خیابان شریعتی - نرسیده به پل سید خندان - ورودی 22 - ساختمان مرکزی
+                    p كدپستی:1631713931
+                    p تلفنخانه:88115790
+            div.col-xs-12(style="border-top: 1px solid white; padding: 20px; margin-top: 5px;")
+                center
+                    span(style="float: right")
+                        span(style= "font-size: 12px") طراحی و توسعه توسط مجموعه دانش بنیان
+                        span &nbsp;
+                        a(href="http://bogendesign.co/", target="_blank", style= "border: 0px; display:inline; font-size: 12px") بوگن دیزاین
+                    span(style= "font-size: 14px; font-weight: bold") تمام حقوق این سامانه متعلق به سازمان فناوری اطلاعات ایران است.

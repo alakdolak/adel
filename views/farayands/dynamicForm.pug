@@ -1,0 +1,173 @@
+div.col-lg-8.col-md-12(style="float: right; display: inline-block; margin-bottom: 30px; padding: 0")
+
+    - for (let j = 0; j < attrs.length; j++) {
+            div.inputLabel
+
+                div(style=" padding: 3px 0px 10px 30px; font-size: 15px; float: right; width: 100%")
+
+                    span(style=" padding: 3px 0px 0px 30px; font-size: 15px; float: right; text-align: justify") #{attrs[j].label}
+                div
+                    - if(attrs[j].ans != null) {
+                        - if(attrs[j].type == 1)
+                            div(style="float: right; min-width: 20%")
+                                input.form_input(checked=(attrs[j].ans == "true"), type='checkbox', data-type="1", data-val=attrs[j].id, style="display: inline-block; margin: 0 0 0 2%")
+                        - else if(attrs[j].type == 2) {
+
+                            div(style="float: right; min-width: 80%")
+
+                                - let date = attrs[j].ans.split("/")
+
+                                select.signInInput.form-control.form_input(name='day_' + attrs[j].id, data-type="2", data-val=attrs[j].id, style="width: 25% !important; display: inline-block; margin: 0 0 0 5%")
+                                    option(value = -1) روز
+                                    - for (let i = 1; i < 32; i++) {
+                                        if (i == date[2])
+                                            option(selected, value=i) !{i}
+                                        else
+                                            option(value=i) !{i}
+                                    - }
+                                select.signInInput.form-control(name='month_' + attrs[j].id, style="width:25% !important; display: inline-block; margin: 0 5%")
+                                    option(value = -1) ماه
+                                    - for (let i = 1; i < 13; i++) {
+                                        if (parseInt(i) == date[1])
+                                            option(selected, value=i) !{i}
+                                        else
+                                            option(value=i) !{i}
+                                    - }
+                                select.signInInput.form-control(name='year_' + attrs[j].id, , style="width:25% !important; display: inline-block; margin: 0 5% 0 0")
+                                    option(value = -1) سال
+                                    - for (var i = 1398; i > 1299; i--) {
+                                        if (parseInt(i) == date[0])
+                                            option(selected, value=i) !{i}
+                                        else
+                                            option(value=i) !{i}
+                                    - }
+                        - }
+
+                        - else if (attrs[j].type == 3)
+                            div(style="float: right; min-width: 50%")
+                                input.signInInput.form-control.justNumber.form_input(value=attrs[j].ans, data-type="3", type='text', data-val=attrs[j].id, style="display: inline-block; margin: 0 0 0 2%")
+
+                        - else if (attrs[j].type == 4)
+                            div(style="float: right; min-width: 50%")
+                                input.signInInput.form-control.form_input.justFarsi(value=attrs[j].ans, type='text', data-type="4", data-val=attrs[j].id, style="display: inline-block; margin: 0 0 0 2%")
+
+                        - else if (attrs[j].type == 5)
+                            div(style="float: right; min-width: 50%")
+                                input.signInInput.form-control.form_input(type='file', data-val=attrs[j].id, data-type="5", style="display: inline-block; margin: 0 0 0 2%")
+                                span(style="direction: ltr") #{attrs[j].ans}
+
+                        - else if (attrs[j].type == 6)
+                            div(style="float: right; min-width: 40%")
+                                select.signInInput.form-control.form_input(data-val=attrs[j].id, data-type="6", style="display: inline-block; margin: 0 0 0 2%")
+                                    - for(let k = 0; k < attrs[j].vals.length; k++) {
+                                        - if(attrs[j].ans == attrs[j].vals[k].id)
+                                            option(selected, value=attrs[j].vals[k].id) #{attrs[j].vals[k].name}
+                                        - else
+                                            option(value=attrs[j].vals[k].id) #{attrs[j].vals[k].name}
+                                    - }
+
+                        - else if (attrs[j].type == 7)
+                            div(style="float: right; min-width: 70%; min-height: 200px")
+                                textarea.signInInput.form-control.form_input.justFarsi( data-type="7", data-val=attrs[j].id, style="height: 200px; display: inline-block; margin: 0 0 0 2%") #{attrs[j].ans}
+
+                        - else if (attrs[j].type == 8)
+                            div.hidden#selectedState(data-val=attrs[j].ans)
+                            div(style="float: right; min-width: 40%")
+                                select#state.stateHandler.form_input.form_input_state(data-val=attrs[j].id, data-type="8", style="color: #989595")
+                                    option(value=-1) استان
+
+                        - else if (attrs[j].type == 9)
+                            div.hidden#selectedCity(data-val=attrs[j].ans)
+                            div(style="float: right; min-width: 40%")
+                                select#citySelect.form_input(data-val=attrs[j].id, data-type="9", style="color: #989595")
+                                    option(value=-1) شهر
+                    - }
+
+                    - else {
+
+                        - if(attrs[j].type == 1)
+                            div(style="float: right; min-width: 20%")
+                                input.form_input(type='checkbox', data-type="1", data-val=attrs[j].id, style="display: inline-block; margin: 0 0 0 2%")
+
+                        - else if(attrs[j].type == 2) {
+                            div(style="float: right; min-width: 80%")
+                                select.signInInput.form-control.form_input(name='day_' + attrs[j].id, data-type="2", data-val=attrs[j].id, style="width:25% !important; display: inline-block; margin: 0 0 0 5%")
+                                    option(value = -1) روز
+                                    - for (let i = 1; i < 32; i++) {
+                                        option(value=i) !{i}
+                                    - }
+                                select.signInInput.form-control(name='month_' + attrs[j].id, style="width:25% !important; display: inline-block; margin: 0 5%")
+                                    option(value = -1) ماه
+                                    - for (let i = 1; i < 13; i++) {
+                                        option(value=i) !{i}
+                                    - }
+                                select.signInInput.form-control(name='year_' + attrs[j].id, style="width:25% !important; display: inline-block; margin: 0 5% 0 0")
+                                    option(value = -1) سال
+                                    - for (var i = 1398; i > 1299; i--) {
+                                        option(value=i) !{i}
+                                    - }
+                        - }
+
+                        - else if (attrs[j].type == 3)
+                            div(style="float: right; min-width: 80%")
+                                input.signInInput.form-control.justNumber.form_input(type='text', data-type="3", data-val=attrs[j].id, style="display: inline-block; margin: 0 0 0 2%")
+
+                        - else if (attrs[j].type == 4)
+                            div(style="float: right; min-width: 80%")
+                                input.signInInput.form-control.form_input.justFarsi(type='text', data-type="4", data-val=attrs[j].id, style="display: inline-block; margin: 0 0 0 2%")
+
+                        - else if (attrs[j].type == 5)
+                            div(style="float: right; min-width: 80%")
+                                input.signInInput.form-control.form_input(type='file', data-type="5", data-val=attrs[j].id, style="display: inline-block; margin: 0 0 0 2%")
+
+                        - else if (attrs[j].type == 6)
+                            div(style="float: right; min-width: 80%")
+                                select.signInInput.form-control.form_input(data-val=attrs[j].id, data-type="6", style="display: inline-block; margin: 0 0 0 2%")
+                                    - for(let k = 0; k < attrs[j].vals.length; k++) {
+                                        option(value=attrs[j].vals[k].id) #{attrs[j].vals[k].name}
+                                    - }
+
+                        - else if (attrs[j].type == 7)
+                            div(style="float: right; min-width: 80%; min-height: 200px")
+                                textarea.signInInput.form-control.form_input.justFarsi(data-type="7",data-val=attrs[j].id, style="height: 200px; display: inline-block; margin: 0 0 0 2%")
+
+                        - else if (attrs[j].type == 8)
+                            div(style="float: right; min-width: 40%")
+                                select#state.stateHandler.form_input.form_input_state(data-val=attrs[j].id, data-type="8", style="color: #989595")
+                                    option(value=-1) استان
+
+                        - else if (attrs[j].type == 9)
+                            div(style="float: right; min-width: 40%")
+                                select#citySelect.form_input(data-val=attrs[j].id, data-type="9", style="color: #989595")
+                                    option(value=-1) شهر
+                    - }
+
+                    - if(attrs[j].help) {
+                        img.off(id="onOff" + attrs[j].id, src = "/assets/img/helpoff.png", style = "float: left; width: 30px")
+                        p.explainText(id="explain" + attrs[j].id) !{attrs[j].help}
+                    - }
+            - }
+
+    div(style=" width: 100%;")
+        p#errors.warning(style="margin: 10px; padding: 10px; line-height: 1.7em")
+
+div.retrievePassInputsLabel(style="float: left; width: 100%; padding: 0")
+
+    - if (final == false && inst.id != 4)
+        button.rpContinuesBtn#confirms1m1(style="float: left; margin: 10px")
+            b(style="float: right; color: #ffffff; font-size: 15px") تایید اطلاعات
+        //button.rpContinuesBtn#nextPage(style="float: left; margin: 10px")
+        //    b(style="float: right; color: #ffffff; font-size: 15px") مرحله بعد
+        //    img(src = "/assets/img/arrowup.png", style = "float:left; transform: rotate(-90deg); padding-top: 10px")
+    - else
+        - if(inst.id != 4)
+            button.rpContinuesBtn#confirms1m1(style="float: left; margin: 10px; width: 200px; background-color: #7bc4dc")
+                b(style="float: right; color: #ffffff; font-size: 15px") ارسال برای بررسی نهایی
+        - else
+            p(style="color: red; font-weight: bold") در خواست شما ظرف یک ماه بررسی و نتیجه آن به شما اعلام می گردد. اگر واجد شرایط بودید، مدارک تکمیلی از شما درخواست می گردد.
+            button.rpContinuesBtn#confirms1m1(style="float: left; margin: 10px; width: 200px; background-color: #7bc4dc")
+                b(style="float: right; color: #ffffff; font-size: 15px") ارسال برای بررسی نهایی
+
+
+    //button.rpContinuesBtn#confirms1m1(style="float: left; margin: 10px", onclick="submitForm()")
+    //    b(style="float: right; color: #ffffff; font-size: 15px") تایید اطلاعات

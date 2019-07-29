@@ -1,0 +1,86 @@
+div.inputLabel
+
+    div(style=" padding: 3px 0px 10px 30px; font-size: 15px; width: 100%;")
+
+        span(style=" padding: 3px 0px 0px 30px; font-size: 15px; width: 100%;") اطلاعات تماس
+
+    - let stateIdTmp = -1;
+    - let cityIdTmp = -1;
+
+    div(style=" width: 100%;")
+
+        select#stateSelect2(style="width:33% !important; display: inline-block; margin: 0 0 0 7%")
+            option(value=-1) استان
+            - for (var i = 0; i < states.length; i++) {
+                if (user_form != null && parseInt(states[i].id) === user_form.state_id)
+                    option(selected, value=states[i].id) #{states[i].name}
+                    - stateIdTmp = states[i].id
+                    - cityIdTmp = user_form.city_id
+                else
+                    option(value=states[i].id) #{states[i].name}
+            - }
+
+        div.hidden#selectedCityTmp(data-val=cityIdTmp)
+        div.hidden#selectedStateTmp(data-val=stateIdTmp)
+
+        select#citySelect(name="city_id", style="width:33% !important; display: inline-block; margin: 0 7% 0 0")
+            option(value=-1) شهر
+
+        img.off#onOff3(src="/assets/img/helpoff.png", style="float: left; width: 30px")
+        p.explainText#explain3 اطلاعات تماس را با دقت پر نمایید
+
+    div(style=" width: 100%; margin: 10px 0 5px 0; display: inline-block")
+        if (user_form != null)
+            textarea#ceoAddress.signInInput.form-control(type='text', placeholder='نشانی دقیق' name='address' style= "width: 80%") #{user_form.address}
+        else
+            textarea#ceoAddress.signInInput.form-control(placeholder='نشانی دقیق' name='address' style= "width: 80%")
+
+    div(style=" width: 80%; margin: 5px 0; display: inline-block")
+
+        span(style=" float:right; font-size: 14px") کد پستی
+        if (user_form != null)
+            input#ceoPostalCode.form-control.justNumber(value=user_form.post_code, type='text', placeholder='ده رقم' name='post_code', style="float: left; width:65%; display: inline-block")
+        else
+            input#ceoPostalCode.form-control.justNumber(type='text', placeholder='ده رقم' name='post_code', style="float: left; width:65%; display: inline-block")
+
+    div(style=" width: 80%; margin: 5px 0; display: inline-block")
+
+        span(style=" float:right; font-size: 90%") تلفن ثابت
+
+        - if(user_form != null) {
+            input#ceoPrePhoneNum.form-control.justNumber(value=user_form.pre_tel, maxlength="4", type='text', placeholder='پیش شماره' name='pre_tel', style="float: left; width:28%; display: inline-block")
+            input#ceoPhoneNum.form-control.justNumber(value=user_form.tel, type='text', placeholder='شماره' name='tel', style="margin: 0 7px; float: left; width:35%; display: inline-block")
+        - }
+        - else {
+            input#ceoPrePhoneNum.form-control.justNumber(maxlength="4", type='text', placeholder='پیش شماره' name='pre_tel', style="float: left; width:28%; display: inline-block")
+            input#ceoPhoneNum.form-control.justNumber(type='text', placeholder='شماره' name='tel', style="margin: 0 7px; float: left; width:35%; display: inline-block")
+        - }
+
+    div(style=" width: 80%; margin: 5px 0; display: inline-block")
+
+        span(style=" float:right; font-size: 14px") نمابر
+        - if(user_form != null) {
+            input#ceoPreFaxNum.form-control.justNumber(maxlength="4", value=user_form.pre_namabar, type='text', placeholder='پیش شماره' name='pre_namabar', style="float: left; width:28%; display: inline-block")
+            input#ceoFaxNum.form-control.justNumber(value=user_form.namabar, type='text', placeholder='شماره' name='namabar', style="margin: 0 7px; float: left; width:35%; display: inline-block")
+        - }
+        - else {
+            input#ceoPreFaxNum.form-control.justNumber(maxlength="4", type='text', placeholder='پیش شماره' name='pre_namabar', style="float: left; width:28%; display: inline-block")
+            input#ceoFaxNum.form-control.justNumber(type='text', placeholder='شماره' name='namabar', style="margin: 0 7px; float: left; width:35%; display: inline-block")
+        - }
+
+div.inputLabel
+
+    div(style=" padding: 3px 0px 10px 30px; font-size: 15px; width: 100%;")
+        span(style=" padding: 3px 0px 0px 30px; font-size: 15px; width: 100%;") پست الکترونیکی
+
+    div(style=" width: 100%;")
+
+        if (user_form != null)
+            input#ceoEmail.signInInput.form-control.justEnglish(value=user_form.mail, type='email', placeholder='name@domain.x' name='email', style="width: 80%; direction: ltr")
+        else
+            input#ceoEmail.signInInput.form-control.justEnglish(type='email', placeholder='name@domain.x' name='email', style="width: 80%; direction: ltr")
+
+        img.off#onOff4(src="/assets/img/helpoff.png", style = "float: left; width: 30px")
+        p.explainText#explain4 آدرس پست الکترونیک فعال را وارد نمایید. <br/> در صورت فقدان آدرس پست الکترونیک <a target="_blank" href="https://gmail.com">از اینجا</a> می توانید به صورت رایگان یک آدرس درست کنید.
+
+script(src="/assets/js/filter/contact.js")

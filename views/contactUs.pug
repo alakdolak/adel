@@ -1,0 +1,55 @@
+extends structure.pug
+
+block backImg
+
+    div.divTitleOnBlock
+        h3.titleOnBack
+
+    //div(style="background: url('/assets/img/cover.jpg'); background-size: cover; right: 0; position: absolute; width: 100%; height: 200px; opacity: 0.9")
+
+    img(src = "/assets/img/contact.jpg", style = "width: 100%; opacity: 0.9")
+
+block content
+
+    div.navBarOnOverBackMainDiv
+        ul
+            img.homeIcon(src="/assets/img/home.png")
+            li.homeBtn خانه /
+            li تماس با ما
+
+    div.mainBlockContactUs
+        div.contactUsContent
+            div.contactUsContentTexts.col-md-6.col-xs-12
+                div.contactUsTitleDiv
+                    p سازمان فناوری اطلاعات ایران
+                    p.goldenOne وزارت ارتباطات و فناوری اطلاعات
+
+                div.contactUsAddressTitle.contactUsTitle
+                    div.contactUsAddressTitleImg.contactUsTitleImg
+                        img(src = "/assets/img/locationIcon.png")
+                    div.contactUsAddressTitleText.contactUsTitleText
+                        p آدرس
+
+                div.contactUsAddressContent.contactUsContents
+                    p تهران - خیابان شریعتی - نرسیده به پل سیدخندان - ورودی 22 - ساختمان مرکزی
+
+                div.contactUsPostalCodeTitle.contactUsTitle
+                    div.contactUsAddressTitleImg.contactUsTitleImg
+                        img(src = "/assets/img/mail-box.png")
+                    div.contactUsAddressTitleText.contactUsTitleText
+                        p صندوق پستی
+
+                div.contactUsPostalCodeContent.contactUsContents
+                    p 1631713931
+
+                div.contactUsSupportTelTitle.contactUsTitle
+                    div.contactUsAddressTitleImg.contactUsTitleImg
+                        img(src = "/assets/img/call(1).png")
+                    div.contactUsAddressTitleText.contactUsTitleText
+                        p تلفن تماس و پشتیبانی
+
+                div.contactUsSupportTelContent.contactUsContents
+                    p 0098-21-88115790
+
+            div.contactUsContentMap.col-md-6.col-xs-12
+                img(src = "/assets/img/location.png")

@@ -1,0 +1,26 @@
+form(method= "post")
+
+    div.col-lg-8.col-md-12(style="float: right; display: inline-block; margin-bottom: 30px; padding: 0")
+
+        div.inputLabel
+
+            div(style=" padding: 3px 0px 10px 30px; font-size: 15px; width: 100%;")
+
+                span(style=" padding: 3px 0px 0px 30px; font-size: 15px; width: 100%;") طرح تجاری
+
+            div(style=" width: 100%;")
+
+                input#BusinessPlan.signInInput.form-control(type='file', name='BusinessPlan',class="filestyle" data-classButton="btn btn-primary" data-input="false" data-classIcon="icon-plus" data-buttonText="Your label here." style="width:80%;float:right; display: inline-block")
+                img.on#onOff10(src = "/assets/img/helpon.png", style = "float: left; width: 30px")
+                b.hidden(style="width: 80%; text-align: justify; color: #1d7eaa; float: right; font-size: 11px; padding-top: 5px") فایل شما مناسب نمی باشد. لطفاً فایل راهنما را مشاهده نمایید.
+
+            div(style="display: inline-block; font-size: 15px; width: 100%;")
+
+                p.explainText#explain10.hidden طرح تجاری خود را در یک فایل نوشتاری الصاق نمایید. در صورت نیاز به الصاق دو فایل بر روی دکمه + کلیک نمایید. از <a href="http://google.com">اینجا</a> می توانید قالب استاندارد طرح را دانلود نمایید.
+                button(style= "background: inherit; border: none;")
+
+                    img(src = "/assets/img/adddoc.png", style = "right: left; width: 20px; margin: 5px 0")
+
+                span(style=" padding: 3px 0px 0px 30px; font-size: 10px; width: 100%;") اگر بیش از یک فایل می باشد
+
+    include elements/submitBtn

@@ -1,0 +1,74 @@
+extend farayandStructure
+
+block navBarSteps
+    include navBarSteps
+
+block farayandStepsDetailsDivs
+
+    div.farayandStepsDetailsResponsiveDiv
+
+        center
+            - for(let i = 0; i < gams.length; i++) {
+
+                    - let url = gams[i].url
+
+                    if(gams[i].selected)
+                        div.farayandStepsDetailsResponsiveDivs(style= "background-color: #1f647d; border-top: 10px solid #009ee0;")
+                            b #{gams[i].name}
+                    else
+                        a.farayandStepsDetailsResponsiveDivs(href=url)
+                            b #{gams[i].name}
+            - }
+
+    - for(let i = 0; i < gams.length; i++) {
+
+        - let url = gams[i].url
+
+        if(gams[i].selected)
+            div.farayandStepsDetailsDivs
+                div(style="float: left; width: 2%; background-color: #009ee0; height: 100%; display: inline-block")
+                b(style=" width: 95%; float: right; padding: 4% 10px 0 0; display: inline-block; font-size: 14px") #{gams[i].name}
+                br
+                span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") #{gams[i].desc}
+        else
+            a.farayandStepsDetailsDivs(href=url, style=" background-color: inherit; color: black")
+                div(style="float: left; width: 2%; background-color: white; height: 100%; display: inline-block")
+                b(style=" width: 95%; float: right; padding: 4% 10px 0 0; display: inline-block; font-size: 14px") #{gams[i].name}
+                br
+                span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") #{gams[i].desc}
+
+    - }
+
+block inputs
+    if mode === 1
+        include forms/hoghoghi
+    if mode === 2
+        include forms/modiramel
+    if mode === 3
+        include forms/heyatmodire
+    if mode === 4
+        include forms/namayande
+    if mode === 5
+        include forms/hoghoghi_madrak
+    if mode === 6
+        include forms/modiramel_madrak
+    if mode === 7
+        include forms/namayande_madrak
+    if mode === 9
+        include forms/tarh
+    if mode === 10
+        include pre
+    if mode === 11
+        include post
+
+    if mode === 12
+        include forms/javaz
+    if mode === 13
+        include forms/haghighiEghdam
+    if mode === 14
+        include forms/haghighi_senf
+    if mode === 15
+        include forms/haghighi_madrak
+
+
+    script(src="/assets/js/getCities.js")

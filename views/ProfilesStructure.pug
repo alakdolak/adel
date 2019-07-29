@@ -1,0 +1,171 @@
+html
+   head
+        title ایران کارفا
+        meta(charset = "utf-8")
+        meta(http-equiv='x-ua-compatible', content='ie=edge')
+        meta(name="description", content="یکی از مهم‌ترین تسهیل‌گری‌های برای نوآوری در نظر گرفتن اندکی روامداری قانونی و مقدماتی است. کسب‌و‌کارهای نوپا و شرکت‌ها براساس مدل کسب‌وکارنو شکل می‌گیرند پس باید به آنها فرصت داد تا ایده خود را برای مدت محدودی و در سقف محدود به آزمون بگذارند")
+        meta(name='viewport', content='width=device-width,initial-scale=1')
+        link(rel = "icon", href="/assets/img/fav.png", type="image/png" sizes="16x16")
+        link(rel='stylesheet', href='/assets/css/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/assets/css/css/font-awesome.min.css')
+        link(rel='stylesheet', href='/assets/css/css/adminpro-custon-icon.css')
+        link(rel='stylesheet', href='/assets/css/css/meanmenu.min.css')
+        link(rel='stylesheet', href='/assets/css/css/animate.css')
+        link(rel='stylesheet', href='/assets/css/css/jquery.mCustomScrollbar.min.css')
+        link(rel='stylesheet', href='/assets/css/css/data-table/bootstrap-table.css')
+        link(rel='stylesheet', href='/assets/css/css/data-table/bootstrap-editable.css')
+        link(rel='stylesheet', href='/assets/css/css/normalize.css')
+        link(rel='stylesheet', href='/assets/css/css/chosen/bootstrap-chosen.css')
+        link(rel='stylesheet', href='/assets/css/css/form.css')
+        link(rel='stylesheet', href='/assets/css/css/form/all-type-forms.css')
+        link(rel='stylesheet', href='/assets/css/css/c3.min.css')
+        link(rel='stylesheet', href='/assets/css/css/style.css')
+        link(rel='stylesheet', href='/assets/css/css/responsive.css')
+        link(rel = "stylesheet", href = "/assets/css/fontiran.css")
+        link(rel = "stylesheet", href = "/assets/css/font.css")
+
+        script(src="/assets/js/jquery.min.js")
+        script(src="/assets/js/common.js")
+        meta(name="csrf-token" content=csrfToken)
+        script(src="/assets/js/jquery.farsiInput.js")
+
+   body.materialdesign(style="direction: rtl")
+        .wrapper-pro
+            .left-sidebar-pro
+                nav#sidebar
+                    .sidebar-header
+                        a(href='#')
+                            img(src='/assets/img/img/message/1.png', alt='', style="width: 80px; height: 80px;")
+                        h3 #{nid}
+                    .left-custom-menu-adp-wrap
+                        ul.nav.navbar-nav.left-sidebar-menu-pro
+                            li.nav-item
+                                a.nav-link.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+                                    i.fa.big-icon.fa-home
+                                    span.mini-dn درخواست های من
+                                    span.indicator-right-menu.mini-dn
+                                        i.fa.indicator-mn.fa-angle-left
+                                //.dropdown-menu.left-menu-dropdown.animated.flipInX(role='menu')
+                                    a.dropdown-item(href='dashboard.html') Dashboard v.1
+                                    a.dropdown-item(href='dashboard-2.html') Dashboard v.2
+                                    a.dropdown-item(href='analytics.html') Analytics
+                                    a.dropdown-item(href='widgets.html') Widgets
+                            li.nav-item
+                                a.nav-link.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+                                    i.fa.big-icon.fa-bar-chart-o
+                                    span.mini-dn ارائه ی گزارش
+                                    span.indicator-right-menu.mini-dn
+                                        i.fa.indicator-mn.fa-angle-left
+                                //.dropdown-menu.left-menu-dropdown.chart-left-menu-std.animated.flipInX(role='menu')
+                                    a.dropdown-item(href='bar-charts.html') Bar Charts
+                                    a.dropdown-item(href='line-charts.html') Line Charts
+                                    a.dropdown-item(href='area-charts.html') Area Charts
+                                    a.dropdown-item(href='rounded-chart.html') Rounded Charts
+                                    a.dropdown-item(href='c3.html') C3 Charts
+                                    a.dropdown-item(href='sparkline.html') Sparkline Charts
+                                    a.dropdown-item(href='peity.html') Peity Charts
+            .content-inner-all
+                    .header-top-area
+                        .fixed-header-top
+                            .container-fluid
+                                .row
+                                    .col-lg-5.col-md-5.col-sm-6.col-xs-12(style= "float: right")
+                                        .header-right-info
+                                            ul.nav.navbar-nav.mai-top-nav.header-right-menu
+                                                li.nav-item
+                                                    a.nav-link.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+                                                        i.fa.fa-bell-o(aria-hidden='true')
+                                                        span.indicator-nt
+                                                    .notification-author.dropdown-menu.animated.flipInX(role='menu')
+                                                        .notification-single-top
+                                                            h1 اعلانات
+                                                        //ul.notification-menu
+                                                        //    li
+                                                        //        a(href='#')
+                                                        //            .notification-icon
+                                                        //                span.adminpro-icon.adminpro-checked-pro
+                                                        //            .notification-content
+                                                        //                span.notification-date 16 Sept
+                                                        //                h2 Advanda Cro
+                                                        //                p Please done this project as soon possible.
+                                                        .notification-view
+                                                            a(href='#') View All Notification
+                                                li.nav-item
+                                                    a.nav-link.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+                                                        span.adminpro-icon.adminpro-user-rounded.header-riht-inf
+                                                        span.admin-name منوی کاربری
+                                                        span.author-project-icon.adminpro-icon.adminpro-down-arrow
+                                                    ul.dropdown-header-top.author-log.dropdown-menu.animated.flipInX(role='menu')
+                                                        li(style="direction: rtl; float: right")
+                                                            a(href='#')
+                                                                span.adminpro-icon.adminpro-settings.author-log-ic(style="margin-left: 10px")
+                                                                | تنظیمات
+                                                        li(style="direction: rtl; float: right")
+                                                            a(href='/logout2')
+                                                                span.adminpro-icon.adminpro-locked.author-log-ic(style="margin-left: 10px")
+                                                                | خروج
+                                #returnHome.homeBtn
+                                    a.rpContinuesBtn(style="padding: 7px; text-decoration: none", href="/") بازگشت به سامانه
+
+                    .mobile-menu-area
+                        .container
+                            .row
+                                .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                    .mobile-menu
+                                        nav#dropdown
+                                            ul.mobile-menu-nav
+                                                li
+                                                    a(data-toggle='collapse', data-target='#Charts', href='#')
+                                                        | درخواست‌های من
+                                                li
+                                                    a(data-toggle='collapse', data-target='#demo', href='#')
+                                                        | ارائه ی گزارش
+                    block content
+
+                    script(src='/assets/js/js/vendor/modernizr-2.8.3.min.js')
+                    script(src='/assets/js/js/vendor/jquery-1.11.3.min.js')
+                    script(src='/assets/js/js/bootstrap.min.js')
+                    script(src='/assets/js/js/jquery.meanmenu.js')
+                    script(src='/assets/js/js/jquery.mCustomScrollbar.concat.min.js')
+                    script(src='/assets/js/js/jquery.sticky.js')
+                    script(src='/assets/js/js/jquery.scrollUp.min.js')
+                    script(src='/assets/js/js/counterup/jquery.counterup.min.js')
+                    script(src='/assets/js/js/counterup/waypoints.min.js')
+                    script(src='/assets/js/js/rounded-counter/jquery.countdown.min.js')
+                    script(src='/assets/js/js/rounded-counter/jquery.knob.js')
+                    script(src='/assets/js/js/rounded-counter/jquery.appear.js')
+                    script(src='/assets/js/js/rounded-counter/knob-active.js')
+                    script(src='/assets/js/js/peity/jquery.peity.min.js')
+                    script(src='/assets/js/js/peity/peity-active.js')
+                    script(src='/assets/js/js/sparkline/jquery.sparkline.min.js')
+
+                    //      script(src='/assets/js/js/sparkline/sparkline-active.js')
+
+                    script(src='/assets/js/js/flot/jquery.flot.js')
+                    script(src='/assets/js/js/flot/jquery.flot.tooltip.min.js')
+                    script(src='/assets/js/js/flot/jquery.flot.resize.js')
+                    script(src='/assets/js/js/flot/widget-flot-chart-active.js')
+
+                    script(src='/assets/js/js/data-table/bootstrap-table.js')
+                    script(src='/assets/js/js/data-table/tableExport.js')
+                    script(src='/assets/js/js/data-table/data-table-active.js')
+                    script(src='/assets/js/js/data-table/bootstrap-table-editable.js')
+                    script(src='/assets/js/js/data-table/bootstrap-editable.js')
+                    script(src='/assets/js/js/data-table/bootstrap-table-resizable.js')
+                    script(src='/assets/js/js/data-table/colResizable-1.5.source.js')
+                    script(src='/assets/js/js/data-table/bootstrap-table-export.js')
+
+                    script(src='/assets/js/js/jquery.mockjax.js')
+                    script(src='/assets/js/js/mock-active.js')
+                    script(src='/assets/js/js/select2.js')
+                    script(src='/assets/js/js/moment.min.js')
+                    script(src='/assets/js/js/bootstrap-datetimepicker.js')
+                    script(src='/assets/js/js/bootstrap-editable.js')
+                    script(src='/assets/js/js/xediable-active.js')
+                    script(src='/assets/js/js/chosen/chosen.jquery.js')
+                    script(src='/assets/js/js/chosen/chosen-active.js')
+                    script(src='/assets/js/js/jquery.form.min.js')
+                    script(src='/assets/js/js/jquery.validate.min.js')
+                    script(src='/assets/js/js/form-active.js')
+                    script(src='/assets/js/js/icheck/icheck.min.js')
+                    script(src='/assets/js/js/icheck/icheck-active.js')

@@ -1,0 +1,96 @@
+extend ../ProfilesStructure.pug
+
+block content
+
+    .login-form-area.mg-t-30.mg-b-15
+        .container-fluid
+            .row
+                .col-lg-3
+                //#adminpro-register-form.adminpro-form
+                form(method="post", action="/doRegistration")
+                    input(type="hidden", name="_csrf", value=csrfToken)
+                    .col-lg-6
+                        .login-bg
+                            .row
+                                .col-lg-12
+                                    .logo
+
+                            .row
+                                .col-lg-12
+                                    .login-title
+                                        h1 ثبت نام اعضای کارگروه
+                            .row
+                                .col-lg-4
+                                    .login-input-head
+                                        p نام و نام خانوادگی
+                                .col-lg-8
+                                    .row
+                                        .col-lg-6
+                                            .login-input-area.register-mg-rt
+                                                input(type='text', name='firstName', placeholder='نام')
+                                                i.fa.fa-user.login-user
+                                        .col-lg-6
+                                            .login-input-area
+                                                input(type='text', name='lastName', placeholder='نام خانوادگی')
+                                                i.fa.fa-user.login-user
+                            .row
+                                .col-lg-4
+                                    .login-input-head
+                                        p آدرس ایمیل
+                                .col-lg-8
+                                    .login-input-area
+                                        input.justEnglish(type='email', name='email')
+                                        i.fa.fa-envelope.login-user(aria-hidden='true')
+                            .row
+                                .col-lg-4
+                                    .login-input-head
+                                        p کلمه‌ی عبور
+                                .col-lg-8
+                                    .login-input-area
+                                        input.justEnglish(type='password', name='password')
+                                        i.fa.fa-lock.login-user
+                            .row
+                                .col-lg-4
+                                    .login-input-head
+                                        p تکرار کلمه‌ی عبور
+                                .col-lg-8
+                                    .login-input-area
+                                        input.justEnglish(type='password', name='confirm_password')
+                                        i.fa.fa-lock.login-user
+                            .row
+                                .col-lg-4
+                                    .login-input-head
+                                        p شماره‌ی همراه
+                                .col-lg-8
+                                    .login-input-area
+                                        input.justNumber(type='text', name='phone')
+                                        i.fa.fa-phone.login-user
+                            .row
+                                .col-lg-4
+                                    .login-input-head
+                                        p کد ملی
+                                .col-lg-8
+                                    .login-input-area
+                                        input.justNumber(type='text', name='nid')
+                                        i.fa.fa-user.login-user
+                            .row
+                                .col-lg-4
+                                    .login-input-head
+                                        p استان
+                                .col-lg-8
+                                    .login-input-area
+                                        select(name="state")
+                                            - for(let i = 0; i < states.length; i++) {
+                                                option(value=states[i].id) #{states[i].name}
+                                            - }
+
+                            .row
+                                .col-lg-4
+                                .col-lg-8
+                                    .login-button-pro
+                                        input.login-button.login-button-rg(type='submit', value="ثبت")
+                                        button.login-button.login-button-lg(type='submit') پاک کردن فیلدها
+
+                                - if(typeof(err) !== "undefined" && err.length > 0)
+                                    p(style="margin: 50px; color: rgb(201, 75, 0)") !{err}
+                .col-lg-3

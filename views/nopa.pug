@@ -1,0 +1,60 @@
+extends structure.pug
+
+block backImg
+
+    div.divTitleOnBlock
+        h3.titleOnBack کسب و کار های نوپا
+
+    //div(style="background: url('/assets/img/cover.jpg'); background-size: cover; right: 0; position: absolute; width: 100%; height: 200px; opacity: 0.9")
+
+    img(src = "/assets/img/cover.jpg", style = "width: 100%; opacity: 0.9")
+
+block content
+    div.overBackMainDiv
+        div.navBarOnOverBackMainDiv
+            ul
+                img.homeIcon(src="/assets/img/home.png")
+                li.homeBtn خانه /
+                li حمایت ها /
+                li کسب و کار های نوپا
+
+
+        div.imgOnOverBackMainDiv
+
+                div.boxOnOverBackMain.col-xs-6
+                    center
+                        b(style= "font-size: 20px; color: white") تسهیلات مناسب:
+
+                div.boxesDivOnImgOnOverBackMainDiv.boxesDivOnImgOnOverBackMainDivNopa
+                    div.boxOnImgOnOverBackMainDiv.boxOnImgOnOverBackMainDivNopa.filter(data-filter="1")
+                        img(src="/assets/img/startup.png")
+                        p من صاحب اپلیکیشن هستم
+
+                    div.boxOnImgOnOverBackMainDiv.boxOnImgOnOverBackMainDivNopa.filter(data-filter="3")
+                        img(src="/assets/img/nopa.png")
+                        p من شرکت نوپا هستم
+
+        div.col-xs-12.chooseCalc
+            center
+                //div.calcBox.calcBox2ndPage.shadow.calcBoxUnSelected#ceil(onclick="changeCompareCeil('ceil')")
+                //    h3 محاسبه سقف تسهیلات
+                div.calcBox.calcBox2ndPage.shadow.calcBoxSelected#compare
+                    h3 مقایسه تسهیلات
+
+        include layouts/calcDiv
+
+        div.col-xs-12.compareDiv
+            div.col-xs-7
+                button.btn(style="float: left; margin-top: 20px; background-color: #1f647d;")
+                    span(style="width: 20px; height: 20px; background: url('/assets/img/arrowup.png'); display: inline-block; background-size: contain; background-repeat: no-repeat; transform: rotate(-90deg)")
+
+                button.btn(style="float: left; margin-top: 20px; margin-left: 5px; background-color: #1f647d;")
+                    span(style="width: 20px; height: 20px; background: url('/assets/img/arrowup.png'); display: inline-block; background-size: contain; background-repeat: no-repeat; transform: rotate(90deg)")
+
+            div.col-xs-5
+
+            div.col-xs-12
+                table#table.calcTable
+
+        div.hidden#selectedMode(data-val=transferedMode)
+        script(src="/assets/js/secondPage.js")
