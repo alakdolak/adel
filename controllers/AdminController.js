@@ -268,52 +268,66 @@ exports.blockCreator = function(req, res) {
             type: Sequelize.QueryTypes.SELECT
         }).then(tmp => {
 
-            State.findAll().then(states => {
+            sequelize.query("select form_id from block_accesses where block_id = ?", {
+                type: Sequelize.QueryTypes.SELECT,
+                replacements: [blockId]
+            }).then(blockAccesses => {
 
-                let outStates = [];
-                let counter = 0;
-                for(let i = 0; i < states.length; i++)
-                    outStates[counter++] = states[i].dataValues;
+                let blockAccessesArr = [];
+                for(let i = 0; i < blockAccesses.length; i++) {
+                    blockAccessesArr[i] = blockAccesses[i].form_id;
+                }
 
-                sequelize.query("select id, name from blocks where instruction_id = ?", {
-                    type: Sequelize.QueryTypes.SELECT,
-                    replacements: [instId]
-                }).then(blocks => {
+                State.findAll().then(states => {
 
-                    if(result[0] !== "true") {
-                        sequelize.query("select b.id, s.name, b.kargroh from states s, block_kargroh_states b where s.id = b.state_id and b.block_id = ?", {
-                            type: Sequelize.QueryTypes.SELECT,
-                            replacements: [result[0].id]
-                        }).then(stateKargrohs => {
+                    let outStates = [];
+                    let counter = 0;
+                    for(let i = 0; i < states.length; i++)
+                        outStates[counter++] = states[i].dataValues;
+
+                    sequelize.query("select id, name from blocks where instruction_id = ?", {
+                        type: Sequelize.QueryTypes.SELECT,
+                        replacements: [instId]
+                    }).then(blocks => {
+
+                        if(result[0] !== "true") {
+                            sequelize.query("select b.id, s.name, b.kargroh from states s, block_kargroh_states b where s.id = b.state_id and b.block_id = ?", {
+                                type: Sequelize.QueryTypes.SELECT,
+                                replacements: [result[0].id]
+                            }).then(stateKargrohs => {
+                                res.render('admin/blockCreator', {
+                                    'kargrohs': tmp,
+                                    'states': states,
+                                    'blocks': blocks,
+                                    'stateKargrohs': stateKargrohs,
+                                    'hoghoghi': !result[1].haghighi,
+                                    'blockId': (result[0] === "true") ? -1 : result[0].id,
+                                    'block': (result[0] === "true") ? null : result[0],
+                                    'instId': instId,
+                                    'blockAccesses': blockAccessesArr,
+                                    'csrfToken': req.csrfToken()
+                                });
+                            })
+                        }
+                        else {
                             res.render('admin/blockCreator', {
                                 'kargrohs': tmp,
                                 'states': states,
                                 'blocks': blocks,
-                                'stateKargrohs': stateKargrohs,
+                                'blockAccesses': blockAccessesArr,
+                                'stateKargrohs': [],
                                 'hoghoghi': !result[1].haghighi,
                                 'blockId': (result[0] === "true") ? -1 : result[0].id,
                                 'block': (result[0] === "true") ? null : result[0],
                                 'instId': instId,
                                 'csrfToken': req.csrfToken()
                             });
-                        })
-                    }
-                    else {
-                        res.render('admin/blockCreator', {
-                            'kargrohs': tmp,
-                            'states': states,
-                            'blocks': blocks,
-                            'stateKargrohs': [],
-                            'hoghoghi': !result[1].haghighi,
-                            'blockId': (result[0] === "true") ? -1 : result[0].id,
-                            'block': (result[0] === "true") ? null : result[0],
-                            'instId': instId,
-                            'csrfToken': req.csrfToken()
-                        });
-                    }
-                });
+                        }
+                    });
 
+                });
             });
+
         });
     });
 };
@@ -338,7 +352,7 @@ exports.accessOfBlock = function (req, res) {
                     replacements: [blockId, fields[i]]
                 });
             }
-            res.send(200);
+            res.send(JSON.stringify("ok"));
         });
     });
 

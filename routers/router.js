@@ -266,30 +266,31 @@ router.get("/login/:msg?", sessionCheckerInverse, function (req, res) {
 
     res.render('login', {
         'err': err,
-        csrfToken: req.csrfToken()
+        csrfToken: req.csrfToken(),
+        my_nonce: req.nonce
     });
 });
 
 router.post("/login", smsLimiter, function(req, res) {
-    //
-    // if(req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
-    //     return res.json({"responseError" : "Please select captcha first"});
-    // }
-    //
-    // const secretKey = "6LewsasUAAAAAKUdOZMH_XQNkmBopQy8j0q5Exem";
-    // const verificationURL = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
-    //
-    // request(verificationURL, function(error,response,body) {
-    //
-    //     body = JSON.parse(body);
-    //
-    //     if(body.success !== undefined && !body.success) {
-    //         return res.json({"responseError" : "Failed captcha verification"});
-    //
-    //     }
+
+    if(req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
+        return res.json({"responseError" : "Please select captcha first"});
+    }
+
+    const secretKey = "6LewsasUAAAAAKUdOZMH_XQNkmBopQy8j0q5Exem";
+    const verificationURL = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
+
+    request(verificationURL, function(error,response,body) {
+
+        body = JSON.parse(body);
+
+        if(body.success !== undefined && !body.success) {
+            return res.json({"responseError" : "Failed captcha verification"});
+
+        }
 
         HomeController.doLogin(req, res);
-    // });
+    });
 });
 
 router.get("/profile", HomeController.profile );
@@ -308,7 +309,9 @@ router.get("/contactUs", HomeController.contactUs );
 
 router.get("/complaint", HomeController.complaint );
 
-router.get("/signUp", smsLimiter, HomeController.signUp );
+router.get("/signUp/:msg?", smsLimiter, HomeController.signUp );
+
+router.get("/signUpStep2/:user_id", smsLimiter, HomeController.signUpStep2 );
 
 router.post("/signUp", smsLimiter, function(req, res) {
 

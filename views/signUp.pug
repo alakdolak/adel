@@ -7,48 +7,57 @@ block content
     div.col-xs-12.signUpContents
         center
             div#gam1.signUpBoxes
+                form#firstForm(method="post", action="/signup")
 
-                div.stepTitles(style="float:right; font-size: 20px")
-                    b(style="float:right") شروع کنید
+                    input(type="hidden", name="_csrf", value=csrfToken)
 
-                div#idCode.inputLabel.signUpInputLabel
-                    div.signUpInputLabelTitles
-                        span(style="float:right; padding: 3px; font-size: 15px") کد ملی
-                        img.on#onOff2(src = "/assets/img/helpon.png", style = "float: left; width: 35px; padding: 4px 10px 0px 0px")
-                    input#idC.justNumber.signUpInput.form-control(type='text', placeholder='کد ملی ده رقمی')
-                    p.explainText.hidden#explain2(style="display: inline-block; margin-top: 10px;") کد ملی ده رقمی خود را بدون فاصله و علامت - وارد فرمایید.
+                    div.stepTitles(style="float:right; font-size: 20px")
+                        b(style="float:right") شروع کنید
 
-                div#phoneNum.inputLabel.signUpInputLabel
-                    div.signUpInputLabelTitles
-                        span(style="float:right; padding: 3px; font-size: 15px") شماره تلفن همراه
-                        img.on#onOff3(src = "/assets/img/helpon.png", style = "float: left; width: 35px; padding: 4px 10px 0px 0px")
-                    input#pNum.justNumber.signUpInput.form-control(type='text', placeholder='09xxxxxxxxx')
-                    p.explainText.hidden#explain3(style="display: inline-block; margin-top: 10px;") شماره تلفن همراه خود را با کد ابتدایی آن و بدون فاصله و علامت وارد فرمایید.
+                    div#idCode.inputLabel.signUpInputLabel
+                        div.signUpInputLabelTitles
+                            span(style="float:right; padding: 3px; font-size: 15px") کد ملی
+                            img.on#onOff2(src = "/assets/img/helpon.png", style = "float: left; width: 35px; padding: 4px 10px 0px 0px")
+                        input#idC.justNumber.signUpInput.form-control(name="nid", type='text', placeholder='کد ملی ده رقمی')
+                        p.explainText.hidden#explain2(style="display: inline-block; margin-top: 10px;") کد ملی ده رقمی خود را بدون فاصله و علامت - وارد فرمایید.
 
-                div#acceptance
-                    input#accCheck(type='radio', name='accCheck')
-                    span#accText(style="float: right") من موافقت خود را با قوانین و مقررات سامانه جامع اشتغال اعلام می دارم و آن را به دقت مطالعه کرده ام. همچنین در بازه های رمانی متناوب با مراجعه به صفحه قوانین و مقررات از تغییرات آن مطلع شده و آن را می پذیرم. همچنین در صورت تغییر شماره تلفن همراه یا پست الکترونیکی در اسرع وقت در پروفایل خود اقدام به اصلاح موارد تغییر یافته می کنم. من می دانم عضویت در سامانه دلیلی برای پرداخت تسهیلات نبوده بلکه مقدمه آن است.
+                    div#phoneNum.inputLabel.signUpInputLabel
+                        div.signUpInputLabelTitles
+                            span(style="float:right; padding: 3px; font-size: 15px") شماره تلفن همراه
+                            img.on#onOff3(src = "/assets/img/helpon.png", style = "float: left; width: 35px; padding: 4px 10px 0px 0px")
+                        input#pNum.justNumber.signUpInput.form-control(name="phone_num", type='text', placeholder='09xxxxxxxxx')
+                        p.explainText.hidden#explain3(style="display: inline-block; margin-top: 10px;") شماره تلفن همراه خود را با کد ابتدایی آن و بدون فاصله و علامت وارد فرمایید.
 
-                div.divSignInInput
-                    div.g-recaptcha(data-sitekey="6LewsasUAAAAAPalqBV7qJioRJa5qXnz4nCHH686")
+                    div#acceptance
+                        input#accCheck(type='radio', name='accCheck')
+                        span#accText(style="float: right") من موافقت خود را با قوانین و مقررات سامانه جامع اشتغال اعلام می دارم و آن را به دقت مطالعه کرده ام. همچنین در بازه های رمانی متناوب با مراجعه به صفحه قوانین و مقررات از تغییرات آن مطلع شده و آن را می پذیرم. همچنین در صورت تغییر شماره تلفن همراه یا پست الکترونیکی در اسرع وقت در پروفایل خود اقدام به اصلاح موارد تغییر یافته می کنم. من می دانم عضویت در سامانه دلیلی برای پرداخت تسهیلات نبوده بلکه مقدمه آن است.
 
-                script(src='https://www.google.com/recaptcha/api.js')
+                    div.divSignInInput
+                        div.g-recaptcha(data-sitekey="6LewsasUAAAAAPalqBV7qJioRJa5qXnz4nCHH686")
 
-                div.suFooter
-                    a(href="/", style="float: right; cursor: pointer; text-decoration: none; padding-top: 5px; font-size: 12px") بازگشت به صفحه اصلی
+                    script(src='https://www.google.com/recaptcha/api.js', nonce=my_nonce)
 
-                    button.continueStages#continueStages1
+                    div.suFooter
+                        a(href="/", style="float: right; cursor: pointer; text-decoration: none; padding-top: 5px; font-size: 12px") بازگشت به صفحه اصلی
+
+                    span.continueStages#continueStages1(style="padding: 5px; cursor: pointer")
                         b(style="float: right; color: #ffffff; font-size: 15px") ادامه
                         img(src = "/assets/img/arrowup.png", style = "float:left; transform: rotate(-90deg); padding-top: 10px")
 
-                center#incorrectNID.formErr.hidden(style="clear:both; padding-top: 10px")
-                    p.verifyCodeHelpText.errors(style="float: none; text-align: center !important") کد ملی وارد شده نامعتبر است
+                - if(typeof(msg) !== undefined && msg != null && msg === "nok1")
+                    center#incorrectNID.formErr(style="clear:both; padding-top: 10px")
+                        p.verifyCodeHelpText.errors(style="float: none; text-align: center !important") کد ملی وارد شده نامعتبر است
 
-                center#duplicateNID.formErr.hidden(style="clear:both; padding-top: 10px")
-                    p.verifyCodeHelpText.errors(style="float: none; text-align: center !important") کد ملی یا شماره همراه وارد شده در سامانه موجود است
+                - if(typeof(msg) !== undefined && msg != null && msg === "nok2")
+                    center#duplicateNID.formErr(style="clear:both; padding-top: 10px")
+                        p.verifyCodeHelpText.errors(style="float: none; text-align: center !important") کد ملی یا شماره همراه وارد شده در سامانه موجود است
 
-                center#tooManyRequest.formErr.hidden(style="clear:both; padding-top: 10px")
-                    p.verifyCodeHelpText.errors(style="float: none; text-align: center !important") تعداد درخواست های شما بیش از حد مجاز است
+                - if(typeof(msg) !== undefined && msg != null && msg === "nok3")
+                    center#tooManyRequest.formErr.hidden(style="clear:both; padding-top: 10px")
+                        p.verifyCodeHelpText.errors(style="float: none; text-align: center !important") تعداد درخواست های شما بیش از حد مجاز است
+
+                center#incorrectCaptcha.formErr.hidden(style="clear:both; padding-top: 10px")
+                    p.verifyCodeHelpText.errors(style="float: none; text-align: center !important") لطفا نکات مربوط به کپچا را رعایت فرمایید
 
                 center#fillInfo.formErr.hidden(style="clear:both; padding-top: 10px")
                     p.verifyCodeHelpText.errors(style="float: none; text-align: center !important") لطفا تمام اطلاعات لازم را پر نمایید
@@ -56,143 +65,4 @@ block content
                 center#agreement.formErr.hidden(style="clear:both; padding-top: 10px")
                     p.verifyCodeHelpText.errors(style="float: none; text-align: center !important") لطفا موافقت خود را با شرایط سایت اعلام کنید.
 
-
-            div#gam2.hidden.signUpBoxes
-
-                div.stepTitles(style="float:right; font-size: 15px")
-
-                    b(style="float:right") کد ارسال شده به تلفن همراه خود را وارد کنید
-
-                div.inputLabel.signUpInputLabel
-                    div.signUpInputLabelTitles
-                        span(style="float:right; padding: 3px; font-size: 15px;") کد تأیید
-                        img.on#onOff1(src = "/assets/img/helpon.png", style = "float: left; width: 35px; padding: 4px 10px 0px 0px")
-
-                    input#vCode.signUpInput.form-control.justNumber(type='text', placeholder='xxxxxx')
-                    p.explainText.hidden#explain1(style="margin-top: 10px;") کد 6 رقمی به صورت پیامک برای شماره ای که وارد فرمودید، ارسال شده است.
-
-                        div#resendDiv.hidden
-                            a.doNotGetCode(style="cursor: auto; float:right; padding: 3px; cursor: pointer; text-decoration: none; color: #aa0800") هنوز کد را دریافت نکرده‌اید؟
-
-                            div(style="display:inline-block; width: 70px; float: left")
-                                a#resendBtn(style="float:left; padding: 3px; font-size: 12px; cursor: pointer; text-decoration: none") ارسال مجدد کد فعال سازی
-                            //a(style="float:left; padding: 3px; font-size: 12px; cursor: pointer; text-decoration: none") تماس صوتی
-
-                div.verifyCodeDescription
-
-                    p.verifyCodeHelpText.errors
-                        span تا
-                        span &nbsp;
-                        span#reminder_time
-                        span &nbsp;
-                        span کد فعال سازی به شماره همراه شما ارسال خواهد شد.
-
-                    p#codeErr.formErr.hidden.verifyCodeHelpText.errors(style="float: none !important") کد مورد نظر، نامعتبر است
-
-                    //p.verifyCodeHelpText.errors تماس صوتی تا 1:00 دقیقه دیگر برای شما ارسال می گردد.
-
-                    //p.verifyCodeHelpText.errors متأسافانه امکان ارسال پیامک و برقراری تماس موجود نمی باشد. کد برای شما ایمیل می گردد.
-
-                    //p.verifyCodeHelpText.errors راه های برقراری ارتباط با شما مسدود می باشد. لطفاً به صفحه ورود بازگشته و چند دقیقه دیگر دوباره تلاش کنید.
-                    //    a(style="cursor: pointer; text-decoration: none") تماس با پشتیبانی
-
-                div.suFooter(style="padding-top: 25px")
-
-                    a(href="/", style="float: right; cursor: pointer; text-decoration: none; padding-top: 5px; font-size: 12px") بازگشت به صفحه قبل
-
-                    button.continueStages#continueStages2
-                        b(style="float: right; color: #ffffff; font-size: 15px") ادامه
-                        img(src = "/assets/img/arrowup.png", style = "float:left; transform: rotate(-90deg); padding-top: 10px")
-
-            div#gam3.hidden.signUpBoxes
-
-                div.stepTitles(style="float:right; font-size: 15px; margin-bottom: 0px")
-
-                    b(style="float:right") گام آخر
-
-                div#signUpPass.inputLabel.signUpInputLabel
-                    div.signUpInputLabelTitles
-                        span(style="float:right; padding: 3px; font-size: 15px;") کلمه عبور
-                    input#suPass.signUpInput.form-control(type='password', placeholder='xxxxxx', style="height:30px")
-
-                div#signUpRePass.inputLabel.signUpInputLabel
-                    div.signUpInputLabelTitles
-                        span(style="float:right; padding: 3px; font-size: 15px;") تکرار کلمه عبور
-                        img(src = "/assets/img/helpon.png", style = "float: left; width: 35px; padding: 4px 10px 0px 0px")
-                    input#conf.signUpInput.form-control(type='password', placeholder='xxxxxx', style="height:30px")
-
-                div.passHelp
-
-
-                    div(style="display: inline-block")
-
-                        fieldset.passDescription(style="margin: 10px 0; width: 80%")
-
-                            legend(style="width: 100px; margin: 0px 10px; border: none;font-size: 15px") توجه کنید
-                            div.passDescTextDiv
-                                p.passDescText رمز شما باید حداقل 8 کاراکتر را شامل شود.
-                            div.passDescTextDiv
-                                p.passDescText رمز شما باید حتماً دارای حروف بزرگ و کوچک باشد.
-                            div.passDescTextDiv
-                                p.passDescText رمز شما حتماً باید دارای عدد باشد.
-                            //div.passDescTextDiv
-                            //    p.passDescText رمز شما باید حتماً دارای کاراکترهای ویژه مانند * % ^ $ # باشد.
-
-                        p#incorrectPass.formErr.hidden.passHelpText.errors(style="margin: 0px 22px") تکرار کلمه عبور مطابقت ندارد
-
-                        p#invalidPass.formErr.hidden.passHelpText.errors(style="margin: 0px 22px; width: 250px") کلمه عبور شما شرایط کلکه عبور ایمن را ندارد. به نکات بالا توجه کنید.
-
-                        p#allFields.formErr.hidden.passHelpText.errors(style="margin: 0px 22px; width: 250px") لطفا تمام موارد لازم را پر نمایید.
-
-                div#signUpSecurityQues.inputLabel.signUpInputLabel
-                    div.signUpInputLabelTitles
-                        span(style="float:right; padding: 3px; font-size: 15px;") پاسخ امنیتی
-                        img(src = "/assets/img/helpon.png", style = "float: left; width: 35px; padding: 4px 10px 0px 0px")
-                    input#suSecureQues.signUpInput.form-control(type='text', placeholder='abcde' name='suSecureQues', style="height:30px")
-
-                div#signUpEmail.inputLabel.signUpInputLabel
-                    div.signUpInputLabelTitles
-                        span(style="float:right; padding: 3px; font-size: 15px;") پست الکترونیکی
-                    input#suEmail.signUpInput.form-control(type='text', placeholder='name@domain.x' name='suEmail' , style="height:30px")
-                    p.passHelpText این گزینه اختیاری است ولی قویاً پیشنهاد می شود.
-
-                div.suFooter
-                    a(href="/", style="float: right; cursor: pointer; text-decoration: none; padding-top: 5px; font-size: 12px") بازگشت به صفحه قبل
-
-                    button.continueStages#continueStages3
-                        b(style="float: right; color: #ffffff; font-size: 15px") ادامه
-                        img(src = "/assets/img/arrowup.png", style = "float:left; transform: rotate(-90deg); padding-top: 10px")
-            div.signUpInstructionsDiv
-
-                div.instructionContent(style="float:right")
-
-                    div.instructionContentTitle
-
-                        b(style="float: right") برای ثبت نام چند مرحله ی ساده پیش رو دارید
-
-                    div#idCodeIns.textIns
-                        img(src = "/assets/img/id.png", style="float: right; width: 50px; padding: 20px 0px 0px 10px")
-                        b(style="float: right; color: black") کد ملی
-                        br
-                        p(style="float: right; text-align: justify; width: 80%; color: #484545") برای احراز هویت شما کد ملی شما لازم است. توجه داشته باشید ثبت نام در سامانه برای افراد بالای 18 سال مجاز می باشد.
-
-                    div#phonNumIns.textIns
-                        img(src = "/assets/img/phone.png", style="float: right; width: 50px; padding: 20px 0px 0px 10px")
-                        b(style="float: right; color: black") شماره تلفن همراه
-                        br
-                        p(style="float: right; text-align: justify; width: 80%; color: #484545") تمامی فرایندها از طریق تلفن همراه شما انجام می یابد. در نتیجه حتماً از شماره هایی استفاده کنید که همیشه همراه شماست و در صورت تغییر آن حتماً ما را مطلع کنید.
-
-                    div#emailIns.textIns
-                        img(src = "/assets/img/mail.png", style="float: right; width: 50px; padding: 20px 0px 0px 10px")
-                        b(style="float: right; color: black") پست الکترونیکی
-                        br
-                        p(style="float: right; text-align: justify; width: 80%; color: #484545") در مواردی که دسترسی به تلفن همراه خود ندارید پست الکترونیکی شما درگاه ارتباط ماست. پس حتماً آن را وارد نمایید. در نظر داشته باشید که فعالسازی پست الکترونیکیرا متعاقباً در پروفایل خود انجام دهید تا فعال گردد.
-
-                    div#securityQuesIns.textIns
-                        img(src = "/assets/img/sq.png", style="float: right; width: 50px; padding: 20px 0px 0px 10px")
-                        b(style="float: right; color: black") پاسخ امنیتی
-                        br
-                        p(style="float: right; text-align: justify; width: 80%; color: #484545") یک کلمه حداکثر 10 و حداقل 6 حرفی و با نگارش انگلیسی انتخاب کنید تا در مواقع لازم از آن برای تأیید هویت شما استفاده گردد.
-
         script(src="/assets/js/activation.js")
-        script(src="/assets/js/timer.js")

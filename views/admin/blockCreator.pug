@@ -12,87 +12,126 @@ block content
                         .sparkline7-hd
                             .main-spark7-hd
                                 h1 فیلدهای مرتبط
-                                .sparkline7-outline-icon
-                                    span.sparkline7-collapse-link
-                                        i.fa.fa-chevron-up
                         .sparkline7-hd
                             div.farayandStepsDetailsDiv
-
                                 div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
                                     b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") شرایط ویژه
                                     br
                                     span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") بازیگران ویژه
-                                    input(type="checkbox", value="-1", name="fields[]", style="margin-right: -10px")
+
+                                    - if(blockAccesses != null && blockAccesses.length > 0 && blockAccesses.indexOf(-1) != -1)
+                                        input(checked="true", type="checkbox", value="-1", name="fields[]", style="margin-right: -10px")
+                                    - else
+                                        input(type="checkbox", value="-1", name="fields[]", style="margin-right: -10px")
 
                                 div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
                                     b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") پیش شرط های وام
                                     br
                                     span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") پیش شرط های وام
-                                    input(type="checkbox", value="0", name="fields[]", style="margin-right: -10px")
+                                    - if(blockAccesses != null && blockAccesses.length > 0 && blockAccesses.indexOf(0) != -1)
+                                        input(checked="true", type="checkbox", value="0", name="fields[]", style="margin-right: -10px")
+                                    - else
+                                        input(type="checkbox", value="0", name="fields[]", style="margin-right: -10px")
 
                                 div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
                                     b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") اطلاعات طرح
                                     br
                                     span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") اطلاعات طرح
-                                    input(type="checkbox", value="-2", name="fields[]", style="margin-right: -10px")
+                                    - if(blockAccesses != null && blockAccesses.length > 0 && blockAccesses.indexOf(-2) != -1)
+                                        input(checked="true", type="checkbox", value="-2", name="fields[]", style="margin-right: -10px")
+                                    - else
+                                        input(type="checkbox", value="-2", name="fields[]", style="margin-right: -10px")
 
                                 - if(hoghoghi)
                                     div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
                                         b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") اطلاعات حقوقی
                                         br
                                         span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") اطلاعات ثبتی شرکت
-                                        input(type="checkbox", value="1", name="fields[]", style="margin-right: -10px")
+                                        - if(blockAccesses != null && blockAccesses.length > 0 && blockAccesses.indexOf(1) != -1)
+                                            input(checked="true", type="checkbox", value="1", name="fields[]", style="margin-right: -10px")
+                                        - else
+                                            input(type="checkbox", value="1", name="fields[]", style="margin-right: -10px")
                                     div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
                                         b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") اطلاعات مدیرعامل
                                         br
                                         span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") اطلاعات حقیقی مدیرعامل
-                                        input(type="checkbox", value="2", name="fields[]", style="margin-right: -10px")
+                                        - if(blockAccesses != null && blockAccesses.length > 0 && blockAccesses.indexOf(2) != -1)
+                                            input(checked="true", type="checkbox", value="2", name="fields[]", style="margin-right: -10px")
+                                        - else
+                                            input(type="checkbox", value="2", name="fields[]", style="margin-right: -10px")
                                     div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
                                         b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") اطلاعات هیئت مدیره
                                         br
                                         span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") اطلاعات حقیقی مدیرعامل
-                                        input(type="checkbox", value="3", name="fields[]", style="margin-right: -10px")
+                                        - if(blockAccesses != null && blockAccesses.length > 0 && blockAccesses.indexOf(3) != -1)
+                                            input(checked="true", type="checkbox", value="3", name="fields[]", style="margin-right: -10px")
+                                        - else
+                                            input(type="checkbox", value="3", name="fields[]", style="margin-right: -10px")
                                     div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
                                         b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") اطلاعات نماینده
                                         br
                                         span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") اطلاعات حقیقی مدیرعامل
-                                        input(type="checkbox", value="4", name="fields[]", style="margin-right: -10px")
+                                        - if(blockAccesses != null && blockAccesses.length > 0 && blockAccesses.indexOf(4) != -1)
+                                            input(checked="true", type="checkbox", value="4", name="fields[]", style="margin-right: -10px")
+                                        - else
+                                            input(type="checkbox", value="4", name="fields[]", style="margin-right: -10px")
                                     div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
                                         b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") مدارک شرکت
                                         br
                                         span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") مدارک ثبتی شرکت
-                                        input(type="checkbox", value="5", name="fields[]", style="margin-right: -10px")
+                                        - if(blockAccesses != null && blockAccesses.length > 0 && blockAccesses.indexOf(5) != -1)
+                                            input(checked="checked", type="checkbox", value="5", name="fields[]", style="margin-right: -10px")
+                                        - else
+                                            input(type="checkbox", value="5", name="fields[]", style="margin-right: -10px")
                                     div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
                                         b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") مدارک مدیرعامل
                                         br
                                         span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") مدارک حقوقی مرتبط با مدیرعامل
-                                        input(type="checkbox", value="6", name="fields[]", style="margin-right: -10px")
+                                        - if(blockAccesses != null && blockAccesses.length > 0 && blockAccesses.indexOf(6) != -1)
+                                            input(checked="true", type="checkbox", value="6", name="fields[]", style="margin-right: -10px")
+                                        - else
+                                            input(type="checkbox", value="6", name="fields[]", style="margin-right: -10px")
                                     div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
                                         b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") مدارک نماینده
                                         br
                                         span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") مدارک حقوقی مرتبط با نماینده
-                                        input(type="checkbox", value="7", name="fields[]", style="margin-right: -10px")
+                                        - if(blockAccesses != null && blockAccesses.length > 0 && blockAccesses.indexOf(7) != -1)
+                                            input(checked="true", type="checkbox", value="7", name="fields[]", style="margin-right: -10px")
+                                        - else
+                                            input(type="checkbox", value="7", name="fields[]", style="margin-right: -10px")
                                 -else
                                     div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
                                          b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") اطلاعات حقیقی صاحبان جواز
                                          br
                                          span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") اطلاعات حقیقی صاحبان جواز
-                                         input(type="checkbox", value="8", name="fields[]", style="margin-right: -10px")
+                                         - if(blockAccesses != null && blockAccesses.length > 0 && blockAccesses.indexOf(8) != -1)
+                                            input(checked="true", type="checkbox", value="8", name="fields[]", style="margin-right: -10px")
+                                         - else
+                                            input(type="checkbox", value="8", name="fields[]", style="margin-right: -10px")
                                     div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
                                          b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") اطلاعات حقیقی اقدام کننده
                                          br
                                          span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") اطلاعات حقیقی اقدام کننده
-                                         input(type="checkbox", value="9", name="fields[]", style="margin-right: -10px")
+                                         - if(blockAccesses != null && blockAccesses.length > 0 && blockAccesses.indexOf(9) != -1)
+                                            input(checked="true", type="checkbox", value="9", name="fields[]", style="margin-right: -10px")
+                                         - else
+                                            input(type="checkbox", value="9", name="fields[]", style="margin-right: -10px")
                                     div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
                                          b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") اطلاعات حقیقی واحد صنف
                                          br
                                          span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") اطلاعات حقیقی واحد صنف
-                                         input(type="checkbox", value="10", name="fields[]", style="margin-right: -10px")
+                                         - if(blockAccesses != null && blockAccesses.length > 0 && blockAccesses.indexOf(10) != -1)
+                                            input(checked="true", type="checkbox", value="10", name="fields[]", style="margin-right: -10px")
+                                         - else
+                                            input(type="checkbox", value="10", name="fields[]", style="margin-right: -10px")
                                     div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
                                          b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") مدارک صاحبان
                                          br
                                          span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") مدارک حقوقی مرتبط با اقدام کننده
-                                         input(type="checkbox", value="11", name="fields[]", style="margin-right: -10px")
+                                         - if(blockAccesses != null && blockAccesses.length > 0 && blockAccesses.indexOf(11) != -1)
+                                            input(checked="true", type="checkbox", value="11", name="fields[]", style="margin-right: -10px")
+                                         - else
+                                            input(type="checkbox", value="11", name="fields[]", style="margin-right: -10px")
 
                                 button.btn.btn-success#manageAccessBtn(style="float: left") تایید
 
@@ -104,11 +143,6 @@ block content
                                 .sparkline10-hd
                                     .main-sparkline10-hd
                                         h1 کارگروه استان
-                                        .sparkline10-outline-icon
-                                            span.sparkline10-collapse-link
-                                                i.fa.fa-chevron-up
-                                            span.sparkline10-collapse-close
-                                                i.fa.fa-times(style= "transform: rotate(45deg)")
                                     .sparkline10-graph
                                         .input-knob-dial-wrap
                                             .row

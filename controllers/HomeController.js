@@ -525,7 +525,34 @@ exports.retrieve = function(req, res) {
 
 exports.signUp = function(req, res) {
     res.render('signUp', {
-        csrfToken: req.csrfToken()
+        csrfToken: req.csrfToken(),
+        my_nonce: req.nonce,
+        msg: req.params.msg
+    });
+};
+
+exports.signUpStep2 = function (req, res) {
+
+    let userId = req.params.user_id;
+
+    sequelize.query("select sendTime from activations a, users u where u.phone_num = a.phone_num and u.id = ?", {
+        type: Sequelize.QueryTypes.SELECT,
+        replacements: [userId]
+    }).then(users => {
+
+        if(users != null && users.length > 0) {
+
+            let activation = users[0];
+            let reminder = parseInt((activation.sendTime - ((new Date).getTime()) + 300000) / 1000);
+
+            res.render('signUpStep2', {
+                csrfToken: req.csrfToken(),
+                user_id: userId,
+                reminder: reminder
+            });
+        }
+        else
+            res.redirect("/");
     });
 };
 
@@ -551,11 +578,11 @@ exports.doSignUp = function(req, res) {
     let phone_num = req.body.phone_num;
 
     if(!Common.vmsNationalCode(nid)) {
-        res.send(JSON.stringify({"status": "nok1"}, null, 4));
+        res.redirect('/signup/nok1');
         return;
     }
 
-    sequelize.query("select phone_num from users where username = ? and phone_num = ? and status = 1", {
+    sequelize.query("select id, phone_num from users where username = ? and phone_num = ? and status = 1", {
         type: Sequelize.QueryTypes.SELECT,
         replacements: [nid, phone_num]
     }).then(user => {
@@ -567,6 +594,8 @@ exports.doSignUp = function(req, res) {
                 replacements: [nid, phone_num, Common.getHashedPass("123456"), 1]
             }).then(user => {
 
+                console.log(user);
+
                 let out = parseInt(Math.random() * (999999 - 100000) + 100000);
 
                 Activation.create({
@@ -576,10 +605,10 @@ exports.doSignUp = function(req, res) {
                 });
 
                 sendSMS(out, phone_num);
-                res.send(JSON.stringify({"status": "ok"}, null, 4));
+                res.redirect("/signupStep2/" + user[0]);
             })
             .catch(error => {
-                res.send(JSON.stringify({"status": "nok2"}, null, 4));
+                res.redirect('/signup/nok2');
             });
         }
 
@@ -594,17 +623,17 @@ exports.doSignUp = function(req, res) {
                         code: out
                     });
                     sendSMS(out, user[0].phone_num);
-                    res.send(JSON.stringify({"status": "ok"}, null, 4));
+                    res.redirect("/signupStep2/" + user[0].id);
                 }
                 else {
 
                     if(act.sendTime >= (new Date).getTime() - 300000) {
-                        res.send(JSON.stringify({'status': 'nok3'}));
+                        res.redirect('/signup/nok3');
                         return;
                     }
 
                     sendSMS(act.code, user[0].phone_num);
-                    res.send(JSON.stringify({"status": "ok"}, null, 4));
+                    res.redirect("/signupStep2/" + user[0].id);
                 }
             });
         }
@@ -614,11 +643,11 @@ exports.doSignUp = function(req, res) {
 exports.activeProfile = function(req, res) {
 
     let code = req.body.code;
-    let phone_num = req.body.phone_num;
+    let userId = req.body.userId;
 
-    sequelize.query("select id, phone_num from activations where code = ? and phone_num = ?", {
+    sequelize.query("select a.id, a.phone_num from activations a, users u where code = ? and u.phone_num = a.phone_num and u.id = ?", {
         type: Sequelize.QueryTypes.SELECT,
-        replacements: [code, phone_num]
+        replacements: [code, userId]
     }).then(act => {
         if(act != null && act.length > 0) {
             Activation.destroy({where: {id: act[0].id}});
@@ -641,7 +670,7 @@ exports.choosePass = function(req, res) {
     let email = req.body.email;
     let pass = req.body.password;
     let confirm_pass = req.body.confirm_password;
-    let phone_num = req.body.phone_num;
+    let userId = req.body.userId;
     let ques = req.body.ques;
 
     if(ques.length === 0) {
@@ -659,9 +688,9 @@ exports.choosePass = function(req, res) {
         return;
     }
 
-    sequelize.query("select id from users where phone_num = ?", {
+    sequelize.query("select * from users where id = ?", {
         type: Sequelize.QueryTypes.SELECT,
-        replacements: [phone_num]
+        replacements: [userId]
     }).then(users => {
 
         if(users.length > 0) {
@@ -724,11 +753,11 @@ exports.changePass = function(req, res) {
 
 exports.resendActivation = function(req, res) {
 
-    let phone_num = req.body.phone_num;
+    let userId = req.body.userId;
 
-    sequelize.query("select sendTime, code, id from activations where phone_num = ?", {
+    sequelize.query("select sendTime, code, a.id, a.phone_num from activations a, users u where u.phone_num = a.phone_num and u.id = ?", {
         type: Sequelize.QueryTypes.SELECT,
-        replacements: [phone_num]
+        replacements: [userId]
     }).then(users => {
         if(users != null && users.length > 0) {
 
@@ -739,7 +768,7 @@ exports.resendActivation = function(req, res) {
                 return;
             }
 
-            sendSMS(activation.code, phone_num);
+            sendSMS(activation.code, activation.phone_num);
 
             sequelize.query("update activations set sendTime = ? where id = ?", {
                 type: Sequelize.QueryTypes.UPDATE,

@@ -4,9 +4,102 @@ let c_minutes = -1;
 let c_seconds = -1;
 let timer;
 
-$("#resendBtn").on('click', function () {
-    resend();
+let reminder;
+let userId = -1;
+
+$(document).ready(function () {
+
+    userId = $("#userId").attr('data-val');
+    reminder = parseInt($("#reminder").attr('data-val'));
+
+    startTimer(reminder);
+
+    $("#resendBtn").on('click', function () {
+        resend();
+    });
+
+    $("#continueStages2").on("click", function () {
+        submitSecondForm();
+    });
+
+    $("#continueStages3").on("click", function () {
+        submitThirdForm();
+    });
+
 });
+
+function submitSecondForm() {
+
+    let code = $("#vCode").val();
+
+    $.ajax({
+
+        url: '/activeProfile',
+        type: 'post',
+        data: {
+            'code': code,
+            'userId': userId
+        },
+        success: function (res) {
+
+            res = JSON.parse(res);
+
+            if(res.status === "ok") {
+                $("#gam2").addClass('hidden');
+                $("#gam3").removeClass('hidden');
+            }
+            else if(res.status === "nok") {
+                $(".formErr").addClass('hidden');
+                $("#codeErr").removeClass('hidden');
+            }
+        }
+    });
+}
+
+function submitThirdForm() {
+
+    let confirm_pass = $("#conf").val();
+    let pass = $("#suPass").val();
+    let email = $("#suEmail").val();
+    let ques = $("#suSecureQues").val();
+
+    if(email.length === 0)
+        email = -1;
+
+    $.ajax({
+
+        url: '/choosePass',
+        type: 'post',
+        data: {
+            'password': pass,
+            'userId': userId,
+            'confirm_password': confirm_pass,
+            'email': email,
+            'ques': ques
+        },
+        success: function (res) {
+
+            res = JSON.parse(res);
+
+            if(res.status === "ok") {
+                document.location.href = "/";
+            }
+            else if(res.status === "nok1") {
+                $('.formErr').addClass('hidden');
+                $("#incorrectPass").removeClass('hidden');
+            }
+            else if(res.status === "nok2") {
+                $('.formErr').addClass('hidden');
+                $("#invalidPass").removeClass('hidden');
+            }
+            else if(res.status === "nok3") {
+                $('.formErr').addClass('hidden');
+                $("#allFields").removeClass('hidden');
+            }
+        }
+    });
+}
+
 
 function startTimer(t) {
 
@@ -41,7 +134,7 @@ function resend() {
         url: '/resendActivation',
         type: 'post',
         data: {
-            'phone_num': phone_num
+            'userId': userId
         },
         success: function (res) {
 

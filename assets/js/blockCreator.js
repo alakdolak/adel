@@ -59,6 +59,11 @@ $("#manageAccessBtn").on("click", function () {
         data: {
             'fields': fields,
             'blockId': blockId
+        },
+        success: function (res) {
+            res = JSON.parse(res);
+            if(res === "ok")
+                alert("عملیات مورد نظر با موفقیت انجام شد");
         }
     });
 });

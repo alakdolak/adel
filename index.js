@@ -9,9 +9,6 @@ const nocache = require('nocache');
 const csrf = require('csurf');
 const Sequelize = require('sequelize');
 const Common = require("./controllers/Common");
-
-
-
 const sequelize = new Sequelize('mysql://hemayat_root:QaS5rtWb2X4wAN2Q@localhost:3306/hemayat', { logging: false});
 
 app.use(nocache());
@@ -20,8 +17,9 @@ app.use(helmet());
 app.use(helmet.frameguard({ action: 'deny' }));
 
 app.use(function(req, res, next) {
+    req.nonce = "2726c7f26c";
     res.setHeader("Content-Security-Policy",
-        "default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' https://www.google.com/recaptcha/api.js https://www.gstatic.com/recaptcha/api2/v1562567553145/recaptcha__en.js 'unsafe-eval'; img-src 'self' www.gstatic.com; frame-src www.google.com; object-src 'none'; base-uri 'none';");
+        "default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'nonce-" + req.nonce + "' https://www.google.com/recaptcha/api.js 'unsafe-eval'; img-src 'self' www.gstatic.com; frame-src www.google.com; object-src 'none'; base-uri 'none';");
     return next();
 });
 
@@ -74,11 +72,11 @@ app.use((req, res, next) => {
 
 app.use('/', router);
 
-// app.use((err, req, res, next) => {
-//     if (err) {
-//         return res.sendStatus(500);
-//     }
-//     next();
-// });
+app.use((err, req, res, next) => {
+    if (err) {
+        return res.sendStatus(500);
+    }
+    next();
+});
 
 app.listen(3000);
