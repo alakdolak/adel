@@ -603,67 +603,78 @@ exports.doSignUp = function(req, res) {
     let nid = req.body.nid;
     let phone_num = req.body.phone_num;
 
+    sequelize.query("delete a from activations a inner join users u on a.phone_num = u.phone_num where u.status < 3 and TIMESTAMPDIFF(MINUTE, u.createdAt, CURRENT_TIMESTAMP) > 30", {
+        type: Sequelize.QueryTypes.DELETE
+    }).then(tmp => {
+        sequelize.query("delete from users where status < 3 and TIMESTAMPDIFF(MINUTE, createdAt, CURRENT_TIMESTAMP) > 30", {
+            type: Sequelize.QueryTypes.DELETE
+        }).then(tmp => {
+            sequelize.query("select id, phone_num from users where username = ? and phone_num = ? and status = 1", {
+                type: Sequelize.QueryTypes.SELECT,
+                replacements: [nid, phone_num]
+            }).then(user => {
+
+                if(user == null || user.length === 0) {
+
+                    sequelize.query("insert into users (username, phone_num, password, status) values (?, ?, ?, ?)", {
+                        type: Sequelize.QueryTypes.INSERT,
+                        replacements: [nid, phone_num, Common.getHashedPass("123456"), 1]
+                    }).then(user => {
+
+                        let out = parseInt(Math.random() * (999999 - 100000) + 100000);
+
+                        Activation.create({
+                            sendTime: (new Date).getTime(),
+                            phone_num: phone_num,
+                            code: out
+                        });
+
+                        sendSMS(out, phone_num);
+                        res.redirect("/signupStep2/" + user[0]);
+                    })
+                        .catch(error => {
+                            res.redirect('/signup/nok2');
+                        });
+                }
+
+                else {
+                    Activation.findOne({where:{phone_num: user[0].phone_num}}).then(act => {
+                        if(act == null) {
+                            let out = parseInt(Math.random() * (999999 - 100000) + 100000);
+
+                            Activation.create({
+                                sendTime: (new Date).getTime(),
+                                phone_num: user[0].phone_num,
+                                code: out
+                            });
+                            sendSMS(out, user[0].phone_num);
+                            res.redirect("/signupStep2/" + user[0].id);
+                        }
+                        else {
+
+                            if(act.sendTime >= (new Date).getTime() - 300000) {
+                                res.redirect('/signup/nok3');
+                                return;
+                            }
+
+                            sendSMS(act.code, user[0].phone_num);
+                            res.redirect("/signupStep2/" + user[0].id);
+                        }
+                    });
+                }
+            });
+        });
+    });
+
     if(!Common.vmsNationalCode(nid)) {
         res.redirect('/signup/nok1');
         return;
     }
 
-    sequelize.query("select id, phone_num from users where username = ? and phone_num = ? and status = 1", {
-        type: Sequelize.QueryTypes.SELECT,
-        replacements: [nid, phone_num]
-    }).then(user => {
-
-        if(user == null || user.length === 0) {
-
-            sequelize.query("insert into users (username, phone_num, password, status) values (?, ?, ?, ?)", {
-                type: Sequelize.QueryTypes.INSERT,
-                replacements: [nid, phone_num, Common.getHashedPass("123456"), 1]
-            }).then(user => {
-
-                console.log(user);
-
-                let out = parseInt(Math.random() * (999999 - 100000) + 100000);
-
-                Activation.create({
-                    sendTime: (new Date).getTime(),
-                    phone_num: phone_num,
-                    code: out
-                });
-
-                sendSMS(out, phone_num);
-                res.redirect("/signupStep2/" + user[0]);
-            })
-            .catch(error => {
-                res.redirect('/signup/nok2');
-            });
-        }
-
-        else {
-            Activation.findOne({where:{phone_num: user[0].phone_num}}).then(act => {
-                if(act == null) {
-                    let out = parseInt(Math.random() * (999999 - 100000) + 100000);
-
-                    Activation.create({
-                        sendTime: (new Date).getTime(),
-                        phone_num: user[0].phone_num,
-                        code: out
-                    });
-                    sendSMS(out, user[0].phone_num);
-                    res.redirect("/signupStep2/" + user[0].id);
-                }
-                else {
-
-                    if(act.sendTime >= (new Date).getTime() - 300000) {
-                        res.redirect('/signup/nok3');
-                        return;
-                    }
-
-                    sendSMS(act.code, user[0].phone_num);
-                    res.redirect("/signupStep2/" + user[0].id);
-                }
-            });
-        }
-    });
+    if(!Common.isValidNumber(phone_num) || phone_num.length !== 11){
+        res.redirect('/signup/nok5');
+        return;
+    }
 };
 
 exports.activeProfile = function(req, res) {
@@ -984,11 +995,10 @@ exports.doLogin = function(req, res) {
         const username = req.body.username,
             password = req.body.password;
 
-        sequelize.query("select * from users where username = ?", {
+        sequelize.query("select * from users where status > 2 and username = ?", {
             type: Sequelize.QueryTypes.SELECT,
             replacements: [username]
         }).then(user => {
-            
             if(user == null || user.length === 0)
                 res.redirect('/login/err');
             else if(!bcrypt.compareSync(password, user[0].password))

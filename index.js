@@ -19,12 +19,13 @@ app.use(helmet.frameguard({ action: 'deny' }));
 app.use(function(req, res, next) {
     req.nonce = Common.makeRand(20);
     res.setHeader("Content-Security-Policy",
-        "default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'nonce-" + req.nonce + "' https://www.google.com/recaptcha/api.js 'unsafe-eval'; img-src 'self' www.gstatic.com; frame-src www.google.com; object-src 'none'; base-uri 'none';");
+        "default-src 'none'; connect-src 'self'; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'nonce-" + req.nonce + "' https://www.google.com/recaptcha/api.js; img-src 'self' www.gstatic.com; frame-src www.google.com; object-src 'none'; base-uri 'none';");
     return next();
 });
 
 app.use(cookieParser());
-app.use(redisSession({'cookieOptions': {'secure': false}}));
+
+app.use(redisSession({'cookieOptions': {'secure': false, 'httpOnly': true}}));
 
 app.set('view engine', 'pug');
 app.set('views','./views');
@@ -34,9 +35,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 const router = require('./routers/router.js');
-app.use(csrf());
+app.use(csrf({cookie: {
+        httpOnly: true
+    }}));
 app.use(function (req, res, next) {
-    res.cookie('XSRF-TOKEN', req.csrfToken());
+    res.cookie('XSRF-TOKEN', req.csrfToken(), Object.assign({ httpOnly: true, secure: true}));
     res.locals.csrftoken = req.csrfToken();
     next();
 });

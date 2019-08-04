@@ -63,8 +63,8 @@ function checkHoghoghiForm(reqId, instId) {
             if(tmp == null)
                 return -1;
 
-            return HoghoghiForm.findOne({where: {nid: tmp.dataValues.nid}}).then(tmp => {
-                return (tmp == null) ? 1 : 0;
+            return HoghoghiForm.findAll({where: {nid: tmp.dataValues.nid}}).then(tmp => {
+                return (tmp != null && tmp.length > 1) ? 0 : 1;
             });
         })
     });

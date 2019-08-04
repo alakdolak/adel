@@ -1,6 +1,9 @@
 extends structure.pug
 
 block content
+
+    style { #recaptcha-anchor-label: font-family: IRANSans; }
+
     div
          img(src = "/assets/img/banner.jpg", style="width: 100%")
 
@@ -13,6 +16,32 @@ block content
 
                     div.stepTitles(style="float:right; font-size: 20px")
                         b(style="float:right") شروع کنید
+
+
+                    - if(typeof(msg) !== undefined && msg != null && msg === "nok1")
+                        center#incorrectNID.formErr(style="clear:both; padding-top: 10px")
+                            p.verifyCodeHelpText.errors(style="float: none; text-align: center !important") کد ملی وارد شده نامعتبر است
+
+                    - if(typeof(msg) !== undefined && msg != null && msg === "nok5")
+                        center#incorrectNID.formErr(style="clear:both; padding-top: 10px")
+                            p.verifyCodeHelpText.errors(style="float: none; text-align: center !important") شماره همراه وارد شده نامعتبر است
+
+                    - if(typeof(msg) !== undefined && msg != null && msg === "nok2")
+                        center#duplicateNID.formErr(style="clear:both; padding-top: 10px")
+                            p.verifyCodeHelpText.errors(style="float: none; text-align: center !important") کد ملی یا شماره همراه وارد شده در سامانه موجود است
+
+                    - if(typeof(msg) !== undefined && msg != null && msg === "nok3")
+                        center#tooManyRequest.formErr.hidden(style="clear:both; padding-top: 10px")
+                            p.verifyCodeHelpText.errors(style="float: none; text-align: center !important") تعداد درخواست های شما بیش از حد مجاز است
+
+                    center#incorrectCaptcha.formErr.hidden(style="clear:both; padding-top: 10px")
+                        p.verifyCodeHelpText.errors(style="float: none; text-align: center !important") لطفا نکات مربوط به کپچا را رعایت فرمایید
+
+                    center#fillInfo.formErr.hidden(style="clear:both; padding-top: 10px")
+                        p.verifyCodeHelpText.errors(style="float: none; text-align: center !important") لطفا تمام اطلاعات لازم را پر نمایید
+
+                    center#agreement.formErr.hidden(style="clear:both; padding-top: 10px")
+                        p.verifyCodeHelpText.errors(style="float: none; text-align: center !important") لطفا موافقت خود را با شرایط سایت اعلام کنید.
 
                     div#idCode.inputLabel.signUpInputLabel
                         div.signUpInputLabelTitles
@@ -35,7 +64,7 @@ block content
                     div.divSignInInput
                         div.g-recaptcha(data-sitekey="6LewsasUAAAAAPalqBV7qJioRJa5qXnz4nCHH686")
 
-                    script(src='https://www.google.com/recaptcha/api.js', nonce=my_nonce)
+                    script(src='https://www.google.com/recaptcha/api.js?hl=fa', nonce=my_nonce)
 
                     div.suFooter
                         a(href="/", style="float: right; cursor: pointer; text-decoration: none; padding-top: 5px; font-size: 12px") بازگشت به صفحه اصلی
@@ -43,26 +72,5 @@ block content
                     span.continueStages#continueStages1(style="padding: 5px; cursor: pointer")
                         b(style="float: right; color: #ffffff; font-size: 15px") ادامه
                         img(src = "/assets/img/arrowup.png", style = "float:left; transform: rotate(-90deg); padding-top: 10px")
-
-                - if(typeof(msg) !== undefined && msg != null && msg === "nok1")
-                    center#incorrectNID.formErr(style="clear:both; padding-top: 10px")
-                        p.verifyCodeHelpText.errors(style="float: none; text-align: center !important") کد ملی وارد شده نامعتبر است
-
-                - if(typeof(msg) !== undefined && msg != null && msg === "nok2")
-                    center#duplicateNID.formErr(style="clear:both; padding-top: 10px")
-                        p.verifyCodeHelpText.errors(style="float: none; text-align: center !important") کد ملی یا شماره همراه وارد شده در سامانه موجود است
-
-                - if(typeof(msg) !== undefined && msg != null && msg === "nok3")
-                    center#tooManyRequest.formErr.hidden(style="clear:both; padding-top: 10px")
-                        p.verifyCodeHelpText.errors(style="float: none; text-align: center !important") تعداد درخواست های شما بیش از حد مجاز است
-
-                center#incorrectCaptcha.formErr.hidden(style="clear:both; padding-top: 10px")
-                    p.verifyCodeHelpText.errors(style="float: none; text-align: center !important") لطفا نکات مربوط به کپچا را رعایت فرمایید
-
-                center#fillInfo.formErr.hidden(style="clear:both; padding-top: 10px")
-                    p.verifyCodeHelpText.errors(style="float: none; text-align: center !important") لطفا تمام اطلاعات لازم را پر نمایید
-
-                center#agreement.formErr.hidden(style="clear:both; padding-top: 10px")
-                    p.verifyCodeHelpText.errors(style="float: none; text-align: center !important") لطفا موافقت خود را با شرایط سایت اعلام کنید.
 
         script(src="/assets/js/activation.js")
