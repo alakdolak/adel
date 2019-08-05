@@ -34,7 +34,7 @@ block content
                         div.divSignInInput
                             div.g-recaptcha(data-sitekey="6LewsasUAAAAAPalqBV7qJioRJa5qXnz4nCHH686")
 
-                        script(src='https://www.google.com/recaptcha/api.js', nonce=my_nonce)
+                        script(src='https://www.google.com/recaptcha/api.js?hl=fa', nonce=my_nonce)
 
 
                         div#siBtnForgetPass.divSignInInput
@@ -45,8 +45,10 @@ block content
                                 img(src = "/assets/img/arrowup.png", style = "float:left; transform: rotate(-90deg); padding-top: 10px")
 
                         div(style="margin-top: 10px; color: #aa0800")
-                            - if(err)
+                            - if(err && err === "err")
                                 p#warning نام کاربری یا رمزعبور اشتباه است و یا حساب کاربری شما فعال نیست
+                            - if(err && err === "err2")
+                                p#warning لطفا نکات مربوط به کپچا را رعایت فرمایید
                             p.explainText#explain1.hidden با ورود کد ملی و رمزعبور خود، وارد سایت شوید.<br/>کد ملی را به صورت پشت سر هم بدون فاصله و علامت - وارد کنید.
                         div#ictLogIn
 
@@ -54,7 +56,7 @@ block content
                                 a(target="_blank" href='http://irannoafarin.ir/')  irannoafarin
                                 span  هستید با پروفایل خود وارد شوید
 
-                            button#ictLogInBtn ورود
+                            span#ictLogInBtn(style="cursor: pointer") ورود
 
                         div#signUpLinkSignIn
 
@@ -115,7 +117,7 @@ block content
 
                                 span(style="display:inline-block; float: right") باز هم مشکل دارید؟
 
-                            button#retrievePassByPhoneBtn.signInHelpBoxBtn(onclick="document.location.href = '/contactUs'")
+                            a.signInHelpBoxBtn(href = '/contactUs', style="padding: 3px")
                                 b(style="color: #ffffff; font-size: 14px") تماس با پشتیبانی
 
                             div.signInHelpBoxTextDivs

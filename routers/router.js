@@ -210,7 +210,7 @@ router.get("/forgetStep2/:userId", HomeController.forgetStep2 );
 router.post("/forget", function(req, res) {
 
     if(req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
-        return res.json({"responseError" : "Please select captcha first"});
+        return res.redirect("/retrievePassPage1/err2");
     }
 
     const secretKey = "6LewsasUAAAAAKUdOZMH_XQNkmBopQy8j0q5Exem";
@@ -274,25 +274,25 @@ router.get("/login/:msg?", sessionCheckerInverse, function (req, res) {
 });
 
 router.post("/login", smsLimiter, function(req, res) {
-    //
-    // if(req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
-    //     return res.json({"responseError" : "Please select captcha first"});
-    // }
-    //
-    // const secretKey = "6LewsasUAAAAAKUdOZMH_XQNkmBopQy8j0q5Exem";
-    // const verificationURL = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
-    //
-    // request(verificationURL, function(error,response,body) {
-    //
-    //     body = JSON.parse(body);
-    //
-    //     if(body.success !== undefined && !body.success) {
-    //         return res.json({"responseError" : "Failed captcha verification"});
-    //
-    //     }
+
+    if(req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
+        return res.redirect('/login/err2');
+    }
+
+    const secretKey = "6LewsasUAAAAAKUdOZMH_XQNkmBopQy8j0q5Exem";
+    const verificationURL = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
+
+    request(verificationURL, function(error,response,body) {
+
+        body = JSON.parse(body);
+
+        if(body.success !== undefined && !body.success) {
+            return res.json({"responseError" : "Failed captcha verification"});
+
+        }
 
         HomeController.doLogin(req, res);
-    // });
+    });
 });
 
 router.get("/profile", HomeController.profile );
@@ -317,24 +317,24 @@ router.get("/signUpStep2/:user_id", smsLimiter, HomeController.signUpStep2 );
 
 router.post("/signUp", smsLimiter, function(req, res) {
 
-    // if(req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
-    //     return res.json({"responseError" : "Please select captcha first"});
-    // }
-    //
-    // const secretKey = "6LewsasUAAAAAKUdOZMH_XQNkmBopQy8j0q5Exem";
-    // const verificationURL = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
-    //
-    // request(verificationURL, function(error,response,body) {
-    //
-    //     body = JSON.parse(body);
-    //
-    //     if(body.success !== undefined && !body.success) {
-    //         return res.json({"responseError" : "Failed captcha verification"});
-    //
-    //     }
+    if(req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
+        return res.json({"responseError" : "Please select captcha first"});
+    }
+
+    const secretKey = "6LewsasUAAAAAKUdOZMH_XQNkmBopQy8j0q5Exem";
+    const verificationURL = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
+
+    request(verificationURL, function(error,response,body) {
+
+        body = JSON.parse(body);
+
+        if(body.success !== undefined && !body.success) {
+            return res.json({"responseError" : "Failed captcha verification"});
+
+        }
 
         HomeController.doSignUp(req, res);
-    // });
+    });
 });
 
 router.post("/resendActivation", smsLimiter, HomeController.resendActivation );

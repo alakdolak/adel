@@ -252,6 +252,7 @@ exports.forget = function(req, res) {
                 sendSMS(out, user.phone_num);
                 res.redirect("/forgetStep2/" + user.id);
             }).catch(x => {
+                console.log("err is " + x);
                 res.redirect("/retrievePassPage1/err");
             });
         }
@@ -574,7 +575,8 @@ exports.signUpStep2 = function (req, res) {
             res.render('signUpStep2', {
                 csrfToken: req.csrfToken(),
                 user_id: userId,
-                reminder: reminder
+                reminder: reminder,
+                my_nonce: req.nonce
             });
         }
         else
@@ -633,6 +635,7 @@ exports.doSignUp = function(req, res) {
                         res.redirect("/signupStep2/" + user[0]);
                     })
                         .catch(error => {
+                            console.log("error2 is " + error);
                             res.redirect('/signup/nok2');
                         });
                 }

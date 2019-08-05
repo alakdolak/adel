@@ -2,8 +2,6 @@ extends structure.pug
 
 block content
 
-    style { #recaptcha-anchor-label: font-family: IRANSans; }
-
     div
          img(src = "/assets/img/banner.jpg", style="width: 100%")
 
@@ -72,5 +70,38 @@ block content
                     span.continueStages#continueStages1(style="padding: 5px; cursor: pointer")
                         b(style="float: right; color: #ffffff; font-size: 15px") ادامه
                         img(src = "/assets/img/arrowup.png", style = "float:left; transform: rotate(-90deg); padding-top: 10px")
+
+
+        div.signUpInstructionsDiv
+
+            div.instructionContent(style="float:right")
+
+                div.instructionContentTitle
+
+                    b(style="float: right") برای ثبت نام چند مرحله ی ساده پیش رو دارید
+
+                div#idCodeIns.textIns
+                    img(src = "/assets/img/id.png", style="float: right; width: 50px; padding: 20px 0px 0px 10px")
+                    b(style="float: right; color: black") کد ملی
+                    br
+                    p(style="float: right; text-align: justify; width: 80%; color: #484545") برای احراز هویت شما کد ملی شما لازم است. توجه داشته باشید ثبت نام در سامانه برای افراد بالای 18 سال مجاز می باشد.
+
+                div#phonNumIns.textIns
+                    img(src = "/assets/img/phone.png", style="float: right; width: 50px; padding: 20px 0px 0px 10px")
+                    b(style="float: right; color: black") شماره تلفن همراه
+                    br
+                    p(style="float: right; text-align: justify; width: 80%; color: #484545") تمامی فرایندها از طریق تلفن همراه شما انجام می یابد. در نتیجه حتماً از شماره هایی استفاده کنید که همیشه همراه شماست و در صورت تغییر آن حتماً ما را مطلع کنید.
+
+                div#emailIns.textIns
+                    img(src = "/assets/img/mail.png", style="float: right; width: 50px; padding: 20px 0px 0px 10px")
+                    b(style="float: right; color: black") پست الکترونیکی
+                    br
+                    p(style="float: right; text-align: justify; width: 80%; color: #484545") در مواردی که دسترسی به تلفن همراه خود ندارید پست الکترونیکی شما درگاه ارتباط ماست. پس حتماً آن را وارد نمایید. در نظر داشته باشید که فعالسازی پست الکترونیکیرا متعاقباً در پروفایل خود انجام دهید تا فعال گردد.
+
+                div#securityQuesIns.textIns
+                    img(src = "/assets/img/sq.png", style="float: right; width: 50px; padding: 20px 0px 0px 10px")
+                    b(style="float: right; color: black") پاسخ امنیتی
+                    br
+                    p(style="float: right; text-align: justify; width: 80%; color: #484545") یک کلمه حداکثر 10 و حداقل 6 حرفی و با نگارش انگلیسی انتخاب کنید تا در مواقع لازم از آن برای تأیید هویت شما استفاده گردد.
 
         script(src="/assets/js/activation.js")

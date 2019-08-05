@@ -32,7 +32,7 @@ block content
                             div.divSignInInput
                                 div.g-recaptcha(data-sitekey="6LewsasUAAAAAPalqBV7qJioRJa5qXnz4nCHH686")
 
-                            script(src='https://www.google.com/recaptcha/api.js', nonce=my_nonce)
+                            script(src='https://www.google.com/recaptcha/api.js?hl=fa', nonce=my_nonce)
 
                             div#siBtnForgetPass.divSignInInput
 
@@ -42,8 +42,11 @@ block content
                                     b(style="float: right; color: #ffffff; font-size: 15px") تأیید
                                     img(src = "/assets/img/arrowup.png", style = "float:left; transform: rotate(-90deg); padding-top: 10px")
 
-                        - if(typeof(err) !== "undefined" && err != null)
+                        - if(typeof(err) !== "undefined" && err != null && err === "err")
                             p#invalidNID.warning کد ملی وارد شده در سامانه موجود نیست
+
+                        - if(typeof(err) !== "undefined" && err != null && err === "err2")
+                            p#invalidNID.warning لطفا نکات مربوط به کپچا را رعایت فرمایید
 
                     div.retPassHelpBox#1stRetPassHelpBox
 
@@ -53,7 +56,7 @@ block content
 
                                 span(style="display:inline-block; float: right") باز هم مشکل دارید؟
 
-                            button#retrievePassSupportBtn.signInHelpBoxBtn.contactUsBtn
+                            a.signInHelpBoxBtn.contactUsBtn(style="padding: 3px", href="/contactUs")
                                  b(style="color: #ffffff; font-size: 14px") تماس با پشتیبانی
 
                             div.signInHelpBoxTextDivs
