@@ -1,0 +1,47 @@
+extend ../ProfilesStructure.pug
+
+block content
+
+    .data-table-area.mg-b-15
+        .container-fluid
+            .row
+                .col-lg-12(style= "margin-top: 15px")
+                    .sparkline13-list.shadow-reset
+
+                        .sparkline13-graph
+
+                            .datatable-dashv1-list.custom-datatable-overright
+                                table#table(data-toggle='table', data-resizable='true')
+                                    thead
+                                        tr
+                                            th(data-field='state')
+                                            th(data-field='id') ID
+                                            th(data-field='nid', data-editable='false') کد ملی درخواست دهنده
+                                            th(data-field='code', data-editable='false') کد پیگیری
+                                            th(data-field='phone', data-editable='false') تلفن درخواست دهنده
+                                            th(data-field='send_date', data-editable='false') تاریخ ارسال درخواست
+                                            th(data-field='accept_date', data-editable='false') تاریخ پذیرش طرح
+                                            th(data-field='duration', data-editable='false') زمان مورد نیاز برای بررسی
+                                            th(data-field='reminder', data-editable='false') زمان باقی مانده برای بررسی
+                                            th(data-field='name', data-editable='false') مرحله
+                                            th(data-field='email', data-editable='false') نام طرح
+                                            th(data-field='op', data-editable='false') عملیات
+                                    tbody
+                                        - for(let i = 0; i < plans.length; i++) {
+                                        tr(id="tr_" + plans[i].reqId)
+                                            td
+                                            td #{i + 1}
+                                            td #{plans[i].username}
+                                            td #{plans[i].follow_code}
+                                            td #{plans[i].phone_num}
+                                            td #{plans[i].send_date}
+                                            td #{plans[i].accept_date}
+                                            td #{plans[i].duration}
+                                            td #{plans[i].reminder}
+                                            td #{plans[i].name}
+                                            td #{plans[i].instName}
+                                            td
+                                                button.btn.btn-danger.deleteBtn(data-val=plans[i].reqId, style="margin: 10px") انصراف از بررسی
+                                                button.btn.btn-success.redirectBtn(data-val=plans[i].id, style="margin: 10px") مشاهده مدارک
+                                        - }
+    script(src="/assets/js/plans.js")

@@ -128,7 +128,7 @@ exports.readExcel2 = function (req, res) {
 exports.readExcel = function (req, res) {
     readXlsxFile('controllers/tmp.xlsx').then((rows) => {
 
-        for (let i = 1; i < rows.length; i++) {
+        for (let i = 0; i < rows.length; i++) {
 
             let j = 0;
 

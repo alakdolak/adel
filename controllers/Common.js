@@ -126,6 +126,18 @@ exports.getFormattedToday = function () {
     return moment(today, 'MM/DD/YYYY').locale('fa').format('YYYYMMDD');
 };
 
+exports.getFormattedToday2 = function () {
+
+    let today = new Date();
+    let dd = String(today.getDate()).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    let yyyy = today.getFullYear();
+
+    today = mm + '/' + dd + '/' + yyyy;
+
+    return moment(today, 'MM/DD/YYYY').locale('fa').format('YYYY/MM/DD');
+};
+
 exports.diffDayWithToday = function (date, diff) {
 
     let today = getToday();
@@ -214,4 +226,8 @@ exports.validPass = function(pass) {
 
     // return (special && lowerCase && upperCase && num);
     return (lowerCase && upperCase && num);
+};
+
+exports.convertDateToString = function (date) {
+    return date.substr(0, 4) + "/" + date.substr(4, 2) + "/" + date.substr(6, 2);
 };

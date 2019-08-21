@@ -68,40 +68,88 @@ const SenfForm = sequelize.define('senf_form', {
         allowNull: false
     },
     name_status: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.INTEGER
     },
     economy_code_status: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.INTEGER
     },
     city_id_status: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.INTEGER
     },
     address_status: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.INTEGER
     },
     post_code_status: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.INTEGER
     },
     tel_status: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.INTEGER
     },
     namabar_status: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.INTEGER
     },
     site_status: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.INTEGER
     },
     pre_tel_status: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.INTEGER
     },
     pre_namabar_status: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.INTEGER
     },
     mail_status: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.INTEGER
     },
     phone_status: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.INTEGER
+    },
+    name_err_log: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    economy_code_err_log: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    city_id_err_log: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    address_err_log: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    post_code_err_log: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    tel_err_log: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    namabar_err_log: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    site_err_log: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    pre_tel_err_log: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    pre_namabar_err_log: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    mail_err_log: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    phone_err_log: {
+        type: Sequelize.STRING,
+        allowNull: false
     }
 });
 

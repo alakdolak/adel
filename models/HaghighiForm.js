@@ -48,25 +48,53 @@ const HaghighiForm = sequelize.define('haghighi_form', {
         allowNull: false
     },
     first_name_status: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.INTEGER
     },
     last_name_status: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.INTEGER
     },
     nid_status: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.INTEGER
     },
     mail_status: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.INTEGER
     },
     phone_status: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.INTEGER
     },
     city_id_status: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.INTEGER
     },
     address_status: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.INTEGER
+    },
+    first_name_err_log: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    last_name_err_log: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    nid_err_log: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    mail_err_log: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    phone_err_log: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    city_id_err_log: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    address_err_log: {
+        type: Sequelize.STRING,
+        allowNull: false
     }
 });
 

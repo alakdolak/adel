@@ -26,7 +26,11 @@ const UserPostAns = sequelize.define('user_post_ans', {
         allowNull: false
     },
     status: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.INTEGER
+    },
+    err_log: {
+        type: Sequelize.STRING,
+        allowNull: false
     }
 });
 

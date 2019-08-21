@@ -26,6 +26,12 @@ const RequestQueue = sequelize.define('request_queue', {
     percent: {
         type: Sequelize.INTEGER,
         allowNull: false
+    },
+
+    step: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        defaultValue: 0
     }
 
 });

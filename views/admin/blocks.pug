@@ -1,0 +1,28 @@
+extend ../ProfilesStructure.pug
+
+block content
+
+    .contact-clients-area.mg-b-40(style="margin-top: 15px")
+        .container-fluid
+            .row
+                - for(let i = 0; i < blocks.length; i++)  {
+                    .col-lg-4.col-md-4.col-sm-6.col-xs-12(style= "margin-top: 15px; float: right")
+                        .contact-client-single.shadow-reset.ct-client-b-mg-30.ct-client-b-mg-30-n.contact-client-v2(style="min-height: 160px")
+                            .row
+                                .col-lg-12(style= "margin-top: 15px")
+                                    .contact-client-img.contact-img-v2
+                                        h2
+                                            a.contact-client-name(href='/blockCreator/' + instId + "/" + blocks[i].id) #{blocks[i].name}
+                                    .contact-client-address
+                                        p.address-client-ct.client-addres-v2 #{blocks[i].default_kargroh + " " + blocks[i].duration}
+
+                                    .contact-client-footer
+                                        .btn-group
+                                            a.btn.btn-xs.btn-white
+                                                i.fa.fa-close
+                                                | حذف
+                - }
+
+            center.col-xs-12
+                a.btn.btn-success(href="/blockCreator/" + instId + "/-1") ساخت بلوک جدید
+

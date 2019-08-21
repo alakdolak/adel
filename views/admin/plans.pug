@@ -1,0 +1,38 @@
+extend ../ProfilesStructure.pug
+
+block content
+
+    .data-table-area.mg-b-15
+        .container-fluid
+            .row
+                .col-lg-12(style= "margin-top: 15px")
+                    .sparkline13-list.shadow-reset
+
+                        .sparkline13-graph
+
+                            .datatable-dashv1-list.custom-datatable-overright
+                                table#table(data-toggle='table', data-resizable='true')
+                                    thead
+                                        tr
+                                            th(data-field='state')
+                                            th(data-field='id') ID
+                                            th(data-field='nid', data-editable='false') کد ملی درخواست دهنده
+                                            th(data-field='code', data-editable='false') کد پیگیری درخواست کننده
+                                            th(data-field='name', data-editable='false') مرحله
+                                            th(data-field='email', data-editable='false') نام طرح
+                                            th(data-field='email', data-editable='false') نام کارگروه
+                                            th(data-field='op', data-editable='false') عملیات
+                                    tbody
+                                        - for(let i = 0; i < plans.length; i++) {
+                                            tr
+                                                td
+                                                td #{i + 1}
+                                                td #{plans[i].nid}
+                                                td #{plans[i].code}
+                                                td #{plans[i].name}
+                                                td #{plans[i].instName}
+                                                td #{plans[i].kargrohName}
+                                                td
+                                                    button.btn.btn-success.confirmBtn(data-val=plans[i].reqId) بر عهده گرفتن درخواست
+                                        - }
+    script(src="/assets/js/plans.js")

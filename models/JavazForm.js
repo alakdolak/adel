@@ -31,13 +31,25 @@ const JavazForm = sequelize.define('javaz_form', {
         allowNull: false
     },
     first_name_status: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.INTEGER
     },
     last_name_status: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.INTEGER
     },
     nid_status: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.INTEGER
+    },
+    first_name_err_log: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    last_name_err_log: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    nid_err_log: {
+        type: Sequelize.STRING,
+        allowNull: false
     }
 });
 

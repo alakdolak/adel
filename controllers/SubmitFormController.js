@@ -382,6 +382,7 @@ exports.submitHoghoghiForm = function (req, res) {
                     }).then(tmp => {
                         res.send(JSON.stringify({'status': 'ok', 'url': '/farayand/1/2/' + instId}));
                     }).catch(x => {
+                        console.log("catch in hoghoghi_forms " + x);
                         sequelize.query("update hoghoghi_forms set name = ?, namabar = ?, pre_namabar = ?, tel = ?, pre_tel = ?, submit_date = ?, company_kind = ?, company_no = ?, nid = ?, city_id = ?, economy_code = ?, address = ?, post_code = ?, mail = ?, site = ? where request_id = ?", {
                             type: Sequelize.QueryTypes.UPDATE,
                             replacements: [name, namabar, pre_namabar, tel, pre_tel, submite_date, company_kind,
@@ -628,7 +629,7 @@ exports.submitModiramelForm = function (req, res) {
                 }).then(tmp => {
                     res.send(JSON.stringify({'status': 'ok', 'url': '/farayand/1/3/' + instId}));
                 }).catch(x => {
-                    sequelize.query("update modiramel_forms set first_name = ?, last_name = ?, nid = ?, phone = ?, mail = ?) where request_id = ?", {
+                    sequelize.query("update modiramel_forms set first_name = ?, last_name = ?, nid = ?, phone = ?, mail = ? where request_id = ?", {
                         type: Sequelize.QueryTypes.UPDATE,
                         replacements: [first_name, last_name, nid, phone, email, reqId]
                     }).then(tmp => {

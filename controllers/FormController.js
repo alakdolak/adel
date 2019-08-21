@@ -22,6 +22,11 @@ exports.farayand = function(req, res) {
     let instId = req.params.instId;
     let subStepId = req.params.subStep;
 
+    instId = parseInt(instId);
+
+    if(instId !== 1 && instId !== 2 && instId !== 6)
+        return res.redirect("/notYet");
+
     let where = {step: stepId, instruction_id: instId};
     sequelize.query("select mode, step, sub_step from forms where step = ? and instruction_id = ?", {
         type: Sequelize.QueryTypes.SELECT,
@@ -254,6 +259,11 @@ exports.preactor = function(req, res) {
 
     let instId = req.params.instId;
 
+    instId = parseInt(instId);
+
+    if(instId !== 1 && instId !== 2 && instId !== 6)
+        return res.redirect("/notYet");
+
     sequelize.query("SELECT pre_actors.*, myTable.ans FROM pre_actors LEFT JOIN (select * from user_pre_ans WHERE mode = false and user_id = ?) as myTable on attr_id = pre_actors.id WHERE instruction_id = ?", {
         type: Sequelize.QueryTypes.SELECT,
         replacements: [req.session.user.id, instId]
@@ -347,6 +357,12 @@ exports.preactor = function(req, res) {
 exports.prefarayand = function(req, res) {
 
     let instId = req.params.instId;
+
+    instId = parseInt(instId);
+
+    if(instId !== 1 && instId !== 2 && instId !== 6)
+        return res.redirect("/notYet");
+
     let specialCities = 0;
 
     sequelize.query("SELECT preconditions.*, myTable.ans FROM preconditions LEFT JOIN (select * from user_pre_ans WHERE mode = true and user_id = ?) as myTable on attr_id = preconditions.id WHERE instruction_id = ?", {
@@ -462,6 +478,11 @@ exports.prefarayand = function(req, res) {
 exports.postcondition = function(req, res) {
 
     let instId = req.params.instId;
+
+    instId = parseInt(instId);
+
+    if(instId !== 1 && instId !== 2 && instId !== 6)
+        return res.redirect("/notYet");
 
     sequelize.query("SELECT post_conditions.*, myTable.ans FROM post_conditions LEFT JOIN (select * from user_post_ans WHERE user_id = ?) as myTable on attr_id = post_conditions.id WHERE instruction_id = ?", {
         type: Sequelize.QueryTypes.SELECT,

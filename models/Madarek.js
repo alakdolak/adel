@@ -27,8 +27,12 @@ const Madarek = sequelize.define('madarek', {
         allowNull: false
     },
     status: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.INTEGER
     },
+    err_log: {
+        type: Sequelize.STRING,
+        allowNull: false
+    }
 });
 
 // create all the defined tables in the specified database.

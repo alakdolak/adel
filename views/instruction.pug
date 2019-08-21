@@ -97,7 +97,10 @@ block content
 
             div.boxInGamBtnDiv(style= "display: inline-block; width: 100%")
                 center
-                    a.btn.btn-danger(href='/preactor/' + instId) شروع درخواست
+                    - if(inst.id == 1 || inst.id == 2|| inst.id == 6)
+                        a.btn.btn-danger(href='/preactor/' + instId) شروع درخواست
+                    - else
+                        a.btn.btn-danger#notYet شروع درخواست
 
                     div(style="width: 85%")
                         img.on#onOff1(src="/assets/img/helpon.png", width="25px", height="25px", style="margin-top: 5px; cursor: pointer; display: inline-block")
@@ -167,4 +170,4 @@ block content
                     p !{inst.desc_gam_4}
                 div.col-xs-3
                     img(src="/assets/img/s4.png")
-
+    script(src="/assets/js/instruction.js")

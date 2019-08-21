@@ -1,0 +1,264 @@
+extend ../ProfilesStructure.pug
+
+block content
+
+        div.hidden#userId(data-val=userId)
+        div.hidden#instId(data-val=instId)
+        div.hidden#reqId(data-val=reqId)
+        div.hidden#haghighi(data-val=haghighi)
+
+        .mobile-menu-area
+            .container
+                .row
+                    .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                        .mobile-menu
+                            nav#dropdown
+                                ul.mobile-menu-nav
+                                    li
+                                        a(data-toggle='collapse', data-target='#Charts', href='#')
+                                            | درخواست‌های من
+                                    li
+                                        a(data-toggle='collapse', data-target='#demo', href='#')
+                                            | ارائه ی گزارش
+
+        // Mobile Menu end
+        .user-profile-area
+            .container-fluid
+                .row
+                    .col-lg-12.col-md-12.col-sm-12.col-xs-12(style= "margin-top: 20px;")
+                        .user-profile-wrap.shadow-reset
+                            .row
+                                .col-lg-4.col-sm-6.col-xs-12(style= "float: right")
+                                    .row
+                                        .col-lg-2.col-xs-2(style= "float: right")
+                                            .user-profile-img
+                                                img(src='assets/img/img/notification/5.jpg', alt='')
+                                        .col-lg-10.col-xs-10(style= "float: right")
+                                            .user-profile-content
+                                                if (!haghighi)
+                                                    h5
+                                                        span مدیرعامل:
+                                                        span &nbsp;&nbsp;
+                                                        span#modirAmelName
+                                                    h5
+                                                        span نماینده:
+                                                        span &nbsp;&nbsp;
+                                                        span#namayandeName
+                                                h5
+                                                    span درخواست دهنده:
+                                                    span &nbsp;&nbsp;
+                                                    span#requesterName
+                                .col-lg-4.col-sm-6.col-xs-12(style= "float: right")
+                                    .user-profile-social-list
+                                        table.table.small.m-b-xs
+                                            tbody
+                                                tr
+                                                    td
+                                                        | شهر یا استان طرح
+                                                        strong #{state}
+                                                    td
+                                                        | مبلغ درخواستی
+                                                        strong#requestedMoney
+                                                tr
+                                                    td
+                                                        span درخواست پیشین
+                                                        span &nbsp;
+                                                        strong.hasPrevReq
+                                                    td
+                                                        | شرایط ویژه
+                                                        strong.hasPreAct
+                                                tr
+                                                    td
+                                                        | درخواست پیشین سایر اعضا
+                                                        strong دارد/ندارد
+                                                    td
+                                                        | کد پیگیری
+                                                        strong #{follow_code}
+
+                                .col-lg-4.col-xs-12(style= "float: right")
+                                    .analytics-sparkle-line.user-profile-sparkline
+                                        .analytics-content
+                                            #sparkline22
+        .user-prfile-activity-area.mg-b-40.mg-t-30
+            .container-fluid
+                .row
+                    .col-lg-3
+                        .user-profile-about.shadow-reset
+                            h2 #{name}
+                            p #{title}
+                        .user-profile-mutual-friends.shadow-reset.mg-t-30
+                            h2 بازیگر ویژه
+                            p#preActor
+
+                        .widget-flot-bg.shadow-reset.mg-t-30
+                            p سایر اعضا:
+                            p#others
+                        .widget-flot-bg.shadow-reset(style= "margin-top: 10px")
+                                div.col-sm-12.col-xs-12(style= "float: right")
+                                    p
+                                        span شماره تماس
+                                        span &nbsp;
+                                        span #{phone_num}
+                                div.col-sm-12.col-xs-12(style= "float: right")
+                                    p
+                                        span کد ملی
+                                        span &nbsp;
+                                        span #{username}
+                                div.col-xs-12(style= "float: inherit")
+                                    p
+                                        span سابقه پیشین در سیستم:
+                                        span &nbsp;
+                                        span.hasPrevReq
+                        .widget-flot-bg.shadow-reset.mg-t-30
+                            .admin-widget-flot-ch
+                                h1 خلاصه اطلاعات دسته پیش‌شرط
+                                p#preConditions
+                            .flot-chart
+                                .flot-chart-content#flot-chart89
+                        .single-skill.shadow-reset.mg-t-30
+                            .row
+                                .col-lg-12
+                                    .progress-circular1
+                                        h2(style= "text-align: justify; line-height: 30px;")
+                                            span سقف تسهیلات
+                                            span &nbsp;
+                                            strong.counter#requestedMoneyRelation
+
+                        .analytics-adminpro-wrap.shadow-reset.mg-t-30
+                            .skill-content-3.analytics-adminpro.analytics-adminpro3
+                                .skill
+                                    .progress.progress-bt
+                                        .lead-content
+                                            h3
+                                                span.counter 80
+                                                | %
+                                            p Admin Template
+                                        .progress-bar.wow.fadeInLeft(data-progress='80%', style='width: 80%; float: right', data-wow-duration='1.5s', data-wow-delay='1.2s')
+                                            span 80%
+                        .analytics-adminpro-wrap.shadow-reset.mg-t-30
+                            .skill-content-3.analytics-adminpro
+                                .skill
+                                    .progress
+                                        .lead-content
+                                            h3
+                                                span.counter 95
+                                                | %
+                                            p Wordpress
+                                        .progress-bar.wow.fadeInLeft(data-progress='95%', style='width: 95%; float: right', data-wow-duration='1.5s', data-wow-delay='1.2s')
+                                            span 95%
+                        .analytics-adminpro-wrap.shadow-reset.mg-t-30
+                            .skill-content-3.analytics-adminpro.analytics-adminpro4
+                                .skill
+                                    .progress
+                                        .lead-content
+                                            h3
+                                                span.counter 85
+                                                | %
+                                            p Joomla
+                                        .progress-bar.wow.fadeInLeft(data-progress='85%', style='width: 85%; float: right', data-wow-duration='1.5s', data-wow-delay='1.2s')
+                                            span 85%
+                        .analytics-adminpro-wrap.profile-res-mg-b-30.shadow-reset.mg-t-30
+                            .skill-content-3.analytics-adminpro.analytics-adminpro2
+                                .skill
+                                    .progress.progress-bt
+                                        .lead-content
+                                            h3
+                                                span.counter 93
+                                                | %
+                                            p Ecommerce
+                                        .progress-bar.wow.fadeInLeft(data-progress='93%', style='width: 93%; float: right', data-wow-duration='1.5s', data-wow-delay='1.2s')
+                                            span 93%
+                    .col-lg-6
+                        .post-user-profile-awrap.shadow-reset#data
+
+                    .col-lg-3
+                        .sparkline7-list.profile-online-mg-t-30.shadow-reset
+                            .sparkline7-hd
+                                .main-spark7-hd
+                                    h1 Contact List
+                                    .sparkline7-outline-icon
+                                        span.sparkline7-collapse-link
+                                            i.fa.fa-chevron-up
+                                        span
+                                            i.fa.fa-wrench
+                                        span.sparkline7-collapse-close
+                                            i.fa.fa-times
+                            .sparkline7-hd
+                                div.farayandStepsDetailsDiv
+
+                                    - if(forms != null && forms.length > 0 && forms.indexOf(-1) != -1)
+                                        div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
+                                            b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") شرایط ویژه
+                                            br
+                                            span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") بازیگران ویژه
+
+                                    - if(forms != null && forms.length > 0 && forms.indexOf(0) != -1)
+                                        div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
+                                            b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") پیش شرط های وام
+                                            br
+                                            span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") پیش شرط های وام
+
+                                    - if(forms != null && forms.length > 0 && forms.indexOf(-2) != -1)
+                                        div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
+                                            b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") اطلاعات طرح
+                                            br
+                                            span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") اطلاعات طرح
+
+
+                                    - if(!haghighi)
+                                        div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
+                                            - if(forms != null && forms.length > 0 && forms.indexOf(1) != -1)
+                                                b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") اطلاعات حقوقی
+                                                br
+                                                span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") اطلاعات ثبتی شرکت
+
+                                        div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
+                                            - if(forms != null && forms.length > 0 && forms.indexOf(2) != -1)
+                                                b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") اطلاعات مدیرعامل
+                                                br
+                                                span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") اطلاعات حقیقی مدیرعامل
+
+                                        div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
+                                            - if(forms != null && forms.length > 0 && forms.indexOf(3) != -1)
+                                                b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") اطلاعات هیئت مدیره
+                                                br
+                                                span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") اطلاعات حقیقی مدیرعامل
+                                        div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
+                                            - if(forms != null && forms.length > 0 && forms.indexOf(4) != -1)
+                                                b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") اطلاعات نماینده
+                                                br
+                                                span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") اطلاعات حقیقی مدیرعامل
+
+                                        div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
+                                            - if(forms != null && forms.length > 0 && forms.indexOf(5) != -1)
+                                                b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") مدارک
+                                                br
+                                                span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") مدارک ثبتی
+
+
+                                    -else
+                                        div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
+                                            - if(forms != null && forms.length > 0 && forms.indexOf(8) != -1)
+                                                b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") اطلاعات حقیقی صاحبان جواز
+                                                br
+                                                span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") اطلاعات حقیقی صاحبان جواز
+
+                                        div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
+                                            - if(forms != null && forms.length > 0 && forms.indexOf(9) != -1)
+                                                b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") اطلاعات حقیقی اقدام کننده
+                                                br
+                                                span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") اطلاعات حقیقی اقدام کننده
+
+                                        div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
+                                            - if(forms != null && forms.length > 0 && forms.indexOf(10) != -1)
+                                                b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") اطلاعات حقیقی واحد صنف
+                                                br
+                                                span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") اطلاعات حقیقی واحد صنف
+
+                                        div.farayandStepsDetailsDivs(style=" background-color: inherit; color: black")
+                                            - if(forms != null && forms.length > 0 && forms.indexOf(11) != -1)
+                                                b(style=" width: 95%; float: right; padding: 14px 10px 0 0; display: inline-block; font-size: 14px") مدارک صاحبان
+                                                br
+                                                span(style=" width: 95%; float: right; padding:  5px 10px 0 0; display: inline-block; font-size: 80%") مدارک حقوقی مرتبط با اقدام کننده
+
+        script(src="/assets/js/showContentsOfBlock.js")

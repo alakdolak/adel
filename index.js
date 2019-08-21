@@ -19,7 +19,7 @@ app.use(helmet.frameguard({ action: 'deny' }));
 app.use(function(req, res, next) {
     req.nonce = Common.makeRand(20);
     res.setHeader("Content-Security-Policy",
-        "default-src 'none'; connect-src 'self'; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'nonce-" + req.nonce + "' https://www.google.com/recaptcha/api.js; img-src 'self' www.gstatic.com; frame-src www.google.com; object-src 'none'; base-uri 'none';");
+        "default-src 'none'; connect-src 'self'; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'nonce-" + req.nonce + "' https://www.google.com/recaptcha/api.js; img-src 'self' www.gstatic.com; frame-src www.google.com; object-src 'self'; base-uri 'none';");
     return next();
 });
 
@@ -75,11 +75,11 @@ app.use((req, res, next) => {
 
 app.use('/', router);
 
-app.use((err, req, res, next) => {
-    if (err) {
-        return res.sendStatus(500);
-    }
-    next();
-});
+// app.use((err, req, res, next) => {
+//     if (err) {
+//         return res.sendStatus(500);
+//     }
+//     next();
+// });
 
 app.listen(3000);

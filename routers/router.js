@@ -35,7 +35,7 @@ const adminLevel = (req, res, next) => {
 };
 
 const supervisionLevel = (req, res, next) => {
-    if(parseInt(req.session.user.level) === 3)
+    if(parseInt(req.session.user.level) === 3 || parseInt(req.session.user.level) === 2)
         next();
     else {
         // sequelize.query("");
@@ -84,7 +84,41 @@ const sessionCheckerInverse = (req, res, next) => {
     }
 };
 
+router.post("/removeResponsible", [sessionChecker, supervisionLevel], AdminController.removeResponsible );
+
+router.post("/acceptRequest", [sessionChecker, supervisionLevel], AdminController.acceptRequest );
+
+router.post("/rejectField", [sessionChecker, supervisionLevel], AdminController.rejectField );
+
+router.get("/showContentOfBlock/:rqId", [sessionChecker, supervisionLevel], AdminController.showContentOfBlock );
+
+router.get("/plans", [sessionChecker, supervisionLevel], AdminController.plans );
+
+router.get("/myPlans", [sessionChecker, supervisionLevel], AdminController.myPlans );
+
 router.get("/registration", [sessionChecker, supervisionLevel], AdminController.registration );
+
+router.post("/others", [sessionChecker, supervisionLevel], AdminController.others );
+
+router.post("/requestModiramelName", [sessionChecker, supervisionLevel], AdminController.requestModiramelName );
+
+router.post("/acceptField", [sessionChecker, supervisionLevel], AdminController.acceptField );
+
+router.post("/getFormData", [sessionChecker, supervisionLevel], AdminController.getFormData );
+
+router.post("/requestNamayandeName", [sessionChecker, supervisionLevel], AdminController.requestNamayandeName );
+
+router.post("/requesterName", [sessionChecker, supervisionLevel], AdminController.requesterName );
+
+router.post("/getPreConditionsField", [sessionChecker, supervisionLevel], AdminController.getPreConditionsField );
+
+router.post("/getPreActorFields", [sessionChecker, supervisionLevel], AdminController.getPreActorFields );
+
+router.post("/requestedMoney", [sessionChecker, supervisionLevel], AdminController.requestedMoney );
+
+router.post("/hasPrevRequest", [sessionChecker, supervisionLevel], AdminController.hasPrevRequest );
+
+router.post("/hasPreActor", [sessionChecker, supervisionLevel], AdminController.hasPreActor );
 
 router.post("/doRegistration", [sessionChecker, supervisionLevel], AdminController.doRegistration );
 
@@ -107,6 +141,10 @@ router.post("/accessOfBlock", [sessionChecker, adminLevel], AdminController.acce
 router.post("/deleteMemberFromKargroh", [sessionChecker, adminLevel], AdminController.deleteMemberFromKargroh );
 
 router.post("/updateKargroh", [sessionChecker, adminLevel], AdminController.updateKargroh );
+
+router.get("/blocks", [sessionChecker, adminLevel], AdminController.insts );
+
+router.get("/blocks/:instId", [sessionChecker, adminLevel], AdminController.blocks );
 
 router.get("/blockCreator/:instId/:blockId", [sessionChecker, adminLevel], AdminController.blockCreator );
 
@@ -136,10 +174,10 @@ router.get("/setting", sessionChecker, HomeController.setting );
 
 router.get('/', HomeController.retrieve);
 
-// router.get('/tmp',
-//     HomeController.readExcel2
-//     HomeController.tmp
-// );
+router.get('/tmp',
+    HomeController.readExcel
+    // HomeController.tmp
+);
 
 router.get('/instruction/:id', function(req, res) {
     HomeController.inst(req, res);
@@ -275,24 +313,24 @@ router.get("/login/:msg?", sessionCheckerInverse, function (req, res) {
 
 router.post("/login", smsLimiter, function(req, res) {
 
-    if(req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
-        return res.redirect('/login/err2');
-    }
-
-    const secretKey = "6LewsasUAAAAAKUdOZMH_XQNkmBopQy8j0q5Exem";
-    const verificationURL = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
-
-    request(verificationURL, function(error,response,body) {
-
-        body = JSON.parse(body);
-
-        if(body.success !== undefined && !body.success) {
-            return res.json({"responseError" : "Failed captcha verification"});
-
-        }
+    // if(req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
+    //     return res.redirect('/login/err2');
+    // }
+    //
+    // const secretKey = "6LewsasUAAAAAKUdOZMH_XQNkmBopQy8j0q5Exem";
+    // const verificationURL = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
+    //
+    // request(verificationURL, function(error,response,body) {
+    //
+    //     body = JSON.parse(body);
+    //
+    //     if(body.success !== undefined && !body.success) {
+    //         return res.json({"responseError" : "Failed captcha verification"});
+    //
+    //     }
 
         HomeController.doLogin(req, res);
-    });
+    // });
 });
 
 router.get("/profile", HomeController.profile );
@@ -310,6 +348,10 @@ router.post("/getMyPlans", HomeController.getMyPlans );
 router.get("/contactUs", HomeController.contactUs );
 
 router.get("/complaint", HomeController.complaint );
+
+router.get("/notYet", function (req, res) {
+    res.render("notYet");
+});
 
 router.get("/signUp/:msg?", smsLimiter, HomeController.signUp );
 

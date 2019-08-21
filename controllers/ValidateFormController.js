@@ -496,7 +496,7 @@ exports.finalize = function (req, res) {
             else {
                 ReqeustQueue.create({
                     request_id: tmp.id,
-                    supervisor_id: 1,
+                    supervisor_id: -1,
                     percent: 0
                 }).then(tmp => {
                     res.send(JSON.stringify({'status': 'ok'}, null, 4));

@@ -191,7 +191,10 @@ block content
                             select.form-control(id="prev")
                                 option(value=-1) این بلاک آغازین است
                                 - for (let i = 0; i < blocks.length; i++) {
-                                    option(value=blocks[i].id) #{blocks[i].name}
+                                    - if(block != null && block.prev_block === blocks[i].id)
+                                        option(selected=true, value=blocks[i].id) #{blocks[i].name}
+                                    - else
+                                        option(value=blocks[i].id) #{blocks[i].name}
                                 - }
                         div
                             p زمان بررسی

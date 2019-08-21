@@ -26,10 +26,11 @@ $(document).ready(function () {
 
                 if(res.status === "ok") {
 
-                    $("#errs").empty();
-
                     if(blockId === -1)
-                        blockId = parseInt(res.blockId);
+                        document.location.href = "/blockCreator/" + instId + "/" + res.blockId;
+                    else {
+                        $("#errs").empty().append("عملیات مورد نظر با موفقیت انجام پذیرفت");
+                    }
                 }
                 else {
                     $("#errs").empty().append(res.errs);
